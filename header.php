@@ -34,7 +34,7 @@
                  <?php
                 
                 
-                    $header_image   = esc_url( get_theme_mod( 'dblogger_banner_adv_image' ) );   
+                    $header_image   = esc_url( get_theme_mod( 'dblogger_banner_image' ) );   
                     $header_image_static   = get_template_directory_uri()."/img/ads-7x9.jpg";
                     $image = $header_image ? "$header_image" : "$header_image_static";      
                 ?>
