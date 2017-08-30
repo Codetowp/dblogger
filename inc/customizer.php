@@ -28,7 +28,7 @@ function dblogger_customize_register( $wp_customize ) {
      $wp_customize->remove_section('header_image');
      $wp_customize->remove_section('background_image');    
      $wp_customize->get_section('title_tagline')->title = __( 'Branding' ); 
-     $wp_customize->add_setting( 'dblogger_accent_color', 
+     $wp_customize->add_setting( 'dblogger_accent_color',  
             array(
                 'default' => '#f53347', 
                 'transport' => 'refresh', 
@@ -59,6 +59,7 @@ function dblogger_customize_register( $wp_customize ) {
             ) 
         ) );
 		
+    
     $wp_customize->add_section( 'dblogger_theme_info', array(
           'title'                 => __( 'Theme INFO', 'dblogger' ),
           'priority'              => 0,
@@ -74,10 +75,22 @@ function dblogger_customize_register( $wp_customize ) {
 		'priority'                  => 10,
 	) ) );    
     
+     
+     /* Front page sections */
+     $wp_customize->add_panel( 'dblogger_panel' ,
+		array(
+			'priority'        => 130,
+			'title'           => esc_html__( 'Frontpage Theme Sections', 'dblogger' ),
+			'description'     => '',
+			/*'active_callback' => 'onepress_showon_frontpage'*/
+		)
+	);
+    
     $wp_customize->add_section('dblogger_header', array(
         'title'                     => __('Header Intro', 'dblogger'),
         'description'               => 'Easily edit your header section',
         'priority'                  => 99,
+         'panel'                     => 'dblogger_panel',
 
     ));
 
@@ -86,7 +99,7 @@ function dblogger_customize_register( $wp_customize ) {
         'type'                      => 'theme_mod',
         'capability'                => 'edit_theme_options',
         'sanitize_callback'         => 'esc_url_raw',
-        'transport'                 => 'postMessage',
+        'transport'                 => 'refresh',
     ) );
 
     $wp_customize->add_control( new WP_Customize_Image_Control(
@@ -152,16 +165,13 @@ function dblogger_customize_register( $wp_customize ) {
         'priority' 					=> 5
     ) );	  
     
-    
-    
+   
     
     
     /***************************Banner Settings**********************/
-    
-    
     $wp_customize->add_section('dblogger_general_banners_controls', array(
         'title'                     => __('Banner Settings', 'dblogger'),
-       
+        'panel'                     => 'dblogger_panel',  
         'priority'                  => 100,
 
     ));
@@ -186,33 +196,30 @@ function dblogger_customize_register( $wp_customize ) {
     
     
     
-    /**
- * Banner url
- */
- $wp_customize->add_setting( 'dblogger_banner_link', array(
+  /**Banner url */
+    
+    $wp_customize->add_setting( 'dblogger_banner_link', array(
 	                            'sanitize_callback' => 'esc_url_raw',
 	                            'default'           => esc_url( '#' ),
                             )
-);
-
-
-$wp_customize->add_control('dblogger_banner_link', array(
+                    );
+    $wp_customize->add_control('dblogger_banner_link', array(
 		'label'           => esc_html__( 'Banner Link:', 'dblogger' ),
 		'description'     => esc_html__( 'Add the link for banner image.', 'dblogger' ),
 		'section'         => 'dblogger_general_banners_controls',
 		'settings'        => 'dblogger_banner_link',
 		'type'			  => 'text',	
 		'active_callback' => 'banners_type_callback',
-	)
-);
+	   )
+    );
 
 
     
-  /*banner img*/  
+    /*banner img*/  
     $wp_customize->add_setting( 'dblogger_banner_image',array(
 	         'default'           => esc_url( get_template_directory_uri() . '/img/banner.png' ),
       )
-);
+    );
     
  $wp_customize->add_control(
 	new WP_Customize_Image_Control(
@@ -254,8 +261,9 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     //************************** SOCIAL SECTION****************************************//  
     
     $wp_customize->add_section( 'social', array(
-        'title'    => __( '[Dblogger]Header Social', 'dblogger'  ),
+        'title'                     => __( '[Dblogger]Header Social', 'dblogger'  ),
         'priority'                  => 100,
+        'panel'                     => 'dblogger_panel',  
     ) );
 
     $social_sites = array( 'facebook', 'twitter','instagram',  'google-plus', 'pinterest', 'linkedin', 'rss');
@@ -280,25 +288,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'title'                     => __('Guide section', 'dblogger'),
         'description'               => 'Easily edit the index',
         'priority'                  => 101,
+         'panel'                     => 'dblogger_panel',  
     ) );
-
-   /* $wp_customize->add_setting( 'dblogger_guide_check', array( 
-        'default'                  => 0,
-        'transport'                => 'postMessage',
-        'sanitize_callback'        => 'sanitize_text_field',
-       ) );
-
-    $wp_customize->add_control( 'dblogger_guide_check', array(
-        'type'					   => 'checkbox',
-        'label' 				   => __( 'Enable/Disable this section', 'dblogger' ),
-        'section'  				   => 'dblogger_guide_section',
-        'priority' 				   => 1,
-      ) ); */
-    
-   
-    
-    
-    
     $wp_customize->add_setting( 'dblogger_guide_icon', array(
 			'default'                   => '',
 			'type'                      => 'theme_mod',
@@ -306,7 +297,6 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			'sanitize_callback'         => 'esc_url_raw',
             'transport'                 => 'postMessage',
 		) );
-    
 	 $wp_customize->add_control( new WP_Customize_Image_Control(
             $wp_customize,'dblogger_guide_icon', array(
             'label'                     => __( 'Guide Icon', '' ),
@@ -316,16 +306,12 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
             'priority'                  => 2,
             ) 
         ) );
-    
-    
-    
 
      $wp_customize->add_setting( 'dblogger_guide_title', array(   
           'default'              =>'How to Guides',
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
-
      $wp_customize->add_control( 'dblogger_guide_title', array(
         
         'type'						=> 'text',
@@ -333,7 +319,6 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'section'  					=> 'dblogger_guide_section',
         'priority' 					=> 2,
       ) );	   
-
      $wp_customize->add_setting( 'dblogger_guide_desc', array(
             'default'               => 'Start a blog and earn money online. Learn from
                                     these amazing articles we have created for you 
@@ -341,23 +326,20 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
             'sanitize_callback'         => 'sanitize_text_field',
             'transport'                 => 'postMessage',
         ));
-    
      $wp_customize->add_control( 'dblogger_guide_desc', array(
             'type'                      => 'textarea',
             'label'                     => __( 'Description', 'dblogger' ),
             'section'                   => 'dblogger_guide_section',
             'priority'                  =>  3,
         ) );
- 
-    
       global $options_categories;
-            $wp_customize->add_setting('dblogger_slide_categories', array(
+      $wp_customize->add_setting('dblogger_slide_categories', array(
                 'default' => '',
                 'type' => 'option',
                 'capability' => 'edit_theme_options',
                 'sanitize_callback' => 'dblogger_sanitize_slidecat'
             ));
-            $wp_customize->add_control('dblogger_slide_categories', array(
+      $wp_customize->add_control('dblogger_slide_categories', array(
                 'label' => __('Slider Category', 'dblogger'),
                 'section' => 'dblogger_guide_section',
                 'type'    => 'select',
@@ -365,17 +347,17 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
                 'choices'    => $options_categories
             ));
     
-     $wp_customize->add_setting(
-    'dblogger_post_number',
+      $wp_customize->add_setting(
+      'dblogger_post_number',
 		array(
             'default' => '6',
 			'sanitize_callback' => 'dblogger_sanitize_integer'
 		)
-    );
+     );
 
-    $wp_customize->add_control(
-    'dblogger_post_number',
-    array(
+      $wp_customize->add_control(
+      'dblogger_post_number',
+      array(
         'type' => 'integer',
 		
         'label' => __('Number Of Slides To Show - i.e 10 (default is 6)','dblogger'),
@@ -391,6 +373,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'title'                     => __('Our Theme section', 'dblogger'),
         'description'               => 'Easily edit the index',
         'priority'                  => 102,
+        'panel'                     => 'dblogger_panel',  
     ) );
 
   
@@ -470,7 +453,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     
     
-       $wp_customize->add_setting( 'dblogger_theme_tag_check', array(
+    $wp_customize->add_setting( 'dblogger_theme_tag_check', array(
 			'default'    => '1',
 			'capability' => 'manage_options',
 			'transport' => 'postMessage',
@@ -491,6 +474,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'title'                     => __('Our Blog Section', 'dblogger'),
         'description'               => 'Easily edit the blog',
         'priority'                  => 103,
+        'panel'                     => 'dblogger_panel', 
     ) );
 
   
@@ -559,8 +543,6 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     );
     
     
-            
-    
     /* Subscribe Settings
 		----------------------------------------------------------------------*/
 		$wp_customize->add_section( 'dblogger_newsletter' ,
@@ -568,12 +550,12 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 				'priority'    => 110,
 				'title'       => esc_html__( 'Subscribe', 'dblogger' ),
 				'description' => '',
+                'panel'                     => 'dblogger_panel', 
 				
 			)
 		);
     
-       
-    $wp_customize->add_setting( 'dblogger_newsletter_disable', 
+        $wp_customize->add_setting( 'dblogger_newsletter_disable', 
            array( 
                'default' => 0,
                /*'transport' => 'postMessage',*/
@@ -581,24 +563,24 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
                'transport'          =>'postMessage',
            ) );
     
-	$wp_customize->add_control( 'dblogger_newsletter_disable', array(
+	   $wp_customize->add_control( 'dblogger_newsletter_disable', array(
 			'type'									=> 'checkbox',
 			'label' 								=> __( 'Hide Subscribe?', 'dblogger' ),
 			'section'  								=> 'dblogger_newsletter',
 			'priority' 								=> 1,
             'description' => esc_html__('Check this box to hide subscribe form.', 'dblogger'),
         
-	) );	
+	       ) );	
     
 			// Mailchimp Form Title
-			$wp_customize->add_setting( 'dblogger_newsletter_title',
+		$wp_customize->add_setting( 'dblogger_newsletter_title',
 				array(
 					'sanitize_callback' => 'sanitize_text_field',
 					'default'           => esc_html__( 'SUBSCRIBE', 'dblogger' ),
                     'transport'         => 'postMessage', 
 				)
 			);
-			$wp_customize->add_control( 'dblogger_newsletter_title',
+		$wp_customize->add_control( 'dblogger_newsletter_title',
 				array(
 					'label'       => esc_html__('Subscribe Form Title', 'dblogger'),
 					'section'     => 'dblogger_newsletter',
@@ -607,14 +589,14 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			);
 
 			// Mailchimp action url
-			$wp_customize->add_setting( 'dblogger_newsletter_mailchimp',
+		$wp_customize->add_setting( 'dblogger_newsletter_mailchimp',
 				array(
 					'sanitize_callback' => 'devfly_main_sanitize_url',
 					'default'           => '',
                     'transport'         => 'postMessage', 
 				)
 			);
-			$wp_customize->add_control( 'dblogger_newsletter_mailchimp',
+		$wp_customize->add_control( 'dblogger_newsletter_mailchimp',
 				array(
 					'label'       => esc_html__('MailChimp Action URL', 'dblogger'),
 					'section'     => 'dblogger_newsletter',
@@ -623,27 +605,30 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 				)
 			);
     
-     $wp_customize->add_setting( 'dblogger_newsletter_det', array(      
-        'default'                   => 'We protect your privacy. We provide you with high quality updates.' ,
-        'sanitize_callback'         => 'sanitize_text_field',
-        'transport'                 => 'postMessage',               
-    ) );    
+        $wp_customize->add_setting( 'dblogger_newsletter_det', 
+               array(      
+                 'default'                   => 'We protect your privacy. We provide you with high quality   updates.' ,
+                 'sanitize_callback'         => 'sanitize_text_field',
+                 'transport'                 => 'postMessage',               
+               ) );    
 
-    $wp_customize->add_control( 'dblogger_newsletter_det', array(
-        'type'						=> 'text',
-        'label' 					=> __( 'Newsletter Details', 'dblogger' ),
-        'section'  					=> 'dblogger_newsletter',
-    ) );	
+        $wp_customize->add_control( 'dblogger_newsletter_det', 
+             array(
+                'type'						=> 'text',
+                'label' 					=> __( 'Newsletter Details', 'dblogger' ),
+                'section'  					=> 'dblogger_newsletter',
+             ) );	
     
     
     /*fonts*/
      
-   $wp_customize->add_section('dblogger_font', array(
-            'title'                     => __('Font', 'dblogger'),
-            'description'               => 'Easily edit your body section',
-            'priority'                  => 103,
+      $wp_customize->add_section('dblogger_font', 
+             array(
+                'title'                     => __('Font', 'dblogger'),
+                'description'               => 'Easily edit your body section',
+                'priority'                  => 103,
           
-    ));
+                ));
     
     
     // paragraph
