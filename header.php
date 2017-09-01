@@ -32,13 +32,13 @@
             ?>
             <div class="col-md-8 pull-right"> 
                  <?php
-                
-                
+                    $type=get_theme_mod( 'dblogger_banner_type');
+                if($type=="image"){
                     $header_image   = esc_url( get_theme_mod( 'dblogger_banner_image' ) );   
-                    $header_image_static   = get_template_directory_uri()."/img/ads-7x9.jpg";
-                    $image = $header_image ? "$header_image" : "$header_image_static";      
+                    $image = $header_image ? "$header_image" :'';      
                 ?>
-                <img class="img-responsive ads pull-right "  src="<?php echo $image;?>"> 
+                <a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"> <img class="img-responsive ads pull-right "  src="<?php echo $image;?>"> </a>
+               <?php  } ?>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
     
                 <ul class="navbar-right social-links-top ">
                  <?php
-                if ( $socials = get_theme_mod( 'social' ) ) 
+                 if ( $socials = get_theme_mod( 'social' ) ) 
                     {
                         $socials = $socials ? array_filter( $socials ) : array();
                         foreach ( $socials as $social => $name ) 
@@ -84,10 +84,12 @@
                     <li>    <a href="#" ><i class="fa fa-rss"></i></a></li>
                     <?php }?>
                     <li> <!--search form-->
-                        <form method="get" action="/search" id="search">
-                            <input name="q" type="text" size="40" placeholder="Search..." />
+                        
+                        <form id="search" action="<?php echo esc_url( home_url( '/search' ) ); ?>" method="get"> 
+  
+                            <input type="text"  placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="q" size="40"/>
+          
                         </form>
-                        <!--/search form--> 
                     </li>
                 </ul>
        

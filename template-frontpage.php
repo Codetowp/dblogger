@@ -28,29 +28,34 @@ get_header(); ?>
 //  $color=esc_attr(get_theme_mod( 'header_textcolor' ));
 ?>
 
+<?php if(get_theme_mod( 'dblogger_header_check' )== 1){?>
 
 <section id="home-banner" style="background-image: url(<?php echo $image; ?>);">
     <div class="content">
         <div class="container wow fdeInUp"  data-wow-duration="1s">
             <span>  
                 <?php echo  $dblogger_tagline=( get_theme_mod( 'dblogger_tagline_text' ) )?
-                    ( get_theme_mod( 'dblogger_tagline_text' ) ):'WELCOME TO DCRAZED'; ?>
+                    ( get_theme_mod( 'dblogger_tagline_text' ) ):''; ?>
             </span>
             <h1> 
                 <?php echo $dblogger_heder=( get_theme_mod( 'dblogger_heder_text' ) )?
-                    ( get_theme_mod( 'dblogger_heder_text' ) ):'Create your own website with our free themes.'; ?>
+                    ( get_theme_mod( 'dblogger_heder_text' ) ):''; ?>
             </h1>
+            
+            <?php if((get_theme_mod( 'dblogger_button_url' ))!='' || (get_theme_mod( 'dblogger_button_text' ))!=''){?>
+            
             <a class="btn btn-default" href=" <?php echo $dblogger_button_url=( get_theme_mod( 'dblogger_button_url' ) )?
-                    ( get_theme_mod( 'dblogger_button_url' ) ):'www.burstfly.com'; ?>">
+                    ( get_theme_mod( 'dblogger_button_url' ) ):''; ?>">
                 
               <?php echo $dblogger_button_text=( get_theme_mod( 'dblogger_button_text' ) )?
-                    ( get_theme_mod( 'dblogger_button_text' ) ):'Click more'; ?>
+                    ( get_theme_mod( 'dblogger_button_text' ) ):''; ?>
           
             </a> 
+            <?php }?>
         </div>
     </div>
 </section>
-
+<?php }?>
 <!-- Guide Page
     ==========================================-->
 <?php //if( get_theme_mod( 'dblogger_guide_check' ) == 1 ) { ?>

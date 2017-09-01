@@ -22,10 +22,17 @@
       <div class="col-md-4">
         <nav class="bottom-nav">
           <ul>
-            <li><a href="#">terms</a></li>
+              
+            <?php wp_nav_menu( array( 
+               'theme_location'    => 'footer-menu', 
+               'menu_class'        => 'bottom-nav' ) );
+            ?>  
+    
+              
+            <!--<li><a href="#">terms</a></li>
             <li><a href="#">privacy</a></li>
             <li><a href="#">copyright</a></li>
-            <li><a href="#">cookies</a></li>
+            <li><a href="#">cookies</a></li>-->
           </ul>
         </nav>
       </div>

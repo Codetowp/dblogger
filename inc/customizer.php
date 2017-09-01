@@ -90,12 +90,28 @@ function dblogger_customize_register( $wp_customize ) {
         'title'                     => __('Header Intro', 'dblogger'),
         'description'               => 'Easily edit your header section',
         'priority'                  => 99,
-         'panel'                     => 'dblogger_panel',
+         'panel'                    => 'dblogger_panel',
 
     ));
+    
+     $wp_customize->add_setting( 'dblogger_header_check', array(
+			'default'    => '1',
+			'capability' => 'manage_options',
+			'transport' => 'postMessage',
+	) );
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_header_check', array(
+			'settings' => 'dblogger_header_check',
+			'label'    => __( 'Enable/Disable sessions this section', 'dblogger' ),
+			'section'  => 'dblogger_header',
+			'type'     => 'ios',
+            'priority' => 1,
 
+	) ) );
+
+    
+    
     $wp_customize->add_setting( 'dblogger_back_img', array(
-        'default'                   => '',
+        'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
         'type'                      => 'theme_mod',
         'capability'                => 'edit_theme_options',
         'sanitize_callback'         => 'esc_url_raw',
@@ -108,25 +124,13 @@ function dblogger_customize_register( $wp_customize ) {
         'section'                   => 'dblogger_header',
         'settings'                  => 'dblogger_back_img',
         'context'                   => 'dblogger_back_img',
-        'priority'                  => 1,
+        'priority'                  => 2,
         ) 
     ) );
-
-    $wp_customize->add_setting( 'dblogger_heder_text', array(      
-        'default'                   => 'Create your own website with our free themes.' ,
-        'sanitize_callback'         => 'sanitize_text_field',
-        'transport'                 => 'postMessage',             
-    ) );    
-
-    $wp_customize->add_control( 'dblogger_heder_text', array(
-        'type'						=> 'text',
-        'label' 					=> __( 'Heading', 'dblogger' ),
-        'section'  					=> 'dblogger_header',
-        'priority' 					=> 2,
-    ) );	
-
-    $wp_customize->add_setting( 'dblogger_tagline_text', array(      
-        'default'                   => 'WELCOME TO DCRAZED' ,
+    
+    
+     $wp_customize->add_setting( 'dblogger_tagline_text', array(      
+        'default'                   => 'Session Title' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -138,31 +142,44 @@ function dblogger_customize_register( $wp_customize ) {
         'priority' 					=> 3,
     ) );	
 
+    $wp_customize->add_setting( 'dblogger_heder_text', array(      
+        'default'                   => 'Session Description.' ,
+        'sanitize_callback'         => 'sanitize_text_field',
+        'transport'                 => 'postMessage',             
+    ) );    
+
+    $wp_customize->add_control( 'dblogger_heder_text', array(
+        'type'						=> 'text',
+        'label' 					=> __( 'Heading', 'dblogger' ),
+        'section'  					=> 'dblogger_header',
+        'priority' 					=> 4,
+    ) );	
+
+   
+
     $wp_customize->add_setting( 'dblogger_button_text', array(      
         'default'                   => 'click more' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
-
     $wp_customize->add_control( 'dblogger_button_text', array(
         'type'						=> 'text',
         'label' 					=> __( 'Button Text', 'dblogger' ),
         'section'  					=> 'dblogger_header',
-        'priority' 					=> 4,
+        'priority' 					=> 5,
     ) );	
 
 
     $wp_customize->add_setting( 'dblogger_button_url', array(      
-        'default'                   => 'www.burstfly.com' ,
+        'default'                   => '#' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
-    ) );    
-
+    ) );   
     $wp_customize->add_control( 'dblogger_button_url', array(
         'type'						=> 'text',
         'label' 					=> __( 'Button Url', 'dblogger' ),
         'section'  					=> 'dblogger_header',
-        'priority' 					=> 5
+        'priority' 					=> 6
     ) );	  
     
    
@@ -270,6 +287,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 		foreach( $social_sites as $social_site ) {
 			$wp_customize->add_setting( "social[$social_site]", array(
+                    'default'           => '#',
 					'type'              => 'theme_mod',
 					'capability'        => 'edit_theme_options',
 					'sanitize_callback' => 'esc_url_raw'

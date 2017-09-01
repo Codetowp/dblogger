@@ -136,12 +136,7 @@ get_header(); ?>
       
       <!--aside-->
       <aside class="col-md-4 col-sm-4" > 
-        
-        <!--Search-->
-        <section class="widget widget_search  wow fdeInUp">
-           <?php get_search_form();?>
-        </section>
-        <!--/Search--> 
+       
            <?php get_sidebar(); ?> 
         
       </aside>
