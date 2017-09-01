@@ -145,7 +145,7 @@ function the_breadcrumb() {
 		echo __('Home', 'dblogger');
 		echo "</a> / ";
 		if (is_category() || is_single()) {
-			the_category('title_li=');			
+			the_category(', ');			
 		} elseif (is_page()) {
 			echo the_title();
 		}
