@@ -12,7 +12,7 @@
 ?>
 <footer id="bottom-footer">
   <div class="container">
-    <div class="row wow fdeInUp">
+    <div class="row wow fadeInUp">
       <div class="col-md-4"> 
         <!--copyright-->
         <p class="copyright">© 2017 Digital Blogger. All rights reserved</p>
@@ -35,7 +35,7 @@
       <div class="col-md-4"> 
         
         <!--copyright-->
-        <p class="powered-by">Maid with <i class="fa fa-heart"></i> by <a href="#">Dcrazed</a></p>
+        <p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="#">Dcrazed</a></p>
       </div>
       <!--/powered by--> 
       
@@ -44,22 +44,9 @@
 </footer>
 <?php wp_footer(); ?>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
-<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
- Include all compiled plugins (below), or include individual files as needed  
-<script type="text/javascript" src="js/bootstrap.js"></script> 
-<script type="text/javascript" src="js/SmoothScroll.js"></script> 
-<script type="text/javascript" src="js/jquery.isotope.js"></script> 
-<script src="js/owl.carousel.js"></script> -->
-
-<!-- Javascripts
-    ================================================== --> 
-<!--<script type="text/javascript" src="js/main.js"></script> 
-<script src="js/wow.min.js"></script> -->
 <script>
-              new WOW().init();
-              </script>
+new WOW().init();
+</script>
 
 </body>
 </html>
