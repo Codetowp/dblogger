@@ -82,15 +82,7 @@ get_header(); ?>
       
       <!--aside-->
       <aside class="col-md-3 col-sm-4" > 
-        
-        <!--Search-->
-        <section class="widget widget_search">
-           <?php get_search_form();?>
-        </section>
-        <!--/Search--> 
-        
              <?php get_sidebar(); ?> 
-      
         <!--Meta  end--> 
         
       </aside>

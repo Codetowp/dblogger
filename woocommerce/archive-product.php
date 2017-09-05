@@ -28,7 +28,9 @@ get_header( 'shop' ); ?>
 
  <!-- banner Page
     ==========================================-->
-<Section id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+
+
+<Section id="page-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container ">
@@ -41,12 +43,11 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 * @hooked WC_Structured_Data::generate_website_data() - 30
 		 */
-		do_action( 'woocommerce_before_main_content' );
 	?><!--/breadcrumb-->
         <h1><?php woocommerce_page_title(); ?></h1>
         <header class="entry-header"><a href="#">
           
-          </a><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span> <!--in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+          </a> </header>
         
         </div>
     </div>

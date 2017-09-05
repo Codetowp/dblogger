@@ -64,7 +64,9 @@
 		value.bind( function( to ) {
 			$( '#home-banner href' ).text( to );
 		} );
-	} );    
+	} );  
+    
+  
     
     /*Color*/
     
@@ -152,6 +154,14 @@
         } );
     } );  
     
+     wp.customize( 'dblogger_tag_title', function( value ) {
+        value.bind( function( to ) {
+            $( '#theme-block span' ).text( to );
+        } );
+    } ); 
+    
+   
+    
     
      //************************** OUR THEME SECTION****************************************//    
     
@@ -194,6 +204,16 @@
             $( '#newsletter-block p' ).text( to );
         } );
     } );    
-    
+    /*blog page */
+      wp.customize( 'dblogger_blogpage_disable', function( value ) {
+			value.bind( function( to ) {
+            if ( true === to) {
+            $( '.single-post-share-ico' ).show();
+            } 
+            else {
+            $( '.single-post-share-ico' ).hide();
+            } 
+			} );
+		} ); 
     
 } )( jQuery );

@@ -27,7 +27,7 @@ get_header( 'shop' ); ?>
 
 <!-- banner Page
     ==========================================-->
-<Section id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+<Section id="page-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container "> 
@@ -40,12 +40,11 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
 	?>
         </ol>
         <!--/breadcrumb-->
         <h1><?php the_title(); ?></h1>
-        <header class="entry-header"><a href="#"> </a><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span> <!--in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+        <header class="entry-header"><a href="#"> </a></header>
       </div>
     </div>
   </div>
@@ -58,12 +57,9 @@ get_header( 'shop' ); ?>
     <div class="row">
       <div id="container">
         <div id="content" role="main">
-         
           <div id="product-37" class="post-37 product type-product status-publish has-post-thumbnail product_cat-clothing product_cat-t-shirts first instock shipping-taxable purchasable product-type-simple">
             
-              
-              
-              <?php
+   <?php
 		/**
 		 * woocommerce_before_main_content hook.
 		 *
@@ -78,9 +74,6 @@ get_header( 'shop' ); ?>
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
 		<?php endwhile; // end of the loop. ?>
-              
-              
-             
             <!-- .summary -->
             <?php
 		/**

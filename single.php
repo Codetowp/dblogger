@@ -40,14 +40,21 @@ get_header(); ?>
       <div class="col-md-8 col-sm-8 single-post">
           
           
-        <?php if(have_posts() ) : while(have_posts() ) : the_post();?>
+        <?php if(have_posts() ) : while(have_posts() ) : the_post();
+          
+          if( get_theme_mod( 'dblogger_blogpage_disable' ) == 1 ) { 
+          
+          ?>
+          
           
         <ul class="single-post-share-ico">
-          <li><a href="#"><i class="fa fa-facebook"></i></a> </li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a> </li>
-          <li><a href="#"><i class="fa fa-dribbble"></i></a> </li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a> </li>
+          <li><a data-original-title="Facebook"  data-placement="left" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="<?php _e('Share this post on Facebook!', 'cryst4l')?>"><i class="fa fa-facebook"></i></a> </li>
+          <li><a data-original-title="Twitter" data-placement="left" target="_blank" href="http://twitter.com/home?status=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>: <?php the_permalink(); ?>" title="<?php _e('Share this post on Twitter!', 'cryst4l')?>"><i class="fa fa-twitter"></i></a> </li>
+          <li><a data-original-title="Dribbble"  data-placement="left" target="_blank" href="https://dribbble.com?url=<?php the_permalink(); ?>&title=<?php urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&source=Dribbble" title="<?php _e('Share this post on Dribbble!', 'cryst4l')?>"><i class="fa fa-dribbble"></i></a> </li>
+          <li><a data-original-title="linkedin"  data-placement="left" target="_blank" href="https://www.linkedin.com/?hl=en?url=<?php the_permalink();?>&description=<?php the_title();?> on <?php bloginfo('name'); ?> <?php echo site_url()?>" class="pin-it-button" count-layout="horizontal" title="<?php _e('Share on linkedin','cryst4l') ?>"><i class="fa fa-linkedin"></i></a> </li>
         </ul>
+          <?php }?>
+          
         <?php echo the_content();?>
        
         
@@ -123,11 +130,7 @@ get_header(); ?>
         <!--comment-->
         
         <div id="comments" class="comments-area text-left">
-          <h2 class="comments-title"> Comments </h2>
-            
              <?php comments_template();?>
-            
-            <!-- #comment-## -->
         </div>
         <!--/comment--> 
         
