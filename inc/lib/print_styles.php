@@ -118,7 +118,7 @@ if (!function_exists('dblogger_accent_color'))  {
         $append_color_button = sprintf( 'background-color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" . '.theme-post-caption .view-payment{'.$append_color_link.'}'."\n".'#top-menu .navbar-fixed-top{'.$append_color_link.'}'."\n".'.btn-default{'.$append_color_button.'}'."\n".'.btn-white:hover{'.$append_color_button.'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.$append_color_button.'}';
+			echo "\n" . '.theme-post-caption .view-payment{'.$append_color_link.'}'."\n".'#top-menu .navbar-fixed-top{'.$append_color_link.'}'."\n".'.btn-default{'.$append_color_button.'}'."\n".'.btn-white:hover{'.$append_color_button.'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.$append_color_button.'}'."\n".'#top-menu.navbar-default{'.$append_color_button.'}';
 		}
 		echo "\n". "</style>". "\n";
 	}

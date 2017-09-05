@@ -9,7 +9,11 @@
 
 ?>
 <?php get_header(); ?>
-	<div id="main-content" class="container">
+<section id="Blog-home">
+  <div class="container">
+    <div class="row"> 
+     
+	   <div id="main-content" class="container">
 	<div class="content">
 		
 		<?php if ( ! have_posts() ) : ?>
@@ -28,5 +32,11 @@
 		<?php endwhile;?>
 
 	</div><!-- .content -->
-<?php get_sidebar(); ?>
+        </div>
+        
+        
+      </div>
+    </div>
+</section>
+
 <?php get_footer(); ?>

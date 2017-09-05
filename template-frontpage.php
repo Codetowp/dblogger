@@ -28,32 +28,37 @@ get_header(); ?>
 //  $color=esc_attr(get_theme_mod( 'header_textcolor' ));
 ?>
 
+<?php if(get_theme_mod( 'dblogger_header_check' )== 1){?>
 
 <section id="home-banner" style="background-image: url(<?php echo $image; ?>);">
     <div class="content">
         <div class="container wow fdeInUp"  data-wow-duration="1s">
             <span>  
                 <?php echo  $dblogger_tagline=( get_theme_mod( 'dblogger_tagline_text' ) )?
-                    ( get_theme_mod( 'dblogger_tagline_text' ) ):'WELCOME TO DCRAZED'; ?>
+                    ( get_theme_mod( 'dblogger_tagline_text' ) ):''; ?>
             </span>
             <h1> 
                 <?php echo $dblogger_heder=( get_theme_mod( 'dblogger_heder_text' ) )?
-                    ( get_theme_mod( 'dblogger_heder_text' ) ):'Create your own website with our free themes.'; ?>
+                    ( get_theme_mod( 'dblogger_heder_text' ) ):''; ?>
             </h1>
+            
+            <?php if((get_theme_mod( 'dblogger_button_url' ))!='' && (get_theme_mod( 'dblogger_button_text' ))!=''){?>
+            
             <a class="btn btn-default" href=" <?php echo $dblogger_button_url=( get_theme_mod( 'dblogger_button_url' ) )?
-                    ( get_theme_mod( 'dblogger_button_url' ) ):'www.burstfly.com'; ?>">
+                    ( get_theme_mod( 'dblogger_button_url' ) ):''; ?>">
                 
               <?php echo $dblogger_button_text=( get_theme_mod( 'dblogger_button_text' ) )?
-                    ( get_theme_mod( 'dblogger_button_text' ) ):'Click more'; ?>
+                    ( get_theme_mod( 'dblogger_button_text' ) ):''; ?>
           
             </a> 
+            <?php }?>
         </div>
     </div>
 </section>
-
+<?php }?>
 <!-- Guide Page
     ==========================================-->
-<?php //if( get_theme_mod( 'dblogger_guide_check' ) == 1 ) { ?>
+<?php if( get_theme_mod( 'dblogger_guide_check' ) == 1 ) { ?>
 
 <section id="guide-block"> 
   
@@ -70,12 +75,11 @@ get_header(); ?>
       <!--<i class="fa fa-book "></i>-->
     <h2>
          <?php echo  $dblogger_guide_title=( get_theme_mod( 'dblogger_guide_title' ) )?
-                    ( get_theme_mod( 'dblogger_guide_title' ) ):'How to Guides'; ?>
+                    ( get_theme_mod( 'dblogger_guide_title' ) ):''; ?>
     </h2>
     <p >
         <?php echo  $dblogger_guide_desc=( get_theme_mod( 'dblogger_guide_desc' ) )?
-                    ( get_theme_mod( 'dblogger_guide_desc' ) ):'Start a blog and earn money online. Learn from<br>
-                      these amazing articles we have created for you <br>that help you build any type of blog from scracth.'; ?>
+                    ( get_theme_mod( 'dblogger_guide_desc' ) ):''; ?>
     </p>
   </div>
   <!--/section-title--> 
@@ -106,30 +110,24 @@ get_header(); ?>
     ?>
       
       
-    <li role="presentation" class="<?php echo $firstClass; ?>"><a href="#<?php echo $values;?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
+    <li role="presentation" class="<?php echo $firstClass; ?>"><a href="<?php the_permalink();?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
  
       <?php  $firstClass = ""; endwhile;endif;?>
   </ul>
 
   <!--  guides Tab panes -->
   <div class="tab-content">
-      
-         <?php
-         $firstClass = 'active'; 
-         $values=0;
-        $count = get_theme_mod( 'dblogger_post_number' );
+   <?php
+       $firstClass = 'active'; 
+       $values=0;
+       $count = get_theme_mod( 'dblogger_post_number' );
        $slidecat =get_option( 'dblogger_slide_categories' );
 
-        $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
-       
-    
-    
-        if ($query->have_posts()) :
+       $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
+       if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post();
         $values++;
     ?>
-      
-      
     <div role="tabpanel" class="tab-pane <?php echo $firstClass; ?>" id="<?php echo $values;?>"><?php
             if  ( get_the_post_thumbnail()!='')
             {
@@ -138,8 +136,6 @@ get_header(); ?>
           <img src="<?php echo get_template_directory_uri()?>/img/p-1.jpg" class="img-responsive">
           <?php } ?>
     </div>
-    
-      
       <?php  $firstClass = ""; endwhile;endif;?>
   </div>
 </div>
@@ -149,10 +145,10 @@ get_header(); ?>
   </div>
   <!--/guide-list--> 
 </section>
-<?php //}?>
+<?php }?>
 <!-- Theme Page
     ==========================================-->
-<?php //if( get_theme_mod( 'dblogger_theme_check' ) == 1 ) { ?>
+<?php if( get_theme_mod( 'dblogger_theme_check' ) == 1 ) { ?>
     <section id="theme-block">
       <div class="container">
         <div class="row wow fdeInUp"> 
@@ -160,22 +156,23 @@ get_header(); ?>
           <div class="section-title text-center">
             <h2>
                 <?php echo  $dblogger_theme_title=( get_theme_mod( 'dblogger_theme_title' ) )?
-                ( get_theme_mod( 'dblogger_theme_title' ) ):'Our Themes'; ?>
+                ( get_theme_mod( 'dblogger_theme_title' ) ):''; ?>
             </h2>
+            <?php if(get_theme_mod( 'dblogger_theme_button_text' )!='' || get_theme_mod( 'dblogger_theme_button_url' )){?>
+              
             <a class="btn btn-white" href="<?php echo $dblogger_theme_button_url=( get_theme_mod( 'dblogger_theme_button_url' ) )?
                 ( get_theme_mod( 'dblogger_theme_button_url' ) ):'#';  ?>">
                 
                 <?php echo  $theme_button_text=( get_theme_mod( 'dblogger_theme_button_text' ) )?
-                ( get_theme_mod( 'dblogger_theme_button_text' ) ):'more themes'; ?>
+                ( get_theme_mod( 'dblogger_theme_button_text' ) ):''; ?>
             </a>
+              
+            <?php }?>
             <hr>
           </div>
           <!--/section-title--> 
 			<?php 
-            
-            
-                $page_counts = get_theme_mod( 'dblogger_page_post_count' );
-            
+             $page_counts = get_theme_mod( 'dblogger_page_post_count' );
              $page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts ) ); ?>
 			 <?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			  	 
@@ -186,10 +183,13 @@ get_header(); ?>
               <?php the_post_thumbnail();?>
               <!--<img src="<?php the_post_thumbnail();?>" class="img-responsive">-->
             <div class="theme-post-caption eq-blocks">
-              <h6><?php the_title(); ?> <span class="badge badge-info"><?php if( get_theme_mod( 'dblogger_theme_tag_check' ) == 1 ) { ?><?php _e('Free');?><?php }?></span></h6>
+              <h6><?php the_title(); ?> <span class="badge badge-info"><?php if( get_theme_mod( 'dblogger_theme_tag_check' ) == 1 ) { ?>
+                  <?php echo  $dblogger_tag_title=( get_theme_mod( 'dblogger_tag_title' ) )?
+                ( get_theme_mod( 'dblogger_tag_title' ) ):'';?>
+                  <?php }?></span></h6>
               <!--view-payment-->
               <div class="view-payment"> <a href="<?php the_permalink();?>"><?php echo   $dblogger_theme_link_title=( get_theme_mod( 'dblogger_theme_link_title' ) )?
-                ( get_theme_mod( 'dblogger_theme_link_title' ) ):'Download Now';  ?></a> </div>
+                ( get_theme_mod( 'dblogger_theme_link_title' ) ):'';  ?></a> </div>
               <!--/view-payment--> 
             </div>
           </div>
@@ -200,17 +200,19 @@ get_header(); ?>
         </div>
       </div>
     </section>
-<?php //}?>
+<?php }?>
 
 <!--From the blog
     ==========================================-->
+<?php if( get_theme_mod( 'dblogger_blog_check' ) == 1 ) { ?>
 
 <section id="from-blog">
   <div class="container">
     <div class="row wow fdeInUp"> 
       <!--section-title-->
       <div class="section-title text-center">
-        <h2><?php echo esc_html__('From the blog');?></h2>
+        <h2><?php echo  $dblogger_blog_title=( get_theme_mod( 'dblogger_blog_title' ) )?
+                ( get_theme_mod( 'dblogger_blog_title' ) ):''; ?></h2>
           
            <a class="btn btn-white" href="<?php echo  esc_url( home_url( '/blog' ) ); ?>"><?php echo esc_html__('See More');?></a> </div>
            <?php 
@@ -233,7 +235,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-
+<?php }?>
 <!--Newsletter
     ==========================================-->
 <?php if( get_theme_mod( 'dblogger_newsletter_disable' ) == 1 ) {

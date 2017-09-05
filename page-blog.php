@@ -42,7 +42,7 @@ get_header(); ?>
         <nav class="navigation posts-navigation"  role="navigation">
           <ul>
             
-          <?php 	
+       <?php 	
 		the_posts_pagination( array(
 	        'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
 	        'next_text' => __( 'Older posts', 'dblogger' ) . ' <i class="fa fa-chevron-right"></i>' ,
@@ -58,11 +58,6 @@ get_header(); ?>
       <!--aside-->
       <aside class="col-md-3 col-sm-4" > 
         
-        <!--Search-->
-        <section class="widget widget_search">
-           <?php get_search_form();?>
-        </section>
-        <!--/Search--> 
           <?php get_sidebar(); ?> 
         
         
