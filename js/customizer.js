@@ -40,35 +40,7 @@
 		} );
 	} );
     
-  //************************** HEADERSECTION****************************************//    
-
-     wp.customize( 'dblogger_heder_text', function( value ) {
-		value.bind( function( to ) {
-			$( '#home-banner h1' ).text( to );
-		} );
-	} );
-    
-     wp.customize( 'dblogger_tagline_text', function( value ) {
-		value.bind( function( to ) {
-			$( '#home-banner span' ).text( to );
-		} );
-	} );    
-    
-     wp.customize( 'dblogger_button_text', function( value ) {
-		value.bind( function( to ) {
-			$( '#home-banner a' ).text( to );
-		} );
-	} );     
-    
-     wp.customize( 'dblogger_button_url', function( value ) {
-		value.bind( function( to ) {
-			$( '#home-banner href' ).text( to );
-		} );
-	} );  
-    
-  
-    
-    /*Color*/
+   /* \\\\\\\\\\\\\\\\\\\\\\Color\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
     
     wp.customize( 'dblogger_accent_color', function( value ) {
 			value.bind( function( to ) {
@@ -99,8 +71,48 @@
 				$( '.input-group-btn button' ).css( 'background-color', to );
 			} );
 		} );
+     
     
+    
+  //************************** HEADERSECTION****************************************//    
+
+     wp.customize( 'dblogger_heder_text', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-banner h1' ).text( to );
+		} );
+	} );
+    
+     wp.customize( 'dblogger_tagline_text', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-banner span' ).text( to );
+		} );
+	} );    
+    
+     wp.customize( 'dblogger_button_text', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-banner a' ).text( to );
+		} );
+	} );     
+    
+     wp.customize( 'dblogger_button_url', function( value ) {
+		value.bind( function( to ) {
+			$( '#home-banner href' ).text( to );
+		} );
+	} );  
+    
+   wp.customize( 'dblogger_header_check', function( value ) {
+			value.bind( function( to ) {
+            if ( true === to) {
+            $( '#home-banner' ).show();
+            } 
+            else {
+            $( '#home-banner' ).hide();
+            } 
+			} );
+		} ); 
    
+    
+    
   //************************** GUIDE SECTION****************************************//    
 
     
@@ -115,8 +127,21 @@
 			$( '#guide-block p' ).text( to );
 		} );
 	} );  
-           
+          
+     wp.customize( 'dblogger_guide_check', function( value ) {
+			value.bind( function( to ) {
+            if ( true === to) {
+            $( '#guide-block' ).show();
+            } 
+            else {
+            $( '#guide-block' ).hide();
+            } 
+			} );
+		} ); 
+    
   //************************** OUR THEME SECTION****************************************//    
+    
+    
     
     wp.customize( 'dblogger_theme_title', function( value ) {
         value.bind( function( to ) {
@@ -154,13 +179,24 @@
         } );
     } );  
     
-     wp.customize( 'dblogger_tag_title', function( value ) {
+    wp.customize( 'dblogger_tag_title', function( value ) {
         value.bind( function( to ) {
             $( '#theme-block span' ).text( to );
         } );
     } ); 
     
-   
+    wp.customize( 'dblogger_theme_check', function( value ) {
+			value.bind( function( to ) {
+            if ( true === to) {
+            $( '#theme-block' ).show();
+            } 
+            else {
+            $( '#theme-block' ).hide();
+            } 
+			} );
+		} ); 
+    
+    
     
     
      //************************** OUR THEME SECTION****************************************//    
@@ -177,8 +213,19 @@
         } );
     } );   
     
+    wp.customize( 'dblogger_blog_check', function( value ) {
+			value.bind( function( to ) {
+            if ( true === to) {
+                
+                $( '#from-blog' ).show();
+            } 
+            else {
+                $( '#from-blog' ).hide();
+            } 
+			} );
+		} ); 
     
-    
+        
      //************************** newsletter SECTION****************************************// 
     
      wp.customize( 'dblogger_newsletter_disable', function( value ) {

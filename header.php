@@ -71,23 +71,12 @@
                             {
                                 printf(' <li> <a href="%s" ><i class="fa fa-%s"></i></a></li> <li> ', esc_url( $name ), $social );
                             }
-                    }
-                if(get_theme_mod( 'social' )=='')
-                    {?>
-                    <li>  <a href="#"><i class="fa fa-facebook-f"></i></a></li>
-                    <li>    <a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li>    <a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li>    <a href="#"><i class="fa fa-youtube"></i></a></li>
-                    <li>    <a href="#" ><i class="fa fa-google-plus"></i></a></li>
-                    <li>    <a href="#" ><i class="fa fa-pinterest"></i></a></li>
-                    <li>    <a href="#" ><i class="fa fa-linkedin"></i></a></li>
-                    <li>    <a href="#" ><i class="fa fa-rss"></i></a></li>
-                    <?php }?>
+                    }?>
                     <li> <!--search form-->
                         
-                        <form id="search" action="<?php echo esc_url( home_url( '/search' ) ); ?>" method="get"> 
+                        <form id="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get"> 
   
-                            <input type="text"  placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="q" size="40"/>
+                            <input type="text"  placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="s" size="40"/>
           
                         </form>
                     </li>

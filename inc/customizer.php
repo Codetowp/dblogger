@@ -29,7 +29,7 @@ function dblogger_customize_register( $wp_customize ) {
      $wp_customize->remove_section('background_image');    
      $wp_customize->get_section('title_tagline')->title = __( 'Branding' ); 
     
-     $wp_customize->add_setting( 'dblogger_accent_color',  
+    $wp_customize->add_setting( 'dblogger_accent_color',  
             array(
                 'default' => '#f53347', 
                 'transport' => 'refresh', 
@@ -42,6 +42,21 @@ function dblogger_customize_register( $wp_customize ) {
 			'description' => esc_attr__( 'Add Accent Color to Button.', 'dblogger' ),
 			'section'    => 'colors',
 		) ) );
+    
+    $wp_customize->add_setting( 'dblogger_secondary_color',  
+            array(
+                'default' => '#3c3e8b', 
+                'transport' => 'refresh', 
+                'sanitize_callback' => 'sanitize_hex_color', 
+            ) );
+			
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_secondary_color', 
+           array(
+			'label'      => esc_attr__( 'Secondary Color', 'dblogger' ),
+			'description' => esc_attr__( 'Add Secondary Color to Button.', 'dblogger' ),
+			'section'    => 'colors',
+		) ) );
+    
 		
      $wp_customize->add_setting( 'header_image', array(
 			'default'                   => '',
@@ -80,7 +95,7 @@ function dblogger_customize_register( $wp_customize ) {
      /* Front page sections */
      $wp_customize->add_panel( 'dblogger_panel' ,
 		array(
-			'priority'        => 130,
+			'priority'        => 120,
 			'title'           => esc_html__( 'Frontpage Theme Sections', 'dblogger' ),
 			'description'     => '',
 			/*'active_callback' => 'onepress_showon_frontpage'*/
@@ -135,7 +150,7 @@ function dblogger_customize_register( $wp_customize ) {
     
     /*banner img*/  
     $wp_customize->add_setting( 'dblogger_banner_image',array(
-	         'default'           => esc_url( get_template_directory_uri() . '/img/banner.png' ),
+	         'default'           => esc_url( get_template_directory_uri() . '/img/ads-7x9.jpg' ),
       )
     );
     
@@ -188,7 +203,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 		foreach( $social_sites as $social_site ) {
 			$wp_customize->add_setting( "social[$social_site]", array(
-                    'default'           => '#',
+                    'default'           => '',
 					'type'              => 'theme_mod',
 					'capability'        => 'edit_theme_options',
 					'sanitize_callback' => 'esc_url_raw'
@@ -312,7 +327,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     ) );
     
     $wp_customize->add_setting( 'dblogger_guide_check', array(
-			'default'    => '1',
+			'default'    => '0',
 			'capability' => 'manage_options',
 			'transport' => 'postMessage',
 	) );
@@ -415,11 +430,11 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     $wp_customize->add_setting( 'dblogger_theme_check', array(
 			'default'    => '1',
 			'capability' => 'manage_options',
-			'transport' => 'postMessage',
+			'transport'  => 'postMessage',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 			'settings' => 'dblogger_theme_check',
-			'label'    => __( 'Enable/Disable sessions this section', 'dblogger' ),
+			'label'    => __( 'Enable/Disable for this section', 'dblogger' ),
 			'section'  => 'dblogger_theme_section',
 			'type'     => 'ios',
             'priority' => 1,
@@ -427,7 +442,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) ) );
       
       $wp_customize->add_setting( 'dblogger_theme_title', array(      
-        'default'                   => 'Section Title' ,
+        'default'                   => 'From The Page' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -468,7 +483,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 
      $wp_customize->add_setting( 'dblogger_theme_link_title', array(      
-        'default'                   => 'Download Now' ,
+        'default'                   => 'Session Link Title' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -520,10 +535,10 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_tag_check', array(
 			'settings' => 'dblogger_theme_tag_check',
-			'label'    => __( 'Enable/Disable tag this section', 'dblogger' ),
+			'label'    => __( 'Enable/Disable tag section', 'dblogger' ),
 			'section'  => 'dblogger_theme_section',
 			'type'     => 'ios',
-            'priority' 				   => 7,
+            'priority' => 7,
 
 	) ) );
 
@@ -552,7 +567,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) ) );
   
       $wp_customize->add_setting( 'dblogger_blog_title', array(      
-        'default'                   => 'Session Title' ,
+        'default'                   => 'From The Blog' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -679,8 +694,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
      $wp_customize->add_section('dblogger_blogsetting_section', array(
         'title'                     => __('Blog Settings Section', 'dblogger'),
         'description'               => 'Easily edit the blog',
-        'priority'                  => 113,
-        'panel'                     => 'dblogger_panel', 
+        'priority'                  => 122,
+       
     ) );
     
     
@@ -717,13 +732,43 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 	) ) );
     
+    /*Custom Fields*/
+    
+     $wp_customize->add_section('dblogger_custom_section', array(
+        'title'                     => __('Custom Settings', 'dblogger'),
+        'description'               => 'Easily edit the custom fields',
+        'priority'                  => 123,
+       
+    ) );
+    
+    
+     $wp_customize->add_setting( 'dblogger_custom_img', array(
+        'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
+        'type'                      => 'theme_mod',
+        'capability'                => 'edit_theme_options',
+        'sanitize_callback'         => 'esc_url_raw',
+        'transport'                 => 'refresh',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize,'dblogger_custom_img', array(
+        'label'                     => __( 'Custom Background Image', '' ),
+        'section'                   => 'dblogger_custom_section',
+        'settings'                  => 'dblogger_custom_img',
+        'context'                   => 'dblogger_custom_img',
+        'priority'                  => 2,
+        ) 
+    ) );
+    
+    
+    
     /*fonts*/
      
       $wp_customize->add_section('dblogger_font_settings', 
              array(
                 'title'                     => __('Font', 'dblogger'),
                 'description'               => 'Easily edit your body section',
-                'priority'                  => 118,
+                'priority'                  => 125,
           
                 ));
     
@@ -732,7 +777,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
      $font_choices = customizer_library_get_font_choices();
     
      $wp_customize->add_setting( 'dblogger_paraph_font', array(
-            'default'        => 'Open Sans',
+            'default'        => 'PT Sans',
         ) );
 
         $wp_customize->add_control( 'dblogger_paraph_font', array(
@@ -780,7 +825,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     /*font */
        
     $wp_customize->add_setting( 'dblogger_font_family', array(
-            'default'        => 'Open Sans',
+            'default'        => 'PT Sans',
              'transport'     => 'refresh',
         ) );
 

@@ -15,9 +15,18 @@ get_header(); ?>
 <?php
           if(have_posts()):		  
 			while ( have_posts() ) : the_post();
+
+            if  ( get_the_post_thumbnail_url()!='')
+            {
+             $img = get_the_post_thumbnail_url(); 
+            }
+            else
+            {  
+                $img = get_template_directory_uri()."/img/p-2.jpg" ; 
+            }
 ?>
 
-<div id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+<div id="page-banner" style="background-image: url(<?php echo $img; ?>);">
      <div class="content wow fdeInUp">
       <div class="container "> 
         <!--breadcrumb-->
@@ -77,12 +86,6 @@ get_header(); ?>
                 echo '<a rel="tag" href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a> ';
               }
               }
-             /* else
-              {
-              ?>
-                  <a href="#" rel="tag">wordpress</a> 
-                  <a href="#" rel="tag">themes</a> 
-                 <?php }*/?>
               </span> 
             </div>
         </footer>

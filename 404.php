@@ -8,22 +8,40 @@
  */
 
 get_header(); ?>
+
+<?php 
+    $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
+    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
+    $image = $background_img ? "$background_img" : "$background_img_static"; 
+?>
+<Section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
+  <div class="overlay-banner">
+    <div class="content">
+      <div class="container"> 
+        <!--breadcrumb-->
+        <header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dblogger' ); ?></h1>
+				</header><!-- .page-header -->
+
+        <!--/breadcrumb-->
+        
+        <h1><?php the_title(); ?> </h1>
+      </div>
+    </div>
+  </div>
+</Section>
+
 <section id="Blog-home">
   <div class="container">
     <div class="row"> 
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'dblogger' ); ?></h1>
-				</header><!-- .page-header -->
-
+				
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'dblogger' ); ?></p>
 
 					<?php
 						get_search_form();
-
-						
 					?>
 
 				</div><!-- .page-content -->

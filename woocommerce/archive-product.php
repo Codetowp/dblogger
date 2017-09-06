@@ -29,8 +29,12 @@ get_header( 'shop' ); ?>
  <!-- banner Page
     ==========================================-->
 
-
-<Section id="page-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+<?php 
+    $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
+    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
+    $image = $background_img ? "$background_img" : "$background_img_static"; 
+?>
+<Section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container ">
@@ -43,6 +47,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 * @hooked WC_Structured_Data::generate_website_data() - 30
 		 */
+          	do_action( 'woocommerce_before_main_content' );
 	?><!--/breadcrumb-->
         <h1><?php woocommerce_page_title(); ?></h1>
         <header class="entry-header"><a href="#">
@@ -63,11 +68,6 @@ get_header( 'shop' ); ?>
 <section id="woocommerce-page">
 <div class="container">
 <div class="row">
-
-
-
-
-
 <div id="content" role="main">
 <nav class="woocommerce-breadcrumb">
     <?php
@@ -78,16 +78,16 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_breadcrumb - 20
 		 * @hooked WC_Structured_Data::generate_website_data() - 30
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		//do_action( 'woocommerce_before_main_content' );
 	?>
     
    
     <header class="woocommerce-products-header">
-	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+	<?php //if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+			<!--<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>-->
 
-		<?php endif; ?>
+		<?php //endif; ?>
 				
 		
     </header>
