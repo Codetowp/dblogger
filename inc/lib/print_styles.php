@@ -99,29 +99,34 @@ if (!function_exists('dblogger_accent_color'))  {
 	function dblogger_accent_color(){
 		echo '<style type="text/css" id="rijo-css">';
 		$color_value = get_theme_mod('dblogger_accent_color', '');
-		$append_color = sprintf( 'color: %s;',  $color_value );
+		$append_color = sprintf( 'color: %s !important;',  $color_value );
+        $append_color_link = sprintf( 'background: %s !important;',  $color_value );
+        $append_bckcolor = sprintf( 'background-color: %s;',  $color_value );
+        $append_border=sprintf( 'border: 2px %s solid;',  $color_value );
+        $append_border_s=sprintf( 'border-color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" . 'ul .nav-tabs li .active{' . $append_color . '}'."\n".'.input-group button{'.$append_color.'}'."\n".'.view-payment{'.$append_color.'}'."\n".'#top-menu .navbar-fixed-top{'.$append_color.'}';
+			echo "\n" .'#top-menu.navbar-default{'.$append_bckcolor.'}'."\n".'#top-menu.navbar-default .navbar-nav > li a:hover{'.$append_bckcolor.'}'."\n".'.btn-default{'.$append_bckcolor.'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.$append_color.'}'."\n".'.btn-white:hover{'.$append_bckcolor.'}'."\n".'.btn-white:hover{'.$append_border.'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.$append_bckcolor.'}'."\n".'.guide-block .nav-tabs > li.active:before, .guide-block .nav-tabs > li:hover:before{'.$append_color_link.'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.$append_bckcolor.'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.$append_border_s.'}';
 		}
 		echo "\n". "</style>". "\n";
 	}
 }
  // Add custom styles to `<head>`.
 add_action( 'wp_head', 'dblogger_accent_color' );
-if (!function_exists('dblogger_accent_color'))  {
-	function dblogger_accent_color(){
+
+
+if (!function_exists('dblogger_secondary_color'))  {
+	function dblogger_secondary_color(){
 		echo '<style type="text/css" id="rijo-css">';
-		$color_value = get_theme_mod('dblogger_accent_color', '');
-		$append_color = sprintf( 'color: %s;',  $color_value );
-        $append_color_link = sprintf( 'background: %s;',  $color_value );
-        $append_color_button = sprintf( 'background-color: %s;',  $color_value );
+		$color_value = get_theme_mod('dblogger_secondary_color', '');
+        $append_bckcolor = sprintf( 'background-color: %s !important;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" . '.theme-post-caption .view-payment{'.$append_color_link.'}'."\n".'#top-menu .navbar-fixed-top{'.$append_color_link.'}'."\n".'.btn-default{'.$append_color_button.'}'."\n".'.btn-white:hover{'.$append_color_button.'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.$append_color_button.'}'."\n".'#top-menu.navbar-default{'.$append_color_button.'}';
+			echo "\n" .'.on{'.$append_bckcolor.'}'."\n".'.theme-post-caption .view-payment{'.$append_bckcolor.'}'."\n".'.widget_categories ul{'.$append_bckcolor.'}';
 		}
 		echo "\n". "</style>". "\n";
 	}
 }
  // Add custom styles to `<head>`.
-add_action( 'wp_head', 'dblogger_accent_color' );
+add_action( 'wp_head', 'dblogger_secondary_color' );
+

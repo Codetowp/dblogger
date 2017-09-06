@@ -27,13 +27,13 @@ get_header(); ?>
   <div class="content wow fdeInUp">
     <div class="container text-center"> 
       <!--breadcrumb-->
-      <ol class="breadcrumb">
+      <!--<ol class="breadcrumb">
         <li class="breadcrumb-item"><?php the_breadcrumb(); ?></li>
-        <!--<li class="breadcrumb-item active">Themes</li>-->
-      </ol>
+        <li class="breadcrumb-item active">Themes</li>
+      </ol>-->
       <!--/breadcrumb-->
       <h1><?php the_title(); ?>  </h1>
-      <header class="entry-header"><a href="#"> </a><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span><!-- in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+      <!--<header class="entry-header"><a href="#"> </a><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span> in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span> </header>-->
     </div>
   </div>
 </section>

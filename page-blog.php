@@ -14,6 +14,26 @@
  */
 
 get_header(); ?>
+<?php 
+    $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
+    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
+    $image = $background_img ? "$background_img" : "$background_img_static"; 
+?>
+<Section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
+  <div class="overlay-banner">
+    <div class="content">
+      <div class="container"> 
+        <!--breadcrumb-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"><?php the_breadcrumb(); ?></a></li>
+        </ol>
+        <!--/breadcrumb-->
+        
+        <h1><?php the_title(); ?> </h1>
+      </div>
+    </div>
+  </div>
+</Section>
 
 <section id="Blog-home">
   <div class="container">

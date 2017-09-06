@@ -110,7 +110,7 @@ get_header(); ?>
     ?>
       
       
-    <li role="presentation" class="<?php echo $firstClass; ?>"><a href="<?php the_permalink();?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
+      <li role="presentation" class="<?php echo $firstClass; ?>"><a href="#<?php echo $values;?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
  
       <?php  $firstClass = ""; endwhile;endif;?>
   </ul>
@@ -130,9 +130,9 @@ get_header(); ?>
     ?>
     <div role="tabpanel" class="tab-pane <?php echo $firstClass; ?>" id="<?php echo $values;?>"><?php
             if  ( get_the_post_thumbnail()!='')
-            {
-             the_post_thumbnail(); 
-            }else{?>
+            {?>
+              <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+            <?php }else{?>
           <img src="<?php echo get_template_directory_uri()?>/img/p-1.jpg" class="img-responsive">
           <?php } ?>
     </div>
@@ -214,18 +214,19 @@ get_header(); ?>
         <h2><?php echo  $dblogger_blog_title=( get_theme_mod( 'dblogger_blog_title' ) )?
                 ( get_theme_mod( 'dblogger_blog_title' ) ):''; ?></h2>
           
-           <a class="btn btn-white" href="<?php echo  esc_url( home_url( '/blog' ) ); ?>"><?php echo esc_html__('See More');?></a> </div>
+          <?php if(get_theme_mod( 'dblogger_blog_button_text' )!=''){?>
+          
+           <a class="btn btn-white" href="<?php echo  esc_url( home_url( '/blog' ) ); ?>"><?php  echo get_theme_mod( 'dblogger_blog_button_text' )?></a>
+          
+          <?php }?>
+          
+      </div>
            <?php 
         
               $count_blog = get_theme_mod( 'dblogger_blog_post_count' );
-              $query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );
-       
-    
-    
+              $query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
         if ($query_post->have_posts()) :
           while ($query_post->have_posts()) : $query_post->the_post();
-            
-        	
          
             get_template_part( 'template-parts/content', get_post_format() );
       

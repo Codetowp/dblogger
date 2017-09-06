@@ -8,6 +8,30 @@
  */
 
 get_header(); ?>
+
+<?php 
+    $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
+    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
+    $image = $background_img ? "$background_img" : "$background_img_static"; 
+?>
+<Section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
+  <div class="overlay-banner">
+    <div class="content">
+      <div class="container"> 
+        <header class="page-header">
+				<h1 class="page-title"><?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'dblogger' ), '<span>' . get_search_query() . '</span>' );
+				?></h1>
+			</header><!-- .page-header -->
+      </div>
+    </div>
+  </div>
+</Section>
+
+
+
+
 <section id="Blog-home">
   <div class="container">
     <div class="row"> 
@@ -15,16 +39,8 @@ get_header(); ?>
       <div class="col-md-9 col-sm-8 " style="padding-left:0; padding-right:0;" > 
 
 		<?php
-		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'dblogger' ), '<span>' . get_search_query() . '</span>' );
-				?></h1>
-			</header><!-- .page-header -->
-
-			<?php
+		if ( have_posts() ) : 
+          
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

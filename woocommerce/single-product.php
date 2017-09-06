@@ -27,7 +27,13 @@ get_header( 'shop' ); ?>
 
 <!-- banner Page
     ==========================================-->
-<Section id="page-banner" style="background-image: url(<?php echo the_post_thumbnail_url('full'); ?>);">
+<?php 
+   /* $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
+    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
+    $image = $background_img ? "$background_img" : "$background_img_static"; */
+?>
+
+<Section id="page-banner" style="background-image: url(<?php //echo $image; ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container "> 
@@ -40,11 +46,12 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
+            do_action( 'woocommerce_before_main_content' );
 	?>
         </ol>
         <!--/breadcrumb-->
         <h1><?php the_title(); ?></h1>
-        <header class="entry-header"><a href="#"> </a></header>
+       <!-- <header class="entry-header"><a href="#"> </a></header>-->
       </div>
     </div>
   </div>
@@ -66,7 +73,7 @@ get_header( 'shop' ); ?>
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		//do_action( 'woocommerce_before_main_content' );
 	?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
