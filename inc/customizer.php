@@ -226,19 +226,25 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
     ));
     
-     $wp_customize->add_setting( 'dblogger_header_check', array(
-			'default'    => 0,
-			'capability' => 'manage_options',
-			'transport' => 'refresh',
-	) );
+    
+    $wp_customize->add_setting( 'dblogger_header_check',
+				array(
+					'sanitize_callback' => 'dblogger_sanitize_checkbox',
+					'default'           => '',
+                    'capability'        => 'manage_options',
+			        'transport'         => 'refresh',
+				)
+			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_header_check', array(
 			'settings' => 'dblogger_header_check',
-			'label'    => __( 'Enable/Disable this section', 'dblogger' ),
+			'label'    => __( 'Disable Header?', 'dblogger' ),
 			'section'  => 'dblogger_header',
 			'type'     => 'ios',
             'priority' => 1,
 
 	) ) );
+    
+     
     
     $wp_customize->add_setting( 'dblogger_back_img', array(
         'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
@@ -260,20 +266,20 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     
      $wp_customize->add_setting( 'dblogger_tagline_text', array(      
-        'default'                   => 'Section Title' ,
+        'default'                   => '' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
 
     $wp_customize->add_control( 'dblogger_tagline_text', array(
         'type'						=> 'text',
-        'label' 					=> __( 'Tagline', 'dblogger' ),
+        'label' 					=> __( 'Section Title', 'dblogger' ),
         'section'  					=> 'dblogger_header',
         'priority' 					=> 3,
     ) );	
 
-    $wp_customize->add_setting( 'dblogger_heder_text', array(      
-        'default'                   => 'Section Description.' ,
+    $wp_customize->add_setting( 'dblogger_heder_text', array(   
+        'default'                   => esc_html__('Section Description', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',             
     ) );    
@@ -285,10 +291,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'priority' 					=> 4,
     ) );	
 
-   
-
     $wp_customize->add_setting( 'dblogger_button_text', array(      
-        'default'                   => 'click more' ,
+        'default'                   => esc_html__('Read More', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -301,7 +305,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 
     $wp_customize->add_setting( 'dblogger_button_url', array(      
-        'default'                   => '#' ,
+        'default'                   => esc_html__('#', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );   
@@ -325,19 +329,23 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
          'panel'                     => 'dblogger_panel',  
     ) );
     
-    $wp_customize->add_setting( 'dblogger_guide_check', array(
-			'default'    => 0,
-			'capability' => 'manage_options',
-			'transport' => 'refresh',
-	) );
+    $wp_customize->add_setting( 'dblogger_guide_check',
+				array(
+					'sanitize_callback' => 'dblogger_sanitize_checkbox',
+					'default'           => '',
+                    'capability'        => 'manage_options',
+			        'transport'         => 'refresh',
+				)
+			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 			'settings' => 'dblogger_guide_check',
-			'label'    => __( 'Enable/Disable sessions this section', 'dblogger' ),
+			'label'    => __( 'Disable guide?', 'dblogger' ),
 			'section'  => 'dblogger_guide_section',
 			'type'     => 'ios',
             'priority' => 1,
 
 	) ) );
+    
     
     $wp_customize->add_setting( 'dblogger_guide_icon', array(
 			'default'           => esc_url( get_template_directory_uri() . '/img/f-fa-book.png' ),
@@ -357,7 +365,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         ) );
 
      $wp_customize->add_setting( 'dblogger_guide_title', array(   
-          'default'              =>__('Section Title', ''),
+         'default'                   => esc_html__('Section Title', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -370,7 +378,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
       ) );	   
     
      $wp_customize->add_setting( 'dblogger_guide_desc', array(
-            'default'               => 'Section Description.', 
+            'default'                   => esc_html__('Section Description.', 'dblogger'),
             'sanitize_callback'     => 'sanitize_text_field',
             'transport'             => 'postMessage',
         ));
@@ -424,22 +432,25 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'panel'                     => 'dblogger_panel',  
     ) );
 
-  
     
-    $wp_customize->add_setting( 'dblogger_theme_check', array(
-			'default'    => 1,
-			'capability' => 'manage_options',
-			'transport'  => 'refresh',
-	) );
+     $wp_customize->add_setting( 'dblogger_theme_check',
+				array(
+					'sanitize_callback' => 'dblogger_sanitize_checkbox',
+					'default'           => '',
+                    'capability'        => 'manage_options',
+			        'transport'         => 'refresh',
+				)
+			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 			'settings' => 'dblogger_theme_check',
-			'label'    => __( 'Enable/Disable for this section', 'dblogger' ),
+			'label'    => __( 'Disable Theme?', 'dblogger' ),
 			'section'  => 'dblogger_theme_section',
 			'type'     => 'ios',
             'priority' => 1,
 
 	) ) );
-      
+  
+        
       $wp_customize->add_setting( 'dblogger_theme_title', array(      
         'default'                   => 'Pages' ,
         'sanitize_callback'         => 'sanitize_text_field',
@@ -551,20 +562,25 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'panel'                     => 'dblogger_panel', 
     ) );
     
-     $wp_customize->add_setting( 'dblogger_blog_check', array(
-			'default'    => '1',
-			'capability' => 'manage_options',
-			'transport' => 'refresh',
-	) );
+    
+   $wp_customize->add_setting( 'dblogger_blog_check',
+				array(
+					'sanitize_callback' => 'dblogger_sanitize_checkbox',
+					'default'           => '',
+                    'capability'        => 'manage_options',
+			        'transport'         => 'refresh',
+				)
+			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_blog_check', array(
 			'settings' => 'dblogger_blog_check',
-			'label'    => __( 'Enable/Disable sessions this section', 'dblogger' ),
+			'label'    => __( 'Disable Theme?', 'dblogger' ),
 			'section'  => 'dblogger_blog_section',
 			'type'     => 'ios',
             'priority' => 1,
 
 	) ) );
-  
+    
+      
       $wp_customize->add_setting( 'dblogger_blog_title', array(      
         'default'                   => 'Our Blog' ,
         'sanitize_callback'         => 'sanitize_text_field',
@@ -624,22 +640,24 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			)
 		);
     
-    
-    
-     $wp_customize->add_setting( 'dblogger_newsletter_disable', array(
-			'default'    => 0,
-			'capability' => 'manage_options',
-			'transport' => 'refresh',
-	) );
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable', array(
-			'settings' => 'dblogger_newsletter_disable',
-			'label'    => __( 'Enable/Disable for this section', 'dblogger' ),
-			'section'  => 'dblogger_newsletter',
-			'type'     => 'ios',
-            'priority' => 1,
+     $wp_customize->add_setting( 'dblogger_newsletter_disable',
+				array(
+					'sanitize_callback' => 'dblogger_sanitize_checkbox',
+					'default'           => '',
+                    'capability'        => 'manage_options',
+			        'transport'         => 'refresh',
+				)
+			);
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable',                   array(
+			             'settings' => 'dblogger_newsletter_disable',
+			             'label'    => __( 'Enable Theme?', 'dblogger' ),
+			             'section'  => 'dblogger_newsletter',
+			             'type'     => 'ios',
+                         'priority' => 1,
 
 	) ) );
     
+        
 			// Mailchimp Form Title
 		$wp_customize->add_setting( 'dblogger_newsletter_title',
 				array(
@@ -896,7 +914,13 @@ function banners_type_false_callback( $control ) {
 }
 
 
-
+function dblogger_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+		return 1;
+    } else {
+		return 0;
+    }
+}
 
 /**
  * Render the site title for the selective refresh partial.

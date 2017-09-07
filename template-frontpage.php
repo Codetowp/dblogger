@@ -26,38 +26,46 @@ get_header(); ?>
  $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
  $image = $background_img ? "$background_img" : "$background_img_static";      
 //  $color=esc_attr(get_theme_mod( 'header_textcolor' ));
-?>
+$disable    = get_theme_mod( 'dblogger_header_check' ) == 1 ? true : false ;
 
-<?php if(get_theme_mod( 'dblogger_header_check' )== 1){?>
+if ( dblogger_is_selective_refresh() ) {
+    $disable = false;
+}
+if ( ! $disable) : ?>
 
 <section id="home-banner" style="background-image: url(<?php echo $image; ?>);">
     <div class="content">
         <div class="container wow fdeInUp"  data-wow-duration="1s">
-            <span>  
-                <?php if(get_theme_mod( 'dblogger_tagline_text' )) {echo get_theme_mod( 'dblogger_tagline_text' ) ;} else {echo 'Section Title';} ?>
-            </span>
-            <h1> 
-                <?php echo $dblogger_heder=( get_theme_mod( 'dblogger_heder_text' ) )?
-                    ( get_theme_mod( 'dblogger_heder_text' ) ):'Section Description'; ?>
-            </h1>
             
-            <?php if((get_theme_mod( 'dblogger_button_url' ))!='' && (get_theme_mod( 'dblogger_button_text' ))!=''){?>
-            
-            <a class="btn btn-default" href=" <?php echo $dblogger_button_url=( get_theme_mod( 'dblogger_button_url' ) )?
-                    ( get_theme_mod( 'dblogger_button_url' ) ):''; ?>">
+            <?php 
+                $title  = get_theme_mod( 'dblogger_tagline_text', esc_html__('Section Title', 'dblogger' ));
                 
-              <?php echo $dblogger_button_text=( get_theme_mod( 'dblogger_button_text' ) )?
-                    ( get_theme_mod( 'dblogger_button_text' ) ):''; ?>
-          
-            </a> 
-            <?php }?>
+                if ($title != '') echo '<span>  ' . wp_kses_post($title) . ' </span>'; 
+            ?>
+            <?php 
+             $desc  = get_theme_mod( 'dblogger_heder_text', esc_html__('Section Description', 'dblogger' ));
+            if ($desc != '') echo '<h1>' . wp_kses_post($desc) . '</h2>'; ?>     
+            <?php 
+            $dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
+            
+            $dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url( home_url( '/' )).esc_html__('#readmore', 'dblogger') );
+            
+            if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; ?>
+            
         </div>
     </div>
 </section>
-<?php }?>
+<?php endif;?>
 <!-- Guide Page
     ==========================================-->
-<?php if( get_theme_mod( 'dblogger_guide_check' ) == 1 ) { ?>
+<?php
+
+$disable1    = get_theme_mod( 'dblogger_guide_check' ) == 0 ? true : false ;
+
+if ( dblogger_is_selective_refresh() ) {
+    $disable1 = false;
+}
+if ( ! $disable1) : ?>
 
 <section id="guide-block"> 
   
@@ -72,14 +80,16 @@ get_header(); ?>
       
         <img src="<?php echo $image;?>" class="img-responsive" style="width:65px;margin-left:48%">
       <!--<i class="fa fa-book "></i>-->
-    <h2>
-         <?php echo  $dblogger_guide_title=( get_theme_mod( 'dblogger_guide_title' ) )?
-                    ( get_theme_mod( 'dblogger_guide_title' ) ):'Section Title'; ?>
-    </h2>
-    <p >
-        <?php echo  $dblogger_guide_desc=( get_theme_mod( 'dblogger_guide_desc' ) )?
-                    ( get_theme_mod( 'dblogger_guide_desc' ) ):''; ?>
-    </p>
+      
+       <?php 
+                $dblogger_guide_title  = get_theme_mod( 'dblogger_guide_title', esc_html__('Section Title', 'dblogger' ));
+                if ($dblogger_guide_title != '') echo '<h2>  ' . wp_kses_post($dblogger_guide_title) . ' </h2>'; 
+       ?>
+      <?php 
+                $dblogger_guide_desc  = get_theme_mod( 'dblogger_guide_desc', esc_html__('Section Description', 'dblogger' ));
+                if ($dblogger_guide_desc != '') echo '<p>  ' . wp_kses_post($dblogger_guide_desc) . ' </p>'; 
+       ?>
+   
   </div>
   <!--/section-title--> 
   
@@ -144,27 +154,34 @@ get_header(); ?>
   </div>
   <!--/guide-list--> 
 </section>
-<?php }?>
+<?php endif;?>
 <!-- Theme Page
     ==========================================-->
-<?php if( get_theme_mod( 'dblogger_theme_check' ) == 1 ) { ?>
+<?php
+
+$disable1    = get_theme_mod( 'dblogger_theme_check' ) == 1 ? true : false ;
+
+if ( dblogger_is_selective_refresh() ) {
+    $disable1 = false;
+}
+if ( ! $disable1) : ?>
     <section id="theme-block">
       <div class="container">
         <div class="row wow fdeInUp"> 
           <!--section-title-->
           <div class="section-title text-center">
-            <h2><?php echo  $dblogger_theme_title=( get_theme_mod( 'dblogger_theme_title' ) )?
-                ( get_theme_mod( 'dblogger_theme_title' ) ):'Pages'; ?></h2>
-            <?php if(get_theme_mod( 'dblogger_theme_button_text' )!='' || get_theme_mod( 'dblogger_theme_button_url' )){?>
+             <?php 
+                $dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('pages', 'dblogger' ));
+                if ($dblogger_theme_title != '') echo '<h2>  ' . wp_kses_post($dblogger_theme_title) . ' </h2>'; 
+             ?>
+                        
               
-            <a class="btn btn-white" href="<?php echo $dblogger_theme_button_url=( get_theme_mod( 'dblogger_theme_button_url' ) )?
-                ( get_theme_mod( 'dblogger_theme_button_url' ) ):'#';  ?>">
-                
-                <?php echo  $theme_button_text=( get_theme_mod( 'dblogger_theme_button_text' ) )?
-                ( get_theme_mod( 'dblogger_theme_button_text' ) ):''; ?>
-            </a>
-              
-            <?php }?>
+               <?php 
+            $dblogger_theme_button_text  = get_theme_mod( 'dblogger_theme_button_text', esc_html__('Read More', 'dblogger') );
+            
+            $dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_html__('#', 'dblogger') );
+            
+            if ($dblogger_theme_button_text != '' && $dblogger_theme_button_url != '') echo '<a  class="btn btn-white" href="' . esc_url($dblogger_button_url) . '" >' . wp_kses_post($dblogger_button_text) . '</a>'; ?>     
             <hr>
           </div>
           <!--/section-title--> 
@@ -202,11 +219,19 @@ get_header(); ?>
         </div>
       </div>
     </section>
-<?php }?>
+
+<?php endif;?>
 
 <!--From the blog
     ==========================================-->
-<?php if( get_theme_mod( 'dblogger_blog_check' ) == 1 ) { ?>
+<?php
+
+$disable1    = get_theme_mod( 'dblogger_blog_check' ) == 1 ? true : false ;
+
+if ( dblogger_is_selective_refresh() ) {
+    $disable1 = false;
+}
+if ( ! $disable1) : ?>
 
 <section id="from-blog">
   <div class="container">
@@ -238,10 +263,20 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<?php }?>
+<?php endif;?>
 <!--Newsletter
     ==========================================-->
-<?php if( get_theme_mod( 'dblogger_newsletter_disable' ) == 1 ) {
+<?php
+
+$disable1    = get_theme_mod( 'dblogger_newsletter_disable' ) == 0 ? true : false ;
+
+if ( dblogger_is_selective_refresh() ) {
+    $disable1 = false;
+}
+if ( ! $disable1) : ?>
+
+
+<?php
        
         $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
  ?> 
@@ -274,7 +309,7 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<?php }?>
+<?php endif;?>
 
 <?php
 get_footer();
