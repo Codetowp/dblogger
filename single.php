@@ -26,7 +26,7 @@ get_header(); ?>
             }
 ?>
 
-<div id="page-banner" style="background-image: url(<?php echo $img; ?>);">
+<div id="single-banner" style="background-image: url(<?php echo $img; ?>);">
      <div class="content wow fdeInUp">
       <div class="container "> 
         <!--breadcrumb-->
@@ -85,7 +85,7 @@ get_header(); ?>
               foreach ( $categories as $category ) {
                 echo '<a rel="tag" href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a> ';
               }
-              }
+              }?>
               </span> 
             </div>
         </footer>

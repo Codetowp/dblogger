@@ -34,12 +34,11 @@ get_header(); ?>
     <div class="content">
         <div class="container wow fdeInUp"  data-wow-duration="1s">
             <span>  
-                <?php echo  $dblogger_tagline=( get_theme_mod( 'dblogger_tagline_text' ) )?
-                    ( get_theme_mod( 'dblogger_tagline_text' ) ):''; ?>
+                <?php if(get_theme_mod( 'dblogger_tagline_text' )) {echo get_theme_mod( 'dblogger_tagline_text' ) ;} else {echo 'Section Title';} ?>
             </span>
             <h1> 
                 <?php echo $dblogger_heder=( get_theme_mod( 'dblogger_heder_text' ) )?
-                    ( get_theme_mod( 'dblogger_heder_text' ) ):''; ?>
+                    ( get_theme_mod( 'dblogger_heder_text' ) ):'Section Description'; ?>
             </h1>
             
             <?php if((get_theme_mod( 'dblogger_button_url' ))!='' && (get_theme_mod( 'dblogger_button_text' ))!=''){?>
@@ -75,7 +74,7 @@ get_header(); ?>
       <!--<i class="fa fa-book "></i>-->
     <h2>
          <?php echo  $dblogger_guide_title=( get_theme_mod( 'dblogger_guide_title' ) )?
-                    ( get_theme_mod( 'dblogger_guide_title' ) ):''; ?>
+                    ( get_theme_mod( 'dblogger_guide_title' ) ):'Section Title'; ?>
     </h2>
     <p >
         <?php echo  $dblogger_guide_desc=( get_theme_mod( 'dblogger_guide_desc' ) )?
@@ -154,10 +153,8 @@ get_header(); ?>
         <div class="row wow fdeInUp"> 
           <!--section-title-->
           <div class="section-title text-center">
-            <h2>
-                <?php echo  $dblogger_theme_title=( get_theme_mod( 'dblogger_theme_title' ) )?
-                ( get_theme_mod( 'dblogger_theme_title' ) ):''; ?>
-            </h2>
+            <h2><?php echo  $dblogger_theme_title=( get_theme_mod( 'dblogger_theme_title' ) )?
+                ( get_theme_mod( 'dblogger_theme_title' ) ):'Pages'; ?></h2>
             <?php if(get_theme_mod( 'dblogger_theme_button_text' )!='' || get_theme_mod( 'dblogger_theme_button_url' )){?>
               
             <a class="btn btn-white" href="<?php echo $dblogger_theme_button_url=( get_theme_mod( 'dblogger_theme_button_url' ) )?
@@ -180,8 +177,13 @@ get_header(); ?>
 			 
           <!--Theme-post-->
           <div class="col-md-4 theme-post "> 
-              <?php the_post_thumbnail();?>
-              <!--<img src="<?php the_post_thumbnail();?>" class="img-responsive">-->
+              <?php 
+                if(get_the_post_thumbnail()){
+                 echo $img=get_the_post_thumbnail();
+                }else{?>
+                     <img src="<?php echo get_template_directory_uri()?>/img/b-1.jpg" class="img-responsive">
+              <?php  }  ?>
+             
             <div class="theme-post-caption eq-blocks">
               <h6><?php the_title(); ?> <span class="badge badge-info"><?php if( get_theme_mod( 'dblogger_theme_tag_check' ) == 1 ) { ?>
                   <?php echo  $dblogger_tag_title=( get_theme_mod( 'dblogger_tag_title' ) )?
@@ -212,7 +214,7 @@ get_header(); ?>
       <!--section-title-->
       <div class="section-title text-center">
         <h2><?php echo  $dblogger_blog_title=( get_theme_mod( 'dblogger_blog_title' ) )?
-                ( get_theme_mod( 'dblogger_blog_title' ) ):''; ?></h2>
+                ( get_theme_mod( 'dblogger_blog_title' ) ):'Our Blog'; ?></h2>
           
           <?php if(get_theme_mod( 'dblogger_blog_button_text' )!=''){?>
           

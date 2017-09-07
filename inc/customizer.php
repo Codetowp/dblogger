@@ -15,7 +15,7 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector'        => '.site-title a',
+			'selector'        => '.navbar-brand h3',
 			'render_callback' => 'dblogger_customize_partial_blogname',
 		) );
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
@@ -26,6 +26,7 @@ function dblogger_customize_register( $wp_customize ) {
 	
      $wp_customize->remove_control('blogdescription');
      $wp_customize->remove_section('header_image');
+     $wp_customize->remove_control('display_header_text');
      $wp_customize->remove_section('background_image');    
      $wp_customize->get_section('title_tagline')->title = __( 'Branding' ); 
     
@@ -57,7 +58,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'section'    => 'colors',
 		) ) );
     
-		
+/*		
      $wp_customize->add_setting( 'header_image', array(
 			'default'                   => '',
 			'type'                      => 'theme_mod',
@@ -75,7 +76,7 @@ function dblogger_customize_register( $wp_customize ) {
             ) 
         ) );
 		
-    
+  */  
     $wp_customize->add_section( 'dblogger_theme_info', array(
           'title'                 => __( 'Theme INFO', 'dblogger' ),
           'priority'              => 0,
@@ -226,20 +227,18 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     ));
     
      $wp_customize->add_setting( 'dblogger_header_check', array(
-			'default'    => '1',
+			'default'    => 0,
 			'capability' => 'manage_options',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_header_check', array(
 			'settings' => 'dblogger_header_check',
-			'label'    => __( 'Enable/Disable sessions this section', 'dblogger' ),
+			'label'    => __( 'Enable/Disable this section', 'dblogger' ),
 			'section'  => 'dblogger_header',
 			'type'     => 'ios',
             'priority' => 1,
 
 	) ) );
-
-    
     
     $wp_customize->add_setting( 'dblogger_back_img', array(
         'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
@@ -327,9 +326,9 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     ) );
     
     $wp_customize->add_setting( 'dblogger_guide_check', array(
-			'default'    => '0',
+			'default'    => 0,
 			'capability' => 'manage_options',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 			'settings' => 'dblogger_guide_check',
@@ -358,7 +357,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         ) );
 
      $wp_customize->add_setting( 'dblogger_guide_title', array(   
-          'default'              =>'Section Title.',
+          'default'              =>__('Section Title', ''),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -428,9 +427,9 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
   
     
     $wp_customize->add_setting( 'dblogger_theme_check', array(
-			'default'    => '1',
+			'default'    => 1,
 			'capability' => 'manage_options',
-			'transport'  => 'postMessage',
+			'transport'  => 'refresh',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 			'settings' => 'dblogger_theme_check',
@@ -442,7 +441,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) ) );
       
       $wp_customize->add_setting( 'dblogger_theme_title', array(      
-        'default'                   => 'From The Page' ,
+        'default'                   => 'Pages' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -529,7 +528,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     );
         
     $wp_customize->add_setting( 'dblogger_theme_tag_check', array(
-			'default'    => '1',
+			'default'    => 1,
 			'capability' => 'manage_options',
 			'transport' => 'postMessage',
 	) );
@@ -555,7 +554,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
      $wp_customize->add_setting( 'dblogger_blog_check', array(
 			'default'    => '1',
 			'capability' => 'manage_options',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_blog_check', array(
 			'settings' => 'dblogger_blog_check',
@@ -567,7 +566,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) ) );
   
       $wp_customize->add_setting( 'dblogger_blog_title', array(      
-        'default'                   => 'From The Blog' ,
+        'default'                   => 'Our Blog' ,
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -628,9 +627,9 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     
      $wp_customize->add_setting( 'dblogger_newsletter_disable', array(
-			'default'    => '1',
+			'default'    => 0,
 			'capability' => 'manage_options',
-			'transport' => 'postMessage',
+			'transport' => 'refresh',
 	) );
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable', array(
 			'settings' => 'dblogger_newsletter_disable',

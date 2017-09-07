@@ -44,13 +44,13 @@ get_header(); ?>
           
 			while ( have_posts() ) : the_post();
 
-         if(get_post_thumbnail_id(get_the_id()) !='')
+         if(get_post_thumbnail_id() !='')
         {
             $single_post= wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); 
         }
         else
         {
-            $single_post=get_template_directory_uri()."/img/p-2.jpeg";
+            $single_post=get_template_directory_uri()."/img/b-1.jpg";
         }
 ?>
           
