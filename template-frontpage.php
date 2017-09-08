@@ -207,7 +207,7 @@ if ( ! $disable1) : ?>
                   
                   <?php 
                    $dblogger_theme_link_title  = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
-                  <a  href="<?php  esc_url(get_the_permalink());?>"> 
+                  <a  href="<?php  echo the_permalink();?>"> 
                       <?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
                   </a>
               </div>
