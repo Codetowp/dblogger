@@ -266,7 +266,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     
      $wp_customize->add_setting( 'dblogger_tagline_text', array(      
-        'default'                   => '' ,
+       'default'                   => esc_html__('Session Title', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -305,7 +305,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 
     $wp_customize->add_setting( 'dblogger_button_url', array(      
-        'default'                   => esc_html__('#', 'dblogger'),
+        'default'           => esc_html__( '#', 'dblogger' ),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );   
@@ -365,7 +365,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         ) );
 
      $wp_customize->add_setting( 'dblogger_guide_title', array(   
-         'default'                   => esc_html__('Section Title', 'dblogger'),
+        'default'                   => esc_html__('Section Title', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -451,8 +451,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 	) ) );
   
         
-      $wp_customize->add_setting( 'dblogger_theme_title', array(      
-        'default'                   => 'Pages' ,
+      $wp_customize->add_setting( 'dblogger_theme_title', array(  
+        'default'                   => esc_html__('Page', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -465,7 +465,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
       ) );	  
 
     $wp_customize->add_setting( 'dblogger_theme_button_text', array(      
-        'default'                   => 'click more' ,
+        'default'                   => esc_html__('Read More', 'dblogger'), 
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -478,8 +478,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     ) );	
 
 
-    $wp_customize->add_setting( 'dblogger_theme_button_url', array(      
-        'default'                   => '#' ,
+    $wp_customize->add_setting( 'dblogger_theme_button_url', array(     
+        'default'                   => esc_html__('#', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -492,8 +492,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     ) );	  
 
 
-     $wp_customize->add_setting( 'dblogger_theme_link_title', array(      
-        'default'                   => 'Session Link Title' ,
+     $wp_customize->add_setting( 'dblogger_theme_link_title', array(   
+        'default'                   => esc_html__('Read More', 'dblogger'),        
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -506,7 +506,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
       ) );
     
     $wp_customize->add_setting( 'dblogger_tag_title', array(      
-        'default'                   => 'Section Tag' ,
+        'default'                   => esc_html__('Session Tag', 'dblogger'),  
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -582,7 +582,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
       
       $wp_customize->add_setting( 'dblogger_blog_title', array(      
-        'default'                   => 'Our Blog' ,
+        'default'                   => esc_html__('Our Blog', 'dblogger'),  
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -595,7 +595,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
       ) );	  
 
     $wp_customize->add_setting( 'dblogger_blog_button_text', array(      
-        'default'                   => 'Section Link' ,
+        'default'                   => esc_html__('Read More', 'dblogger'),  
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -662,7 +662,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 		$wp_customize->add_setting( 'dblogger_newsletter_title',
 				array(
 					'sanitize_callback' => 'sanitize_text_field',
-					'default'           => esc_html__( 'Section Title', 'dblogger' ),
+					'default'           => esc_html__( 'Subscribe to our newsletter', 'dblogger' ),
                     'transport'         => 'postMessage', 
 				)
 			);

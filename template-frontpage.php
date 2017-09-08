@@ -48,7 +48,7 @@ if ( ! $disable) : ?>
             <?php 
             $dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
             
-            $dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url( home_url( '/' )).esc_html__('#readmore', 'dblogger') );
+            $dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_html__('#', 'dblogger') );
             
             if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; ?>
             
@@ -104,24 +104,20 @@ if ( ! $disable1) : ?>
 
   <ul class="nav nav-tabs" >
   <!-- guides tabs ul -->
-      <?php
-         $firstClass = 'active'; 
-         $values=0;
-        $count = get_theme_mod( 'dblogger_post_number' );
-       $slidecat =get_option( 'dblogger_slide_categories' );
-
-        $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
-    
-    
-        if ($query->have_posts()) :
+   <?php
+       $firstClass = 'active'; 
+       $values=0;
+       $count = get_theme_mod( 'dblogger_post_number' );
+       $slidecat = get_option( 'dblogger_slide_categories' );
+       $query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
+       if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post();
-        $values++;
+       $values++;
     ?>
-      
-      
-      <li role="presentation" class="<?php echo $firstClass; ?>"><a href="#<?php echo $values;?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
+      <li role="presentation" class="<?php echo $firstClass; ?>"><a href="<?php the_permalink;?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
  
       <?php  $firstClass = ""; endwhile;endif;?>
+      
   </ul>
 
   <!--  guides Tab panes -->
@@ -176,12 +172,12 @@ if ( ! $disable1) : ?>
              ?>
                         
               
-               <?php 
+           <?php 
             $dblogger_theme_button_text  = get_theme_mod( 'dblogger_theme_button_text', esc_html__('Read More', 'dblogger') );
             
             $dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_html__('#', 'dblogger') );
             
-            if ($dblogger_theme_button_text != '' && $dblogger_theme_button_url != '') echo '<a  class="btn btn-white" href="' . esc_url($dblogger_button_url) . '" >' . wp_kses_post($dblogger_button_text) . '</a>'; ?>     
+            if ($dblogger_theme_button_text != '' && $dblogger_theme_button_url != '') echo '<a  class="btn btn-white" href="' . esc_url($dblogger_theme_button_url) . '" >' . wp_kses_post($dblogger_theme_button_text) . '</a>'; ?>     
             <hr>
           </div>
           <!--/section-title--> 
@@ -190,8 +186,6 @@ if ( ! $disable1) : ?>
              $page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts ) ); ?>
 			 <?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			  	 
-			
-			 
           <!--Theme-post-->
           <div class="col-md-4 theme-post "> 
               <?php 
@@ -202,13 +196,21 @@ if ( ! $disable1) : ?>
               <?php  }  ?>
              
             <div class="theme-post-caption eq-blocks">
-              <h6><?php the_title(); ?> <span class="badge badge-info"><?php if( get_theme_mod( 'dblogger_theme_tag_check' ) == 1 ) { ?>
-                  <?php echo  $dblogger_tag_title=( get_theme_mod( 'dblogger_tag_title' ) )?
-                ( get_theme_mod( 'dblogger_tag_title' ) ):'';?>
-                  <?php }?></span></h6>
+              <h6><?php the_title(); ?> 
+                  
+                  <?php 
+                   $dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Session Tag', 'dblogger' ));
+                  if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; ?>
+              </h6>
               <!--view-payment-->
-              <div class="view-payment"> <a href="<?php the_permalink();?>"><?php echo   $dblogger_theme_link_title=( get_theme_mod( 'dblogger_theme_link_title' ) )?
-                ( get_theme_mod( 'dblogger_theme_link_title' ) ):'';  ?></a> </div>
+              <div class="view-payment"> 
+                  
+                  <?php 
+                   $dblogger_theme_link_title  = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+                  <a  href="<?php  esc_url(get_the_permalink());?>"> 
+                      <?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+                  </a>
+              </div>
               <!--/view-payment--> 
             </div>
           </div>
@@ -238,14 +240,14 @@ if ( ! $disable1) : ?>
     <div class="row wow fdeInUp"> 
       <!--section-title-->
       <div class="section-title text-center">
-        <h2><?php echo  $dblogger_blog_title=( get_theme_mod( 'dblogger_blog_title' ) )?
-                ( get_theme_mod( 'dblogger_blog_title' ) ):'Our Blog'; ?></h2>
+          <?php 
+             $dblogger_blog_title  = get_theme_mod( 'dblogger_blog_title', esc_html__('Our Blog', 'dblogger' ));
+             if ($dblogger_blog_title != '') echo '<h2>' . wp_kses_post($dblogger_blog_title) . '</h2>'; ?>
           
-          <?php if(get_theme_mod( 'dblogger_blog_button_text' )!=''){?>
+           <?php 
+             $dblogger_blog_button_text  = get_theme_mod( 'dblogger_blog_button_text', esc_html__('Read More', 'dblogger' ));
+             if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url( home_url( '/blog' ) ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; ?>
           
-           <a class="btn btn-white" href="<?php echo  esc_url( home_url( '/blog' ) ); ?>"><?php  echo get_theme_mod( 'dblogger_blog_button_text' )?></a>
-          
-          <?php }?>
           
       </div>
            <?php 
@@ -285,11 +287,11 @@ if ( ! $disable1) : ?>
     <div class="row wow fdeInUp"> 
       <!--section-title-->
       <div class="section-title text-center">
-        <h3> 
-            <?php echo  $dblogger_newsletter_title=( get_theme_mod( 'dblogger_newsletter_title' ) )?
-                    ( get_theme_mod( 'dblogger_newsletter_title' ) ):'Subscribe to our newsletter'; ?>
-         </h3>
-      </div>
+         <?php 
+                $dblogger_newsletter_title  = get_theme_mod( 'dblogger_newsletter_title', esc_html__('Subscribe to our newsletter', 'dblogger' ));
+                if ($dblogger_newsletter_title != '') echo '<h3>  ' . wp_kses_post($dblogger_newsletter_title) . ' </h3>'; 
+          ?>  
+     </div>
       <!--/section-title-->
       
       <div class="col-md-4 col-md-offset-4">
