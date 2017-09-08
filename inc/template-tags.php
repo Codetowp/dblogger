@@ -100,3 +100,11 @@ function dblogger_entry_footer() {
 	);
 }
 endif;
+
+
+if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {
+    function dblogger_is_selective_refresh()
+    {
+        return isset($GLOBALS['dblogger_is_selective_refresh']) && $GLOBALS['dblogger_is_selective_refresh'] ? true : false;
+    }
+}
