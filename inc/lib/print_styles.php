@@ -14,10 +14,10 @@ add_action( 'wp_head', 'text_color_styles' );
 
 
 
-if (!function_exists('dblogger_paraph_font'))  {
-	function dblogger_paraph_font(){
+if (!function_exists('dblogger_paragraph_font'))  {
+	function dblogger_paragraph_font(){
 		echo '<style type="text/css" >';
-		$fontfamily_value = get_theme_mod('dblogger_paraph_font', '');
+		$fontfamily_value = get_theme_mod('dblogger_paragraph_font', '');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
@@ -27,13 +27,13 @@ if (!function_exists('dblogger_paraph_font'))  {
 	}
 }
  // Add custom styles to `<head>`.
-add_action( 'wp_head', 'dblogger_paraph_font' );
+add_action( 'wp_head', 'dblogger_paragraph_font' );
 
 
 if (!function_exists('dblogger_paragraph_font_size_styles'))  {
 	function dblogger_paragraph_font_size_styles(){
 		echo '<style type="text/css" >';
-		$fontparagfamily_value = get_theme_mod('dblogger_paragragph_font_size', '');
+		$fontparagfamily_value = get_theme_mod('dblogger_paragraph_font_size', '');
 		$append_para_family_font = sprintf( 'font-size: %spx !important;',  $fontparagfamily_value );
 			// Output the styles.
 		if ( $fontparagfamily_value ) {
@@ -45,10 +45,10 @@ if (!function_exists('dblogger_paragraph_font_size_styles'))  {
  // Add custom styles to `<head>`.
 add_action( 'wp_head', 'dblogger_paragraph_font_size_styles' );
 
-if (!function_exists('dblogger_paraph_font_color'))  {
-	function dblogger_paraph_font_color(){
+if (!function_exists('dblogger_paragraph_font_color'))  {
+	function dblogger_paragraph_font_color(){
 		echo '<style type="text/css" >';
-		$color_value = get_theme_mod('dblogger_paraph_font_color', '');
+		$color_value = get_theme_mod('dblogger_paragraph_font_color', '');
 		$append_color = sprintf( 'color: %s !important;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
@@ -58,30 +58,29 @@ if (!function_exists('dblogger_paraph_font_color'))  {
 	}
 }
  // Add custom styles to `<head>`.
-add_action( 'wp_head', 'dblogger_paraph_font_color' );
+add_action( 'wp_head', 'dblogger_paragraph_font_color' );
 
 
-if (!function_exists('dblogger_font_family'))  {
-	function dblogger_font_family(){
+if (!function_exists('dblogger_heading_font_family'))  {
+	function dblogger_heading_font_family(){
 		echo '<style type="text/css">';
-		$fontfamily_value = get_theme_mod('dblogger_font_family', '');
+		$fontfamily_value = get_theme_mod('dblogger_heading_font_family', '');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
-			echo "\n" . 'h1{' . $append_family . '}'."\n".'h2{'.$append_family.'}'."\n".'h3{'.$append_family.'}'.
-                "\n".'h4{'.$append_family.'}'."\n".'h5{'.$append_family.'}' ;
+			echo "\n" . 'h1,h2,h3,h4,h5,h6{'.$append_family.'}' ;
 		}
 		echo "\n". "</style>". "\n";
 	}
 }
  // Add custom styles to `<head>`.
-add_action( 'wp_head', 'dblogger_font_family' );
+add_action( 'wp_head', 'dblogger_heading_font_family' );
 
 
-if (!function_exists('dblogger_font_color'))  {
-	function dblogger_font_color(){
+if (!function_exists('dblogger_headings_font_color'))  {
+	function dblogger_headings_font_color(){
 		echo '<style type="text/css" id="rijo-css">';
-		$color_value = get_theme_mod('dblogger_font_color', '');
+		$color_value = get_theme_mod('dblogger_headings_font_color', '');
 		$append_color = sprintf( 'color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
@@ -92,7 +91,7 @@ if (!function_exists('dblogger_font_color'))  {
 	}
 }
  // Add custom styles to `<head>`.
-add_action( 'wp_head', 'dblogger_font_color' );
+add_action( 'wp_head', 'dblogger_headings_font_color' );
 
 
 if (!function_exists('dblogger_accent_color'))  {

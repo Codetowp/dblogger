@@ -21,9 +21,8 @@ function dblogger_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
 			'render_callback' => 'dblogger_customize_partial_blogdescription',
-		) ); 
-        
-        $wp_customize->selective_refresh->add_partial( 'dblogger_tagline_text', array(
+		) );   
+          $wp_customize->selective_refresh->add_partial( 'dblogger_tagline_text', array(
 			'selector'        => '#home-banner span',
 			'render_callback' => 'dblogger_customize_partial_tagline_text',
 		) ); 
@@ -47,7 +46,6 @@ function dblogger_customize_register( $wp_customize ) {
 			'selector'        => '#newsletter-block .container',
 			'render_callback' => 'dblogger_customize_partial_newsletter_title',
 		) );
-        
 	}
 	
      $wp_customize->remove_control('blogdescription');
@@ -719,7 +717,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
         $wp_customize->add_setting( 'dblogger_newsletter_det', 
                array(      
-                 'default'                   => 'Section Description' ,
+                 'default'                   => 'We protect your privacy. We provide you with high quality updates.' ,
                  'sanitize_callback'         => 'sanitize_text_field',
                  'transport'                 => 'postMessage',               
                ) );    
@@ -805,12 +803,12 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     
     
-    /*fonts*/
+    /*Fonts*/
      
       $wp_customize->add_section('dblogger_font_settings', 
              array(
-                'title'                     => __('Font', 'dblogger'),
-                'description'               => 'Easily edit your body section',
+                'title'                     => __('Font Settings', 'dblogger'),
+                'description'               => 'Change font family, size and color (Headings & Paragraph) for Homepage, Blog Posts & Pages.',
                 'priority'                  => 125,
           
                 ));
@@ -819,43 +817,46 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     // paragraph
      $font_choices = customizer_library_get_font_choices();
     
-     $wp_customize->add_setting( 'dblogger_paraph_font', array(
-            'default'        => 'PT Sans',
+     $wp_customize->add_setting( 'dblogger_paragraph_font', array(
+            'default'        => 'PT Serif',
         ) );
 
-        $wp_customize->add_control( 'dblogger_paraph_font', array(
-            'label'   => 'Dblogger Paragragh Font Family',
+        $wp_customize->add_control( 'dblogger_paragraph_font', array(
+            'label'   => esc_attr__('Pick Paragraph Font Family', 'dblogger' ),
+            'description'   => esc_attr__('Default : PT Serif', 'dblogger' ),
             'section' => 'dblogger_font_settings',
             'type'    => 'select',
             'choices' => $font_choices,
             'priority' => 1,
 			));
     
-    $wp_customize->add_setting( 'dblogger_paraph_font_color', 
+    $wp_customize->add_setting( 'dblogger_paragraph_font_color', 
             array(
-                'default' => '#9C9C9C', 
+                'default' => '#43484d', 
                 'transport' => 'refresh', 
                 'sanitize_callback' => 'sanitize_hex_color', 
             ) );
-	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_paraph_font_color', 
+	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_paragraph_font_color', 
            array(
-			'label'      => esc_attr__( 'Paragraph Font Color', 'dblogger' ),
+			'label'      => esc_attr__( 'Pick Paragraph Font Color', 'dblogger' ),
+             'description'   => esc_attr__('Default : #43484d', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
                'priority'   => 2,
 		) ) );    
 
     
-     $wp_customize->add_setting( 'dblogger_paragragph_font_size', array(
-			'default'       => get_theme_mod( 'dblogger_paragragph_font_size', '24px' ),
+     $wp_customize->add_setting( 'dblogger_paragraph_font_size', array(
+			'default'       => get_theme_mod( 'dblogger_paragraph_font_size', '16px' ),
 			'capability'    => 'edit_theme_options',
 			'transport'     => 'refresh',
 	) );
 
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragragph_font_size', array(
+	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragraph_font_size', array(
 			'type'     => 'range-value',
 			'section'  => 'dblogger_font_settings',
-			'settings' => 'dblogger_paragragph_font_size',
-			'label'    => __( 'Paragraph Font Width' ),
+			'settings' => 'dblogger_paragraph_font_size',        
+			'label'    => __( 'Pick Paragraph Font Size' ),
+            'description'   => esc_attr__('Default : 16px', 'dblogger' ),
 			'input_attrs' => array(
 				'min'    => 11,
 				'max'    => 24,
@@ -865,15 +866,16 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         'priority'   => 3,
 	) ) );
     
-    /*font */
+    /*Heading fonts */
        
-    $wp_customize->add_setting( 'dblogger_font_family', array(
-            'default'        => 'PT Sans',
+    $wp_customize->add_setting( 'dblogger_heading_font_family', array(
+            'default'        => 'Montserrat',
              'transport'     => 'refresh',
         ) );
 
-    $wp_customize->add_control( 'dblogger_font_family', array(
-        'label'   => 'Dblogger Font Family',
+    $wp_customize->add_control( 'dblogger_heading_font_family', array(
+        'label'   => 'Pick Heading Font Family',
+        'description'   =>  esc_attr__('Default : Montserrat', 'dblogger' ),
         'section' => 'dblogger_font_settings',
         'type'    => 'select',
         'choices' => $font_choices,
@@ -881,15 +883,15 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
         ));
         
     
-    $wp_customize->add_setting( 'dblogger_font_color', 
+    $wp_customize->add_setting( 'dblogger_headings_font_color', 
             array(
                 'default' => '#5a5a5a', 
                 'transport' => 'refresh', 
                 'sanitize_callback' => 'sanitize_hex_color', 
             ) );
-	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_font_color', 
+	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_headings_font_color', 
            array(
-			'label'      => esc_attr__( 'Font Color', 'dblogger' ),
+			'label'      => esc_attr__( 'Pick Heading Font Color', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
                'priority'   => 5,
 		) ) );
@@ -983,7 +985,6 @@ function dblogger_customize_partial_blog_title() {
 function dblogger_customize_partial_newsletter_title() {
 	echo get_theme_mode('dblogger_newsletter_title');
 }
-
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
