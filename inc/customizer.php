@@ -21,7 +21,33 @@ function dblogger_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 			'selector'        => '.site-description',
 			'render_callback' => 'dblogger_customize_partial_blogdescription',
-		) );        
+		) ); 
+        
+        $wp_customize->selective_refresh->add_partial( 'dblogger_tagline_text', array(
+			'selector'        => '#home-banner span',
+			'render_callback' => 'dblogger_customize_partial_tagline_text',
+		) ); 
+        $wp_customize->selective_refresh->add_partial( 'dblogger_heder_text', array(
+			'selector'        => '#home-banner h1',
+			'render_callback' => 'dblogger_customize_partial_heder_text',
+		) ); 
+        $wp_customize->selective_refresh->add_partial( 'dblogger_guide_title', array(
+			'selector'        => '#guide-block h2',
+			'render_callback' => 'dblogger_customize_partial_guide_title',
+		) ); 
+        $wp_customize->selective_refresh->add_partial( 'dblogger_theme_title', array(
+			'selector'        => '#theme-block .container',
+			'render_callback' => 'dblogger_customize_partial_theme_title',
+		) );
+        $wp_customize->selective_refresh->add_partial( 'dblogger_blog_title', array(
+			'selector'        => '#from-blog .container',
+			'render_callback' => 'dblogger_customize_partial_blog_title',
+		) );
+        $wp_customize->selective_refresh->add_partial( 'dblogger_newsletter_title', array(
+			'selector'        => '#newsletter-block .container',
+			'render_callback' => 'dblogger_customize_partial_newsletter_title',
+		) );
+        
 	}
 	
      $wp_customize->remove_control('blogdescription');
@@ -938,6 +964,24 @@ function dblogger_customize_partial_blogname() {
  */
 function dblogger_customize_partial_blogdescription() {
 	bloginfo( 'description' );
+}
+function dblogger_customize_partial_tagline_text() {
+	echo get_theme_mode('dblogger_tagline_text');
+}
+function dblogger_customize_partial_heder_text() {
+	echo get_theme_mode('dblogger_heder_text');
+}
+function dblogger_customize_partial_guide_title() {
+	echo get_theme_mode('dblogger_guide_title');
+}
+function dblogger_customize_partial_theme_title() {
+	echo get_theme_mode('dblogger_theme_title');
+}
+function dblogger_customize_partial_blog_title() {
+	echo get_theme_mode('dblogger_blog_title');
+}
+function dblogger_customize_partial_newsletter_title() {
+	echo get_theme_mode('dblogger_newsletter_title');
 }
 
 /**
