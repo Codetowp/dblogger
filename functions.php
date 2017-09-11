@@ -107,6 +107,24 @@ global $options_categories;
        $options_categories[$category->cat_ID] = $category->cat_name;
 	}
 
+
+/*fonts*/
+function demo_fonts() {
+
+	// Font options
+	$fonts = array(
+		get_theme_mod( 'dblogger_paragraph_font', customizer_library_get_default( 'primary-font' ) ),
+		get_theme_mod( 'dblogger_heading_font_family', customizer_library_get_default( 'secondary-font' ) )
+	);
+
+	$font_uri = customizer_library_get_google_font_uri( $fonts );
+
+	// Load Google Fonts
+	wp_enqueue_style( 'demo_fonts', $font_uri, array(), null, 'screen' );
+
+}
+add_action( 'wp_enqueue_scripts', 'demo_fonts' );
+
 /**
  * Register widget area.
  *

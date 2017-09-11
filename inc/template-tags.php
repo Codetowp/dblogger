@@ -108,3 +108,13 @@ if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {
         return isset($GLOBALS['dblogger_is_selective_refresh']) && $GLOBALS['dblogger_is_selective_refresh'] ? true : false;
     }
 }
+function customizer_library_get_default( $setting ) {
+
+	$customizer_library = Customizer_Library::Instance();
+	$options = $customizer_library->get_options();
+
+	if ( isset( $options[$setting]['default'] ) ) {
+		return $options[$setting]['default'];
+	}
+
+}
