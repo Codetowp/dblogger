@@ -108,6 +108,12 @@ if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {
         return isset($GLOBALS['dblogger_is_selective_refresh']) && $GLOBALS['dblogger_is_selective_refresh'] ? true : false;
     }
 }
+
+/*for font*/
+
+
+
+/*
 function customizer_library_get_default( $setting ) {
 
 	$customizer_library = Customizer_Library::Instance();
@@ -117,4 +123,4 @@ function customizer_library_get_default( $setting ) {
 		return $options[$setting]['default'];
 	}
 
-}
+}*/

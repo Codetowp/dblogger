@@ -109,7 +109,7 @@ global $options_categories;
 
 
 /*fonts*/
-function demo_fonts() {
+/*function demo_fonts() {
 
 	// Font options
 	$fonts = array(
@@ -123,7 +123,7 @@ function demo_fonts() {
 	wp_enqueue_style( 'demo_fonts', $font_uri, array(), null, 'screen' );
 
 }
-add_action( 'wp_enqueue_scripts', 'demo_fonts' );
+add_action( 'wp_enqueue_scripts', 'demo_fonts' );*/
 
 /**
  * Register widget area.
@@ -144,6 +144,10 @@ function dblogger_widgets_init() {
 	// Custom Widgets of the theme
 	require get_template_directory() . '/inc/widgets/social.php';  
 	require get_template_directory() . '/inc/widgets/recentpost.php';
+    
+    //require get_template_directory() . '/inc/styles.php';
+	//require get_template_directory() . '/inc/customizer-library.php';
+    
 }
 add_action( 'widgets_init', 'dblogger_widgets_init' );
 
@@ -212,6 +216,7 @@ function dblogger_js_scripts() {
     wp_enqueue_script( 'dblogger-wow-min', get_template_directory_uri().'/js/wow.min.js', array(), '20151215', true );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_js_scripts' );
+
 
 /**
  * Implement the Custom Header feature.

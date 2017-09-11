@@ -8,7 +8,9 @@
 function dblogger_customize_register( $wp_customize ) {    
 	require get_template_directory() . '/inc/lib/fo-to-range.php';
 	require get_template_directory() . '/inc/lib/theme-info.php';   
-	
+
+    //require get_template_directory() . '/inc/customizer-library.php';
+    
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
