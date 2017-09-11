@@ -55,19 +55,18 @@
     
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
+      <ul class="nav navbar-nav navbar-left">
         
         	<?php if ( has_nav_menu( 'header-menu' ) ) : ?>
             <?php
 				wp_nav_menu( array( 
-                        'theme_location'    => 'header-menu', 
-                        'menu_class'        => 'nav navbar-nav navbar-left' ) );
+                        'theme_location'    => 'header-menu') );
             ?>
             <?php else : ?>
 				<li ><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo __( 'Add a Primary Menu', 'dblogger' );?>  </a></li>
 			<?php endif; ?>
         
-       
+       </ul>
                 <ul class="navbar-right social-links-top ">
                  <?php
                  if ( $socials = get_theme_mod( 'social' ) ) 
