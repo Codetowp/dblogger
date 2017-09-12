@@ -61,7 +61,7 @@ if ( ! function_exists( 'customizer_library_get_google_font_uri' ) ) :
 function customizer_library_get_google_font_uri( $fonts ) {
 
 	// De-dupe the fonts
-	$fonts         = array_unique( $fonts );
+    $fonts         = array_unique( $fonts );
 	$allowed_fonts = customizer_library_get_google_fonts();
 	$family        = array();
 
