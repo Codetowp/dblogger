@@ -167,8 +167,8 @@ if ( ! $disable1) : ?>
           <!--section-title-->
           <div class="section-title text-center">
              <?php 
-                $dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('pages', 'dblogger' ));
-                if ($dblogger_theme_title != '') echo '<h2>  ' . wp_kses_post($dblogger_theme_title) . ' </h2>'; 
+                $dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('Pages', 'dblogger' ));
+                if ($dblogger_theme_title != '') echo '<h2>' . wp_kses_post($dblogger_theme_title) . ' </h2>'; 
              ?>
                         
               
@@ -182,7 +182,7 @@ if ( ! $disable1) : ?>
           </div>
           <!--/section-title--> 
 			<?php 
-             $page_counts = get_theme_mod( 'dblogger_page_post_count' );
+             $page_counts = get_theme_mod( 'dblogger_page_post_count', esc_attr(6, 'dblogger' ) );
              $page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts ) ); ?>
 			 <?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			  	 
@@ -199,7 +199,7 @@ if ( ! $disable1) : ?>
               <h6><?php the_title(); ?> 
                   
                   <?php 
-                   $dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Session Tag', 'dblogger' ));
+                   $dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
                   if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; ?>
               </h6>
               <!--view-payment-->
@@ -252,7 +252,8 @@ if ( ! $disable1) : ?>
       </div>
            <?php 
         
-            $count_blog = get_theme_mod( 'dblogger_blog_post_count' , esc_html__('3', 'dblogger' ));
+            $count_blog = get_theme_mod( 'dblogger_blog_post_count' , esc_attr(2, 'dblogger' ));
+            $count_blog = $count_blog-1;
               $query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
         if ($query_post->have_posts()) :
           while ($query_post->have_posts()) : $query_post->the_post();

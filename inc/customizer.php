@@ -102,7 +102,7 @@ function dblogger_customize_register( $wp_customize ) {
 		
   */  
     $wp_customize->add_section( 'dblogger_theme_info', array(
-          'title'                 => __( 'Theme INFO', 'dblogger' ),
+          'title'                 => __( 'Documentation & Links', 'dblogger' ),
           'priority'              => 0,
        ) );   
    
@@ -219,7 +219,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     //************************** SOCIAL SECTION****************************************//  
     
     $wp_customize->add_section( 'social', array(
-        'title'                     => __( '[Dblogger]Header Social', 'dblogger'  ),
+        'title'                     => __( 'Social Links', 'dblogger'  ),
         'priority'                  => 99,
         'panel'                     => 'dblogger_panel',  
     ) );
@@ -347,8 +347,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
   //**************************  GUIDE SECTION****************************************//    
     
     $wp_customize->add_section('dblogger_guide_section', array(
-        'title'                     => __('Guide section', 'dblogger'),
-        'description'               => 'Easily edit the index',
+        'title'                     => __('Category section', 'dblogger'),
+        'description'               => 'Show any category posts on homepage',
         'priority'                  => 101,
          'panel'                     => 'dblogger_panel',  
     ) );
@@ -363,7 +363,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 			'settings' => 'dblogger_guide_check',
-			'label'    => __( 'Disable guide?', 'dblogger' ),
+			'label'    => __( 'Enable this section ?', 'dblogger' ),
 			'section'  => 'dblogger_guide_section',
 			'type'     => 'ios',
             'priority' => 1,
@@ -450,8 +450,8 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
   //************************** OUR THEME SECTION****************************************//    
     
     $wp_customize->add_section('dblogger_theme_section', array(
-        'title'                     => __('Our Theme section', 'dblogger'),
-        'description'               => 'Easily edit the index',
+        'title'                     => __('Pages section', 'dblogger'),
+        'description'               => 'Show your latest pages here',
         'priority'                  => 102,
         'panel'                     => 'dblogger_panel',  
     ) );
@@ -467,7 +467,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 			'settings' => 'dblogger_theme_check',
-			'label'    => __( 'Disable Theme?', 'dblogger' ),
+			'label'    => __( 'Disable this section', 'dblogger' ),
 			'section'  => 'dblogger_theme_section',
 			'type'     => 'ios',
             'priority' => 1,
@@ -476,7 +476,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
   
         
       $wp_customize->add_setting( 'dblogger_theme_title', array(  
-        'default'                   => esc_html__('Page', 'dblogger'),
+        'default'                   => esc_html__('Pages', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -530,7 +530,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
       ) );
     
     $wp_customize->add_setting( 'dblogger_tag_title', array(      
-        'default'                   => esc_html__('Session Tag', 'dblogger'),  
+        'default'                   => esc_html__('Tag', 'dblogger'),  
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
       ) );    
@@ -581,7 +581,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     
     $wp_customize->add_section('dblogger_blog_section', array(
         'title'                     => __('Our Blog Section', 'dblogger'),
-        'description'               => 'Easily edit the blog',
+        'description'               => 'Change settings for no of posts on homepage and manage related posts on single post.',
         'priority'                  => 103,
         'panel'                     => 'dblogger_panel', 
     ) );
@@ -597,7 +597,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_blog_check', array(
 			'settings' => 'dblogger_blog_check',
-			'label'    => __( 'Disable Theme?', 'dblogger' ),
+			'label'    => __( 'Disable Blog Section?', 'dblogger' ),
 			'section'  => 'dblogger_blog_section',
 			'type'     => 'ios',
             'priority' => 1,
@@ -635,7 +635,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     $wp_customize->add_setting(
     'dblogger_blog_post_count',
 		array(
-            'default'           => esc_html__('3', 'dblogger'),
+            'default'           => esc_attr(2, 'dblogger'),
 			'sanitize_callback' => 'dblogger_sanitize_integer',
             'transport'         => 'refresh',  
 		)
@@ -644,7 +644,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     'dblogger_blog_post_count',
     array(
         'type' => 'integer',
-        'label' => __('Number Of Blog To Show - i.e 10 (default is 3)','dblogger'),
+        'label' => __('Number Of Posts To Show','dblogger'),
         'section' => 'dblogger_blog_section',
 		
         )
@@ -674,7 +674,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable',                   array(
 			             'settings' => 'dblogger_newsletter_disable',
-			             'label'    => __( 'Enable Theme?', 'dblogger' ),
+			             'label'    => __( 'Enable newsletter?', 'dblogger' ),
 			             'section'  => 'dblogger_newsletter',
 			             'type'     => 'ios',
                          'priority' => 1,
@@ -730,36 +730,29 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
              ) );	
     
     
-    /*blog setting*/
+    /*blog setting
     
      $wp_customize->add_section('dblogger_blogsetting_section', array(
         'title'                     => __('Blog Settings Section', 'dblogger'),
         'description'               => 'Easily edit the blog',
         'priority'                  => 122,
        
-    ) );
+    ) );*/
     
-    
-     $wp_customize->add_setting(
-    'dblogger_post_related_post_count',
-		array(
-            'default' => '3',
+     $wp_customize->add_setting('dblogger_post_related_post_count', array(
+            'default' => 3,
 			'sanitize_callback' => 'dblogger_sanitize_integer'
 		)
     );
 
-    $wp_customize->add_control(
-    'dblogger_post_related_post_count',
-    array(
-        'type' => 'integer',
-		
-        'label' => __('Number Of Related Post To Show - i.e 10 (default is 3)','dblogger'),
-        'section' => 'dblogger_blogsetting_section',
-		
+    $wp_customize->add_control('dblogger_post_related_post_count', array(
+        'type' => 'integer',		
+        'label' => __('Number Of Related Post To Show','dblogger'),
+        'section' => 'dblogger_blog_section',		
         )
     );
     
-     $wp_customize->add_setting( 'dblogger_blogpage_disable', array(
+   /*  $wp_customize->add_setting( 'dblogger_blogpage_disable', array(
 			'default'    => '1',
 			'capability' => 'manage_options',
 			'transport' => 'postMessage',
@@ -771,13 +764,13 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 			'type'     => 'ios',
             'priority' => 1,
 
-	) ) );
+	) ) );*/
     
     /*Custom Fields*/
     
      $wp_customize->add_section('dblogger_custom_section', array(
-        'title'                     => __('Custom Settings', 'dblogger'),
-        'description'               => 'Easily edit the custom fields',
+        'title'                     => __('Custom Background', 'dblogger'),
+        'description'               => 'Add custom header for categories, 404, search etc',
         'priority'                  => 123,
        
     ) );

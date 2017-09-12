@@ -64,7 +64,7 @@
                         'menu_class'        => 'nav navbar-nav navbar-left' ) );
             ?>
             <?php else : ?>
-				<li ><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo __( 'Add a Primary Menu', 'dblogger' );?>  </a></li>
+				<ul class="nav navbar-nav navbar-left"><li class="menu-item"><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo __( 'Add a Primary Menu', 'dblogger' );?>  </a></li></ul>
 			<?php endif; ?>
         
                 <ul class="navbar-right social-links-top ">
