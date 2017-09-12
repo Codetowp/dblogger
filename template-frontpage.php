@@ -48,7 +48,7 @@ if ( ! $disable) : ?>
             <?php 
             $dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
             
-            $dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_html__('#', 'dblogger') );
+            $dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#', 'dblogger') );
             
             if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; ?>
             
@@ -114,7 +114,7 @@ if ( ! $disable1) : ?>
           while ($query->have_posts()) : $query->the_post();
        $values++;
     ?>
-      <li role="presentation" class="<?php echo $firstClass; ?>"><a href="<?php the_permalink;?>" aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
+      <li role="presentation" class="<?php echo $firstClass; ?>"><a href="#<?php echo $values;?>"  onclick="location.href='<?php the_permalink();?>'"  aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
  
       <?php  $firstClass = ""; endwhile;endif;?>
       
@@ -175,7 +175,7 @@ if ( ! $disable1) : ?>
            <?php 
             $dblogger_theme_button_text  = get_theme_mod( 'dblogger_theme_button_text', esc_html__('Read More', 'dblogger') );
             
-            $dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_html__('#', 'dblogger') );
+            $dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_url('#', 'dblogger') );
             
             if ($dblogger_theme_button_text != '' && $dblogger_theme_button_url != '') echo '<a  class="btn btn-white" href="' . esc_url($dblogger_theme_button_url) . '" >' . wp_kses_post($dblogger_theme_button_text) . '</a>'; ?>     
             <hr>
@@ -252,13 +252,13 @@ if ( ! $disable1) : ?>
       </div>
            <?php 
         
-              $count_blog = get_theme_mod( 'dblogger_blog_post_count' );
+            $count_blog = get_theme_mod( 'dblogger_blog_post_count' , esc_html__('3', 'dblogger' ));
               $query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
         if ($query_post->have_posts()) :
           while ($query_post->have_posts()) : $query_post->the_post();
          
             get_template_part( 'template-parts/content', get_post_format() );
-      
+        
         endwhile;endif;?>
     
       <?php wp_reset_postdata(); ?>

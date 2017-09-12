@@ -9,8 +9,6 @@ function dblogger_customize_register( $wp_customize ) {
 	require get_template_directory() . '/inc/lib/fo-to-range.php';
 	require get_template_directory() . '/inc/lib/theme-info.php';   
 
-    //require get_template_directory() . '/inc/customizer-library.php';
-    
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
@@ -331,7 +329,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 
     $wp_customize->add_setting( 'dblogger_button_url', array(      
-        'default'           => esc_html__( '#', 'dblogger' ),
+        'default'           => esc_url( '#', 'dblogger' ),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );   
@@ -505,7 +503,7 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
 
 
     $wp_customize->add_setting( 'dblogger_theme_button_url', array(     
-        'default'                   => esc_html__('#', 'dblogger'),
+        'default'                   => esc_url('#', 'dblogger'),
         'sanitize_callback'         => 'sanitize_text_field',
         'transport'                 => 'postMessage',               
     ) );    
@@ -637,16 +635,16 @@ $wp_customize->add_control( 'dblogger_banner_adsense_code', array(
     $wp_customize->add_setting(
     'dblogger_blog_post_count',
 		array(
-            'default' => '2',
-			'sanitize_callback' => 'dblogger_sanitize_integer'
+            'default'           => esc_html__('3', 'dblogger'),
+			'sanitize_callback' => 'dblogger_sanitize_integer',
+            'transport'         => 'refresh',  
 		)
     );
     $wp_customize->add_control(
     'dblogger_blog_post_count',
     array(
         'type' => 'integer',
-		
-        'label' => __('Number Of Blog To Show - i.e 10 (default is 2)','dblogger'),
+        'label' => __('Number Of Blog To Show - i.e 10 (default is 3)','dblogger'),
         'section' => 'dblogger_blog_section',
 		
         )

@@ -16,6 +16,11 @@ if ( ! defined( 'WPINC' ) ) {
 // Continue if the Customizer_Library isn't already in use.
 if ( ! class_exists( 'Customizer_Library' ) ) :
 
+
+// Helper functions for fonts.
+	require plugin_dir_path( __FILE__ ) . 'lib/fonts.php';
+
+
 	/**
 	 * Class wrapper with useful methods for interacting with the theme customizer.
 	 */

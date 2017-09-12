@@ -113,7 +113,7 @@ if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {
 
 
 
-/*
+
 function customizer_library_get_default( $setting ) {
 
 	$customizer_library = Customizer_Library::Instance();
@@ -123,4 +123,4 @@ function customizer_library_get_default( $setting ) {
 		return $options[$setting]['default'];
 	}
 
-}*/
+}

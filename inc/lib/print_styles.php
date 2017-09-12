@@ -21,7 +21,7 @@ if (!function_exists('dblogger_paragraph_font'))  {
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
-			echo "\n" . 'p{' . $append_family . '}' ;
+			echo "\n" . 'p{' . $append_family . '}' ."\n". '#guide-block p{'.$append_family.'}' ."\n". '#guide-block .nav-tabs h6{'.$append_family.'}' ."\n". '#newsletter-block p{' .$append_family.'}' ."\n". '#Blog-home p{'.$append_family.'}' ."\n". '.widget ul li{'.$append_family.'}' . "\n". '.widget widget-title{'.$append_family.'}' . "\n" . '#home-banner span{'.$append_family.'}';
 		}
 		echo "\n". "</style>". "\n";
 	}
