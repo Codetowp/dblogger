@@ -9,7 +9,7 @@
 
 ?>
  <!--blog post-->
-      <article class="col-md-6">
+      <article class="col-md-6 eq-blocks">
           <a href="<?php the_permalink();?>">
                <?php
             if  ( get_the_post_thumbnail()!='')

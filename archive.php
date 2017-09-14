@@ -69,7 +69,7 @@ get_header(); ?>
         <nav class="navigation posts-navigation"  role="navigation">
           <ul>
               
-              
+              <li>
           <?php 	
 		the_posts_pagination( array(
 	        'prev_text' => '<i class="pull-left"></i> ' . __( 'Newer posts', 'dblogger' ),
@@ -78,7 +78,7 @@ get_header(); ?>
 		?>
 		
 		<?php wp_reset_postdata(); ?>
-              
+           </li>   
         
           </ul>
         </nav>
