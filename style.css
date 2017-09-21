@@ -1501,12 +1501,13 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
 	padding: 30px;
 }
 .modal-body p {
-	font-size: 17px;
+	font-size: 17px !important;
 	color: #343e5c;
 	letter-spacing: 0.8px;
 	text-align: center;
 	font-family: 'PT Serif', serif;
 	line-height: 1.7;
+    margin-bottom: 0 !important;
 }
 .close:hover {
 	color: #CCC;
