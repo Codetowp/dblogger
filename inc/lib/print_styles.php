@@ -49,10 +49,10 @@ if (!function_exists('dblogger_paragraph_font_color'))  {
 	function dblogger_paragraph_font_color(){
 		echo '<style type="text/css" >';
 		$color_value = get_theme_mod('dblogger_paragraph_font_color', '');
-		$append_color = sprintf( 'color: %s !important;',  $color_value );
+		$append_color = sprintf( 'color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" . 'p{' . $append_color . '}' ;
+			echo "\n" . '#theme-details p, .single .single-post p{' . $append_color . '}' ;
 		}
 		echo "\n". "</style>". "\n";
 	}

@@ -3,7 +3,7 @@
 function dblogger_related_post() {
 
 	$args = '';
-    $count = get_theme_mod( 'dblogger_post_related_post_count' );
+    $count = get_theme_mod( 'dblogger_post_related_post_count', 3 );
       
 	$args = wp_parse_args( $args, array(
 		'category__in'   => wp_get_post_categories( get_the_ID() ),
@@ -46,8 +46,8 @@ function dblogger_related_post() {
 				printf(
 					'<div class="col-md-4 theme-post">%s 
                         <div class="theme-post-caption">
-                            <h6><span class="badge badge-info">%s</span></h6>
-                            <div class="view-payment"> <a href="%s">View Theme</a></div>
+                            <h6>%s</h6>
+                            <div class="view-payment"> <a href="%s">Read More</a></div>
                         </div>
                     </div> 
                    ',

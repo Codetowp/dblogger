@@ -79,7 +79,7 @@ get_header(); ?>
                     'orderby' => 'name',
                     'parent' => 0
                     );
-              $categories = get_categories( $args );
+              $categories = get_tags( $args );
               if($categories!='')
               {
               foreach ( $categories as $category ) {
@@ -106,17 +106,9 @@ get_header(); ?>
         <!--posts navigation-->
         <nav class="navigation posts-navigation"  role="navigation">
             
-          <?php  //the_post_navigation(); ?>
-            
-         <!-- <ul>
-            <li class="pull-left">
-              <div class="nav-previous"><a href="http://localhost/wordpress/page/2/"><i class="fa fa-chevron-left"></i> Previous post</a></div>
-            </li>
-            <li class="pull-right">
-              <div class="nav-next"><a href="http://localhost/wordpress/page/2/">Next post <i class="fa fa-chevron-right"></i></a></div>
-            </li>
-          </ul>-->
-        </nav>
+          <?php  the_post_navigation(); ?>
+
+          </nav>
         <!--/posts navigation-->
         
         <div class="clearfix"></div>
@@ -155,5 +147,4 @@ get_header(); ?>
 
 
 <?php
-//get_sidebar();
 get_footer();

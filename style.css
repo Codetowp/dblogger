@@ -803,9 +803,9 @@ button + .dropdown-menu {
 	background: #ff4a5d;
 	color: #fff;
 }
-.posts-navigation .nav-next {
-}
-.posts-navigation .nav-previous {
+span.page-numbers.current {
+    background: #f0f2f7;
+    padding: 15px 18px;
 }
 header.entry-header .date-article {
 	color: #a1aaba;
@@ -1858,7 +1858,11 @@ aside .widget_search .input-group {
 .widget_recent_entries li a {
 	display: inline-block;
 	margin-left: 0px;
-	float: left;
+    padding: 8px 0;
+}
+.widget_recent_entries span.post-date {
+    float: left;
+    display: inline-block;
 }
 .widget_recent_entries ul li .media-body p {
 	color: #193f5d;
@@ -2856,7 +2860,7 @@ article a h5:hover {
 }
 article p {
 	font-size: 14px;
-	color: #95979c;
+	color: #73757d;
 	font-weight: 400;
 	margin-top: 15px;
 	letter-spacing: 0.5px;
@@ -3186,8 +3190,8 @@ display: block;
 	margin: 10px 0;
 }
 .single .single-post ul, .single .single-post ol {
-	margin-left: 50px;
-	margin-bottom: 48px;
+	/*margin-left: 50px;*/
+	margin-bottom: 8px;
 }
 .single .single-post ul li {
 	list-style: none;
@@ -3297,11 +3301,11 @@ display: block;
 	font-style: italic;
 }
 .single .single-post p {
-	padding-left: 60px;
+	/*padding-left: 60px;*/
 }
 .single .single-post p span {
 	display: block;
-	margin: 60px 0;
+	/*margin: 60px 0;*/
 }
 .single #d.single-post p:first-child {
 	color: #5e6977;
@@ -3336,15 +3340,15 @@ display: block;
 	-webkit-transition: all 0.6s
 }
 .single .single-post h1, .single .single-post h2, .single .single-post h3, .single .single-post h4, .single .single-post h5, .single .single-post h6 {
-	padding-left: 60px;
+	/*padding-left: 60px;*/
 }
 .single .single-post footer.entry-meta-bar {
-	padding-left: 60px;
+	padding-left: 20px;
 	margin-top: 30px;
 }
 .single .single-post footer.entry-meta-bar .fa {
 	position: absolute;
-	left: 42px;
+	left: 0;
 	z-index: 10;
 	color: #e4e7ef;
 	font-size: 18px;

@@ -85,15 +85,7 @@ class Dblogger_Premium extends WP_Widget{
                     ?>  
 
             </li>
-              
-             <li> <!--search form-->
-                         
-                        <form  action="<?php echo esc_url( home_url( '/' ) ); ?>" id="search">
-                            <input  type="text" size="40" placeholder="<?php echo esc_attr_x( 'Type Here&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'dblogger' ); ?>">
-                        </form>
-                        <!--/search form--> 
-                    </li>  
-              
+
                 <?php }?>
             
 </ul>

@@ -72,7 +72,7 @@ get_header(); ?>
               <li>
           <?php 	
 		the_posts_pagination( array(
-	        'prev_text' => '<i class="pull-left"></i> ' . __( 'Newer posts', 'dblogger' ),
+	        'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
 	        'next_text' => __( 'Older posts', 'dblogger' ) . ' <i class="fa fa-chevron-right"></i>' ,
 	    ) );
 		?>

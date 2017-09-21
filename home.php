@@ -33,13 +33,14 @@ get_header(); ?>
         <div class="clearfix"></div>
         <nav class="navigation posts-navigation"  role="navigation">
           <ul>
-            
+            <li>  
           <?php 	
 		the_posts_pagination( array(
-	        'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
+            'mid_size' => 3,
+	       'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
 	        'next_text' => __( 'Older posts', 'dblogger' ) . ' <i class="fa fa-chevron-right"></i>' ,
 	    ) );
-		?>
+		?></li>  
           </ul>
         </nav>
       </div>
