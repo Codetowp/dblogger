@@ -182,6 +182,9 @@ header a.navbar-brand {
 	padding: 0;
 	font-weight: 900;
 }
+
+header a.navbar-brand img{max-height: 90px; max-width: 340px; overflow: hidden; object-fit: contain;}
+
 #top-menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
 	color: #FFF;
@@ -217,6 +220,7 @@ header a.navbar-brand {
 	top: 100%;
 	left: 0;
 	padding: 0;
+	z-index:99;
 	padding-top: 30px;
 }
 #top-menu.navbar-default .navbar-nav li.menu-item-has-children a.page-scroll:after {
@@ -1753,7 +1757,7 @@ dd {
 	padding: 4px 8px;
 	margin-bottom: 0;
 	text-transform: uppercase;
-	font-size: 11px;
+	font-size: 11px !important;
 	font-weight: 600;
 	line-height: 1.42857143;
 	text-align: center;
@@ -2196,6 +2200,7 @@ aside li a:hover {
 	font-size: 14px;
 	letter-spacing: 0.6px;
 	line-height: 1.7;
+	margin-bottom:0;
 }
 
 #comments form label{font-family: 'Montserrat', sans-serif; font-weight:400;}
@@ -2253,10 +2258,11 @@ aside li a:hover {
     left: 120px;*/
 }
 #comments ol li ol {
-	border-top: 1px #e1e1e1 solid;
+	border-top: 0px #e1e1e1 solid;
 }
+#comments ol li:frist-child{border-bottom: 0px #e1e1e1 solid; border-top: 0px #e1e1e1 solid;}
 #comments ol li ol li {
-	border-bottom: 1px #e1e1e1 solid;
+	border-bottom: 0px #e1e1e1 solid;
 	word-wrap: break-word;
 	padding-left: 50px;
 }
@@ -2288,6 +2294,12 @@ aside li a:hover {
 	margin-right: 5px;
 	color: #73757d;
 }
+
+#comments .comment-meta{}
+
+#comments ol {margin-left:inherit;}
+
+
 #respond h3 {
 	padding-left: 0;
 }
@@ -2794,7 +2806,9 @@ article {
 	margin-bottom: 40px;
 }
 article a img {
-	max-height: 350px;
+	max-height: 280px;
+	min-height: 280px;
+	overflow:hidden;
 	width: 100%;
 	object-fit: cover;
 	display: block;
@@ -3067,10 +3081,8 @@ display: block;
 	text-align: center;
 }
 #theme-details p img, .single .single-post p img {
-	max-height: 430px;
 	overflow: hidden;
 	object-fit: cover;
-	width: 100%;
 	margin-bottom: 72px;
 }
 .Features-block {
@@ -3349,7 +3361,8 @@ display: block;
 	border-radius: 8px;
 	display: inline-block;
 	padding: 4px 8px;
-	margin-bottom: 0;
+	margin-bottom: 2px;
+	margin-top:2px;
 	text-transform: uppercase;
 	font-size: 11px;
 	font-weight: 600;
@@ -3366,6 +3379,9 @@ display: block;
 	user-select: none;
 	background-image: none;
 }
+
+
+
 .single .single-post footer.entry-meta-bar a:hover {
 	webkit-transition: all 300ms ease-in-out;
 	transition: all 300ms ease-in-out;

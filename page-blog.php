@@ -61,7 +61,7 @@ get_header(); ?>
         <div class="clearfix"></div>
         <nav class="navigation posts-navigation"  role="navigation">
           <ul>
-            
+           
        <?php 	
 		the_posts_pagination( array(
 	        'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
@@ -70,6 +70,7 @@ get_header(); ?>
 		?>
               
 		<?php wp_reset_postdata(); ?>
+       
           </ul>
         </nav>
       </div>
