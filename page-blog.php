@@ -19,7 +19,7 @@ get_header(); ?>
     $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
     $image = $background_img ? "$background_img" : "$background_img_static"; 
 ?>
-<Section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
+<section id="page-banner" style="background-image: url(<?php echo $image; ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container"> 
@@ -33,7 +33,7 @@ get_header(); ?>
       </div>
     </div>
   </div>
-</Section>
+</section>
 
 <section id="Blog-home">
   <div class="container">
@@ -53,15 +53,17 @@ get_header(); ?>
           
                     get_template_part( 'template-parts/content', get_post_format() );
           
+            
+          
              endwhile; ?>
-        <!--/article grid--> 
-        
+        <!--/article grid-->   
+          
 		<?php endif; ?>
         
         <div class="clearfix"></div>
         <nav class="navigation posts-navigation"  role="navigation">
           <ul>
-           
+
        <?php 	
 		the_posts_pagination( array(
 	        'prev_text' => '<i class="fa fa-chevron-left"></i> ' . __( 'Newer posts', 'dblogger' ),
@@ -70,7 +72,8 @@ get_header(); ?>
 		?>
               
 		<?php wp_reset_postdata(); ?>
-       
+
+      
           </ul>
         </nav>
       </div>
