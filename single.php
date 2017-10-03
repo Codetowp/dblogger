@@ -35,7 +35,7 @@ get_header(); ?>
         </ol>
         <!--/breadcrumb-->
         <h1><?php the_title(); ?> </h1>
-        <header class="entry-header"><a href="#"> </a><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span> <!--in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+        <header class="entry-header"><span class="date-article"><?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago'; ?></span> </header>
       </div>
     </div>
 </div>
@@ -97,7 +97,7 @@ get_header(); ?>
         <div class="author-box"><?php echo get_avatar( get_the_author_meta('user_email'), '100', '' ); ?> <!--<img alt="" src="img/a-1.jpg"  class="avatar " height="100" width="100">-->
           <div class="author-box-title"> Authored By <a href="#" rel="author"><?php the_author_link(); ?> </a> </div>
           <div class="author-description"><?php the_author_meta('description'); ?></div>
-          <div class="author_social"> </div>
+          <div class="author_social"> <a href="<?php echo get_the_author_meta('url') ; ?>"><i class="fa fa-globe"></i></a> </div>
         </div>
         <!--/author box-->
         
