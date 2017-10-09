@@ -136,9 +136,9 @@ if ( ! $disable1) : ?>
     <div role="tabpanel" class="tab-pane <?php echo $firstClass; ?>" id="<?php echo $values;?>"><?php
             if  ( get_the_post_thumbnail()!='')
             {?>
-              <a href="<?php the_permalink();?>"><?php the_post_thumbnail(); ?></a>
+              <a href="<?php the_permalink();?>"><?php the_post_thumbnail('dblogger_homepage'); ?></a>
             <?php }else{?>
-          <img src="<?php echo get_template_directory_uri()?>/img/p-1.jpg" class="img-responsive">
+          <img src="<?php echo get_template_directory_uri()?>/img/default.jpg" class="img-responsive">
           <?php } ?>
     </div>
       <?php  $firstClass = ""; endwhile;endif;?>
@@ -190,9 +190,9 @@ if ( ! $disable1) : ?>
           <div class="col-md-4 theme-post "> 
               <?php 
                 if(get_the_post_thumbnail()){
-                 echo $img=get_the_post_thumbnail();
+                 echo $img=get_the_post_thumbnail('dblogger_theme');
                 }else{?>
-                     <img src="<?php echo get_template_directory_uri()?>/img/b-1.jpg" class="img-responsive">
+                     <img src="<?php echo get_template_directory_uri()?>/img/default.jpg" class="img-responsive">
               <?php  }  ?>
              
             <div class="theme-post-caption eq-blocks">

@@ -18,11 +18,11 @@ get_header(); ?>
 
             if  ( get_the_post_thumbnail_url()!='')
             {
-             $img = get_the_post_thumbnail_url(); 
+             $img = get_the_post_thumbnail_url('dblogger_single_artical'); 
             }
             else
             {  
-                $img = get_template_directory_uri()."/img/p-2.jpg" ; 
+                $img = get_template_directory_uri()."/img/default.jpg" ; 
             }
 ?>
 
@@ -75,11 +75,8 @@ get_header(); ?>
                   
                   
            <?php
-               $args = array(
-                    'orderby' => 'name',
-                    'parent' => 0
-                    );
-              $categories = get_tags( $args );
+            
+              $categories = get_the_tags( );
               if($categories!='')
               {
               foreach ( $categories as $category ) {

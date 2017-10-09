@@ -157,7 +157,12 @@ add_action( 'widgets_init', 'dblogger_widgets_init' );
 	require get_template_directory() . '/inc/lib/print_styles.php';
 
 // Custom Theme Image Sizes	
-add_image_size( 'dblogger_recent_post', 565, 350,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_recent_post', 60, 60,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_header', 1900, 560,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_homepage', 570, 350,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_theme', 375, 210,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_single_artical', 1900, 500,  array( 'top', 'center' ) );
+add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
 
 // Breadcrumb Function
 function the_breadcrumb() {
