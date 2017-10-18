@@ -44,20 +44,14 @@ $image = $background_img ? "$background_img" : "$background_img_static";
 				while ( have_posts() ) : the_post();
 					if ( get_post_thumbnail_id() != '' ) {
 						$single_post = wp_get_attachment_url( get_post_thumbnail_id( get_the_id() ) );
-					}else{
+					} else {
 						$single_post = get_template_directory_uri() . '/img/b-1.jpg';
 					}
 			?>
 
 					<!--blog post-->
-					<article class="col-md-6 eq-blocks">
-						<a href="<?php the_permalink();?>"><img src="<?php echo esc_url( $single_post );?>" class="img-responsive"></a>
-						<header class="entry-header">
-							<a href="<?php the_permalink();?>"><h5><?php the_title(); ?></h5></a> 
-							<span class="date-article"><?php echo esc_html_e( human_time_diff( get_the_time('U'), current_time('timestamp') ),'dblogger' ) . 'ago'; ?></span> 
-						</header>
-						<p><?php echo the_excerpt();?></p>
-					</article>
+					<?php get_template_part( 'template-parts/content', get_post_format() );?>
+				
 					<!--/blog post--> 
 
 			<?php
@@ -72,7 +66,7 @@ $image = $background_img ? "$background_img" : "$background_img_static";
 							the_posts_pagination(
 								array(
 									'prev_text' => '<i class="fa fa-chevron-left"></i>' . __( 'Newer posts', 'dblogger' ),
-									'next_text' => __( 'Older posts', 'dblogger' ) . ' <i class="fa fa-chevron-right"></i>' ,
+									'next_text' => __( 'Older posts', 'dblogger' ) . '<i class="fa fa-chevron-right"></i>',
 								)
 							);
 							?>

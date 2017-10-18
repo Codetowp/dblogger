@@ -26,9 +26,9 @@
 				$logo = wp_get_attachment_image_src( $custom_logo , 'full' );
 				if ( has_custom_logo() ) {
 					echo '<a class="navbar-brand" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $logo[0] ) . '"></a>';
-				} else {
-					echo '<a class="navbar-brand" href="' . esc_url( home_url( '/' ) ) . '"><h3>' . esc_html_e( get_bloginfo( 'name' , 'dblogger' ) . '</h3></a>';
-				}
+				}else{
+                    echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'"><h3>'. esc_html( get_bloginfo( 'name' ) ) .'</h3></a>';}
+					
 				?>
 				<div class="col-md-8 pull-right"> 
 					<?php
@@ -62,7 +62,7 @@
 						'menu_class'        => 'nav navbar-nav navbar-left' ) );
 					?>
 				<?php else : ?>
-					<ul class="nav navbar-nav navbar-left"><li class="menu-item"><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo __( 'Add a Primary Menu', 'dblogger' );?>  </a></li></ul>
+					<ul class="nav navbar-nav navbar-left"><li class="menu-item"><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo esc_html_e( 'Add a Primary Menu', 'dblogger' );?>  </a></li></ul>
 				<?php endif; ?>
 				<ul class="navbar-right social-links-top ">
 					<?php
@@ -71,7 +71,7 @@
 						$socials = $socials ? array_filter( $socials ) : array();
 						foreach ( $socials as $social => $name ) 
 						{
-						printf(' <li> <a href="%s" ><i class="fa fa-%s"></i></a></li> <li> ', esc_url( $name ), esc_html_e($social) );
+						printf(' <li> <a href="%s" ><i class="fa fa-%s"></i></a></li> <li> ', esc_url( $name ), esc_html($social) );
 						}
 					}?>
 					<li> <!--search form-->

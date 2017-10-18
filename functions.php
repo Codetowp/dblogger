@@ -160,9 +160,9 @@ add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
 function the_breadcrumb() {
 	if ( ! is_home() ) {
 		echo '<a href="';
-		echo home_url( 'home' );
+		echo esc_url(home_url( 'home' ));
 		echo '">';
-		echo __( 'Home', 'dblogger' );
+		echo esc_html_e( 'Home', 'dblogger' );
 		echo '</a> /';
 		if ( is_category() || is_single() ) {
 			the_category( ',' );			
