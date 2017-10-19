@@ -52,7 +52,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->remove_section('header_image');
 	$wp_customize->remove_control('display_header_text');
 	$wp_customize->remove_section('background_image');    
-	$wp_customize->get_section('title_tagline')->title = esc_html_e( 'Branding' , 'dblogger' ); 
+	$wp_customize->get_section('title_tagline')->title = __( 'Branding' , 'dblogger' ); 
     
     $wp_customize->add_setting( 'dblogger_accent_color',  
 		array(
@@ -257,7 +257,7 @@ function dblogger_customize_register( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize,'dblogger_back_img', array(
-        'label'                     => esc_html_e( 'Background Image', 'dblogger' ),
+        'label'                     => __( 'Background Image', 'dblogger' ),
         'section'                   => 'dblogger_header',
         'settings'                  => 'dblogger_back_img',
         'context'                   => 'dblogger_back_img',
@@ -321,7 +321,7 @@ function dblogger_customize_register( $wp_customize ) {
   //**************************  GUIDE SECTION****************************************//    
     
     $wp_customize->add_section('dblogger_guide_section', array(
-        'title'                     => esc_html_e('Category section', 'dblogger'),
+        'title'                     => __('Category section', 'dblogger'),
         'description'               => 'Show any category posts on homepage',
         'priority'                  => 101,
          'panel'                     => 'dblogger_panel',  
@@ -337,7 +337,7 @@ function dblogger_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 		'settings' => 'dblogger_guide_check',
-		'label'    => esc_html_e( 'Enable this section ?', 'dblogger' ),
+		'label'    => __( 'Enable this section ?', 'dblogger' ),
 		'section'  => 'dblogger_guide_section',
 		'type'     => 'ios',
 		'priority' => 1,) 
@@ -352,7 +352,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,'dblogger_guide_icon', array(
-		'label'                     => esc_html_e( 'Guide Icon', 'dblogger' ),
+		'label'                     => __( 'Guide Icon', 'dblogger' ),
 		'section'                   => 'dblogger_guide_section',
 		'settings'                  => 'dblogger_guide_icon',
 		'context'                   => 'dblogger_guide_icon',
@@ -366,7 +366,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );    
 	$wp_customize->add_control( 'dblogger_guide_title', array(
 		'type'						=> 'text',
-		'label' 					=> esc_html_e( 'Title', 'dblogger' ),
+		'label' 					=> __( 'Title', 'dblogger' ),
 		'section'  					=> 'dblogger_guide_section',
 		'priority' 					=> 2,
 	) );	   
@@ -378,7 +378,7 @@ function dblogger_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control( 'dblogger_guide_desc', array(
 		'type'                      => 'textarea',
-		'label'                     => esc_html_e( 'Description', 'dblogger' ),
+		'label'                     => __( 'Description', 'dblogger' ),
 		'section'                   => 'dblogger_guide_section',
 		'priority'                  =>  3,
 	) );
@@ -738,7 +738,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Image_Control(
 		$wp_customize,'dblogger_custom_img', array(
-			'label'                     => esc_html_e( 'Custom Background Image', 'dblogger' ),
+			'label'                     => __( 'Custom Background Image', 'dblogger' ),
 			'section'                   => 'dblogger_custom_section',
 			'settings'                  => 'dblogger_custom_img',
 			'context'                   => 'dblogger_custom_img',
@@ -800,7 +800,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'type'     => 'range-value',
 		'section'  => 'dblogger_font_settings',
 		'settings' => 'dblogger_paragraph_font_size',        
-		'label'    => esc_html_e( 'Pick Paragraph Font Size' , 'dblogger' ),
+		'label'    => __( 'Pick Paragraph Font Size' , 'dblogger' ),
 		'description'   => esc_attr__('Default : 16px', 'dblogger' ),
 		'input_attrs' => array(
 		'min'    => 11,
