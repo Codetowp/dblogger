@@ -23,13 +23,13 @@ function dblogger_related_post() {
                 
                 if  ( get_the_post_thumbnail()=='')
                 {
-                    $background_img_relatedpost   = get_template_directory_uri()."/img/t-1.jpg";
+                    $background_img_relatedpost   = get_template_directory_uri() . '/img/default.jpg';
                     
                     $post_thumbnail= '<img src="'.$background_img_relatedpost.'" class="img-responsive">';
                 }
                 else
                 {
-                    $post_thumbnail = get_the_post_thumbnail( get_the_ID(), 'img-responsive' );
+                    $post_thumbnail = get_the_post_thumbnail( get_the_ID(), 'dblogger_related_post' ,  'img-responsive' );
                 }
                 
 				$class_format = '';
@@ -51,10 +51,10 @@ function dblogger_related_post() {
                         </div>
                     </div> 
                    ',
-					$post_thumbnail,
-                    $title,
+					esc_url( $post_thumbnail ),
+                    esc_html( $title ),
                     esc_url( get_permalink() ),
-                    $class_format
+                    esc_html( $class_format )
 				);
 				?>
 			<?php
