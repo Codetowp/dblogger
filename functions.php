@@ -94,11 +94,16 @@ add_action( 'after_setup_theme', 'dblogger_setup' );
  *
  * @global int $content_width
  */
+ 
 function dblogger_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'dblogger_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'dblogger_content_width', 0 );
-// Global variables
+
+/**
+ * Global variables
+ */ 
+
 global $options_categories;
 $options_categories = array();
 $options_categories_obj = get_categories();
@@ -106,9 +111,11 @@ foreach ( $options_categories_obj as $category ) {
 	$options_categories[ $category->cat_ID ] = $category->cat_name;
 }
 
-/*fonts*/
-function demo_fonts() {
+/**
+ * Fonts
+ */
 
+function demo_fonts() {
 	// Font options
 	$fonts = array(
 		get_theme_mod( 'dblogger_paragraph_font', customizer_library_get_default( 'primary-font' ) ),
@@ -156,7 +163,10 @@ add_action( 'widgets_init', 'dblogger_widgets_init' );
 	add_image_size( 'dblogger_single_artical', 1900, 500,  array( 'top', 'center' ) );
 	add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
 
-// Breadcrumb Function
+/**
+ * Breadcrumb Function
+ */
+ 
 function the_breadcrumb() {
 	if ( ! is_home() ) {
 		echo '<a href="';
@@ -211,6 +221,7 @@ function dblogger_js_scripts() {
     wp_enqueue_script( 'dblogger-wow-min', get_template_directory_uri() . '/js/wow.min.js', array(), '20151215', true );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_js_scripts' );
+
 /**
  * Implement the Custom Header feature.
  */

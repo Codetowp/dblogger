@@ -31,7 +31,7 @@ class Dblogger_Premium extends WP_Widget{
 	/* *front-end widget form.
 	front page view */
 	public function widget( $args, $instance ){
-		echo esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 	?>
 		<?php if(! empty( $instance['social_title'] ) ){?>
 			<h2 class="widget-title"><?php echo esc_html( apply_filters( 'widget_title', $instance['social_title'] ) );?></h2>
@@ -73,7 +73,7 @@ class Dblogger_Premium extends WP_Widget{
 		<?php }?>
 		</ul>
 		<?php
-		echo esc_html( $args['after_widget'] );
+		echo $args['after_widget'];
 	}
 
 	/**
