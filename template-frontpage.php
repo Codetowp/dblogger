@@ -181,7 +181,7 @@ if ( ! $disable1) : ?>
 				<div class="col-md-4 theme-post "> 
 					<?php 
 					if(get_the_post_thumbnail()){
-						echo $img =  esc_html( get_the_post_thumbnail('dblogger_theme') ) ;
+						echo  esc_html( get_the_post_thumbnail('dblogger_theme') ) ;
 					}else{
 						$page_post_img= get_template_directory_uri() . '/img/default.jpg' ;
 						?>

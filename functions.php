@@ -103,7 +103,7 @@ global $options_categories;
 $options_categories = array();
 $options_categories_obj = get_categories();
 foreach ( $options_categories_obj as $category ) {
-	$options_categories[$category->cat_ID] = $category->cat_name;
+	$options_categories[ $category->cat_ID ] = $category->cat_name;
 }
 
 /*fonts*/
@@ -148,19 +148,19 @@ add_action( 'widgets_init', 'dblogger_widgets_init' );
 	require get_template_directory() . '/inc/lib/related-post.php';
 	require get_template_directory() . '/inc/lib/print_styles.php';
 	require get_template_directory() . '/inc/widgets/recentpost.php';
-// Custom Theme Image Sizes
-add_image_size( 'dblogger_recent_post', 60, 60,  array( 'top', 'center' ) );
-add_image_size( 'dblogger_header', 1900, 560,  array( 'top', 'center' ) );
-add_image_size( 'dblogger_homepage', 570, 350,  array( 'top', 'center' ) );
-add_image_size( 'dblogger_theme', 375, 210,  array( 'top', 'center' ) );
-add_image_size( 'dblogger_single_artical', 1900, 500,  array( 'top', 'center' ) );
-add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
+	// Custom Theme Image Sizes
+	add_image_size( 'dblogger_recent_post', 60, 60,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_header', 1900, 560,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_homepage', 570, 350,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_theme', 375, 210,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_single_artical', 1900, 500,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
 
 // Breadcrumb Function
 function the_breadcrumb() {
 	if ( ! is_home() ) {
 		echo '<a href="';
-		echo esc_url(home_url( 'home' ));
+		echo esc_url( home_url( 'home' ) );
 		echo '">';
 		echo esc_html_e( 'Home', 'dblogger' );
 		echo '</a> /';
@@ -176,12 +176,12 @@ function the_breadcrumb() {
  * Enqueue scripts and styles.
  */
 
-function dblogger_css_styles() { 
-    wp_enqueue_style( 'dblogger-bootstrap' , get_template_directory_uri() . '/css/bootstrap.css');
-    wp_enqueue_style( 'dblogger-font-awesome' , get_template_directory_uri() . '/css/font-awesome.css');
-    wp_enqueue_style( 'dblogger-animate' , get_template_directory_uri() . '/css/animate.css');
-    wp_enqueue_style( 'dblogger-style' , get_template_directory_uri() . '/style.css');
-    wp_enqueue_style( 'dblogger-googleapis', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900');    
+function dblogger_css_styles(){
+    wp_enqueue_style( 'dblogger-bootstrap' , get_template_directory_uri() . '/css/bootstrap.css' );
+    wp_enqueue_style( 'dblogger-font-awesome' , get_template_directory_uri() . '/css/font-awesome.css' );
+    wp_enqueue_style( 'dblogger-animate' , get_template_directory_uri() . '/css/animate.css' );
+    wp_enqueue_style( 'dblogger-style' , get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'dblogger-googleapis', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900' );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_css_styles' );
 

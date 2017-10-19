@@ -51,11 +51,11 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						{
 							$background_img_relatedpost   = get_template_directory_uri()."/img/default.jpg";
 
-							echo   $post_thumbnail  = '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
+							echo   '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
 						}
 						else
 						{
-							echo  $post_thumbnail  =  esc_url( get_the_post_thumbnail( get_the_ID(),'dblogger_related_post' ) ) ;
+							echo   get_the_post_thumbnail( get_the_ID(),'dblogger_related_post' );
 						}   
 						?>
 					</a>

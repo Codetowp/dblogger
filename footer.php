@@ -24,8 +24,9 @@
 							<ul>
 								<?php
 								wp_nav_menu( array(
-								'theme_location'    => 'footer-menu',
-								'menu_class'        => 'bottom-nav' ) 
+										'theme_location'    => 'footer-menu',
+										'menu_class'        => 'bottom-nav',
+									)
 								);
 								?>
 							</ul>
@@ -45,5 +46,6 @@
 		<script>
 			new WOW().init();
 		</script>
+		
 	</body>
 </html>
