@@ -160,7 +160,7 @@ add_action( 'widgets_init', 'dblogger_widgets_init' );
 	add_image_size( 'dblogger_header', 1900, 560,  array( 'top', 'center' ) );
 	add_image_size( 'dblogger_homepage', 570, 350,  array( 'top', 'center' ) );
 	add_image_size( 'dblogger_theme', 375, 210,  array( 'top', 'center' ) );
-	add_image_size( 'dblogger_single_artical', 1900, 500,  array( 'top', 'center' ) );
+	add_image_size( 'dblogger_single_article', 1900, 500,  array( 'top', 'center' ) );
 	add_image_size( 'dblogger_related_post', 250, 140,  array( 'top', 'center' ) );
 
 /**
@@ -173,9 +173,9 @@ function the_breadcrumb() {
 		echo esc_url( home_url( 'home' ) );
 		echo '">';
 		echo esc_html_e( 'Home', 'dblogger' );
-		echo '</a> /';
+		echo '</a> / ';
 		if ( is_category() || is_single() ) {
-			the_category( ',' );			
+			the_category( ',' );
 		} elseif ( is_page() ) {
 			echo the_title();
 		}

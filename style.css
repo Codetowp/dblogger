@@ -64,10 +64,6 @@ font-family: 'PT Serif', serif;
 
 */
 
-
-
-
-
 /* Bootstrap handles reset of basic elements */
 
 /*--------------------
@@ -127,12 +123,11 @@ p {
 	line-height: 24px;
 	position: relative;
 }
-p a {
+a {
 	color: #3b3e8a;
-	text-decoration: underline;
 }
-p a:hover {
-	color: #4be1ab;
+a:hover {
+	color: #ff4a5b;
 	opacity: 0.8;
 	transition: all 0.5s;
 	-moz-transition: all 0.5s;
@@ -786,7 +781,7 @@ button + .dropdown-menu {
 .posts-navigation ul li:before {
 	display: none !important;
 }
-.posts-navigation ul li a {
+.posts-navigation ul li a, .nav-links a {
 	background: #fff;
 	font-family: 'Montserrat', sans-serif;
 	color: #3a405b;
@@ -796,7 +791,7 @@ button + .dropdown-menu {
 	border-radius: 0px;
 	border: 0px #9c9c9c solid;
 }
-.posts-navigation ul li a:hover {
+.posts-navigation ul li a:hover, .nav-links a:hover {
 	transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -3252,6 +3247,7 @@ display: block;
 #single-banner h1 {
 	color: #fff;
 	font-weight: 500;
+	max-width: 700px;
 }
 #single-banner h5 {
 	color: #fff;
@@ -4378,4 +4374,26 @@ div.bbp-breadcrumb p a {
 
 time:nth-child(2) {
     display: none;
+}
+.single-post .entry-date {
+    color: #fff;
+}
+span.byline {
+    margin-left: 5px;
+}
+.nav-previous {
+    float: left;
+}
+.nav-next {
+    float: right;
+}
+.nav-previous a:before {
+    content: "\f053";
+    font-family: fontawesome;
+    margin-right: 5px;
+}
+.nav-next a:after {
+    content: "\f054";
+    font-family: fontawesome;
+    margin-left: 5px;
 }

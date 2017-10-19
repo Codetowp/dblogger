@@ -18,8 +18,7 @@ function dblogger_related_post() {
 			<?php
             $num = 0;
 			while ( $related->have_posts() ) {
-				$related->the_post();
-                
+				$related->the_post();                
                 
                 if  ( get_the_post_thumbnail()=='')
                 {
@@ -51,7 +50,7 @@ function dblogger_related_post() {
                         </div>
                     </div> 
                    ',
-					esc_url( $post_thumbnail ),
+					$post_thumbnail,
                     esc_html( $title ),
                     esc_url( get_permalink() ),
                     esc_html( $class_format )
