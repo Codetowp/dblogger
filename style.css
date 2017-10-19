@@ -48,6 +48,7 @@ This theme, like WordPress, is licensed under the GPL.
 	6.1 Gallery & Captions
 7.0 Footer
 8.0 Responsive
+9.0 Common
 ---------------------------*/
 
 /*--------------------
@@ -4370,3 +4371,11 @@ div.bbp-breadcrumb p a {
 @-webkit-keyframes fdeInUp{from{opacity:0;-webkit-transform:translate3d(0,10%,0);transform:translate3d(0,10%,0)}to{opacity:1;-webkit-transform:none;transform:none}}
 @keyframes fdeInUp{from{opacity:0;-webkit-transform:translate3d(0,10%,0);transform:translate3d(0,10%,0)}to{opacity:1;-webkit-transform:none;transform:none}}
 @media (min-width:768px){.fdeInUp{-webkit-animation-name:fdeInUp;animation-name:fdeInUp;-webkit-animation-duration:1s;animation-duration:1s}}
+
+/*--------------------
+9.0 Common
+----------------------*/
+
+time:nth-child(2) {
+    display: none;
+}
