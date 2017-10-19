@@ -18,8 +18,7 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 
 
 // Helper functions for fonts.
-	require plugin_dir_path( __FILE__ ) . 'lib/fonts.php';
-
+	require get_template_directory() . '/inc/lib/fonts.php';
 
 	/**
 	 * Class wrapper with useful methods for interacting with the theme customizer.
