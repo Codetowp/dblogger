@@ -16,7 +16,7 @@
 				<div class="content">
 				<?php
 				if ( ! have_posts() ) :
-					get_template_part( 'framework/parts/not-found' );
+					get_template_part( 'template-parts/content', 'none' );
 				endif;
 				?>
 				<?php while ( have_posts() ) : the_post();?>
