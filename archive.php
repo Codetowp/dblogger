@@ -42,11 +42,6 @@ $image = $background_img ? "$background_img" : "$background_img_static";
 			<?php
 			if ( have_posts() ) :
 				while ( have_posts() ) : the_post();
-					if ( get_post_thumbnail_id() != '' ) {
-						$single_post = wp_get_attachment_url( get_post_thumbnail_id( get_the_id() ) );
-					} else {
-						$single_post = get_template_directory_uri() . '/img/b-1.jpg';
-					}
 			?>
 
 					<!--blog post-->
