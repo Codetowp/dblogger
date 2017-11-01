@@ -20,20 +20,14 @@ get_header(); ?>
     ==========================================-->
 
 <?php
-// *************REMOVE THIS ************ Dont use this. Add a default image in customizer thats it. 
-
-$background_img   =  get_theme_mod( 'dblogger_back_img' );   
-$background_img_static   = get_template_directory_uri() . '/img/b-1.jpg';
-$image = $background_img ? "$background_img" : "$background_img_static";      
-//  $color=esc_attr(get_theme_mod( 'header_textcolor' ));
+$background_img   =  get_theme_mod( 'dblogger_back_img',  esc_url(get_template_directory_uri() . '/img/b-1.jpg'));   
 $disable    = get_theme_mod( 'dblogger_header_check' ) == 1 ? true : false ;
-
 if ( dblogger_is_selective_refresh() ) {
 	$disable = false;
 }
 if ( ! $disable) : ?>
 
-<section id="home-banner" style="background-image: url(<?php echo esc_url( $image ); ?>);">
+<section id="home-banner" style="background-image: url(<?php echo esc_url( $background_img ); ?>);">
     <div class="content">
         <div class="container wow fdeInUp"  data-wow-duration="1s">
 			<?php 

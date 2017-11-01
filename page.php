@@ -13,45 +13,20 @@
  */
 
 get_header(); ?>
-<!-- banner Page
-    ==========================================-->
-<?php
-if(have_posts()):
-	while ( have_posts() ) : the_post();
 
-?>  
-	<section id="theme-banner" style="background-image: url(<?php echo esc_url( the_post_thumbnail_url('full') ); ?>);">
-		<div class="content wow fdeInUp">
-			<div class="container text-center">
-				<!--breadcrumb-->
-				<?php the_breadcrumb(); ?>
-				<!--/breadcrumb-->
-				<h1><?php the_title(); ?>  </h1>
-				<!--<header class="entry-header"><a href="#"> </a><span class="date-article">
-				<?php dblogger_posted_on(); ?></span> in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span> </header>-->
-			</div>
-		</div>
-	</section>
+	<?php
+		while ( have_posts() ) : the_post();
 
-<?php endwhile;
-endif;?>
+			get_template_part( 'template-parts/content', 'page' );
 
-	<section id="theme-details">
-		<div class="container">
-			<div class="row wow fdeInUp">
-				<div class="col-md-12">
-				<?php
-				if(have_posts()):
-					while ( have_posts() ) : the_post();
-				?>
-					<?php the_content();?>
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-				<?php endwhile;
-				endif;?>
-				</div>
-			</div>
-		</div>
-	</section>
+		endwhile; // End of the loop.
+	?>
 
+	
 <?php
 get_footer();

@@ -49,10 +49,10 @@ function dblogger_customize_register( $wp_customize ) {
 	}
 	
 	$wp_customize->remove_control('blogdescription');
-	$wp_customize->remove_section('header_image');
 	$wp_customize->remove_control('display_header_text');
 	$wp_customize->remove_section('background_image');    
 	$wp_customize->get_section('title_tagline')->title = __( 'Branding' , 'dblogger' ); 
+	$wp_customize->get_section('header_image')->description = __( 'Add custom header for categories, 404, search etc' , 'dblogger' ); 
     
     $wp_customize->add_setting( 'dblogger_accent_color',  
 		array(
@@ -718,34 +718,6 @@ function dblogger_customize_register( $wp_customize ) {
             'priority' => 1,
 
 	) ) );*/
-    
-    /*Custom Fields*/
-    
-	$wp_customize->add_section('dblogger_custom_section', array(
-		'title'                     => __('Custom Background', 'dblogger'),
-		'description'               => 'Add custom header for categories, 404, search etc',
-		'priority'                  => 123,
-	) );
-    
-    
-	$wp_customize->add_setting( 'dblogger_custom_img', array(
-		'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
-		'type'                      => 'theme_mod',
-		'capability'                => 'edit_theme_options',
-		'sanitize_callback'         => 'esc_url_raw',
-		'transport'                 => 'refresh',
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-		$wp_customize,'dblogger_custom_img', array(
-			'label'                     => __( 'Custom Background Image', 'dblogger' ),
-			'section'                   => 'dblogger_custom_section',
-			'settings'                  => 'dblogger_custom_img',
-			'context'                   => 'dblogger_custom_img',
-			'priority'                  => 2,
-		) 
-	) );
-    
     
     
     /*Fonts*/

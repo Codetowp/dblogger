@@ -9,42 +9,50 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+			
+<!-- banner Page
+    ==========================================-->
+<section id="theme-banner" style="background-image: url(<?php echo esc_url( the_post_thumbnail_url('full') ); ?>);">
+	<div class="content wow fadeInUp">
+		<div class="container text-center">
+			<!--breadcrumb-->
+			<?php the_breadcrumb(); ?>
+			<!--/breadcrumb-->
+			<h1><?php the_title(); ?></h1>
+			<!--<header class="entry-header"><a href="#"> </a><span class="date-article">
+			<?php dblogger_posted_on(); ?></span> in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span> </header>-->
+		</div>
+	</div>
+</section>
 
-	<div class="entry-content">
-		<?php
-			the_content();
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dblogger' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-				edit_post_link(
-					sprintf(
-						wp_kses(
-							/* translators: %s: Name of current post. Only visible to screen readers */
-							__( 'Edit <span class="screen-reader-text">%s</span>', 'dblogger' ),
-							array(
-								'span' => array(
-									'class' => array(),
+<section id="theme-details">
+	<div class="container">
+		<div class="row wow fadeInUp">
+			<div class="col-md-12">			
+				<?php the_content(); ?>
+				<?php if ( get_edit_post_link() ) : ?>
+					<div class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									wp_kses(
+										/* translators: %s: Name of current post. Only visible to screen readers */
+										__( 'Edit <span class="screen-reader-text">%s</span>', 'dblogger' ),
+										array(
+											'span' => array(
+												'class' => array(),
+											),
+										)
+									),
+									get_the_title()
 								),
-							)
-						),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
-			?>
-		</footer><!-- .entry-footer -->
-	<?php endif; ?>
-</article><!-- #post-<?php the_ID(); ?> -->
+								'<span class="edit-link">',
+								'</span>'
+							);
+						?>
+					</div><!-- .entry-footer -->
+				<?php endif; ?>
+			</div>
+		</div>		
+	</div>
+</section>

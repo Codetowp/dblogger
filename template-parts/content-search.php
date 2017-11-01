@@ -8,21 +8,23 @@
  */
 
 ?>
-<?php
-if(get_post_thumbnail_id(get_the_id()) !='')
-{
-	$single_post= wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); 
-}
-else
-{
-	$single_post=get_template_directory_uri() . '/img/t-1.jpg';
-}
-?>
 <!--blog post-->
-<article class="col-md-6 eq-blocks"> <a href="<?php the_permalink();?>"><img src="<?php echo esc_url( $single_post );?>" class="img-responsive"></a>
-	<header class="entry-header"><a href="<?php the_permalink();?>">
-	<h5><?php the_title(); ?></h5>
-	</a> <span class="date-article"><?php dblogger_posted_on(); ?></span> <!--in <span class="byline"><span class="author vcard"><a href="#">Wordpress . Blog</a></span></span>--> 
+<article class="col-md-6 eq-blocks">
+	<a href="<?php the_permalink();?>">
+		<?php
+		if  ( get_the_post_thumbnail()!=''){
+			the_post_thumbnail('dblogger_theme'); 
+		} else {
+			$single_img = get_template_directory_uri().'/img/default.jpg';
+		?>
+			<img src="<?php echo esc_url( $single_img );?>" alt="" class="img-responsive">
+		<?php }?>
+	</a>
+	<header class="entry-header">
+		<a href="<?php the_permalink();?>">
+			<h5><?php the_title();?></h5>
+		</a> 
+		<span class="date-article"><?php dblogger_posted_on();?></span>
 	</header>
 	<p><?php echo the_excerpt();?></p>
 </article>
