@@ -44,7 +44,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 
 				<li class="media">
-					<a href="<?php esc_url(the_permalink()); ?>">
+					<a class="pull-left no-pddig" href="<?php esc_url(the_permalink()); ?>">
 						<?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
 
 						if  ( get_the_post_thumbnail()=='')
