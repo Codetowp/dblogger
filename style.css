@@ -150,6 +150,11 @@ a:hover {
 	color: #3a405b;
 	margin: 10px 0 20px;
 }
+.single .cat-links a,.single .tags-links a , .page .cat-links a, .page .tags-links a , .page .date-article a{
+
+	color: #fff;
+}
+
 /* 	2.2 Navigation */
 
 #top-menu {
@@ -1853,9 +1858,10 @@ aside .widget_search .input-group {
 	transition: all 300ms ease-in-out;
 }
 .widget_recent_entries li a {
-	display: block;
+	display: inline-block;
 	margin-left: 0px;
-    padding: 10px 0;
+    padding: 8px 0;
+    float: left;
 }
 .widget_recent_entries span.post-date {
     float: left;
@@ -1924,6 +1930,13 @@ aside .widget_search .input-group {
 	-moz-transition: all ease-in .3s;
 	-webkit-transition: all ease-in .3s;
 }
+
+
+
+
+
+
+
 aside section {
 	margin-bottom: 40px !important;
 }
@@ -3299,7 +3312,7 @@ display: block;
 	font-style: italic;
 }
 .single .single-post p {
-	/*padding-left: 60px;*/
+	padding-left: 60px;
 }
 .single .single-post p span {
 	display: block;
@@ -3338,7 +3351,7 @@ display: block;
 	-webkit-transition: all 0.6s
 }
 .single .single-post h1, .single .single-post h2, .single .single-post h3, .single .single-post h4, .single .single-post h5, .single .single-post h6 {
-	/*padding-left: 60px;*/
+	padding-left: 60px;
 }
 .single .single-post footer.entry-meta-bar {
 	padding-left: 20px;
@@ -3424,6 +3437,7 @@ blockquote p {
 	border: 2px #f0f2f7 solid;
 	border-radius: 8px;
 	margin: 60px 0;
+	width: 100%;
 }
 .author-box .avatar {
 	margin: 0rem 2.1rem 4.1rem 0rem;
@@ -4063,6 +4077,7 @@ div.bbp-breadcrumb p a {
 }
 #bottom-footer nav.bottom-nav ul {
 	text-align: center;
+	padding-left: 0px;
 }
 #bottom-footer nav.bottom-nav ul li {
 	list-style: none;
@@ -4317,9 +4332,26 @@ div.bbp-breadcrumb p a {
 .widget_premium-widget .fa-pinterest {
 	background: #3fccfd;
 }
+
+.widget_premium-widget .fa-dribbble {
+	background: #e94c89;
+}
+
+.widget_premium-widget .fa-behance {
+	background: #005bff;
+}
+.widget_premium-widget .fa-instagram {
+	background: #a23eba;
+}
+
+
+
+
 .widget_tag_cloud .tagcloud a {
 	margin-top: 5px;
 }
+
+.widget_premium-widget ul{padding-left: 0;}
 
 .widget_premium-widget li a {
 	height: 34px;

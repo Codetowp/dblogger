@@ -221,6 +221,16 @@ function dblogger_js_scripts() {
     wp_enqueue_script( 'dblogger-wow-min', get_template_directory_uri() . '/js/wow.min.js', array(), '20151215', true );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_js_scripts' );
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function dblogger_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'dblogger_custom_excerpt_length', 999 );
 
 /**
  * Implement the Custom Header feature.

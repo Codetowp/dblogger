@@ -14,19 +14,55 @@
 
 get_header(); ?>
 
-	<?php
-		while ( have_posts() ) : the_post();
+<!-- banner Page
+    ==========================================-->
+<section id="theme-banner" style="background-image: url(<?php echo esc_url( the_post_thumbnail_url('full') ); ?>);">
+	<div class="content wow fadeInUp">
+		<div class="container text-center"> 
+		<!--breadcrumb-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><?php the_breadcrumb(); ?></li>
+			</ol>
+		<!--/breadcrumb-->
+			<h1><?php the_title(); ?></h1>
+			<header class="entry-header"><a href="#"> </a><span class="date-article"><?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?></span><!-- in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+		</div>
+	</div>
+</section>
 
-			get_template_part( 'template-parts/content', 'page' );
+<section id="theme-details">
+	<div class="container">
+		<div class="row wow fadeInUp">
+			<div class="col-md-8 col-md-offset-2">
+				<?php if(have_posts()): while ( have_posts() ) : the_post(); ?>
+					<?php the_content(); ?>
+					<?php if ( get_edit_post_link() ) : ?>
+						<div class="entry-footer">
+							<?php
+								edit_post_link(
+									sprintf(
+										wp_kses(
+											/* translators: %s: Name of current post. Only visible to screen readers */
+											__( 'Edit <span class="screen-reader-text">%s</span>', 'dblogger' ),
+											array(
+												'span' => array(
+													'class' => array(),
+												),
+											)
+										),
+										get_the_title()
+									),
+									'<span class="edit-link">',
+									'</span>'
+								);
+							?>
+						</div><!-- .entry-footer -->
+					<?php endif; ?>
+				<?php endwhile; endif; ?>
+			</div>
+		</div>
+	</div>
+</section>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-	?>
-
-	
 <?php
 get_footer();

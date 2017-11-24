@@ -427,7 +427,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_theme_check',
 		array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
-			'default'           => '',
+			'default'           => 1,
 			'capability'        => 'manage_options',
 			'transport'         => 'refresh',
 		)
@@ -655,7 +655,7 @@ function dblogger_customize_register( $wp_customize ) {
 	// Mailchimp action url
 	$wp_customize->add_setting( 'dblogger_newsletter_mailchimp',
 		array(
-			'sanitize_callback' => 'devfly_main_sanitize_url',
+			'sanitize_callback' => 'esc_url',
 			'default'           => '',
 			'transport'         => 'postMessage', 
 		)
