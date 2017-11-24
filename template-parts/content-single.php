@@ -22,10 +22,7 @@
 			<h1><?php the_title(); ?></h1>
 			<header class="entry-header">
 				<span class="date-article">
-					<?php dblogger_posted_on(); ?>
-				</span>
-				<span style="display:block">
-					<?php dblogger_entry_footer(); ?>
+					<?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?> 
 				</span>
 			</header>
 		</div>

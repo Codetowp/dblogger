@@ -40,7 +40,7 @@ if ( ! $disable) : ?>
 
 				if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; 
 			?>
-
+            
         </div>
     </div>
 </section>
@@ -90,16 +90,16 @@ if ( ! $disable1) : ?>
 							<?php
 							$firstClass = 'active'; 
 							$values=0;
-							$count = get_theme_mod( 'dblogger_post_number' );
-							$slidecat = get_option( 'dblogger_slide_categories' );
-							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
+							$count = get_theme_mod( 'dblogger_post_number',6);
+							$slidecat = get_option( 'dblogger_slide_categories');
+							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
 							if ($query->have_posts()) :
 								while ($query->have_posts()) : $query->the_post();
 									$values++;
 								?>
 									<li role="presentation" class="<?php echo esc_html( $firstClass ); ?>"><a href="#<?php echo esc_attr( $values );?>"  onclick="location.href='<?php the_permalink();?>'"  aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
 							<?php  
-								$firstClass = ""; 
+								$firstClass = "";
 								endwhile;
 							endif;?>
 						</ul>
@@ -109,10 +109,9 @@ if ( ! $disable1) : ?>
 							<?php
 							esc_url( $firstClass = 'active' ); 
 							$values=0;
-							$count = get_theme_mod( 'dblogger_post_number' );
+							$count = get_theme_mod( 'dblogger_post_number',6);
 							$slidecat =get_option( 'dblogger_slide_categories' );
-
-							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count ) );
+							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
 							if ($query->have_posts()) :
 								while ($query->have_posts()) : $query->the_post();
 								$values++;
@@ -175,7 +174,10 @@ if ( ! $disable1) : ?>
 				<div class="col-md-4 theme-post "> 
 					<?php 
 					if(get_the_post_thumbnail()){
-						echo  esc_html( get_the_post_thumbnail('dblogger_theme') ) ;
+						the_post_thumbnail('dblogger_theme');
+						?>
+						
+						<?php 
 					}else{
 						$page_post_img= get_template_directory_uri() . '/img/default.jpg' ;
 						?>
@@ -276,11 +278,11 @@ if ( ! $disable1) : ?>
 
 				<div class="col-md-4 col-md-offset-4">
 
-					<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_html( $dblogger_newsletter_mailchimp ); ?>" target="_blank">
+					<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo $dblogger_newsletter_mailchimp ; ?>" target="_blank">
 						<div class="input-group">
 							<input class="form-control" type="text" placeholder="Email Address..." value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
 							<span class="input-group-btn">
-								<button  type="button"><i class="fa  fa-chevron-right"></i></button>
+								<button  type="submit"><i class="fa  fa-chevron-right"></i></button>
 							</span>
 						</div>
 					</form>

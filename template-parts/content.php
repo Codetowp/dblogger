@@ -24,8 +24,8 @@
 		<a href="<?php the_permalink();?>">
 			<h5><?php the_title();?></h5>
 		</a> 
-		<span class="date-article"><?php dblogger_posted_on();?></span>
+		<span class="date-article"><?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?></span>
 	</header>
-	<p><?php echo the_excerpt();?></p>
+	<p><?php the_excerpt(); ?></p>
 </article>
 <!--/blog post--> 
