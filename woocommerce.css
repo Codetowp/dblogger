@@ -638,7 +638,7 @@ p.no-comments {
     margin-bottom: 2em;
 }
 .woocommerce div.product p.price, .woocommerce div.product span.price {
-    color: #77a464;
+    color: #3b3e8a;
     font-size: 1.25em;
 }
 .woocommerce div.product p.price ins, .woocommerce div.product span.price ins {
@@ -646,12 +646,12 @@ p.no-comments {
     font-weight: 700;
 }
 .woocommerce .quantity .qty {
-    width: 3.631em;
+    width: 5em;
     text-align: center;
 }
 .woocommerce div.product form.cart .button {
     vertical-align: middle;
-    float: left;
+    /*float: left;*/
 }
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
     background-color: #a46497;
@@ -660,4 +660,10 @@ p.no-comments {
 }
 .woocommerce .cart .button, .woocommerce .cart input.button {
     float: none;
+}
+.woocommerce div.product form.cart, .woocommerce div.product p.cart {
+    margin-bottom: 2em;
+}
+.woocommerce .quantity {
+    float: left;
 }
