@@ -622,3 +622,42 @@ p.no-comments {
     font-size: 1em;
     width: 5.4em;
     font-family: star;
+}
+.woocommerce div.product {
+    margin-bottom: 0;
+    position: relative;
+}
+.woocommerce div.product .woocommerce-product-rating {
+    margin-bottom: 1.618em;
+}
+.woocommerce .woocommerce-product-rating {
+    line-height: 2;
+    display: block;
+}
+.woocommerce div.product div.summary {
+    margin-bottom: 2em;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #77a464;
+    font-size: 1.25em;
+}
+.woocommerce div.product p.price ins, .woocommerce div.product span.price ins {
+    background: inherit;
+    font-weight: 700;
+}
+.woocommerce .quantity .qty {
+    width: 3.631em;
+    text-align: center;
+}
+.woocommerce div.product form.cart .button {
+    vertical-align: middle;
+    float: left;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    background-color: #a46497;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+.woocommerce .cart .button, .woocommerce .cart input.button {
+    float: none;
+}

@@ -262,3 +262,23 @@ if ( ! function_exists( 'dblogger_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+function my_woocommerce_breadcrumbs() {
+    return array(
+            'delimiter'   => '&nbsp / &nbsp',
+            'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">',
+            'wrap_after'  => '</nav>',
+            'before'      => '',
+            'after'       => '',
+            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+        );
+}
+ 
+add_filter( 'woocommerce_breadcrumb_defaults','my_woocommerce_breadcrumbs' );
+/** to change the position of rating **/
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_rating', 10 );
+add_action( 'woocommerce_single_product_summary','woocommerce_template_single_rating', 21 );
+/**to change the position of price **/
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary','woocommerce_template_single_price', 22 );
+/*remove title**/
+remove_action('woocommerce_single_product_summary','woocommerce_template_single_title',5);

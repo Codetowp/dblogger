@@ -40,10 +40,7 @@ get_header( 'shop' ); ?>
 				*/
 				do_action( 'woocommerce_before_main_content' );
 				?><!--/breadcrumb-->
-				<h1><?php woocommerce_page_title(); ?></h1>
-				<header class="entry-header"><a href="#"></a> 
-				</header>
-
+				<h1><?php  woocommerce_page_title(); ?></h1>
 			</div>
 		</div>
 	</div>

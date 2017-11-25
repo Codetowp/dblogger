@@ -3514,8 +3514,8 @@ blockquote p {
 	margin-bottom: 15px;
 }
 .woocommerce-breadcrumb a {
-	color: #b7b5b5;
-	margin-right: 15px;
+	color: #fff;
+	/*margin-right: 15px;*/
 }
 .woocommerce .star-rating {
 	display: none;
