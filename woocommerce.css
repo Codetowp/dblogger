@@ -605,6 +605,9 @@ p.no-comments {
 .woocommerce ul.products li.product .star-rating {
     font-size: .857em;
 }
+.woocommerce ul.products li.product strong {
+    display: block;
+}
 .woocommerce .products .star-rating {
     display: block;
     margin: 0 0 .5em;
