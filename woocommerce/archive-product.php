@@ -25,13 +25,7 @@ get_header( 'shop' ); ?>
 
  <!-- banner Page
     ==========================================-->
-
-<?php 
-$background_img   =  get_theme_mod( 'dblogger_custom_img' ) ;   
-$background_img_static   = get_template_directory_uri() . '/img/b-1.jpg';
-$image = $background_img ? "$background_img" : "$background_img_static"; 
-?>
-<Section id="page-banner" style="background-image: url(<?php echo esc_url( $image ); ?>);">
+<Section id="page-banner" style="background-image: url(<?php header_image() ?>);">
 	<div class="overlay-banner">
 		<div class="content">
 			<div class="container ">
@@ -46,10 +40,7 @@ $image = $background_img ? "$background_img" : "$background_img_static";
 				*/
 				do_action( 'woocommerce_before_main_content' );
 				?><!--/breadcrumb-->
-				<h1><?php woocommerce_page_title(); ?></h1>
-				<header class="entry-header"><a href="#"></a> 
-				</header>
-
+				<h1><?php  woocommerce_page_title(); ?></h1>
 			</div>
 		</div>
 	</div>

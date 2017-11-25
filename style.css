@@ -3514,8 +3514,8 @@ blockquote p {
 	margin-bottom: 15px;
 }
 .woocommerce-breadcrumb a {
-	color: #b7b5b5;
-	margin-right: 15px;
+	color: #fff;
+	/*margin-right: 15px;*/
 }
 .woocommerce .star-rating {
 	display: none;
@@ -3884,6 +3884,7 @@ post-type-archive-product.woocommerce ul.products li.product:hover .add_to_cart_
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
 	border-top: 0px solid #ff4a5d;
+	text-transform: uppercase;
 	padding: 20px 20px;
 	color: #fff;
 	margin-top: 30px;
@@ -3911,7 +3912,6 @@ post-type-archive-product.woocommerce ul.products li.product:hover .add_to_cart_
 	font-weight: 400;
 	color: #73757d;
 	font-size: 14px;
-	text-transform: uppercase;
 	letter-spacing: 0.8px;
 	list-style: none;
 }
@@ -3974,7 +3974,8 @@ li.bbp-forum-info, li.bbp-topic-title {
 	float: none;
 	border-radius: 50%;
 	width: 20px;
-	height: 20px;
+	height:20px;
+	min-height: 20px;
 	margin-right: 5px;
 	margin-top: -9px;
 	border: 1px double #ddd;
@@ -4428,4 +4429,9 @@ span.byline {
     content: "\f054";
     font-family: fontawesome;
     margin-left: 5px;
+}
+/*bbpress*/
+#bbpress-forums div.bbp-forum-author img.avatar, #bbpress-forums div.bbp-topic-author img.avatar, #bbpress-forums div.bbp-reply-author img.avatar{
+
+	min-height: 80px;
 }

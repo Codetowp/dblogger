@@ -27,13 +27,8 @@ get_header( 'shop' ); ?>
 
 <!-- banner Page
     ==========================================-->
-<?php 
-   /* $background_img   = esc_url( get_theme_mod( 'dblogger_custom_img' ) );   
-    $background_img_static   = get_template_directory_uri()."/img/b-1.jpg";
-    $image = $background_img ? "$background_img" : "$background_img_static"; */
-?>
 
-<Section id="page-banner" style="background-image: url(<?php //echo $image; ?>);">
+<Section id="page-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container "> 
