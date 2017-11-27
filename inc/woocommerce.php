@@ -282,3 +282,10 @@ remove_action('woocommerce_single_product_summary','woocommerce_template_single_
 add_action( 'woocommerce_single_product_summary','woocommerce_template_single_price', 22 );
 /*remove title**/
 remove_action('woocommerce_single_product_summary','woocommerce_template_single_title',5);
+/*change related product count*/
+add_filter( 'woocommerce_output_related_products_args', 'dblogger_related_products_args' );
+function dblogger_related_products_args( $args ) {
+$args['posts_per_page']     = 4; // 4 related products
+$args['columns']            = 4; // arranged in columns
+return $args;
+}
