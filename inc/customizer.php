@@ -880,22 +880,22 @@ function dblogger_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 function dblogger_customize_partial_tagline_text() {
-	echo esc_html( get_theme_mode('dblogger_tagline_text') );
+	echo get_theme_mod('dblogger_tagline_text') ;
 }
 function dblogger_customize_partial_heder_text() {
-	echo esc_html( get_theme_mode('dblogger_heder_text') );
+	echo  get_theme_mod('dblogger_heder_text') ;
 }
 function dblogger_customize_partial_guide_title() {
-	echo esc_html( get_theme_mode('dblogger_guide_title') );
+	echo esc_html( get_theme_mod('dblogger_guide_title') );
 }
 function dblogger_customize_partial_theme_title() {
-	echo esc_html( get_theme_mode('dblogger_theme_title') );
+	echo esc_html( get_theme_mod('dblogger_theme_title') );
 }
 function dblogger_customize_partial_blog_title() {
-	echo esc_html( get_theme_mode('dblogger_blog_title') );
+	echo esc_html( get_theme_mod('dblogger_blog_title') );
 }
 function dblogger_customize_partial_newsletter_title() {
-	echo esc_html( get_theme_mode('dblogger_newsletter_title') );
+	echo esc_html( get_theme_mod('dblogger_newsletter_title') );
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
