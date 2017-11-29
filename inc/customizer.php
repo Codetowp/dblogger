@@ -23,7 +23,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'render_callback' => 'dblogger_customize_partial_blogdescription',
 		) );   
           $wp_customize->selective_refresh->add_partial( 'dblogger_tagline_text', array(
-			'selector'        => '#home-banner span',
+			'selector'        => '#home-banner .sub',
 			'render_callback' => 'dblogger_customize_partial_tagline_text',
 		) ); 
         $wp_customize->selective_refresh->add_partial( 'dblogger_heder_text', array(
