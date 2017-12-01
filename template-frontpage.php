@@ -32,9 +32,9 @@ if ( ! $disable) : ?>
         <div class="container wow fdeInUp"  data-wow-duration="1s">
 			<?php 
 				$title  = get_theme_mod( 'dblogger_tagline_text', esc_html__('Section Title', 'dblogger' ));
-				if ($title != '') echo '<span>  ' . wp_kses_post($title) . ' </span>'; 
+				if ($title != '') echo '<span class="sub">  ' . wp_kses_post($title) . ' </span>'; 
 					$desc  = get_theme_mod( 'dblogger_heder_text', esc_html__('Section Description', 'dblogger' ));
-				if ($desc != '') echo '<h1>' . wp_kses_post($desc) . '</h2>';
+				if ($desc != '') echo '<h1>' . wp_kses_post($desc) . '</h1>';
 					$dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
 					$dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#', 'dblogger') );
 

@@ -23,7 +23,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'render_callback' => 'dblogger_customize_partial_blogdescription',
 		) );   
           $wp_customize->selective_refresh->add_partial( 'dblogger_tagline_text', array(
-			'selector'        => '#home-banner span',
+			'selector'        => '#home-banner .sub',
 			'render_callback' => 'dblogger_customize_partial_tagline_text',
 		) ); 
         $wp_customize->selective_refresh->add_partial( 'dblogger_heder_text', array(
@@ -39,7 +39,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'render_callback' => 'dblogger_customize_partial_theme_title',
 		) );
         $wp_customize->selective_refresh->add_partial( 'dblogger_blog_title', array(
-			'selector'        => '#from-blog .container',
+			'selector'        => '#from-blog h2',
 			'render_callback' => 'dblogger_customize_partial_blog_title',
 		) );
         $wp_customize->selective_refresh->add_partial( 'dblogger_newsletter_title', array(
@@ -880,22 +880,22 @@ function dblogger_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 function dblogger_customize_partial_tagline_text() {
-	echo get_theme_mod('dblogger_tagline_text') ;
+	return get_theme_mod('dblogger_tagline_text');
 }
 function dblogger_customize_partial_heder_text() {
-	echo  get_theme_mod('dblogger_heder_text') ;
+	return get_theme_mod('dblogger_heder_text');
 }
 function dblogger_customize_partial_guide_title() {
-	echo esc_html( get_theme_mod('dblogger_guide_title') );
+	return get_theme_mod('dblogger_guide_title');
 }
 function dblogger_customize_partial_theme_title() {
-	echo esc_html( get_theme_mod('dblogger_theme_title') );
+	return get_theme_mod('dblogger_theme_title');
 }
 function dblogger_customize_partial_blog_title() {
-	echo esc_html( get_theme_mod('dblogger_blog_title') );
+	return get_theme_mod('dblogger_blog_title');
 }
 function dblogger_customize_partial_newsletter_title() {
-	echo esc_html( get_theme_mod('dblogger_newsletter_title') );
+	return  get_theme_mod('dblogger_newsletter_title');
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

@@ -1,17 +1,17 @@
 
-jQuery(function($) { // DOM is now read and ready to be manipulated
+jQuery(function(jQuery) { // DOM is now read and ready to be manipulated
 equalheight = function(container){
 
 var currentTallest = 0,
      currentRowStart = 0,
      rowDivs = new Array(),
-     $el,
+     jQueryel,
      topPosition = 0;
- $(container).each(function() {
+ jQuery(container).each(function() {
 
-   $el = $(this);
-   $($el).height('auto')
-   topPostion = $el.position().top;
+   jQueryel = jQuery(this);
+   jQuery(jQueryel).height('auto')
+   topPostion = jQueryel.position().top;
 
    if (currentRowStart != topPostion) {
      for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
@@ -19,11 +19,11 @@ var currentTallest = 0,
      }
      rowDivs.length = 0; // empty the array
      currentRowStart = topPostion;
-     currentTallest = $el.height();
-     rowDivs.push($el);
+     currentTallest = jQueryel.height();
+     rowDivs.push(jQueryel);
    } else {
-     rowDivs.push($el);
-     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+     rowDivs.push(jQueryel);
+     currentTallest = (currentTallest < jQueryel.height()) ? (jQueryel.height()) : (currentTallest);
   }
    for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
      rowDivs[currentDiv].height(currentTallest);
@@ -31,12 +31,12 @@ var currentTallest = 0,
  });
 }
 
-$(window).load(function() {
+jQuery(window).load(function() {
   equalheight('.eq-blocks');
 });
 
 
-$(window).resize(function(){
+jQuery(window).resize(function(){
   equalheight('.eq-blocks');
 });
 
@@ -64,16 +64,16 @@ function main() {
     /*====================================
     Show Menu on Book
     ======================================*/
-    $(window).bind('scroll', function() {
-        var navHeight = $(window).height() - 10;
-        if ($(window).scrollTop() > navHeight) {
-            $('.navbar-default').addClass('on');
+    jQuery(window).bind('scroll', function() {
+        var navHeight = jQuery(window).height() - 10;
+        if (jQuery(window).scrollTop() > navHeight) {
+            jQuery('.navbar-default').addClass('on');
         } else {
-            $('.navbar-default').removeClass('on');
+            jQuery('.navbar-default').removeClass('on');
         }
     });
 
-    $('body').scrollspy({ 
+    jQuery('body').scrollspy({ 
         target: '.navbar-default',
         offset: 10
     })
@@ -86,62 +86,62 @@ function main() {
     top -menu
     ======================================*/
 
-$('#top-menu.navbar-default li:has(ul)').addClass('menu-item-has-children');
+jQuery('#top-menu.navbar-default li:has(ul)').addClass('menu-item-has-children');
 
 
 
 
-$('#Guide-list1').hover(function() {
-     $('.img-list-1').addClass('img-active');
+jQuery('#Guide-list1').hover(function() {
+     jQuery('.img-list-1').addClass('img-active');
 }, function() {
-     $('.img-list-1').removeClass('img-active');
+     jQuery('.img-list-1').removeClass('img-active');
 });
 
 
-$('#Guide-list2').hover(function() {
-     $('.img-list-2').addClass('img-active');
+jQuery('#Guide-list2').hover(function() {
+     jQuery('.img-list-2').addClass('img-active');
 }, function() {
-     $('.img-list-2').removeClass('img-active');
+     jQuery('.img-list-2').removeClass('img-active');
 });
 
-$('#Guide-list3').hover(function() {
-     $('.img-list-3').addClass('img-active');
+jQuery('#Guide-list3').hover(function() {
+     jQuery('.img-list-3').addClass('img-active');
 }, function() {
-     $('.img-list-3').removeClass('img-active');
+     jQuery('.img-list-3').removeClass('img-active');
 });
 
-$('#Guide-list4').hover(function() {
-     $('.img-list-4').addClass('img-active');
+jQuery('#Guide-list4').hover(function() {
+     jQuery('.img-list-4').addClass('img-active');
 }, function() {
-     $('.img-list-4').removeClass('img-active');
+     jQuery('.img-list-4').removeClass('img-active');
 });
-$('#Guide-list5').hover(function() {
-     $('.img-list-5').addClass('img-active');
+jQuery('#Guide-list5').hover(function() {
+     jQuery('.img-list-5').addClass('img-active');
 }, function() {
-     $('.img-list-5').removeClass('img-active');
+     jQuery('.img-list-5').removeClass('img-active');
 });
-$('#Guide-list6').hover(function() {
-     $('.img-list-6').addClass('img-active');
+jQuery('#Guide-list6').hover(function() {
+     jQuery('.img-list-6').addClass('img-active');
 }, function() {
-     $('.img-list-6').removeClass('img-active');
+     jQuery('.img-list-6').removeClass('img-active');
 });
-$('#Guide-list7').hover(function() {
-     $('.img-list-7').addClass('img-active');
+jQuery('#Guide-list7').hover(function() {
+     jQuery('.img-list-7').addClass('img-active');
 }, function() {
-     $('.img-list-7').removeClass('img-active');
+     jQuery('.img-list-7').removeClass('img-active');
 });
 
 
-$('.guide-block .nav-tabs > li > a').hover(function() {
-  $(this).tab('show');
+jQuery('.guide-block .nav-tabs > li > a').hover(function() {
+  jQuery(this).tab('show');
 });
 
   	/*====================================
     Portfolio Isotope Filter
     ======================================*/
-    $(window).load(function() {
-        var $container = $('#lightbox');
-        $container.isotope({
+    jQuery(window).load(function() {
+        var jQuerycontainer = jQuery('#lightbox');
+        jQuerycontainer.isotope({
             filter: '*',
             animationOptions: {
                 duration: 750,
@@ -149,11 +149,11 @@ $('.guide-block .nav-tabs > li > a').hover(function() {
                 queue: false
             }
         });
-        $('.cat a').click(function() {
-            $('.cat .active').removeClass('active');
-            $(this).addClass('active');
-            var selector = $(this).attr('data-filter');
-            $container.isotope({
+        jQuery('.cat a').click(function() {
+            jQuery('.cat .active').removeClass('active');
+            jQuery(this).addClass('active');
+            var selector = jQuery(this).attr('data-filter');
+            jQuerycontainer.isotope({
                 filter: selector,
                 animationOptions: {
                     duration: 750,
