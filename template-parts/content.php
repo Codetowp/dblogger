@@ -15,7 +15,7 @@
 		if  ( get_the_post_thumbnail()!=''){
 			the_post_thumbnail('dblogger_theme'); 
 		} else {
-			$single_img = get_template_directory_uri().'/img/default.jpg';
+			$single_img = get_template_directory_uri().'/assets/img/default.jpg';
 		?>
 			<img src="<?php echo esc_url( $single_img );?>" alt="" class="img-responsive">
 		<?php }?>

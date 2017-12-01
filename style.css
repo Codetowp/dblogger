@@ -354,7 +354,7 @@ header a.navbar-brand img{max-height: 90px; max-width: 340px; overflow: hidden; 
 color:#fff;
 }
 .social-links-top > li > #search input[type="text"] {
-	background: url(img/search-white.png) no-repeat 0px 3px;
+	background: url(assets/img/search-white.png) no-repeat 0px 3px;
 	border: 0 none;
 	font: bold 12px Arial, Helvetica, Sans-serif;
 	color: #fff;
@@ -1858,32 +1858,32 @@ aside .widget_search .input-group {
 	transition: all 300ms ease-in-out;
 }
 .widget_recent_entries li a {
-	display: inline-block;
+	display: block;
 	margin-left: 0px;
-    padding: 8px 0;
-    float: left;
+    padding: 2px 0;
 }
 .widget_recent_entries span.post-date {
-    float: left;
     display: inline-block;
 }
-.widget_recent_entries ul li .media-body p {
-	color: #193f5d;
+.widget_recent_entries ul li .media-body .media-heading a {
+	color: #404040;
 	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
 }
-.widget_recent_entries ul li .media-body p a {
+.widget_recent_entries ul li .media-body .by-author a {
 	color: #404040;
 	font-size: 12px;
 	font-weight: 500;
 	text-transform: uppercase;
-	margin-left: 30px;
+	margin-left: 10px;
 	letter-spacing: 0.8px;
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
 	margin-top: 0px;
 	line-height: 1.8;
 }
-.widget_recent_entries ul li .media-body p .by-author {
+.widget_recent_entries .post-date {
+	font-size: 90%;
 }
 .widget_recent_entries ul li .media-body p a:hover {
 	color: #3b3e8a;
@@ -3411,7 +3411,7 @@ blockquote {
 	padding: 0px;
 	margin: 30px;
 	padding-left: 36px;
-	background: #fff url(img/bq-bg.png) 0 0 no-repeat;
+	background: #fff url(assets/img/bq-bg.png) 0 0 no-repeat;
 }
 blockquote p {
 	font-size: 18px !important;

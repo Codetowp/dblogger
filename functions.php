@@ -187,9 +187,9 @@ function the_breadcrumb() {
  */
 
 function dblogger_css_styles(){
-    wp_enqueue_style( 'dblogger-bootstrap' , get_template_directory_uri() . '/css/bootstrap.css' );
-    wp_enqueue_style( 'dblogger-font-awesome' , get_template_directory_uri() . '/css/font-awesome.css' );
-    wp_enqueue_style( 'dblogger-animate' , get_template_directory_uri() . '/css/animate.css' );
+    wp_enqueue_style( 'dblogger-bootstrap' , get_template_directory_uri() . '/assets/css/bootstrap.css' );
+    wp_enqueue_style( 'dblogger-font-awesome' , get_template_directory_uri() . '/assets/css/font-awesome.css' );
+    wp_enqueue_style( 'dblogger-animate' , get_template_directory_uri() . '/assets/css/animate.css' );
     wp_enqueue_style( 'dblogger-style' , get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'dblogger-googleapis', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900' );    
 }
@@ -206,18 +206,18 @@ function add_ie8_support() {
 add_action('wp_head', 'add_ie8_support');
 
 function dblogger_js_scripts() {
-	wp_enqueue_script( 'dblogger-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	wp_enqueue_script( 'dblogger-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'dblogger-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'dblogger-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );          
 	} 
 	wp_enqueue_script( 'jquery' );    
-    wp_enqueue_script( 'dblogger-modernizr-min', get_template_directory_uri() . '/js/modernizr.min.js', array(), '20151215', true );      
-    wp_enqueue_script( 'dblogger-bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array(), '20151215', true );    
-    wp_enqueue_script( 'dblogger-SmoothScroll', get_template_directory_uri() . '/js/SmoothScroll.js', array(), '20151215', true );    
-    wp_enqueue_script( 'dblogger-jquery-isotope', get_template_directory_uri() . '/js/jquery.isotope.js', array(), '20151215', true );    
-    wp_enqueue_script( 'dblogger-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );    
-    wp_enqueue_script( 'dblogger-wow-min', get_template_directory_uri() . '/js/wow.min.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-modernizr-min', get_template_directory_uri() . '/assets/js/modernizr.min.js', array(), '20151215', true );      
+    wp_enqueue_script( 'dblogger-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-SmoothScroll', get_template_directory_uri() . '/assets/js/SmoothScroll.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-jquery-isotope', get_template_directory_uri() . '/assets/js/jquery.isotope.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-main', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-wow-min', get_template_directory_uri() . '/assets/js/wow.min.js', array(), '20151215', true );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_js_scripts' );
 /**

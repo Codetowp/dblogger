@@ -22,7 +22,7 @@ function dblogger_related_post() {
                 
                 if  ( get_the_post_thumbnail()=='')
                 {
-                    $background_img_relatedpost   = get_template_directory_uri() . '/img/default.jpg';
+                    $background_img_relatedpost   = get_template_directory_uri() . '/assets/img/default.jpg';
                     
                     $post_thumbnail= '<img src="'.$background_img_relatedpost.'" class="img-responsive">';
                 }

@@ -20,7 +20,7 @@ get_header(); ?>
     ==========================================-->
 
 <?php
-$background_img   =  get_theme_mod( 'dblogger_back_img',  esc_url(get_template_directory_uri() . '/img/b-1.jpg'));   
+$background_img   =  get_theme_mod( 'dblogger_back_img',  esc_url(get_template_directory_uri() . '/assets/img/b-1.jpg'));   
 $disable    = get_theme_mod( 'dblogger_header_check' ) == 1 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
 	$disable = false;
@@ -61,7 +61,7 @@ if ( ! $disable1) : ?>
 			<?php
 
 			$background_img   =  get_theme_mod( 'dblogger_guide_icon' );   
-			$background_img_static   = get_template_directory_uri() . '/img/f-fa-book.png';
+			$background_img_static   = get_template_directory_uri() . '/assets/img/f-fa-book.png';
 			$image = $background_img ? "$background_img" : "$background_img_static"; 
 			?>
 
@@ -121,7 +121,7 @@ if ( ! $disable1) : ?>
 									{?>
 										<a href="<?php the_permalink();?>"><?php the_post_thumbnail('dblogger_homepage'); ?></a>
 									<?php }else{
-										$default_img= get_template_directory_uri() . '/img/default.jpg';
+										$default_img= get_template_directory_uri() . '/assets/img/default.jpg';
 									?>
 										<img src="<?php echo esc_url( $default_img );?>" class="img-responsive">
 									<?php } ?>
@@ -155,7 +155,7 @@ if ( ! $disable1) : ?>
 			<div class="section-title text-center">
 				<?php 
 				$dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('Pages', 'dblogger' ));
-				if ($dblogger_theme_title != '') echo '<h2>' . wp_kses_post($dblogger_theme_title) . ' </h2>'; 
+				if ($dblogger_theme_title != '') echo '<h2>' . wp_kses_post($dblogger_theme_title) . '</h2>'; 
 				
 					$dblogger_theme_button_text  = get_theme_mod( 'dblogger_theme_button_text', esc_html__('Read More', 'dblogger') );
 
@@ -179,7 +179,7 @@ if ( ! $disable1) : ?>
 						
 						<?php 
 					}else{
-						$page_post_img= get_template_directory_uri() . '/img/default.jpg' ;
+						$page_post_img= get_template_directory_uri() . '/assets/img/default.jpg' ;
 						?>
 						<img src="<?php echo esc_url( $page_post_img );?>" class="img-responsive">
 					<?php  }  ?>

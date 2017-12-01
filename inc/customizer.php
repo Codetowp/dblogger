@@ -160,7 +160,7 @@ function dblogger_customize_register( $wp_customize ) {
 	/*banner img*/  
 	$wp_customize->add_setting( 'dblogger_banner_image',
 		array(
-			'default'           => esc_url( get_template_directory_uri() . '/img/ads-7x9.jpg' ),
+			'default'           => esc_url( get_template_directory_uri() . '/assets/img/ads.jpg' ),
 	) );
     
 	$wp_customize->add_control(
@@ -248,7 +248,7 @@ function dblogger_customize_register( $wp_customize ) {
     
          
 	$wp_customize->add_setting( 'dblogger_back_img', array(
-		'default'           => esc_url( get_template_directory_uri() . '/img/b-1.jpg' ),
+		'default'           => esc_url( get_template_directory_uri() . '/assets/img/b-1.jpg' ),
 		'type'                      => 'theme_mod',
 		'capability'                => 'edit_theme_options',
 		'sanitize_callback'         => 'esc_url_raw',
@@ -344,7 +344,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
         
 	$wp_customize->add_setting( 'dblogger_guide_icon', array(
-		'default'           => esc_url( get_template_directory_uri() . '/img/f-fa-book.png' ),
+		'default'           => esc_url( get_template_directory_uri() . '/assets/img/f-fa-book.png' ),
 		'type'                      => 'theme_mod',
 		'capability'                => 'edit_theme_options',
 		'sanitize_callback'         => 'esc_url_raw',
@@ -407,7 +407,6 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_control('dblogger_post_number',
 		array(
 			'type' => 'integer',
-
 			'label' => __('Number Of Slides To Show - i.e 10 (default is 6)','dblogger'),
 			'section' => 'dblogger_guide_section',
 		)
@@ -427,7 +426,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_theme_check',
 		array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
-			'default'           => 1,
+			'default'           => 0,
 			'capability'        => 'manage_options',
 			'transport'         => 'refresh',
 		)

@@ -44,12 +44,12 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 
 				<li class="media">
-					<a href="<?php esc_url(the_permalink()); ?>">
+					<a class="pull-left no-pddig" href="<?php esc_url(the_permalink()); ?>">
 						<?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
 
 						if  ( get_the_post_thumbnail()=='')
 						{
-							$background_img_relatedpost   = get_template_directory_uri()."/img/default.jpg";
+							$background_img_relatedpost   = get_template_directory_uri()."/assets/img/default.jpg";
 
 							echo   '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
 						}
@@ -71,7 +71,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						</p>
 						<p class="by-author"><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html_e('Read more', 'dblogger'); ?></a></p>
 						<?php if ( $show_date ) : ?>
-							<p class="dter"><?php echo esc_attr(get_the_date()); ?></p>
+							<p class="post-date"><?php echo esc_attr(get_the_date()); ?></p>
 						<?php endif;
 
 						//thirst_number_comments();

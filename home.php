@@ -16,7 +16,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row"> 
 			<!--blog posts container-->
-			<div class="col-md-9 col-sm-8 " style="padding-left:0; padding-right:0;" > 
+			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;" > 
 				<?php 
 				if ( have_posts() ) :
 					/* Start the Loop */
@@ -41,7 +41,7 @@ get_header(); ?>
 			</div>
 			<!--blog posts container--> 
 			<!--aside-->
-			<aside class="col-md-3 col-sm-4" > 
+			<aside class="col-md-4 col-sm-4" > 
 				<?php get_sidebar(); ?> 
 			</aside>
 			<!--aside-->
