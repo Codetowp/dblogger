@@ -1726,7 +1726,8 @@ dd {
 .me {
 	border-bottom-color: #d35400;
 }
-.n-lt-s {
+.widget_rss cite {
+    display: block;
 }
 .n-lt-s input[type='email'] {
 	width: 100%;
@@ -1802,7 +1803,7 @@ aside .widget_search .input-group {
 	color: #aab6aa;
 }
 .widget_recent_comments ul li {
-	padding: 26px 0;
+	padding: 24px 0;
 	font-family: 'Montserrat', sans-serif;
 	color: #73757d;
 	font-size: 12px;
@@ -1948,7 +1949,7 @@ aside {
 	padding-left: 40px !important;
 }
 aside ul li {
-	padding: 8px 0;
+	padding: 7px 0;
 	font-family: 'Montserrat', sans-serif;
 	letter-spacing: 0.8px;
 	color: #969dad;
@@ -2100,7 +2101,7 @@ aside li a:hover {
 }
 .widget_meta ul {
 	list-style: none;
-	padding-left: 0;
+	padding-left: 20px;
 }
 .widget_meta li {
 	padding: 8px 0;
@@ -2308,10 +2309,8 @@ aside li a:hover {
 	color: #73757d;
 }
 
-#comments .comment-meta{}
 
 #comments ol {margin-left:inherit;}
-
 
 #respond h3 {
 	padding-left: 0;
@@ -2911,6 +2910,9 @@ display: block;
     max-width: 100%;
     height: auto;
 }
+img.rss-widget-icon {
+    display: inline-block;
+}
 #page-banner {
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -3052,7 +3054,6 @@ display: block;
 	font-size: 16px;
 	color: #43484d;
 	line-height: 1.7;
-	padding: 0;
 	margin-bottom: 48px;
 }
 .tab-pane p {
@@ -3222,8 +3223,9 @@ display: block;
 }
 .single .single-post ol li {
 	color: #43484d;
-	font-size: 17px;
+	font-size: 18px;
 	margin: 10px 0;
+	font-family: 'PT Serif', serif;
 }
 
 /*single page*/
@@ -3260,6 +3262,7 @@ display: block;
 	color: #fff;
 	font-weight: 500;
 	max-width: 700px;
+	padding: 0;
 }
 #single-banner h5 {
 	color: #fff;
@@ -3310,12 +3313,9 @@ display: block;
 	font-weight: 400;
 	font-style: italic;
 }
-.single .single-post p {
-	padding-left: 60px;
-}
+
 .single .single-post p span {
 	display: block;
-	/*margin: 60px 0;*/
 }
 .single #d.single-post p:first-child {
 	color: #5e6977;
@@ -3349,7 +3349,7 @@ display: block;
 	-moz-transition: all 0.6s;
 	-webkit-transition: all 0.6s
 }
-.single .single-post h1, .single .single-post h2, .single .single-post h3, .single .single-post h4, .single .single-post h5, .single .single-post h6 {
+.single-post p, .single-post h1, .single-post h2, .single-post h3, .single-post h4, .single-post h5, .single-post h6 {
 	padding-left: 60px;
 }
 .single .single-post footer.entry-meta-bar {
@@ -3475,16 +3475,16 @@ blockquote p {
 	border-radius: 6px;
 	margin-left: 20px;
 }
-.also-like-block {
-}
+
 .also-like-block h1, .also-like-block h2, .also-like-block h3, .also-like-block h4, .also-like-block h5, .also-like-block h6 {
 	padding-left: 0px !important;
 }
-.also-like-block h4 {
+.also-like-block h4, #comments .comment-reply-title {
 	color: #3b3e8a;
-	text-transform: none;
+	text-transform: uppercase;
 	margin-top: 80px;
 }
+
 /*Woocommerce product page*/
 
 

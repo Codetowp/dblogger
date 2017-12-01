@@ -12,8 +12,8 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 	<?php get_template_part( 'template-parts/content', 'single' ); ?>	
-		
-		<div class="clearfix"></div>
+		</div>
+			<div class="clearfix"></div>
 			
 			<!--author box-->
 			<div class="author-box">
@@ -32,9 +32,7 @@ get_header(); ?>
 			<div class="also-like-block">
 				<h4><?php echo esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
 				<?php dblogger_related_post(); ?>
-			</div>
-			
-			<div class="clearfix"></div>
+			</div>						
 			
 			<!--Comments-->
 			<div id="comments" class="comments-area text-left">
