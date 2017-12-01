@@ -1710,7 +1710,7 @@ dd {
 	font-weight: 600;
 }
 .widget-title {
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 600;
 	color: #585b98;
 	background: none;
@@ -1842,6 +1842,12 @@ aside .widget_search .input-group {
 	left: 45px;
 	font-size: 18px;
 }
+.widget ul {
+	padding-left:20px;
+}
+#recentcomments {
+	padding-left:40px;
+}
 .widget_recent_entries li img {
 	width: 65px;
 	height: 65px;
@@ -1932,11 +1938,6 @@ aside .widget_search .input-group {
 }
 
 
-
-
-
-
-
 aside section {
 	margin-bottom: 40px !important;
 }
@@ -1945,8 +1946,6 @@ aside section:first-child {
 }
 aside {
 	padding-left: 40px !important;
-}
-aside ul {
 }
 aside ul li {
 	padding: 8px 0;
