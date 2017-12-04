@@ -330,14 +330,14 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_guide_check',
 		array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
-			'default'           => '',
+			'default'           => 0,
 			'capability'        => 'manage_options',
 			'transport'         => 'refresh',
 		)
 	);
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 		'settings' => 'dblogger_guide_check',
-		'label'    => __( 'Enable this section ?', 'dblogger' ),
+		'label'    => __( 'Disable this section ?', 'dblogger' ),
 		'section'  => 'dblogger_guide_section',
 		'type'     => 'ios',
 		'priority' => 1,) 
@@ -900,6 +900,12 @@ function dblogger_customize_partial_newsletter_title() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function dblogger_customize_preview_js() {
-	wp_enqueue_script( 'dblogger-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'dblogger-customizer', get_template_directory_uri() . '../assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'dblogger_customize_preview_js' );
+
+function dblogger_customizer_css() {
+		wp_enqueue_style( 'dblogger-customizer-css', get_template_directory_uri() . '../assets/css/customizer.css' );
+	}
+
+	add_action( 'customize_controls_print_styles', 'dblogger_customizer_css' );

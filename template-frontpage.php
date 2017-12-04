@@ -45,10 +45,10 @@ if ( ! $disable) : ?>
     </div>
 </section>
 <?php endif;?>
-<!-- Guide Page
+<!-- Category Section
     ==========================================-->
 <?php
-$disable1    = get_theme_mod( 'dblogger_guide_check' ) == 0 ? true : false ;
+$disable1    = get_theme_mod( 'dblogger_guide_check' ) == 1 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
 	$disable1 = false;
 }

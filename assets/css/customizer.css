@@ -1,0 +1,20 @@
+/*
+Theme Name: atoZ
+*/
+
+
+
+.dblogger-theme-info {
+    padding: 10px;
+    background: #3b3e8a;
+	border-radius: 6px;
+}
+.dblogger-theme-info a {
+    color: #fff;
+    display: block;
+    padding: 15px;
+}
+.dblogger-theme-info a:hover {
+    background: #f53347;
+    color: #fff;
+}
