@@ -653,11 +653,6 @@ p.no-comments {
     vertical-align: middle;
     /*float: left;*/
 }
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    background-color: #a46497;
-    color: #fff;
-    -webkit-font-smoothing: antialiased;
-}
 .woocommerce .cart .button, .woocommerce .cart input.button {
     float: none;
 }

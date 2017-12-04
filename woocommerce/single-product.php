@@ -22,13 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-
-
-
 <!-- banner Page
     ==========================================-->
-
-<Section id="page-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+<section id="page-banner" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
   <div class="overlay-banner">
     <div class="content">
       <div class="container "> 
@@ -46,12 +42,10 @@ get_header( 'shop' ); ?>
         </ol>
         <!--/breadcrumb-->
         <h1><?php the_title(); ?></h1>
-       <!-- <header class="entry-header"><a href="#"> </a></header>-->
       </div>
     </div>
   </div>
-</Section>
-
+</section>
 <!--woocommerce body-->
 
 <section id="woocommerce-page">
@@ -95,8 +89,6 @@ get_header( 'shop' ); ?>
     </div>
   </div>
 </section>
-
-
 
 <?php get_footer( 'shop' );
 

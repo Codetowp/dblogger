@@ -13,7 +13,6 @@
 	<div class="overlay-banner">
 		<div class="content">
 			<div class="container">
-
 				<h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing"><span itemprop="name"><?php the_title(); ?></span></h1>
 			</div>
 		</div>
