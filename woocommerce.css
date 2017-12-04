@@ -662,3 +662,6 @@ p.no-comments {
 .woocommerce .quantity {
     float: left;
 }
+a.woocommerce-LoopProduct-link.woocommerce-loop-product__link img {
+    min-height: 0;
+}
