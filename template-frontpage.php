@@ -232,7 +232,8 @@ if ( ! $disable1) : ?>
 					if ($dblogger_blog_title != '') echo '<h2>' . wp_kses_post($dblogger_blog_title) . '</h2>'; ?>
 					<?php 
 					$dblogger_blog_button_text  = get_theme_mod( 'dblogger_blog_button_text', esc_html__('Read More', 'dblogger' ));
-					if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url( home_url( '/blog' ) ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; 
+					$dblogger_blog_button_url   = get_theme_mod('dblogger_blog_button_url',esc_url('#', 'dblogger') );
+					if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url($dblogger_blog_button_url ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; 
 					?>
 				</div>
 				<?php 

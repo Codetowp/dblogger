@@ -588,7 +588,18 @@ function dblogger_customize_register( $wp_customize ) {
         'priority' 					=> 4,
     ) );	
     
-    
+     $wp_customize->add_setting( 'dblogger_blog_button_url', array(     
+        'default'                   => esc_url('#', 'dblogger'),
+        'sanitize_callback'         => 'sanitize_text_field',
+        'transport'                 => 'postMessage',               
+    ) );    
+
+    $wp_customize->add_control( 'dblogger_blog_button_url', array(
+        'type'						=> 'text',
+        'label' 					=> __( 'Button Url', 'dblogger' ),
+        'section'  					=> 'dblogger_blog_section',
+        'priority' 					=> 3
+    ) );	  
     $wp_customize->add_setting(
     'dblogger_blog_post_count',
 		array(

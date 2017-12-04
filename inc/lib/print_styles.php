@@ -96,16 +96,17 @@ add_action( 'wp_head', 'dblogger_headings_font_color' );
 
 if (!function_exists('dblogger_accent_color'))  {
 	function dblogger_accent_color(){
-		echo '<style type="text/css" id="rijo-css">';
+		echo '<style type="text/css" id="accent-css">';
 		$color_value = get_theme_mod('dblogger_accent_color', '');
 		$append_color = sprintf( 'color: %s !important;',  $color_value );
         $append_color_link = sprintf( 'background: %s !important;',  $color_value );
         $append_bckcolor = sprintf( 'background-color: %s;',  $color_value );
         $append_border=sprintf( 'border: 2px %s solid;',  $color_value );
         $append_border_s=sprintf( 'border-color: %s;',  $color_value );
+        $append_border_b=sprintf('border-bottom: 20px solid %s;',$color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" .'#top-menu.navbar-default{'.esc_html( $append_bckcolor ).'}'."\n".'#top-menu.navbar-default .navbar-nav > li a:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-default{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.esc_html( $append_color ).'}'."\n".'.btn-white:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-white:hover{'.esc_html( $append_border ).'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active:before, .guide-block .nav-tabs > li:hover:before{'.esc_html( $append_color_link ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_bckcolor ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_border_s ).'}';
+			echo "\n" .'#top-menu.navbar-default{'.esc_html( $append_bckcolor ).'}'."\n".'#top-menu.navbar-default .navbar-nav > li a:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-default{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.esc_html( $append_color ).'}'."\n".'.btn-white:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-white:hover{'.esc_html( $append_border ).'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active:before, .guide-block .nav-tabs > li:hover:before{'.esc_html( $append_color_link ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_bckcolor ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_border_s ).'}'."\n".'#top-menu.navbar-default .navbar-nav ul li{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#top-menu.navbar-default .navbar-nav ul:before{'.esc_html( $append_border_b ).'}'."\n"."\n".'#respond input[type=submit]{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#respond input[type=submit]:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.single .single-post ul li:before{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.widget_archive li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_categories li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li:hover:before{'.esc_html( $append_color ).'}'."\n"."\n".'aside li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.posts-navigation ul li a:hover, .nav-links a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_border_s ).'}'."\n"."\n".'.cat-links a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.tags-links a:hover{'.esc_html( $append_color ).'}'."\n";
 		}
 		echo "\n". "</style>". "\n";
 	}
@@ -116,12 +117,14 @@ add_action( 'wp_head', 'dblogger_accent_color' );
 
 if (!function_exists('dblogger_secondary_color'))  {
 	function dblogger_secondary_color(){
-		echo '<style type="text/css" id="rijo-css">';
+		echo '<style type="text/css" id="secondary-color-css">';
 		$color_value = get_theme_mod('dblogger_secondary_color', '');
         $append_bckcolor = sprintf( 'background-color: %s !important;',  $color_value );
+        $append_color=sprintf('color:%s;',$color_value);
+        $append_border= sprintf('border: 2px %s solid',$color_value);
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" .'.on{'.esc_html( $append_bckcolor ).'}'."\n".'.theme-post-caption .view-payment{'.esc_html( $append_bckcolor ).'}'."\n".'.widget_categories ul{'.esc_html( $append_bckcolor ).'}';
+			echo "\n" .'.on{'.esc_html( $append_bckcolor ).'}'."\n".'.theme-post-caption .view-payment{'.esc_html( $append_bckcolor ).'}'."\n".'.widget_categories ul{'.esc_html( $append_bckcolor ).'}'."\n".'.author-box .author-box-title a{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.author-box .author-box-title{'.esc_html( $append_color ).'}'."\n"."\n".'a{'.esc_html( $append_color ).'}'."\n"."\n".'.widget-title{'.esc_html( $append_color ).'}'."\n"."\n".'.tagcloud a{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.social-links-top > li > a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.also-like-block h4, #comments .comment-reply-title{'.esc_html( $append_color ).'}'."\n";
 		}
 		echo "\n". "</style>". "\n";
 	}

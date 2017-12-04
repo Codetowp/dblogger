@@ -152,7 +152,7 @@ a:hover {
 }
 .single .cat-links a,.single .tags-links a , .page .cat-links a, .page .tags-links a , .page .date-article a{
 
-	color: #fff;
+	/*color: #fff;*/
 }
 
 /* 	2.2 Navigation */
@@ -789,7 +789,7 @@ button + .dropdown-menu {
 .posts-navigation ul li a, .nav-links a {
 	background: #fff;
 	font-family: 'Montserrat', sans-serif;
-	color: #3a405b;
+	/*color: #3a405b;*/
 	font-size: 14px;
 	font-weight: 600;
 	padding: 15px 18px;
@@ -1781,7 +1781,7 @@ dd {
 	border: 2px #3b3e8a solid;
 	background: #3b3e8a;
 	border-radius: 15px;
-	color: #fff;
+	color: #fff !important;
 }
 aside .widget_search {
 	margin-bottom: 18px;
@@ -4433,4 +4433,7 @@ span.byline {
 #bbpress-forums div.bbp-forum-author img.avatar, #bbpress-forums div.bbp-topic-author img.avatar, #bbpress-forums div.bbp-reply-author img.avatar{
 
 	min-height: 80px;
+}
+.single span.cat-links a {
+    color: white !important;
 }
