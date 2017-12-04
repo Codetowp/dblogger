@@ -15,7 +15,7 @@
 		if  ( get_the_post_thumbnail()!=''){
 			the_post_thumbnail('dblogger_theme'); 
 		} else {
-			$single_img = get_template_directory_uri().'/img/default.jpg';
+			$single_img = get_template_directory_uri().'/assets/img/default.jpg';
 		?>
 			<img src="<?php echo esc_url( $single_img );?>" alt="" class="img-responsive">
 		<?php }?>
@@ -24,7 +24,7 @@
 		<a href="<?php the_permalink();?>">
 			<h5><?php the_title();?></h5>
 		</a> 
-		<span class="date-article"><?php dblogger_posted_on();?></span>
+		<span class="date-article"><?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?></span>
 	</header>
 	<p><?php echo the_excerpt();?></p>
 </article>

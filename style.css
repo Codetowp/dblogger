@@ -3201,7 +3201,7 @@ img.rss-widget-icon {
 }
 .single .single-post ul, .single .single-post ol {
 	/*margin-left: 50px;*/
-	margin-bottom: 8px;
+	margin-bottom: 25px;
 }
 .single .single-post ul li {
 	list-style: none;
@@ -3352,6 +3352,10 @@ img.rss-widget-icon {
 .single-post p, .single-post h1, .single-post h2, .single-post h3, .single-post h4, .single-post h5, .single-post h6 {
 	padding-left: 60px;
 }
+.comment-content p, .comment-content h1, .comment-content h2, .comment-content h3, .comment-content h4, .comment-content h5, .comment-content h6 {
+	padding-left: 0px;
+}
+
 .single .single-post footer.entry-meta-bar {
 	padding-left: 20px;
 	margin-top: 30px;
