@@ -105,7 +105,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_panel( 'dblogger_panel' ,
 		array(
 			'priority'        => 120,
-			'title'           => esc_html__( 'Frontpage Theme Sections', 'dblogger' ),
+			'title'           => esc_html__( 'Frontpage Sections', 'dblogger' ),
 			'description'     => '',
 			/*'active_callback' => 'onepress_showon_frontpage'*/
 	) );
@@ -684,15 +684,6 @@ function dblogger_customize_register( $wp_customize ) {
 	);	
     
     
-    /*blog setting
-    
-     $wp_customize->add_section('dblogger_blogsetting_section', array(
-        'title'                     => __('Blog Settings Section', 'dblogger'),
-        'description'               => 'Easily edit the blog',
-        'priority'                  => 122,
-       
-    ) );*/
-    
 	$wp_customize->add_setting('dblogger_post_related_post_count', array(
 		'default' => 3,
 		'sanitize_callback' => 'dblogger_sanitize_integer'
@@ -704,20 +695,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'section' => 'dblogger_blog_section',		
 	) );
     
-   /*  $wp_customize->add_setting( 'dblogger_blogpage_disable', array(
-			'default'    => '1',
-			'capability' => 'manage_options',
-			'transport' => 'postMessage',
-	) );
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_blogpage_disable', array(
-			'settings' => 'dblogger_blogpage_disable',
-			'label'    => __( 'Enable/Disable for this section', 'dblogger' ),
-			'section'  => 'dblogger_blogsetting_section',
-			'type'     => 'ios',
-            'priority' => 1,
-
-	) ) );*/
-    
+  
     
     /*Fonts*/
      
@@ -725,7 +703,7 @@ function dblogger_customize_register( $wp_customize ) {
 		array(
 			'title'                     => __('Font Settings', 'dblogger'),
 			'description'               => 'Change font family, size and color (Headings & Paragraph) for Homepage, Blog Posts & Pages.',
-			'priority'                  => 125,
+			'priority'                  => 40,
 	));
 
     
