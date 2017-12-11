@@ -2,7 +2,7 @@
 /**
  * Implements styles set in the theme customizer
  *
- * @package Customizer Library Demo
+ * @package dblogger
  */
 
 if ( ! function_exists( 'customizer_library_demo_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) :

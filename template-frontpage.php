@@ -15,7 +15,6 @@
 
 get_header(); ?>
 
-
 <!-- banner Page
     ==========================================-->
 
@@ -40,15 +39,14 @@ if ( ! $disable) : ?>
 
 				if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; 
 			?>
-            
-        </div>
+		</div>
     </div>
 </section>
 <?php endif;?>
 <!-- Category Section
     ==========================================-->
 <?php
-$disable1    = get_theme_mod( 'dblogger_guide_check' ) == 1 ? true : false ;
+$disable1 =	get_theme_mod( 'dblogger_guide_check' ) == 1 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
 	$disable1 = false;
 }
@@ -79,9 +77,9 @@ if ( ! $disable1) : ?>
 		<!--/section-title--> 
 
 		<!--guide-list-->
-		<div class="guide-list wow fdeInUp">
+		<div class="guide-list wow fadeInUp">
 			<div class="container">
-				<div class="row  guide-block"> 
+				<div class="row guide-block"> 
 					<!-- guides tabs -->    
 					<div>
 
@@ -150,7 +148,7 @@ if ( dblogger_is_selective_refresh() ) {
 if ( ! $disable1) : ?>
     <section id="theme-block">
       <div class="container">
-        <div class="row wow fdeInUp"> 
+        <div class="row wow fadeInUp"> 
           <!--section-title-->
 			<div class="section-title text-center">
 				<?php 
@@ -224,7 +222,7 @@ if ( ! $disable1) : ?>
 
 	<section id="from-blog">
 		<div class="container">
-			<div class="row wow fdeInUp"> 
+			<div class="row wow fadeInUp"> 
 			<!--section-title-->
 				<div class="section-title text-center">
 					<?php 
@@ -267,7 +265,7 @@ if ( ! $disable1) : ?>
 	 ?> 
 	<section id="newsletter-block">
 		<div class="container">
-			<div class="row wow fdeInUp"> 
+			<div class="row wow fadeInUp"> 
 			<!--section-title-->
 				<div class="section-title text-center">
 					<?php 

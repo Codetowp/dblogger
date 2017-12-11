@@ -43,8 +43,6 @@
                    $code =get_theme_mod( 'dblogger_banner_adsense_code', '' );
                    echo htmlspecialchars_decode( $code );
 					} ?>
-					
-
 				</div>
 			</div>
 		</div>
