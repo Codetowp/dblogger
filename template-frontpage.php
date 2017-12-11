@@ -277,7 +277,7 @@ if ( ! $disable1) : ?>
 
 				<div class="col-md-4 col-md-offset-4">
 
-					<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo $dblogger_newsletter_mailchimp ; ?>" target="_blank">
+					<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>" target="_blank">
 						<div class="input-group">
 							<input class="form-control" type="text" placeholder="Email Address..." value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
 							<span class="input-group-btn">

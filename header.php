@@ -40,7 +40,7 @@
 						<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"> <img class="img-responsive ads pull-right "  src="<?php echo esc_url($header_image);?>"> </a>
 					<?php  } else{ ?>
 					<?php 
-                   $code =get_theme_mod( 'dblogger_banner_adsense_code', '' );
+                   $code =get_theme_mod( 'dblogger_banner_adsense_code');
                    echo htmlspecialchars_decode( $code );
 					} ?>
 				</div>

@@ -56,11 +56,10 @@ function dblogger_entry_footer() {
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'dblogger' ) );
-		if ( $tags_list ) {
-			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( ', %1$s', 'dblogger' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
+		//$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'dblogger' ) );
+		//if ( $tags_list ) {
+		//	printf( '<span class="tags-links">' . esc_html__( ', %1$s', 'dblogger' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		//}
 	}
 }
 endif;
@@ -92,7 +91,7 @@ function dblogger_days_ago() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( '%s', 'post date', 'dblogger' ),$time_string 
+		esc_html( '%s', 'post date', 'dblogger' ),$time_string 
 	);
     $sep=' ';
 	echo '<span class="posted-on">'. $posted_on,$sep.'</span>'; 

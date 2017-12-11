@@ -33,15 +33,13 @@
 	<div class="container">
 		<div class="row wow fadeInUp">			
 			<div class="col-md-8 col-sm-8">
-				<article class="single-post">	
-					<?php //if( get_theme_mod( 'dblogger_blogpage_disable' ) == 1 ) { ?>
-						<ul class="single-post-share-ico">
-							<li><a data-original-title="Facebook"  data-placement="left" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="<?php esc_html('Share this post on Facebook!', 'dblogger')?>"><i class="fa fa-facebook"></i></a> </li>
-							<li><a data-original-title="Twitter" data-placement="left" target="_blank" href="http://twitter.com/home?status=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>: <?php the_permalink(); ?>" title="<?php esc_html('Share this post on Twitter!', 'dblogger')?>"><i class="fa fa-twitter"></i></a> </li>
-							<li><a data-original-title="Dribbble"  data-placement="left" target="_blank" href="https://dribbble.com?url=<?php the_permalink(); ?>&title=<?php urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&source=Dribbble" title="<?php esc_html('Share this post on Dribbble!', 'dblogger')?>"><i class="fa fa-dribbble"></i></a> </li>
-							<li><a data-original-title="linkedin"  data-placement="left" target="_blank" href="https://www.linkedin.com/?hl=en?url=<?php the_permalink();?>&description=<?php the_title();?> on <?php bloginfo('name'); ?> <?php echo esc_url( site_url() );?>" class="pin-it-button" count-layout="horizontal" title="<?php esc_html('Share on linkedin','dblogger') ?>"><i class="fa fa-linkedin"></i></a> </li>
-						</ul>
-					<?php//}?>
+				<article class="single-post">				
+					<ul class="single-post-share-ico">
+						<li><a data-original-title="Facebook"  data-placement="left" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="<?php esc_html('Share this post on Facebook!', 'dblogger')?>"><i class="fa fa-facebook"></i></a> </li>
+						<li><a data-original-title="Twitter" data-placement="left" target="_blank" href="http://twitter.com/home?status=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>: <?php the_permalink(); ?>" title="<?php esc_html('Share this post on Twitter!', 'dblogger')?>"><i class="fa fa-twitter"></i></a> </li>
+						<li><a data-original-title="Dribbble"  data-placement="left" target="_blank" href="https://dribbble.com?url=<?php the_permalink(); ?>&title=<?php urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&source=Dribbble" title="<?php esc_html('Share this post on Dribbble!', 'dblogger')?>"><i class="fa fa-dribbble"></i></a> </li>
+						<li><a data-original-title="linkedin"  data-placement="left" target="_blank" href="https://www.linkedin.com/?hl=en?url=<?php the_permalink();?>&description=<?php the_title();?> on <?php bloginfo('name'); ?> <?php echo esc_url( site_url() );?>" class="pin-it-button" count-layout="horizontal" title="<?php esc_html('Share on linkedin','dblogger') ?>"><i class="fa fa-linkedin"></i></a> </li>
+					</ul>
 					<?php echo the_content();?>
 					<!--Tags-->
 					<?php
@@ -80,8 +78,10 @@
 							);
 						?>
 					<?php endif; ?>
-					<div class="clearfix"></div>
-			
+			<div class="clearfix"></div>
+			<div class="page-links">
+				<?php wp_link_pages(); ?> 
+			</div>
 			<!--author box-->
 			<div class="author-box">
 				<?php echo get_avatar( get_the_author_meta('user_email'), '100', '' ); ?>

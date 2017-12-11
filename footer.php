@@ -15,7 +15,7 @@
 		<div class="row wow fadeInUp">
 			<div class="col-md-4">
 				<!--copyright-->
-				<p class="copyright">© 2017 Digital Blogger. All rights reserved</p>
+				<p class="copyright">&#169; 2017 Digital Blogger. All rights reserved</p>
 				<!--/copyright--> 
 			</div>
 			<!--bottom nav-->

@@ -81,8 +81,14 @@ if ( ! function_exists( 'dblogger_setup' ) ) :
 			'flex-height' => true,
 			)
 		);
-		// Woocommerce supported
-		add_theme_support( 'woocommerce' );
+		/**
+		 * This theme styles the visual editor to resemble the theme style,
+		 * specifically font, colors, and column width.
+		 */
+		add_editor_style( 'assets/css/editor-style.css', 'dblogger' );
+		
+		// Woocommerce supported here
+		add_theme_support( 'woocommerce' );		
 	}
 endif;
 add_action( 'after_setup_theme', 'dblogger_setup' );
@@ -194,16 +200,6 @@ function dblogger_css_styles(){
     wp_enqueue_style( 'dblogger-googleapis', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900' );    
 }
 add_action( 'wp_enqueue_scripts', 'dblogger_css_styles' );
-
-function add_ie8_support() {
-    $script = '<!--[if lt IE 9]>';
-    $script .= '<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>';
-    $script .= '<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>';
-    $script .= '<![endif]-->';
- 
-    echo $script;
-}
-add_action('wp_head', 'add_ie8_support');
 
 function dblogger_js_scripts() {
 	wp_enqueue_script( 'dblogger-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );

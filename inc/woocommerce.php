@@ -269,7 +269,7 @@ function dblogger_woocommerce_breadcrumbs() {
             'wrap_after'  => '</nav>',
             'before'      => '',
             'after'       => '',
-            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+            'home'        => _x( 'Home', 'breadcrumb', 'dblogger' ),
         );
 }
  
