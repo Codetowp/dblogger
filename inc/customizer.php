@@ -618,6 +618,42 @@ function dblogger_customize_register( $wp_customize ) {
         )
     );
     
+	/* Global Settings*/
+	$wp_customize->add_section( 'dblogger_global_settings' ,
+		array(
+			'priority'    => 105,
+			'title'       => esc_html__( 'Global Settings', 'dblogger' ),
+			'description' => '', 
+		)
+	);
+	
+	$wp_customize->add_setting('dblogger_post_related_post_count', array(
+		'default' => 3,
+		'sanitize_callback' => 'dblogger_sanitize_integer'
+	) );
+
+	$wp_customize->add_control('dblogger_post_related_post_count', array(
+		'type' => 'integer',		
+		'label' => __('Number Of Related Post To Show','dblogger'),
+		'section' => 'dblogger_global_settings',		
+	) );
+	
+	$wp_customize->add_setting( 'dblogger_post_sharing_icons',
+		array(
+			'sanitize_callback' => 'dblogger_sanitize_checkbox',
+			'default'           => 0,
+			'capability'        => 'manage_options',
+			'transport'         => 'refresh',
+		)
+	);
+	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_post_sharing_icons',  array(
+		'settings' => 'dblogger_post_sharing_icons',
+		'label'    => __( 'Enable Sharing Icons in Posts', 'dblogger' ),
+		'section'  => 'dblogger_global_settings',
+		'type'     => 'ios',
+		'priority' => 1,
+	) ) );
+	
     /* Subscribe Settings
 		----------------------------------------------------------------------*/
 	$wp_customize->add_section( 'dblogger_newsletter' ,
@@ -694,17 +730,7 @@ function dblogger_customize_register( $wp_customize ) {
 		) 
 	);	
     
-    
-	$wp_customize->add_setting('dblogger_post_related_post_count', array(
-		'default' => 3,
-		'sanitize_callback' => 'dblogger_sanitize_integer'
-	) );
-
-	$wp_customize->add_control('dblogger_post_related_post_count', array(
-		'type' => 'integer',		
-		'label' => __('Number Of Related Post To Show','dblogger'),
-		'section' => 'dblogger_blog_section',		
-	) );
+ 
     
   
     
@@ -726,7 +752,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'dblogger_paragraph_font', array(
-		'label'   => esc_attr__('Pick Paragraph Font Family', 'dblogger' ),
+		'label'   => esc_attr__('Change paragraph font family', 'dblogger' ),
 		'description'   => esc_attr__('Default : PT Serif', 'dblogger' ),
 		'section' => 'dblogger_font_settings',
 		'type'    => 'select',
@@ -743,7 +769,7 @@ function dblogger_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_paragraph_font_color', 
 		array(
-			'label'      => esc_attr__( 'Pick Paragraph Font Color', 'dblogger' ),
+			'label'      => esc_attr__( 'Pick paragraph font color', 'dblogger' ),
 			'description'   => esc_attr__('Default : #43484d', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
 			'priority'   => 2,
@@ -760,7 +786,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'type'     => 'range-value',
 		'section'  => 'dblogger_font_settings',
 		'settings' => 'dblogger_paragraph_font_size',        
-		'label'    => __( 'Pick Paragraph Font Size' , 'dblogger' ),
+		'label'    => __( 'Pick paragraph font size' , 'dblogger' ),
 		'description'   => esc_attr__('Default : 16px', 'dblogger' ),
 		'input_attrs' => array(
 		'min'    => 11,
@@ -779,7 +805,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'dblogger_heading_font_family', array(
-		'label'   => 'Pick Heading Font Family',
+		'label'   => 'Change heading font family',
 		'description'   =>  esc_attr__('Default : Montserrat', 'dblogger' ),
 		'section' => 'dblogger_font_settings',
 		'type'    => 'select',
@@ -796,7 +822,7 @@ function dblogger_customize_register( $wp_customize ) {
 		) );
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_headings_font_color', 
 		array(
-			'label'      => esc_attr__( 'Pick Heading Font Color', 'dblogger' ),
+			'label'      => esc_attr__( 'Pick heading font color', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
 			'priority'   => 5,
 		) ) );

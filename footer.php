@@ -15,7 +15,7 @@
 		<div class="row wow fadeInUp">
 			<div class="col-md-4">
 				<!--copyright-->
-				<p class="copyright">&#169; 2017 Digital Blogger. All rights reserved</p>
+				<p class="copyright">&#169; 2017 <?php echo bloginfo('name'); ?>. All rights reserved</p>
 				<!--/copyright--> 
 			</div>
 			<!--bottom nav-->
@@ -36,7 +36,7 @@
 		<!--powered by-->
 		<div class="col-md-4">
 		<!--copyright-->
-		<p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="#">Dcrazed</a></p>
+		<p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="<?php echo esc_url('https://dcrazed.com/'); ?>">Dcrazed</a></p>
 		</div>
 		<!--/powered by--> 
 		</div>

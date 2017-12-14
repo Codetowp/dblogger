@@ -140,7 +140,7 @@ if ( ! $disable1) : ?>
     ==========================================-->
 <?php
 
-$disable1    = get_theme_mod( 'dblogger_theme_check' ) == 1 ? true : false ;
+$disable1  = get_theme_mod( 'dblogger_theme_check' ) == 1 ? true : false ;
 
 if ( dblogger_is_selective_refresh() ) {
     $disable1 = false;
@@ -214,7 +214,7 @@ if ( ! $disable1) : ?>
 <!--From the blog
     ==========================================-->
 <?php
-$disable1    = get_theme_mod( 'dblogger_blog_check' ) == 1 ? true : false ;
+$disable1  = get_theme_mod( 'dblogger_blog_check' ) == 1 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
     $disable1 = false;
 }
@@ -255,7 +255,7 @@ if ( ! $disable1) : ?>
 <!--Newsletter
     ==========================================-->
 <?php
-$disable1    = get_theme_mod( 'dblogger_newsletter_disable' ) == 0 ? true : false ;
+$disable1  = get_theme_mod( 'dblogger_newsletter_disable' ) == 0 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
     $disable1 = false;
 }

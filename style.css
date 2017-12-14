@@ -1914,8 +1914,6 @@ aside .widget_search .input-group {
 	color: #acadb1;
 	text-decoration: underline;
 }
-.widget_archive ul {
-}
 .widget_archive ul li {
 	padding: 8px 0;
 	font-family: 'Montserrat', sans-serif;
@@ -2797,6 +2795,10 @@ article a img {
 	object-fit: cover;
 	display: block;
 }
+.gallery-item a img  {
+	min-height: fit-content;
+    height: fit-content;
+}
 article header {
 	padding: 0;
 }
@@ -3305,7 +3307,9 @@ img.rss-widget-icon {
 	font-weight: 400;
 	font-style: italic;
 }
-
+.archive-description {
+	color:#fff;
+}
 .single .single-post p span {
 	display: block;
 }
