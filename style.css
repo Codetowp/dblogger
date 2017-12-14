@@ -298,6 +298,9 @@ header a.navbar-brand img{max-height: 90px; max-width: 340px; overflow: hidden; 
 	color: #fff;
 	display: inline-block;
 }
+#top-menu.navbar-default .navbar-nav > li:last-child:after {
+	display: none;
+}
 #top-menu.navbar-default .navbar-nav > li:last-child a:after {
 	display: none;
 }
@@ -795,6 +798,7 @@ button + .dropdown-menu {
 	padding: 15px 18px;
 	border-radius: 0px;
 	border: 0px #9c9c9c solid;
+	display:inline-block;
 }
 .posts-navigation ul li a:hover, .nav-links a:hover {
 	transition: all 0.5s;
@@ -3317,13 +3321,14 @@ img.rss-widget-icon {
 	color: #5e6977;
 	font-size: 25px;
 	line-height: 1.4;
-	text-align: left
+	text-align: left;
 }
 .single .single-post .single-post-share-ico {
 	position: absolute;
 	left: 0;
 	top: 22px;
 	z-index: 10;
+	padding-left:0;
 	margin-left: inherit;
 }
 .single .single-post .single-post-share-ico li {
