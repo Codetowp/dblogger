@@ -1,0 +1,616 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: dBlogger\n"
+"POT-Creation-Date: 2017-12-14 13:54+0530\n"
+"PO-Revision-Date: 2017-12-14 13:54+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:32
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: archive.php:57 home.php:34
+msgid "Newer posts"
+msgstr ""
+
+#: archive.php:58 home.php:35
+msgid "Older posts"
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:39
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:58
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: functions.php:48
+msgid "Footer"
+msgstr ""
+
+#: functions.php:146
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:148
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:181
+msgid "Home"
+msgstr ""
+
+#: header.php:69
+msgid "Add a Primary Menu"
+msgstr ""
+
+#: header.php:83
+msgctxt "placeholder"
+msgid "Search...&hellip;"
+msgstr ""
+
+#: inc/customizer.php:54
+msgid "Branding"
+msgstr ""
+
+#: inc/customizer.php:55
+msgid "Custom Header image"
+msgstr ""
+
+#: inc/customizer.php:56
+msgid "Add custom header for categories, 404, search etc"
+msgstr ""
+
+#: inc/customizer.php:68
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer.php:69
+msgid "Add Accent Color to Button."
+msgstr ""
+
+#: inc/customizer.php:82
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:83
+msgid "Add Secondary Color to Button."
+msgstr ""
+
+#: inc/customizer.php:89
+msgid "Documentation & Links"
+msgstr ""
+
+#: inc/customizer.php:109
+msgid "Global Settings"
+msgstr ""
+
+#: inc/customizer.php:116
+msgid "Banner Settings"
+msgstr ""
+
+#: inc/customizer.php:130
+msgid "Image"
+msgstr ""
+
+#: inc/customizer.php:131
+msgid "AdSense"
+msgstr ""
+
+#: inc/customizer.php:133
+msgid "The type of the banner"
+msgstr ""
+
+#: inc/customizer.php:134
+msgid ""
+"Select what type of banner you want to use: normal image or adsense script"
+msgstr ""
+
+#: inc/customizer.php:145
+msgid "Banner Link:"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Add the link for banner image."
+msgstr ""
+
+#: inc/customizer.php:162
+msgid "Banner Image:"
+msgstr ""
+
+#: inc/customizer.php:163
+msgid "Recommended size: 728 x 90"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "AdSense Code:"
+msgstr ""
+
+#: inc/customizer.php:179
+msgid ""
+"Add the code you retrieved from your AdSense account. You only need to "
+"insert the <ins> tag."
+msgstr ""
+
+#: inc/customizer.php:190
+msgid "Post Settings"
+msgstr ""
+
+#: inc/customizer.php:203
+msgid "Number Of Related Post To Show"
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "Enable Sharing Icons in Posts"
+msgstr ""
+
+#: inc/customizer.php:227
+msgid "Font Settings"
+msgstr ""
+
+#: inc/customizer.php:240
+msgid "Change paragraph font family"
+msgstr ""
+
+#: inc/customizer.php:241
+msgid "Default : PT Serif"
+msgstr ""
+
+#: inc/customizer.php:258
+msgid "Pick paragraph font color"
+msgstr ""
+
+#: inc/customizer.php:259
+msgid "Default : #43484d"
+msgstr ""
+
+#: inc/customizer.php:275
+msgid "Pick paragraph font size"
+msgstr ""
+
+#: inc/customizer.php:276
+msgid "Default : 16px"
+msgstr ""
+
+#: inc/customizer.php:293
+msgid "Default : Montserrat"
+msgstr ""
+
+#: inc/customizer.php:309
+msgid "Pick heading font color"
+msgstr ""
+
+#: inc/customizer.php:317
+msgid "Social Links"
+msgstr ""
+
+#: inc/customizer.php:333
+msgid " Url:"
+msgstr ""
+
+#: inc/customizer.php:343
+msgid "Frontpage Sections"
+msgstr ""
+
+#: inc/customizer.php:349
+msgid "Header Intro"
+msgstr ""
+
+#: inc/customizer.php:366
+msgid "Disable Header?"
+msgstr ""
+
+#: inc/customizer.php:382
+msgid "Background Image"
+msgstr ""
+
+#: inc/customizer.php:391
+msgid "Session Title"
+msgstr ""
+
+#: inc/customizer.php:398 inc/customizer.php:484 template-frontpage.php:33
+#: template-frontpage.php:69
+msgid "Section Title"
+msgstr ""
+
+#: inc/customizer.php:404 template-frontpage.php:35 template-frontpage.php:73
+msgid "Section Description"
+msgstr ""
+
+#: inc/customizer.php:411
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer.php:417 inc/customizer.php:580 inc/customizer.php:606
+#: inc/customizer.php:701 template-frontpage.php:37 template-frontpage.php:158
+#: template-frontpage.php:196 template-frontpage.php:232
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer.php:423 inc/customizer.php:587 inc/customizer.php:708
+msgid "Button Text"
+msgstr ""
+
+#: inc/customizer.php:435 inc/customizer.php:600 inc/customizer.php:721
+msgid "Button Url"
+msgstr ""
+
+#: inc/customizer.php:443
+msgid "Category section"
+msgstr ""
+
+#: inc/customizer.php:460
+msgid "Disable this section ?"
+msgstr ""
+
+#: inc/customizer.php:476
+msgid "Guide Icon"
+msgstr ""
+
+#: inc/customizer.php:491 inc/customizer.php:574 inc/customizer.php:695
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:497
+msgid "Section Description."
+msgstr ""
+
+#: inc/customizer.php:504
+msgid "Description"
+msgstr ""
+
+#: inc/customizer.php:518
+msgid "Slider Category"
+msgstr ""
+
+#: inc/customizer.php:521
+msgid "Select a category for the featured post slider"
+msgstr ""
+
+#: inc/customizer.php:535
+msgid "Number Of Slides To Show - i.e 10 (default is 6)"
+msgstr ""
+
+#: inc/customizer.php:543
+msgid "Pages section"
+msgstr ""
+
+#: inc/customizer.php:560
+msgid "Disable this section"
+msgstr ""
+
+#: inc/customizer.php:567 template-frontpage.php:155
+msgid "Pages"
+msgstr ""
+
+#: inc/customizer.php:613
+msgid "Link Title"
+msgstr ""
+
+#: inc/customizer.php:619 template-frontpage.php:188
+msgid "Tag"
+msgstr ""
+
+#: inc/customizer.php:626
+msgid "Tag Title"
+msgstr ""
+
+#: inc/customizer.php:642
+msgid "Number Of Page To Show (default - 6)"
+msgstr ""
+
+#: inc/customizer.php:655
+msgid "Enable/Disable tag section"
+msgstr ""
+
+#: inc/customizer.php:664
+msgid "Our Blog Section"
+msgstr ""
+
+#: inc/customizer.php:681
+msgid "Disable Blog Section?"
+msgstr ""
+
+#: inc/customizer.php:688 template-frontpage.php:229
+msgid "Our Blog"
+msgstr ""
+
+#: inc/customizer.php:739
+msgid "Number Of Posts To Show"
+msgstr ""
+
+#: inc/customizer.php:750 template-frontpage.php:282
+msgid "Subscribe"
+msgstr ""
+
+#: inc/customizer.php:766
+msgid "Enable newsletter?"
+msgstr ""
+
+#: inc/customizer.php:775 template-frontpage.php:272
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: inc/customizer.php:781
+msgid "Subscribe Form Title"
+msgstr ""
+
+#: inc/customizer.php:796
+msgid "MailChimp Action URL"
+msgstr ""
+
+#: inc/customizer.php:798
+msgid ""
+"The newsletter form use MailChimp, please follow <a target=\"_blank\" href="
+"\"http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms"
+"\">this guide</a> to know how to get MailChimp Action URL. Example <i>//"
+"yourlist.us8.list-manage.com/subscribe/post?u=anything</i>"
+msgstr ""
+
+#: inc/customizer.php:813
+msgid "Newsletter Details"
+msgstr ""
+
+#: inc/lib/fonts.php:16
+msgid "Standard Fonts"
+msgstr ""
+
+#: inc/lib/fonts.php:18
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/lib/fonts.php:123
+msgid "All"
+msgstr ""
+
+#: inc/lib/fonts.php:124
+msgid "Cyrillic"
+msgstr ""
+
+#: inc/lib/fonts.php:125
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:126
+msgid "Devanagari"
+msgstr ""
+
+#: inc/lib/fonts.php:127
+msgid "Greek"
+msgstr ""
+
+#: inc/lib/fonts.php:128
+msgid "Greek Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:129
+msgid "Khmer"
+msgstr ""
+
+#: inc/lib/fonts.php:130
+msgid "Latin"
+msgstr ""
+
+#: inc/lib/fonts.php:131
+msgid "Latin Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:132
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/lib/fonts.php:192
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: inc/lib/fonts.php:196
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/lib/fonts.php:200
+msgctxt "font style"
+msgid "Monospaced"
+msgstr ""
+
+#: inc/lib/theme-info.php:41
+msgid "Documentation"
+msgstr ""
+
+#: inc/lib/theme-info.php:45
+msgid "Demo"
+msgstr ""
+
+#: inc/lib/theme-info.php:49
+msgid "Leave a review"
+msgstr ""
+
+#: inc/lib/theme-info.php:53
+msgid "Buy us a coffee"
+msgstr ""
+
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:35
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:55
+#, php-format
+msgid "in %1$s"
+msgstr ""
+
+#: inc/widgets/recentpost.php:7
+msgid "Dblogger Recent Posts"
+msgstr ""
+
+#: inc/widgets/recentpost.php:31
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widgets/recentpost.php:72
+msgid "Read more"
+msgstr ""
+
+#: inc/widgets/recentpost.php:131
+msgid "The most recent posts on your site with thumbnails"
+msgstr ""
+
+#: inc/widgets/social.php:11
+msgid "Dblogger-Sidebar social widget"
+msgstr ""
+
+#: inc/widgets/social.php:13
+msgid "Display a Premium or Feature description."
+msgstr ""
+
+#: inc/widgets/social.php:91
+msgid "Social Title"
+msgstr ""
+
+#: inc/widgets/social.php:99
+msgid "Facebook Url"
+msgstr ""
+
+#: inc/widgets/social.php:107
+msgid "Twitter Url"
+msgstr ""
+
+#: inc/widgets/social.php:115
+msgid "Google Url"
+msgstr ""
+
+#: inc/widgets/social.php:123
+msgid "Instagram Title"
+msgstr ""
+
+#: inc/widgets/social.php:131
+msgid "Dribbble Url"
+msgstr ""
+
+#: inc/widgets/social.php:139
+msgid "Behance Url"
+msgstr ""
+
+#: inc/woocommerce.php:227
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/woocommerce.php:229
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce.php:272
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: page.php:41 template-parts/content-single.php:74
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-single.php:95
+msgid "By"
+msgstr ""
+
+#: template-parts/content-single.php:107
+msgid "YOU MAY ALSO LIKE"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "dBlogger"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://dcrazed.com/themes/dblogger/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Digital blogger(dBlogger) is a free wordpress blog theme with a clean layout "
+"and responsive design. It is for cool digital bloggers, theme developers, "
+"graphic designers etc who want to showcase their works in detail. The "
+"powerful blog gives you better SEO visibility and lets you reach a global "
+"audience."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Dcrazed"
+msgstr ""
