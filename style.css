@@ -2716,7 +2716,6 @@ embed, iframe, object {
 	margin: 10px 0;
 }
 .theme-post img {
-	min-height: 212px;
 	max-height: 212px;
 	overflow: hidden;
 	width: 100%;
