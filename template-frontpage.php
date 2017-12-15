@@ -165,7 +165,7 @@ if ( ! $disable1) : ?>
 			<!--/section-title--> 
 			<?php 
 			$page_counts = get_theme_mod( 'dblogger_page_post_count', esc_attr(6, 'dblogger' ) );
-			$page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts ) ); ?>
+			$page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts, 'orderby' => 'date', 'order' => 'DESC', ) ); ?>
 			<?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
 
 				<!--Theme-post-->
