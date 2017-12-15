@@ -154,7 +154,15 @@ a:hover {
 
 	/*color: #fff;*/
 }
-
+pre {
+    padding: 25px;
+    color: #999;
+    border: none;
+	font-size:16px;
+    font-weight: 400;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+}
 /* 	2.2 Navigation */
 
 #top-menu {
