@@ -155,13 +155,7 @@
         } );
     } );     
     
-    wp.customize( 'dblogger_theme_button_url', function( value ) {
-        value.bind( function( to ) {
-            $( '#theme-block href' ).text( to );
-        } );
-    } ); 
-    
-    
+   
     wp.customize( 'dblogger_theme_tag_check', function( value ) {
 			value.bind( function( to ) {
             if ( true === to) {

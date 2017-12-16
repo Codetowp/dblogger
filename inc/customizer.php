@@ -35,9 +35,13 @@ function dblogger_customize_register( $wp_customize ) {
 			'render_callback' => 'dblogger_customize_partial_guide_title',
 		) ); 
         $wp_customize->selective_refresh->add_partial( 'dblogger_theme_title', array(
-			'selector'        => '#theme-block .container',
+			'selector'        => '#theme-block .container h2',
 			'render_callback' => 'dblogger_customize_partial_theme_title',
 		) );
+		$wp_customize->selective_refresh->add_partial( 'dblogger_theme_button_url', array(
+			'selector'        => '#theme-block .container .btn-white',
+			'render_callback' => 'dblogger_customize_partial_theme_title',
+		) );		
         $wp_customize->selective_refresh->add_partial( 'dblogger_blog_title', array(
 			'selector'        => '#from-blog h2',
 			'render_callback' => 'dblogger_customize_partial_blog_title',

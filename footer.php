@@ -12,14 +12,11 @@
 ?>
 <footer id="bottom-footer">
 	<div class="container">
-		<div class="row wow fadeInUp">
-			<div class="col-md-4">
-				<!--copyright-->
+		<div class="row">
+			<div class="col-md-4 wow fadeInLeft">
 				<p class="copyright">&#169; 2017 <?php echo bloginfo('name'); ?>. All rights reserved</p>
-				<!--/copyright--> 
 			</div>
-			<!--bottom nav-->
-			<div class="col-md-4">
+			<div class="col-md-4 wow zoomIn">
 				<nav class="bottom-nav">
 					<ul>
 						<?php
@@ -32,13 +29,9 @@
 					</ul>
 				</nav>
 			</div>
-		<!--/bottom nav-->
-		<!--powered by-->
-		<div class="col-md-4">
-		<!--copyright-->
-		<p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="<?php echo esc_url('https://dcrazed.com/'); ?>">Dcrazed</a></p>
-		</div>
-		<!--/powered by--> 
+			<div class="col-md-4 wow fadeInRight">
+				<p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="<?php echo esc_url('https://dcrazed.com/'); ?>">Dcrazed</a></p>
+			</div>
 		</div>
 	</div>
 </footer>
@@ -46,6 +39,5 @@
 <script>
 	new WOW().init();
 </script>
-
 </body>
 </html>

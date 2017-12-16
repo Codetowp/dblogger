@@ -34,10 +34,9 @@
 					<?php
 					$type = get_theme_mod( 'dblogger_banner_type','image' );
 					if( $type == 'image' ){
-						$header_image   =  get_theme_mod( 'dblogger_banner_image' );
-						
+						$header_image   =  get_theme_mod( 'dblogger_banner_image', esc_url(get_template_directory_uri() . '/assets/img/ads.jpg') );						
 					?>
-						<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"> <img class="img-responsive ads pull-right "  src="<?php echo esc_url($header_image);?>"> </a>
+					<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"> <img class="img-responsive ads pull-right" src="<?php echo esc_url($header_image);?>"> </a>
 					<?php  } else{ ?>
 					<?php 
                    $code =get_theme_mod( 'dblogger_banner_adsense_code');
@@ -47,9 +46,7 @@
 			</div>
 		</div>
 	</header>
-
-	<!-- Navigation
-	==========================================-->
+	<!-- // Navigation -->
 	<nav id="top-menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container"> 
 			<!-- Brand and toggle get grouped for better mobile display -->
