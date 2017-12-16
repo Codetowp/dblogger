@@ -24,16 +24,15 @@ if ( dblogger_is_selective_refresh() ) {
 if ( ! $disable) : ?>
 <section id="home-banner" style="background-image: url(<?php echo esc_url( $background_img ); ?>);">
     <div class="content">
-        <div class="container wow fadeInUp"  data-wow-duration="1s">
+        <div class="container">
 			<?php 
 				$title  = get_theme_mod( 'dblogger_tagline_text', esc_html__('Section Title', 'dblogger' ));
-				if ($title != '') echo '<span class="sub">  ' . wp_kses_post($title) . ' </span>'; 
+				if ($title != '') echo '<span class="sub wow fadeInRight" data-wow-duration="1s">  ' . wp_kses_post($title) . ' </span>'; 
 					$desc  = get_theme_mod( 'dblogger_heder_text', esc_html__('Section Description', 'dblogger' ));
-				if ($desc != '') echo '<h1>' . wp_kses_post($desc) . '</h1>';
+				if ($desc != '') echo '<h1 class="wow fadeInUp">' . wp_kses_post($desc) . '</h1>';
 					$dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
 					$dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#', 'dblogger') );
-
-				if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default">' . wp_kses_post($dblogger_button_text) . '</a>'; 
+				if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default wow fadeInLeft">' . wp_kses_post($dblogger_button_text) . '</a>'; 
 			?>
 		</div>
     </div>
@@ -47,7 +46,7 @@ if ( dblogger_is_selective_refresh() ) {
 }
 if ( ! $disable1) : ?>
 <section id="guide-block">
-	<div class="section-title text-center"> 
+	<div class="section-title text-center wow fadeInUp"> 
 		<?php
 			$background_img   =  get_theme_mod( 'dblogger_guide_icon' );   
 			$background_img_static   = get_template_directory_uri() . '/assets/img/f-fa-book.png';
@@ -126,7 +125,7 @@ if ( ! $disable1) : ?>
 <section id="theme-block">
 	<div class="container">
 		<div class="row"> 
-			<div class="section-title text-center">
+			<div class="section-title text-center wow fadeInUp">
 				<?php 
 				$dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('Pages', 'dblogger' ));
 				?>
@@ -144,10 +143,12 @@ if ( ! $disable1) : ?>
 			$page_counts = get_theme_mod( 'dblogger_page_post_count', esc_attr(6, 'dblogger' ) );
 			$page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts, 'orderby' => 'date', 'order' => 'DESC', ) ); ?>
 			<?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
-			<div class="col-md-4 theme-post wow fadeInUp"> 
-				<a href="<?php echo the_permalink();?>">
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
 				<?php 
 				if(get_the_post_thumbnail()){
+				?>
+				<a href="<?php echo the_permalink();?>">
+				<?php
 					the_post_thumbnail('dblogger_theme');
 				?>	
 				</a>
@@ -200,19 +201,15 @@ if ( ! $disable1) : ?>
 				if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url($dblogger_blog_button_url ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; 
 				?>
 			</div>
-			<?php 
-
+			<?php
 			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , esc_attr(2, 'dblogger' ));
 			$count_blog = $count_blog-1;
 			$query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
 			if ($query_post->have_posts()) :
 				while ($query_post->have_posts()) : $query_post->the_post();
-
 					get_template_part( 'template-parts/content', get_post_format() );
-
 				endwhile;
 			endif;?>
-
 			<?php wp_reset_postdata(); ?>
 		</div>
 	</div>

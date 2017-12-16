@@ -4151,10 +4151,14 @@ div.bbp-breadcrumb p a {
 /*--------------------
 8.0 Responsive
 ----------------------*/
-
-
+@media (max-width: 480px) {
+#theme-block .col-xs-6 {
+	width:100%;
+}
+}	
 
 @media (max-width: 768px) {
+	
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
 	width: 48% !important;
 }
