@@ -20,7 +20,11 @@ get_header(); ?>
 	<div class="content wow fadeInUp">
 		<div class="container text-center"> 
 			<h1><?php the_title(); ?></h1>
-			<header class="entry-header"><a href="#"> </a><span class="date-article"><?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?></span><!-- in <span class="byline"><span class="author vcard"><a href="#">WORDPRESS</a> ,<a href="#"> BLOG</a></span></span>--> </header>
+			<header class="entry-header">
+				<span class="date-article">
+					<?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?>
+				</span>
+			</header>
 		</div>
 	</div>
 </section>

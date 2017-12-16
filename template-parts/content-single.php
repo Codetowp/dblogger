@@ -31,8 +31,8 @@
 
 <div id="Blog-home">
 	<div class="container">
-		<div class="row wow fadeInUp">			
-			<div class="col-md-8 col-sm-8">
+		<div class="row">			
+			<div class="col-md-8 col-sm-8 wow fadeInUp">
 				<article class="single-post">
 					<?php
 					$disable1  = get_theme_mod( 'dblogger_post_sharing_icons' ) == 0 ? true : false ;
@@ -90,7 +90,7 @@
 				<?php wp_link_pages(); ?> 
 			</div>
 			<!--author box-->
-			<div class="author-box">
+			<div class="author-box wow fadeInLeft">
 				<?php echo get_avatar( get_the_author_meta('user_email'), '100', '' ); ?>
 				<div class="author-box-title"><?php echo esc_html_e('By', 'dblogger'); ?><?php esc_url(the_author_posts_link()); ?></a></div>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
@@ -103,14 +103,14 @@
 			<div class="clearfix"></div>
 			
 			<!-- Related Posts-->
-			<div class="also-like-block">
+			<div class="also-like-block wow bounceIn">
 				<h4><?php echo esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
 				<?php dblogger_related_post(); ?>
 			</div>						
 			
 			<!--Comments-->
 			<div class="clearfix"></div>
-			<div id="comments" class="comments-area text-left">
+			<div id="comments" class="comments-area text-left wow fadeInUp">
 				<?php comments_template(); ?>
 			</div>
 			

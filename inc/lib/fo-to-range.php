@@ -1,7 +1,9 @@
 <?php
 /**
  * Build Fonts List, Toggle, Range Slide
+ *
  * Note: Types select for fonts, toggle, range-input
+ *
  * @package dblogger
  */
  
@@ -33,8 +35,8 @@ endif;
 class Customizer_Toggle_Control extends WP_Customize_Control {
 	public $type = 'toggle';
 	public function enqueue() {
-		wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/assets/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
-		wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/assets/pure-css-togle-buttons.css', array(), rand() );			
+		wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/admin/pure-css-togle-buttons.css', array(), rand() );			
 		$css = '.disabled-control-title {color: #a0a5aa;}
 				input[type=checkbox].tgl-light:checked + .tgl-btn {background: #0085ba;}
 				input[type=checkbox].tgl-light + .tgl-btn {background: #a0a5aa;}
@@ -65,8 +67,8 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
     class Customizer_Range_Value_Control extends WP_Customize_Control {
 		public $type = 'range-input';
 		public function enqueue() {
-			wp_enqueue_script( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/assets/customizer-range-value-control.js', array( 'jquery' ), rand(), true );
-			wp_enqueue_style( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/assets/customizer-range-value-control.css', array(), rand() );
+			wp_enqueue_script( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.js', array( 'jquery' ), rand(), true );
+			wp_enqueue_style( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.css', array(), rand() );
 		}
 
 		public function render_content() {
