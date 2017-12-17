@@ -72,9 +72,7 @@ table.shop_table_responsive tr td.download-actions .button {
 /**
  * Products
  */
-/**
- * Products
- */
+
 ul.products {
 	content: "";
 	display: table;
@@ -124,7 +122,7 @@ ul.products li.product .button {
 		width: 30.7966666667%;
 	}
 	.columns-4 ul.products li.product {
-		width: 22.15%;
+		/* width: 22.15%; */
 	}
 	.columns-5 ul.products li.product {
 		width: 16.96%;
