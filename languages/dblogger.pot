@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: dBlogger\n"
-"POT-Creation-Date: 2017-12-14 13:54+0530\n"
-"PO-Revision-Date: 2017-12-14 13:54+0530\n"
+"POT-Creation-Date: 2017-12-17 12:17+0530\n"
+"PO-Revision-Date: 2017-12-17 12:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -75,306 +75,306 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: header.php:69
+#: header.php:66
 msgid "Add a Primary Menu"
 msgstr ""
 
-#: header.php:83
+#: header.php:80
 msgctxt "placeholder"
 msgid "Search...&hellip;"
 msgstr ""
 
-#: inc/customizer.php:54
+#: inc/customizer.php:58
 msgid "Branding"
 msgstr ""
 
-#: inc/customizer.php:55
+#: inc/customizer.php:59
 msgid "Custom Header image"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:60
 msgid "Add custom header for categories, 404, search etc"
 msgstr ""
 
-#: inc/customizer.php:68
+#: inc/customizer.php:72
 msgid "Accent Color"
 msgstr ""
 
-#: inc/customizer.php:69
+#: inc/customizer.php:73
 msgid "Add Accent Color to Button."
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:86
 msgid "Secondary Color"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:87
 msgid "Add Secondary Color to Button."
 msgstr ""
 
-#: inc/customizer.php:89
+#: inc/customizer.php:93
 msgid "Documentation & Links"
 msgstr ""
 
-#: inc/customizer.php:109
+#: inc/customizer.php:113
 msgid "Global Settings"
 msgstr ""
 
-#: inc/customizer.php:116
+#: inc/customizer.php:120
 msgid "Banner Settings"
 msgstr ""
 
-#: inc/customizer.php:130
+#: inc/customizer.php:134
 msgid "Image"
 msgstr ""
 
-#: inc/customizer.php:131
+#: inc/customizer.php:135
 msgid "AdSense"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:137
 msgid "The type of the banner"
 msgstr ""
 
-#: inc/customizer.php:134
+#: inc/customizer.php:138
 msgid ""
 "Select what type of banner you want to use: normal image or adsense script"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:149
 msgid "Banner Link:"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:150
 msgid "Add the link for banner image."
 msgstr ""
 
-#: inc/customizer.php:162
+#: inc/customizer.php:166
 msgid "Banner Image:"
 msgstr ""
 
-#: inc/customizer.php:163
+#: inc/customizer.php:167
 msgid "Recommended size: 728 x 90"
 msgstr ""
 
-#: inc/customizer.php:178
+#: inc/customizer.php:182
 msgid "AdSense Code:"
 msgstr ""
 
-#: inc/customizer.php:179
+#: inc/customizer.php:183
 msgid ""
 "Add the code you retrieved from your AdSense account. You only need to "
 "insert the <ins> tag."
 msgstr ""
 
-#: inc/customizer.php:190
+#: inc/customizer.php:194
 msgid "Post Settings"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:207
 msgid "Number Of Related Post To Show"
 msgstr ""
 
-#: inc/customizer.php:217
+#: inc/customizer.php:221
 msgid "Enable Sharing Icons in Posts"
 msgstr ""
 
-#: inc/customizer.php:227
+#: inc/customizer.php:231
 msgid "Font Settings"
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:244
 msgid "Change paragraph font family"
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:245
 msgid "Default : PT Serif"
 msgstr ""
 
-#: inc/customizer.php:258
+#: inc/customizer.php:262
 msgid "Pick paragraph font color"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:263
 msgid "Default : #43484d"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:279
 msgid "Pick paragraph font size"
 msgstr ""
 
-#: inc/customizer.php:276
+#: inc/customizer.php:280
 msgid "Default : 16px"
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:297
 msgid "Default : Montserrat"
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:313
 msgid "Pick heading font color"
 msgstr ""
 
-#: inc/customizer.php:317
+#: inc/customizer.php:321
 msgid "Social Links"
 msgstr ""
 
-#: inc/customizer.php:333
+#: inc/customizer.php:337
 msgid " Url:"
 msgstr ""
 
-#: inc/customizer.php:343
+#: inc/customizer.php:347
 msgid "Frontpage Sections"
 msgstr ""
 
-#: inc/customizer.php:349
+#: inc/customizer.php:353
 msgid "Header Intro"
 msgstr ""
 
-#: inc/customizer.php:366
+#: inc/customizer.php:370
 msgid "Disable Header?"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:386
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:395
 msgid "Session Title"
 msgstr ""
 
-#: inc/customizer.php:398 inc/customizer.php:484 template-frontpage.php:33
-#: template-frontpage.php:69
+#: inc/customizer.php:402 inc/customizer.php:488 template-frontpage.php:29
+#: template-frontpage.php:57
 msgid "Section Title"
 msgstr ""
 
-#: inc/customizer.php:404 template-frontpage.php:35 template-frontpage.php:73
+#: inc/customizer.php:408 template-frontpage.php:31 template-frontpage.php:61
 msgid "Section Description"
 msgstr ""
 
-#: inc/customizer.php:411
+#: inc/customizer.php:415
 msgid "Heading"
 msgstr ""
 
-#: inc/customizer.php:417 inc/customizer.php:580 inc/customizer.php:606
-#: inc/customizer.php:701 template-frontpage.php:37 template-frontpage.php:158
-#: template-frontpage.php:196 template-frontpage.php:232
+#: inc/customizer.php:421 inc/customizer.php:584 inc/customizer.php:610
+#: inc/customizer.php:705 template-frontpage.php:33 template-frontpage.php:134
+#: template-frontpage.php:172 template-frontpage.php:199
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:423 inc/customizer.php:587 inc/customizer.php:708
+#: inc/customizer.php:427 inc/customizer.php:591 inc/customizer.php:712
 msgid "Button Text"
 msgstr ""
 
-#: inc/customizer.php:435 inc/customizer.php:600 inc/customizer.php:721
+#: inc/customizer.php:439 inc/customizer.php:604 inc/customizer.php:725
 msgid "Button Url"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:447
 msgid "Category section"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:464
 msgid "Disable this section ?"
 msgstr ""
 
-#: inc/customizer.php:476
+#: inc/customizer.php:480
 msgid "Guide Icon"
 msgstr ""
 
-#: inc/customizer.php:491 inc/customizer.php:574 inc/customizer.php:695
+#: inc/customizer.php:495 inc/customizer.php:578 inc/customizer.php:699
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:497
+#: inc/customizer.php:501
 msgid "Section Description."
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:508
 msgid "Description"
 msgstr ""
 
-#: inc/customizer.php:518
+#: inc/customizer.php:522
 msgid "Slider Category"
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:525
 msgid "Select a category for the featured post slider"
 msgstr ""
 
-#: inc/customizer.php:535
+#: inc/customizer.php:539
 msgid "Number Of Slides To Show - i.e 10 (default is 6)"
 msgstr ""
 
-#: inc/customizer.php:543
+#: inc/customizer.php:547
 msgid "Pages section"
 msgstr ""
 
-#: inc/customizer.php:560
+#: inc/customizer.php:564
 msgid "Disable this section"
 msgstr ""
 
-#: inc/customizer.php:567 template-frontpage.php:155
+#: inc/customizer.php:571 template-frontpage.php:130
 msgid "Pages"
 msgstr ""
 
-#: inc/customizer.php:613
+#: inc/customizer.php:617
 msgid "Link Title"
 msgstr ""
 
-#: inc/customizer.php:619 template-frontpage.php:188
+#: inc/customizer.php:623 template-frontpage.php:166
 msgid "Tag"
 msgstr ""
 
-#: inc/customizer.php:626
+#: inc/customizer.php:630
 msgid "Tag Title"
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:646
 msgid "Number Of Page To Show (default - 6)"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:659
 msgid "Enable/Disable tag section"
 msgstr ""
 
-#: inc/customizer.php:664
+#: inc/customizer.php:668
 msgid "Our Blog Section"
 msgstr ""
 
-#: inc/customizer.php:681
+#: inc/customizer.php:685
 msgid "Disable Blog Section?"
 msgstr ""
 
-#: inc/customizer.php:688 template-frontpage.php:229
+#: inc/customizer.php:692 template-frontpage.php:196
 msgid "Our Blog"
 msgstr ""
 
-#: inc/customizer.php:739
+#: inc/customizer.php:743
 msgid "Number Of Posts To Show"
 msgstr ""
 
-#: inc/customizer.php:750 template-frontpage.php:282
+#: inc/customizer.php:754 template-frontpage.php:240
 msgid "Subscribe"
 msgstr ""
 
-#: inc/customizer.php:766
+#: inc/customizer.php:770
 msgid "Enable newsletter?"
 msgstr ""
 
-#: inc/customizer.php:775 template-frontpage.php:272
+#: inc/customizer.php:779 template-frontpage.php:233
 msgid "Subscribe to our newsletter"
 msgstr ""
 
-#: inc/customizer.php:781
+#: inc/customizer.php:785
 msgid "Subscribe Form Title"
 msgstr ""
 
-#: inc/customizer.php:796
+#: inc/customizer.php:800
 msgid "MailChimp Action URL"
 msgstr ""
 
-#: inc/customizer.php:798
+#: inc/customizer.php:802
 msgid ""
 "The newsletter form use MailChimp, please follow <a target=\"_blank\" href="
 "\"http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms"
@@ -382,7 +382,7 @@ msgid ""
 "yourlist.us8.list-manage.com/subscribe/post?u=anything</i>"
 msgstr ""
 
-#: inc/customizer.php:813
+#: inc/customizer.php:817
 msgid "Newsletter Details"
 msgstr ""
 
@@ -554,7 +554,7 @@ msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: page.php:41 template-parts/content-single.php:74
+#: page.php:45 template-parts/content-single.php:74
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
