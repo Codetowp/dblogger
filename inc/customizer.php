@@ -124,7 +124,8 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_banner_type', 
 		array( 
-			'default'           => 'image'
+			'default'           => 'image',
+			'sanitize_callback' => 'banners_type_callback',
 	));
     
 	$wp_customize->add_control('dblogger_banner_type',
@@ -156,7 +157,9 @@ function dblogger_customize_register( $wp_customize ) {
      
 	$wp_customize->add_setting( 'dblogger_banner_image',
 		array(
-			'default'           => esc_url( get_template_directory_uri() . '/assets/img/ads.jpg' ),
+			'default'           =>  get_template_directory_uri() . '/assets/img/ads.jpg',
+			'sanitize_callback' => 'esc_url_raw',
+
 	) );
     
 	$wp_customize->add_control(
@@ -238,6 +241,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_paragraph_font', array(
 		'default'        => 'PT Serif',
+		'sanitize_callback' => 'customizer_library_sanitize_font_choice',
 	) );
 
 	$wp_customize->add_control( 'dblogger_paragraph_font', array(
@@ -270,6 +274,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'default'       => get_theme_mod( 'dblogger_paragraph_font_size', '16px' ),
 		'capability'    => 'edit_theme_options',
 		'transport'     => 'refresh',
+		'sanitize_callback' => 'dblogger_sanitize_integer',
 	) );
 
 	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragraph_font_size', array(
@@ -290,6 +295,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_heading_font_family', array(
 		'default'        => 'Montserrat',
 		'transport'     => 'refresh',
+		'sanitize_callback' => 'customizer_library_sanitize_font_choice',
 	) );
 
 	$wp_customize->add_control( 'dblogger_heading_font_family', array(
@@ -652,6 +658,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'default'    => 1,
 		'capability' => 'manage_options',
 		'transport' => 'postMessage',
+		'sanitize_callback' => 'dblogger_sanitize_checkbox',
 	) );
 	
 	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_tag_check', array(
@@ -660,6 +667,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'section'  => 'dblogger_theme_section',
 		'type'     => 'ios',
 		'priority' => 7,
+		
 	) ) );
 
 	// Our Blog SECTION
@@ -866,7 +874,19 @@ function dblogger_sanitize_checkbox( $input ) {
 		return 0;
     }
 }
-
+//select sanitization function
+    function dblogger_sanitize_select( $input, $setting ){
+         
+            //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+            $input = sanitize_key($input);
+ 
+            //get the list of possible select options 
+            $choices = $font_choices;
+                             
+            //return input if valid or return default option
+            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+             
+        }
 /**
  * Render the site title for the selective refresh partial.
  *
