@@ -3,7 +3,7 @@
 /**
  * Archive Forum Content Part
  *
- * @package bbPress
+ * @package dblogger
  * @subpackage Theme
  */
 

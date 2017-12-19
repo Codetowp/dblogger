@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package spore
+ * @package dblogger
  */
 get_header(); ?>
 		<?php
