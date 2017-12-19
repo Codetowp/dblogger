@@ -2,7 +2,7 @@
 if ( !function_exists( 'text_color_styles') )  {
 	function text_color_styles(){
 		echo '<style type="text/css" >';
-		$color_value = get_theme_mod('header_textcolor', '');
+		$color_value = get_theme_mod('header_textcolor', 'dblogger');
 		$append_color = sprintf( 'color: %s;',  $color_value );
 		if ( $color_value ) {
 			echo "\n" . '#top-header a , .openmenu-nav{' . esc_html( $append_color ) . '}';
@@ -17,7 +17,7 @@ add_action( 'wp_head', 'text_color_styles' );
 if (!function_exists('dblogger_paragraph_font'))  {
 	function dblogger_paragraph_font(){
 		echo '<style type="text/css" >';
-		$fontfamily_value = get_theme_mod('dblogger_paragraph_font', '');
+		$fontfamily_value = get_theme_mod('dblogger_paragraph_font', 'dblogger');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
@@ -33,7 +33,7 @@ add_action( 'wp_head', 'dblogger_paragraph_font' );
 if (!function_exists('dblogger_paragraph_font_size_styles'))  {
 	function dblogger_paragraph_font_size_styles(){
 		echo '<style type="text/css" >';
-		$fontparagfamily_value = get_theme_mod('dblogger_paragraph_font_size', '');
+		$fontparagfamily_value = get_theme_mod('dblogger_paragraph_font_size', 'dblogger');
 		$append_para_family_font = sprintf( 'font-size: %spx !important;',  $fontparagfamily_value );
 			// Output the styles.
 		if ( $fontparagfamily_value ) {
@@ -48,7 +48,7 @@ add_action( 'wp_head', 'dblogger_paragraph_font_size_styles' );
 if (!function_exists('dblogger_paragraph_font_color'))  {
 	function dblogger_paragraph_font_color(){
 		echo '<style type="text/css" >';
-		$color_value = get_theme_mod('dblogger_paragraph_font_color', '');
+		$color_value = get_theme_mod('dblogger_paragraph_font_color', 'dblogger');
 		$append_color = sprintf( 'color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
@@ -64,7 +64,7 @@ add_action( 'wp_head', 'dblogger_paragraph_font_color' );
 if (!function_exists('dblogger_heading_font_family'))  {
 	function dblogger_heading_font_family(){
 		echo '<style type="text/css">';
-		$fontfamily_value = get_theme_mod('dblogger_heading_font_family', '');
+		$fontfamily_value = get_theme_mod('dblogger_heading_font_family', 'dblogger');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
@@ -80,7 +80,7 @@ add_action( 'wp_head', 'dblogger_heading_font_family' );
 if (!function_exists('dblogger_headings_font_color'))  {
 	function dblogger_headings_font_color(){
 		echo '<style type="text/css" id="rijo-css">';
-		$color_value = get_theme_mod('dblogger_headings_font_color', '');
+		$color_value = get_theme_mod('dblogger_headings_font_color', 'dblogger');
 		$append_color = sprintf( 'color: %s;',  $color_value );
 			// Output the styles.
 		if ( $color_value ) {
@@ -97,7 +97,7 @@ add_action( 'wp_head', 'dblogger_headings_font_color' );
 if (!function_exists('dblogger_accent_color'))  {
 	function dblogger_accent_color(){
 		echo '<style type="text/css" id="accent-css">';
-		$color_value = get_theme_mod('dblogger_accent_color', '');
+		$color_value = get_theme_mod('dblogger_accent_color', 'dblogger');
 		$append_color = sprintf( 'color: %s !important;',  $color_value );
         $append_color_link = sprintf( 'background: %s !important;',  $color_value );
         $append_bckcolor = sprintf( 'background-color: %s;',  $color_value );
@@ -118,7 +118,7 @@ add_action( 'wp_head', 'dblogger_accent_color' );
 if (!function_exists('dblogger_secondary_color'))  {
 	function dblogger_secondary_color(){
 		echo '<style type="text/css" id="secondary-color-css">';
-		$color_value = get_theme_mod('dblogger_secondary_color', '');
+		$color_value = get_theme_mod('dblogger_secondary_color', 'dblogger');
         $append_bckcolor = sprintf( 'background-color: %s !important;',  $color_value );
         $append_color=sprintf('color:%s;',$color_value);
         $append_border= sprintf('border: 2px %s solid',$color_value);
