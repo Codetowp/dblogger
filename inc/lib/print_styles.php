@@ -17,7 +17,7 @@ add_action( 'wp_head', 'text_color_styles' );
 if (!function_exists('dblogger_paragraph_font'))  {
 	function dblogger_paragraph_font(){
 		echo '<style type="text/css" >';
-		$fontfamily_value = get_theme_mod('dblogger_paragraph_font', 'dblogger');
+		$fontfamily_value = get_theme_mod('dblogger_paragraph_font', 'PT Serif', 'dblogger');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
@@ -64,7 +64,7 @@ add_action( 'wp_head', 'dblogger_paragraph_font_color' );
 if (!function_exists('dblogger_heading_font_family'))  {
 	function dblogger_heading_font_family(){
 		echo '<style type="text/css">';
-		$fontfamily_value = get_theme_mod('dblogger_heading_font_family', 'dblogger');
+		$fontfamily_value = get_theme_mod('dblogger_heading_font_family', 'Montserrat', 'dblogger');
 		$append_family = sprintf( 'font-family: %s;',  $fontfamily_value );
 			// Output the styles.
 		if ( $fontfamily_value ) {
