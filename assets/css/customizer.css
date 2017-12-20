@@ -1,3 +1,17 @@
+.dblogger-theme-info a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+}
+.dblogger-theme-info a:hover {
+    color: #f53347;
+}
+
+.dblogger-theme-info {
+    background: #3c3e8b;
+    padding: 10px;
+}
+
 li[id*="accordion-panel-onepress"] > .accordion-section-title{
     padding-left: 30px;
 }

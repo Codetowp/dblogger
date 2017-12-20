@@ -39,19 +39,15 @@ class dblogger_info extends WP_Customize_Control {
 		$links = array(
 			array(
 				'name' => __( 'Documentation','dblogger' ),
-				'link' => esc_url( '#' ),
+				'link' => esc_url( 'https://dcrazed.com/docs/dblogger/' ),
 			),
 			array(
-				'name' => __( 'Demo','dblogger' ),
-				'link' => esc_url( '#' ),
+				'name' => __( 'Live Demo','dblogger' ),
+				'link' => esc_url( 'http://dblogger.dcrazed.com/' ),
 			),
 			array(
-				'name' => __( 'Leave a review','dblogger' ),
-				'link' => esc_url( '#' ),
-			),
-			array(
-				'name' => __( 'Buy us a coffee','dblogger' ),
-				'link' => esc_url( '#' ),
+				'name' => __( 'Go to Themepage','dblogger' ),
+				'link' => esc_url( 'https://dcrazed.com/themes/dblogger/' ),
 			),
 		); ?>
 
