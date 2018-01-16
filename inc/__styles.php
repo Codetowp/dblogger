@@ -5,7 +5,7 @@
  * @package dblogger
  */
 
-if ( ! function_exists( 'dblogger_demo_build_styles' ) && class_exists( 'Customizer_Library_Styles' ) ) :
+if ( ! function_exists( 'dblogger_demo_build_styles' ) && class_exists( 'Dblogger_Customizer_Library_Styles' ) ) :
 /**
  * Process user options to generate CSS needed to implement the choices.
  *
@@ -23,7 +23,7 @@ function dblogger_demo_build_styles() {
 
 		$color = sanitize_hex_color( $mod );
 
-		Customizer_Library_Styles()->add( array(
+		Dblogger_Customizer_Library_Styles()->add( array(
 			'selectors' => array(
 				'.primary'
 			),
@@ -41,7 +41,7 @@ function dblogger_demo_build_styles() {
 
 		$color = sanitize_hex_color( $mod );
 
-		Customizer_Library_Styles()->add( array(
+		Dblogger_Customizer_Library_Styles()->add( array(
 			'selectors' => array(
 				'.secondary'
 			),

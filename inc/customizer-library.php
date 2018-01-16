@@ -10,8 +10,8 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-// Continue if the Customizer_Library isn't already in use.
-if ( ! class_exists( 'Customizer_Library' ) ) :
+// Continue if the Dblogger_Customizer_Library isn't already in use.
+if ( ! class_exists( 'Dblogger_Customizer_Library' ) ) :
 
 
 // Helper functions for fonts.
@@ -20,14 +20,14 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 	/**
 	 * Class wrapper with useful methods for interacting with the theme customizer.
 	 */
-	class Customizer_Library {
+	class Dblogger_Customizer_Library {
 
 		/**
-		 * The one instance of Customizer_Library.
+		 * The one instance of Dblogger_Customizer_Library.
 		 *
 		 * @since 1.0.0.
 		 *
-		 * @var   Customizer_Library_Styles    The one instance for the singleton.
+		 * @var   Dblogger_Customizer_Library_Styles    The one instance for the singleton.
 		 */
 		private static $instance;
 
@@ -42,11 +42,11 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 		public $options = array();
 
 		/**
-		 * Instantiate or return the one Customizer_Library instance.
+		 * Instantiate or return the one Dblogger_Customizer_Library instance.
 		 *
 		 * @since  1.0.0.
 		 *
-		 * @return Customizer_Library
+		 * @return Dblogger_Customizer_Library
 		 */
 		public static function instance() {
 			if ( is_null( self::$instance ) ) {

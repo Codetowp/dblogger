@@ -111,7 +111,7 @@ if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {
 }
 function dblogger_get_default( $setting ) {
 
-	$dblogger = Customizer_Library::Instance();
+	$dblogger = Dblogger_Customizer_Library::Instance();
 	$options = $dblogger->get_options();
 
 	if ( isset( $options[$setting]['default'] ) ) {

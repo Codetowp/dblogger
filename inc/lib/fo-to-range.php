@@ -9,10 +9,10 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-if ( ! class_exists( 'Customizer_Library' ) ) :
+if ( ! class_exists( 'Dblogger_Customizer_Library' ) ) :
 	// Helper functions for fonts.
 	require plugin_dir_path( __FILE__ ) . 'fonts.php';
-	class Customizer_Library {
+	class Dblogger_Customizer_Library {
 		private static $instance;
 		public $options = array();
 		public static function instance() {
@@ -30,11 +30,11 @@ if ( ! class_exists( 'Customizer_Library' ) ) :
 	}
 endif;
  
-class Customizer_Toggle_Control extends WP_Customize_Control {
+class Dblogger_Customizer_Toggle_Control extends WP_Customize_Control {
 	public $type = 'toggle';
 	public function enqueue() {
-		wp_enqueue_script( 'customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
-		wp_enqueue_style( 'pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/admin/pure-css-togle-buttons.css', array(), rand() );			
+		wp_enqueue_script( 'dblogger-customizer-toggle-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-toggle-control.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_style( 'dblogger-pure-css-toggle-buttons', get_stylesheet_directory_uri() . '/inc/admin/pure-css-togle-buttons.css', array(), rand() );			
 		$css = '.disabled-control-title {color: #a0a5aa;}
 				input[type=checkbox].tgl-light:checked + .tgl-btn {background: #0085ba;}
 				input[type=checkbox].tgl-light + .tgl-btn {background: #a0a5aa;}
@@ -43,7 +43,7 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
 				input[type=checkbox].tgl-flat:checked + .tgl-btn {border: 4px solid #0085ba;}
 				input[type=checkbox].tgl-flat:checked + .tgl-btn:after {background: #0085ba;}
 		';
-		wp_add_inline_style( 'pure-css-toggle-buttons' , $css );
+		wp_add_inline_style( 'dblogger-pure-css-toggle-buttons' , $css );
 	}
 
 	public function render_content() {
@@ -62,11 +62,11 @@ class Customizer_Toggle_Control extends WP_Customize_Control {
 	}
 }
 
-class Customizer_Range_Value_Control extends WP_Customize_Control {
+class Dblogger_Customizer_Range_Value_Control extends WP_Customize_Control {
 	public $type = 'range-input';
 	public function enqueue() {
-		wp_enqueue_script( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.js', array( 'jquery' ), rand(), true );
-		wp_enqueue_style( 'customizer-range-value-control', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.css', array(), rand() );
+		wp_enqueue_script( 'dblogger-customizer-range-value-control-js', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.js', array( 'jquery' ), rand(), true );
+		wp_enqueue_style( 'dblogger-customizer-range-value-control-css', get_stylesheet_directory_uri() . '/inc/admin/customizer-range-value-control.css', array(), rand() );
 	}
 
 	public function render_content() {

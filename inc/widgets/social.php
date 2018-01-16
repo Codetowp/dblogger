@@ -1,4 +1,10 @@
 <?php 
+/**
+ * Register a simple social follow widget
+ * 
+ * @package dblogger
+ */
+ 
 class Dblogger_Premium extends WP_Widget{
 
 	/**

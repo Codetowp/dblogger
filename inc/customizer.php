@@ -219,7 +219,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'transport'         => 'refresh',
 		)
 	);
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_post_sharing_icons',  array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_sharing_icons',  array(
 		'settings' => 'dblogger_post_sharing_icons',
 		'label'    => __( 'Enable Sharing Icons in Posts', 'dblogger' ),
 		'section'  => 'dblogger_post_settings',
@@ -277,7 +277,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'dblogger_sanitize_integer',
 	) );
 
-	$wp_customize->add_control( new Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragraph_font_size', array(
+	$wp_customize->add_control( new Dblogger_Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragraph_font_size', array(
 		'type'     => 'range-value',
 		'section'  => 'dblogger_font_settings',
 		'settings' => 'dblogger_paragraph_font_size',        
@@ -370,7 +370,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'transport'         => 'refresh',
 	) );
 	
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_header_check', 
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_header_check', 
 		array(
 			'settings' => 'dblogger_header_check',
 			'label'    => __( 'Disable Header?', 'dblogger' ),
@@ -465,7 +465,7 @@ function dblogger_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_guide_check', array(
 		'settings' => 'dblogger_guide_check',
 		'label'    => __( 'Disable this section ?', 'dblogger' ),
 		'section'  => 'dblogger_guide_section',
@@ -565,7 +565,7 @@ function dblogger_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 		'settings' => 'dblogger_theme_check',
 		'label'    => __( 'Disable this section', 'dblogger' ),
 		'section'  => 'dblogger_theme_section',
@@ -661,7 +661,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'dblogger_sanitize_checkbox',
 	) );
 	
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_tag_check', array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_tag_check', array(
 		'settings' => 'dblogger_theme_tag_check',
 		'label'    => __( 'Enable/Disable tag section', 'dblogger' ),
 		'section'  => 'dblogger_theme_section',
@@ -688,7 +688,7 @@ function dblogger_customize_register( $wp_customize ) {
 		)
 	);
 	
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_blog_check', array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_blog_check', array(
 		'settings' => 'dblogger_blog_check',
 		'label'    => __( 'Disable Blog Section?', 'dblogger' ),
 		'section'  => 'dblogger_blog_section',
@@ -773,7 +773,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'transport'         => 'refresh',
 		)
 	);
-	$wp_customize->add_control( new Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable',                   array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable',                   array(
 		'settings' => 'dblogger_newsletter_disable',
 		'label'    => __( 'Enable newsletter?', 'dblogger' ),
 		'section'  => 'dblogger_newsletter',

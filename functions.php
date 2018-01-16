@@ -121,7 +121,7 @@ foreach ( $options_categories_obj as $category ) {
  * Fonts
  */
 
-function demo_fonts() {
+function dblogger_demo_fonts() {
 	// Font options
 	$fonts = array(
 		get_theme_mod( 'dblogger_paragraph_font', dblogger_get_default( 'primary-font' ) ),
@@ -131,10 +131,10 @@ function demo_fonts() {
 	$font_uri = dblogger_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
-	wp_enqueue_style( 'demo_fonts', $font_uri, array(), null, 'screen' );
+	wp_enqueue_style( 'dblogger_demo_fonts', $font_uri, array(), null, 'screen' );
 
 }
-add_action( 'wp_enqueue_scripts', 'demo_fonts' );
+add_action( 'wp_enqueue_scripts', 'dblogger_demo_fonts' );
 
 /**
  * Register widget area.
@@ -154,7 +154,7 @@ function dblogger_widgets_init() {
 	
 	// Custom Widgets of the theme
 	require get_template_directory() . '/inc/widgets/social.php';
-    require get_template_directory() . '/inc/styles.php';
+    //require get_template_directory() . '/inc/styles.php';
 	require get_template_directory() . '/inc/customizer-library.php';
 }
 add_action( 'widgets_init', 'dblogger_widgets_init' );
