@@ -124,11 +124,11 @@ foreach ( $options_categories_obj as $category ) {
 function demo_fonts() {
 	// Font options
 	$fonts = array(
-		get_theme_mod( 'dblogger_paragraph_font', customizer_library_get_default( 'primary-font' ) ),
-		get_theme_mod( 'dblogger_heading_font_family', customizer_library_get_default( 'secondary-font' ) ),
+		get_theme_mod( 'dblogger_paragraph_font', dblogger_get_default( 'primary-font' ) ),
+		get_theme_mod( 'dblogger_heading_font_family', dblogger_get_default( 'secondary-font' ) ),
 	);
 
-	$font_uri = customizer_library_get_google_font_uri( $fonts );
+	$font_uri = dblogger_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
 	wp_enqueue_style( 'demo_fonts', $font_uri, array(), null, 'screen' );
@@ -151,16 +151,19 @@ function dblogger_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	));
+	
 	// Custom Widgets of the theme
 	require get_template_directory() . '/inc/widgets/social.php';
     require get_template_directory() . '/inc/styles.php';
 	require get_template_directory() . '/inc/customizer-library.php';
 }
 add_action( 'widgets_init', 'dblogger_widgets_init' );
+
 	// Custom Theme Functions
 	require get_template_directory() . '/inc/lib/related-post.php';
 	require get_template_directory() . '/inc/lib/print_styles.php';
 	require get_template_directory() . '/inc/widgets/recentpost.php';
+	
 	// Custom Theme Image Sizes
 	add_image_size( 'dblogger_recent_post', 60, 60,  array( 'top', 'center' ) );
 	add_image_size( 'dblogger_header', 1900, 560,  array( 'top', 'center' ) );

@@ -2,10 +2,7 @@
 /**
  * Customizer Library
  *
- * @package        dblogger
- * @author         Devin Price, The Theme Foundry
- * @license        GPL-2.0+
- * @version        1.3.0
+ * @package dblogger
  */
 
 // If this file is called directly, abort.

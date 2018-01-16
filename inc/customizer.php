@@ -237,11 +237,11 @@ function dblogger_customize_register( $wp_customize ) {
 			'priority'                  => 40,
 	));    
 
-	$font_choices = customizer_library_get_font_choices();
+	$font_choices = dblogger_get_font_choices();
 
 	$wp_customize->add_setting( 'dblogger_paragraph_font', array(
 		'default'        => 'PT Serif',
-		'sanitize_callback' => 'customizer_library_sanitize_font_choice',
+		'sanitize_callback' => 'dblogger_sanitize_font_choice',
 	) );
 
 	$wp_customize->add_control( 'dblogger_paragraph_font', array(
@@ -295,7 +295,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_heading_font_family', array(
 		'default'        => 'Montserrat',
 		'transport'     => 'refresh',
-		'sanitize_callback' => 'customizer_library_sanitize_font_choice',
+		'sanitize_callback' => 'dblogger_sanitize_font_choice',
 	) );
 
 	$wp_customize->add_control( 'dblogger_heading_font_family', array(

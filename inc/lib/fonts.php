@@ -1,10 +1,11 @@
 <?php
 /**
  * Customizer Fonts
- *
+ * 
+ * @package dblogger
  */
 
-if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
+if ( ! function_exists( 'dblogger_get_font_choices' ) ) :
 /**
  * Packages the font choices into value/label pairs for use with the customizer.
  *
@@ -12,11 +13,11 @@ if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
  *
  * @return array    The fonts in value/label pairs.
  */
-function customizer_library_get_all_fonts() {
+function dblogger_get_all_fonts() {
 	$heading1       = array( 1 => array( 'label' => sprintf( '--- %s ---', __( 'Standard Fonts', 'dblogger' ) ) ) );
-	$standard_fonts = customizer_library_get_standard_fonts();
+	$standard_fonts = dblogger_get_standard_fonts();
 	$heading2       = array( 2 => array( 'label' => sprintf( '--- %s ---', __( 'Google Fonts', 'dblogger' ) ) ) );
-	$google_fonts   = customizer_library_get_google_fonts();
+	$google_fonts   = dblogger_get_google_fonts();
 
 	/**
 	 * Allow for developers to modify the full list of fonts.
@@ -25,11 +26,11 @@ function customizer_library_get_all_fonts() {
 	 *
 	 * @param array    $fonts    The list of all fonts.
 	 */
-	return apply_filters( 'customizer_library_all_fonts', array_merge( $heading1, $standard_fonts, $heading2, $google_fonts ) );
+	return apply_filters( 'dblogger_all_fonts', array_merge( $heading1, $standard_fonts, $heading2, $google_fonts ) );
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
+if ( ! function_exists( 'dblogger_get_font_choices' ) ) :
 /**
  * Packages the font choices into value/label pairs for use with the customizer.
  *
@@ -37,8 +38,8 @@ if ( ! function_exists( 'customizer_library_get_font_choices' ) ) :
  *
  * @return array    The fonts in value/label pairs.
  */
-function customizer_library_get_font_choices() {
-	$fonts   = customizer_library_get_all_fonts();
+function dblogger_get_font_choices() {
+	$fonts   = dblogger_get_all_fonts();
 	$choices = array();
 
 	// Repackage the fonts into value/label pairs
@@ -50,7 +51,7 @@ function customizer_library_get_font_choices() {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_google_font_uri' ) ) :
+if ( ! function_exists( 'dblogger_get_google_font_uri' ) ) :
 /**
  * Build the HTTP request URL for Google Fonts.
  *
@@ -58,11 +59,11 @@ if ( ! function_exists( 'customizer_library_get_google_font_uri' ) ) :
  *
  * @return string    The URL for including Google Fonts.
  */
-function customizer_library_get_google_font_uri( $fonts ) {
+function dblogger_get_google_font_uri( $fonts ) {
 
 	// De-dupe the fonts
     $fonts         = array_unique( $fonts );
-	$allowed_fonts = customizer_library_get_google_fonts();
+	$allowed_fonts = dblogger_get_google_fonts();
 	$family        = array();
 
 	// Validate each font and convert to URL format
@@ -72,7 +73,7 @@ function customizer_library_get_google_font_uri( $fonts ) {
 		// Verify that the font exists
 		if ( array_key_exists( $font, $allowed_fonts ) ) {
 			// Build the family name and variant string (e.g., "Open+Sans:regular,italic,700")
-			$family[] = urlencode( $font . ':' . join( ',', customizer_library_choose_google_font_variants( $font, $allowed_fonts[ $font ]['variants'] ) ) );
+			$family[] = urlencode( $font . ':' . join( ',', dblogger_choose_google_font_variants( $font, $allowed_fonts[ $font ]['variants'] ) ) );
 		}
 	}
 
@@ -84,10 +85,10 @@ function customizer_library_get_google_font_uri( $fonts ) {
 	}
 
 	// Load the font subset
-	$subset = get_theme_mod( 'font-subset', customizer_library_get_default( 'font-subset' ) );
+	$subset = get_theme_mod( 'font-subset', dblogger_get_default( 'font-subset' ) );
 
 	if ( 'all' === $subset ) {
-		$subsets_available = customizer_library_get_google_font_subsets();
+		$subsets_available = dblogger_get_google_font_subsets();
 
 		// Remove the all set
 		unset( $subsets_available['all'] );
@@ -110,7 +111,7 @@ function customizer_library_get_google_font_uri( $fonts ) {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_google_font_subsets' ) ) :
+if ( ! function_exists( 'dblogger_get_google_font_subsets' ) ) :
 /**
  * Retrieve the list of available Google font subsets.
  *
@@ -118,7 +119,7 @@ if ( ! function_exists( 'customizer_library_get_google_font_subsets' ) ) :
  *
  * @return array    The available subsets.
  */
-function customizer_library_get_google_font_subsets() {
+function dblogger_get_google_font_subsets() {
 	return array(
 		'all'          => __( 'All', 'dblogger' ),
 		'cyrillic'     => __( 'Cyrillic', 'dblogger' ),
@@ -134,7 +135,7 @@ function customizer_library_get_google_font_subsets() {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_choose_google_font_variants' ) ) :
+if ( ! function_exists( 'dblogger_choose_google_font_variants' ) ) :
 /**
  * Given a font, chose the variants to load for the theme.
  *
@@ -147,10 +148,10 @@ if ( ! function_exists( 'customizer_library_choose_google_font_variants' ) ) :
  * @param  array     $variants    The variants for the font.
  * @return array                  The chosen variants.
  */
-function customizer_library_choose_google_font_variants( $font, $variants = array() ) {
+function dblogger_choose_google_font_variants( $font, $variants = array() ) {
 	$chosen_variants = array();
 	if ( empty( $variants ) ) {
-		$fonts = customizer_library_get_google_fonts();
+		$fonts = dblogger_get_google_fonts();
 
 		if ( array_key_exists( $font, $fonts ) ) {
 			$variants = $fonts[ $font ]['variants'];
@@ -174,11 +175,11 @@ function customizer_library_choose_google_font_variants( $font, $variants = arra
 		$chosen_variants[] = '700';
 	}
 
-	return apply_filters( 'customizer_library_font_variants', array_unique( $chosen_variants ), $font, $variants );
+	return apply_filters( 'dblogger_font_variants', array_unique( $chosen_variants ), $font, $variants );
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_standard_fonts' ) ) :
+if ( ! function_exists( 'dblogger_get_standard_fonts' ) ) :
 /**
  * Return an array of standard websafe fonts.
  *
@@ -186,7 +187,7 @@ if ( ! function_exists( 'customizer_library_get_standard_fonts' ) ) :
  *
  * @return array    Standard websafe fonts.
  */
-function customizer_library_get_standard_fonts() {
+function dblogger_get_standard_fonts() {
 	return array(
 		'serif' => array(
 			'label' => _x( 'Serif', 'font style', 'dblogger' ),
@@ -204,7 +205,7 @@ function customizer_library_get_standard_fonts() {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_font_stack' ) ) :
+if ( ! function_exists( 'dblogger_get_font_stack' ) ) :
 /**
  * Validate the font choice and get a font stack for it.
  *
@@ -213,12 +214,12 @@ if ( ! function_exists( 'customizer_library_get_font_stack' ) ) :
  * @param  string    $font    The 1st font in the stack.
  * @return string             The full font stack.
  */
-function customizer_library_get_font_stack( $font ) {
+function dblogger_get_font_stack( $font ) {
 
-	$all_fonts = customizer_library_get_all_fonts();
+	$all_fonts = dblogger_get_all_fonts();
 
 	// Sanitize font choice
-	$font = customizer_library_sanitize_font_choice( $font );
+	$font = dblogger_sanitize_font_choice( $font );
 
 	$sans = '"Helvetica Neue",sans-serif';
 	$serif = 'Georgia, serif';
@@ -234,7 +235,7 @@ function customizer_library_get_font_stack( $font ) {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_sanitize_font_choice' ) ) :
+if ( ! function_exists( 'dblogger_sanitize_font_choice' ) ) :
 /**
  * Sanitize a font choice.
  *
@@ -243,11 +244,11 @@ if ( ! function_exists( 'customizer_library_sanitize_font_choice' ) ) :
  * @param  string    $value    The font choice.
  * @return string              The sanitized font choice.
  */
-function customizer_library_sanitize_font_choice( $value ) {
+function dblogger_sanitize_font_choice( $value ) {
 	if ( is_int( $value ) ) {
 		// The array key is an integer, so the chosen option is a heading, not a real choice
 		return '';
-	} else if ( array_key_exists( $value, customizer_library_get_font_choices() ) ) {
+	} else if ( array_key_exists( $value, dblogger_get_font_choices() ) ) {
 		return $value;
 	} else {
 		return '';
@@ -255,7 +256,7 @@ function customizer_library_sanitize_font_choice( $value ) {
 }
 endif;
 
-if ( ! function_exists( 'customizer_library_get_google_fonts' ) ) :
+if ( ! function_exists( 'dblogger_get_google_fonts' ) ) :
 /**
  * Return an array of all available Google Fonts.
  *
@@ -263,8 +264,8 @@ if ( ! function_exists( 'customizer_library_get_google_fonts' ) ) :
  *
  * @return array    All Google Fonts.
  */
-function customizer_library_get_google_fonts() {
-	return apply_filters( 'customizer_library_get_google_fonts', array(
+function dblogger_get_google_fonts() {
+	return apply_filters( 'dblogger_get_google_fonts', array(
 		'ABeeZee' => array(
 			'label'    => 'ABeeZee',
 			'variants' => array(
