@@ -154,7 +154,6 @@ function dblogger_widgets_init() {
 	
 	// Custom Widgets of the theme
 	require get_template_directory() . '/inc/widgets/social.php';
-    //require get_template_directory() . '/inc/styles.php';
 	require get_template_directory() . '/inc/customizer-library.php';
 }
 add_action( 'widgets_init', 'dblogger_widgets_init' );

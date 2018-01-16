@@ -2912,13 +2912,16 @@ article p {
 	margin: 1.5em 0 0;
 }
 
-
-
 .single img, .page img {
 display: block;
     max-width: 100%;
     height: auto;
 }
+
+.theme-post img {
+    min-height: auto;
+}
+
 img.rss-widget-icon {
     display: inline-block;
 }

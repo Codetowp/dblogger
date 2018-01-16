@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * dblogger Related post for articles
+ * *
+ * @package dblogger
+ */
+ 
 function dblogger_related_post() {
 
 	$args = '';
@@ -43,17 +48,18 @@ function dblogger_related_post() {
                 $cat_link = get_category_link($categories[0]->cat_ID);
                 
 				printf(
-					'<div class="col-md-4 theme-post">%s 
+					'<div class="col-md-4 theme-post"><a href="%s">%s</a>
                         <div class="theme-post-caption">
                             <h6>%s</h6>
-                            <div class="view-payment"> <a href="%s">Read More</a></div>
+                            <div class="view-payment"> <a class="%s" href="%s">Read More</a></div>
                         </div>
                     </div> 
                    ',
-					$post_thumbnail,
-                    esc_html( $title ),
-                    esc_url( get_permalink() ),
-                    esc_html( $class_format )
+				   esc_url( get_permalink() ),
+					wp_kses_post( $post_thumbnail ),
+                    esc_html( $title ),					
+                    esc_html( $class_format ),
+                    esc_url( get_permalink() )
 				);
 				?>
 			<?php

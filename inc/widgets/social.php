@@ -14,7 +14,7 @@ class Dblogger_Premium extends WP_Widget{
 	{
 		parent::__construct(
 		'premium-widget', // Base ID
-		esc_attr__( 'Dblogger-Sidebar social widget', 'dblogger' ), // Name
+		esc_attr__( 'Dblogger - Follow widget', 'dblogger' ), // Name
 			array( 
 				'description' => esc_attr__( 'Display a Premium or Feature description.', 'dblogger' ),
 				'customize_selective_refresh' => true, // 1 Selective Refresh
@@ -27,7 +27,7 @@ class Dblogger_Premium extends WP_Widget{
 
 				wp_enqueue_media();
 
-				wp_enqueue_script( 'Dblogger_Premium_widget_scripts', get_template_directory_uri() . '/js/widget.js', false, '1.0', true );
+				wp_enqueue_script( 'Dblogger-Premium-widget-scripts', get_template_directory_uri() . '/js/widget.js', false, '1.0', true );
 
 			}
 			add_action('admin_enqueue_scripts', 'Dblogger_Premium_widget_scripts');
@@ -45,22 +45,22 @@ class Dblogger_Premium extends WP_Widget{
 		<ul >
 
 		<?php if( !empty( $instance['facebook_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['facebook_url'] ) ); endif; ?>" title="facebook"><i class="fa fa-facebook"></i></a></li>
+			<li ><a href="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['facebook_url'] ) ); endif; ?>" title="facebook"><i class="fa fa-facebook"></i></a></li>
 		<?php }?>
 		<?php if( !empty( $instance['twitter_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['twitter_url'] ) ); endif; ?>" title="twitter"><i class="fa  fa-twitter"></i></a></li>
+			<li ><a href="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['twitter_url'] ) ); endif; ?>" title="twitter"><i class="fa  fa-twitter"></i></a></li>
 		<?php }?>
 		<?php if( !empty( $instance['google_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['google_url'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['google_url'] ) ); endif; ?>" title="google-plus"><i class="fa  fa-google-plus"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['google_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['google_url'] ) ); endif; ?>" title="google-plus"><i class="fa  fa-google-plus"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['dribbble'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['dribbble'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['dribbble'] ) ); endif; ?>" title="dribbble"><i class="fa fa-dribbble"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['dribbble'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['dribbble'] ) ); endif; ?>" title="dribbble"><i class="fa fa-dribbble"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['behance'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['behance'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['behance'] ) ); endif; ?>" title="behance"><i class="fa fa-behance"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['behance'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['behance'] ) ); endif; ?>" title="behance"><i class="fa fa-behance"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['inst_title'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['inst_title'] ) ): echo esc_html( apply_filters( 'widget_title', $instance['inst_title'] ) ); endif; ?>" title="instagram"><i class="fa  fa-instagram"></i></a>
+			<li ><a href="<?php if( !empty( $instance['inst_title'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['inst_title'] ) ); endif; ?>" title="instagram"><i class="fa  fa-instagram"></i></a>
 
 				<?php 
 				if( !empty($instance['text']) ):
@@ -94,7 +94,7 @@ class Dblogger_Premium extends WP_Widget{
 	?>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('social_title') ); ?>"><?php esc_html_e( 'Social Title', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_html( $this->get_field_id('social_title') ); ?>"><?php esc_html_e( 'Title', 'dblogger' ); ?></label><br/>
 
 			<input type="text" name="<?php echo esc_html( $this->get_field_name('social_title') ); ?>"
 			id="<?php echo esc_html( $this->get_field_id('social_title') ); ?>" value="<?php if( !empty( $instance['social_title'] ) ): echo esc_html( $instance['social_title'] ); endif; ?>"

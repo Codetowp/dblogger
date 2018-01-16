@@ -99,8 +99,6 @@ function dblogger_days_ago() {
 	else {
 		echo  $days . " days ago ";
 	} 
-
-
     }
 endif;
 if ( ! function_exists( 'dblogger_is_selective_refresh' ) ) {

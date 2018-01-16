@@ -1,4 +1,10 @@
 <?php
+/**
+ * Custom css styles printed to wp_head
+ *
+ * @package dblogger
+ */
+ 
 if ( !function_exists( 'text_color_styles') )  {
 	function text_color_styles(){
 		echo '<style type="text/css" >';
