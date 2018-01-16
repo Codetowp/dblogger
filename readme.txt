@@ -1,17 +1,18 @@
 === dblogger ===
 
-Contributors: Dcrazed, Rijo Abraham
-Tags: blog, news, two-columns, right-sidebar, e-commerce, four-columns, custom-colors, custom-background, custom-menu, custom-logo, featured-images, full-width-template, post-formats, theme-options, threaded-comments, translation-ready 
-
+Contributors: Rijo Abraham, Dcrazed.
 Requires at least: 4.0
 Tested up to: 4.9.1
 Stable tag: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Dblogger Theme, Copyright 2018 Dcrazed.
+Dblogger is distributed under the terms of the GNU GPL
+
 == Description ==
 
-Digital blogger(dBlogger) is a free wordpress blog theme with a clean layout and responsive design.
+Digital blogger(Dblogger) is a free wordpress blog theme with a clean layout and responsive design.
 
 == Installation ==
 
@@ -23,11 +24,17 @@ Digital blogger(dBlogger) is a free wordpress blog theme with a clean layout and
 
 = Does this theme support any plugins? =
 
-Woocommerce, bbpress are fully supported.
+Woocommerce, bbpress, Contact Form 7, Jetpack, Yoast SEO are fully supported.
+
+= Is there a step by step documentation for the theme =
+Yes. You can check this URL: https://dcrazed.com/docs/dblogger/
 
 == Changelog ==
 
-= 1.0 - Dec 11 2017 =
+= 1.1 - Jan 20 2018 =
+* Minor Bugs and Customizer improvements.
+
+= 1.0 - Dec 20 2017 =
 * Initial release
 
 == Credits ==
@@ -40,8 +47,8 @@ The exceptions to this license are as follows:
     Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
 * Images:
-	All images are from Unsplash (	www.unsplash.com ) .
-	License under Creative Commons Zero.
+	All images are made by the theme author.
+	Licensed under CC0 license.
 	
 * Font Awesome:
 	License: SIL OFL 1.1
