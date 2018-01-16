@@ -52,12 +52,20 @@ function dblogger_customize_register( $wp_customize ) {
 		) );
 	}
 	
-	$wp_customize->remove_control('blogdescription');
-	$wp_customize->remove_control('display_header_text');
-	$wp_customize->remove_section('background_image');    
+	
+//**************************  General WordPress settings ****************************************// 
+	$wp_customize->add_panel( 'dblogger_wp_settings' ,
+		array(
+			'priority'        => 100,
+			'title'           => esc_html__( 'WordPress Settings', 'dblogger' ),
+	) );   	
+	$wp_customize->get_section('background_image')-> panel = 'dblogger_wp_settings';
+	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section('title_tagline')->title = __( 'Branding' , 'dblogger' ); 
-	$wp_customize->get_section('header_image')->title = __( 'Custom Header image' , 'dblogger' ); 
-	$wp_customize->get_section('header_image')->description = __( 'Add custom header for categories, 404, search etc' , 'dblogger' ); 
+	$wp_customize->get_section('header_image')->title = __( 'Archive Banner' , 'dblogger' ); 
+	$wp_customize->get_section('header_image')->description = __( 'Add custom banner for categories, 404, search pages etc' , 'dblogger' ); 
+	$wp_customize->get_section('header_image')-> panel = 'dblogger_global_panel';
+	
     
 //**************************  COLORS ****************************************// 
     $wp_customize->add_setting( 'dblogger_accent_color',  
@@ -114,10 +122,10 @@ function dblogger_customize_register( $wp_customize ) {
 			'description'     => '',
 	) );    
 	 
-    // Banner SETTINGS
+    // Ad Banner SETTINGS
 	$wp_customize->add_section('dblogger_general_banners_controls',
 		array(
-			'title'                     => __('Banner Settings', 'dblogger'),
+			'title'                     => __('Ad Banner Settings', 'dblogger'),
 			'panel'                     => 'dblogger_global_panel',  
 			'priority'                  => 98,
 	) );    
@@ -349,7 +357,7 @@ function dblogger_customize_register( $wp_customize ) {
 //**************************  FRONTPAGE SECTIONS ****************************************// 
 	$wp_customize->add_panel( 'dblogger_panel' ,
 		array(
-			'priority'        => 120,
+			'priority'        => 90,
 			'title'           => esc_html__( 'Frontpage Sections', 'dblogger' ),
 			'description'     => '',
 	) );
@@ -875,32 +883,26 @@ function dblogger_sanitize_checkbox( $input ) {
     }
 }
 //select sanitization function
-    function dblogger_sanitize_select( $input, $setting ){
-         
-            //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
-            $input = sanitize_key($input);
- 
-            //get the list of possible select options 
-            $choices = $font_choices;
-                             
-            //return input if valid or return default option
-            return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
-             
-        }
+function dblogger_sanitize_select( $input, $setting ){
+	 
+	//input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
+	$input = sanitize_key($input);
+
+	//get the list of possible select options 
+	$choices = $font_choices;
+					 
+	//return input if valid or return default option
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
+		 
+}
 /**
- * Render the site title for the selective refresh partial.
+ * Render all selective refresh partial.
  *
  * @return void
  */
 function dblogger_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
-
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
 function dblogger_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
@@ -931,6 +933,6 @@ function dblogger_customize_preview_js() {
 add_action( 'customize_preview_init', 'dblogger_customize_preview_js' );
 
 function dblogger_customizer_css() {
-		wp_enqueue_style( 'dblogger-customizer-css', get_template_directory_uri() . '/assets/css/customizer.css' );
+	wp_enqueue_style( 'dblogger-customizer-css', get_template_directory_uri() . '/assets/css/customizer.css' );
 	}
 add_action( 'customize_controls_print_styles', 'dblogger_customizer_css' );

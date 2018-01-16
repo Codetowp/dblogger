@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 wow fadeInLeft">
-				<p class="copyright">&#169; 2018 <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger').</p>
+				<p class="copyright">&#169; 2018 <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
 			</div>
 			<div class="col-md-4 wow zoomIn">
 				<nav class="bottom-nav">
