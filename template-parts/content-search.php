@@ -13,7 +13,7 @@
 	<a href="<?php the_permalink();?>">
 		<?php
 		if  ( get_the_post_thumbnail()!=''){
-			the_post_thumbnail('dblogger_theme'); 
+			the_post_thumbnail('dblogger_homepage_article'); 
 		} else {
 			$single_img = get_template_directory_uri().'/assets/img/default.jpg';
 		?>

@@ -11,7 +11,6 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		$widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html( "The most recent posts on your site with thumbnails"), 'customize_selective_refresh' => true, );
 		parent::__construct('thirst-recent-posts', __('Dblogger - Recent Posts', 'dblogger'), $widget_ops);
 		$this->alt_option_name = 'widget_recent_entries';
-
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
 		add_action( 'switch_theme', array($this, 'flush_widget_cache') );
@@ -34,7 +33,6 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		ob_start();
 		extract($args);
 		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts','dblogger') : $instance['title'], $instance, $this->id_base);
-
 		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
 		$number = 10;
 		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
@@ -55,7 +53,6 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						if  ( get_the_post_thumbnail()=='')
 						{
 							$background_img_relatedpost   = get_template_directory_uri()."/assets/img/default.jpg";
-
 							echo   '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
 						}
 						else
@@ -137,6 +134,7 @@ function Dblogger_WP_Widget_Recent_Posts() {
 	// register the widget
 	$this->WP_Widget('dblogger-recent-posts',  esc_html('Dblogger Recent Posts'), $widget_ops);
 }
+
 function Dblogger_WP_Widget_Recent_Posts_init(){
 	register_widget('Dblogger_WP_Widget_Recent_Posts');
 }

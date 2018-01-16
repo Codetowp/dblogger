@@ -98,7 +98,7 @@ if ( ! $disable1) : ?>
 							<div role="tabpanel" class="tab-pane <?php echo esc_html( $firstClass ); ?>" id="<?php echo esc_attr( $values );?>"><?php
 								if  ( get_the_post_thumbnail()!='')
 								{?>
-									<a href="<?php the_permalink();?>"><?php the_post_thumbnail('dblogger_homepage'); ?></a>
+									<a href="<?php the_permalink();?>"><?php the_post_thumbnail('dblogger_homepage_article'); ?></a>
 								<?php }else{
 									$default_img= get_template_directory_uri() . '/assets/img/default.jpg';
 								?>
@@ -149,7 +149,7 @@ if ( ! $disable1) : ?>
 				?>
 				<a href="<?php echo the_permalink();?>">
 				<?php
-					the_post_thumbnail('dblogger_theme');
+					the_post_thumbnail('dblogger_theme_page');
 				?>	
 				</a>
 				<?php 
