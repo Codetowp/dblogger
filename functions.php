@@ -87,14 +87,14 @@ if ( ! function_exists( 'dblogger_setup' ) ) :
 		 */
 		add_editor_style( 'assets/css/editor-style.css', 'dblogger' );
 		
-		// Woocommerce supported here
+		// WooCommerce supported here
 		add_theme_support( 'woocommerce' );		
 	}
 endif;
 add_action( 'after_setup_theme', 'dblogger_setup' );
 
 /**
- * Set the content width in pixels, based on the theme's design and stylesheet.
+ * Set the content width in pixels for video embed, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
  *
@@ -102,12 +102,12 @@ add_action( 'after_setup_theme', 'dblogger_setup' );
  */
  
 function dblogger_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dblogger_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'dblogger_content_width', 750 );
 }
 add_action( 'after_setup_theme', 'dblogger_content_width', 0 );
 
 /**
- * Global variables
+ * Global variables for category listing
  */ 
 
 global $options_categories;
