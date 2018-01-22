@@ -524,7 +524,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'priority'                  =>  3,
 	) );
     
-	global $options_categories;
+	global $dblogger_options_categories;
 	$wp_customize->add_setting('dblogger_slide_categories', array(
 		'default' => '',
 		'type' => 'option',
@@ -537,7 +537,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'section' => 'dblogger_guide_section',
 		'type'    => 'select',
 		'description' => __('Select a category for the featured post slider', 'dblogger'),
-		'choices'    => $options_categories
+		'choices'    => $dblogger_options_categories
 	));
     
 	$wp_customize->add_setting('dblogger_post_number',
@@ -845,8 +845,8 @@ function dblogger_sanitize_integer( $input ) {
 }
 
 function dblogger_sanitize_slidecat( $input ) {
-	global $options_categories;
-		if ( array_key_exists( $input, $options_categories ) ) {
+	global $dblogger_options_categories;
+		if ( array_key_exists( $input, $dblogger_options_categories ) ) {
 			return $input;
 		} else {
 			return '';
