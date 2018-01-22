@@ -11,7 +11,7 @@
 
 <!-- banner Page
     ==========================================-->
-<div id="single-banner" style="background-image: url(<?php echo esc_url(the_post_thumbnail_url('dblogger_single_article')); ?>);">
+<div id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('dblogger_single_article'); ?>);">
 	<div class="content wow fadeInUp">
 		<div class="container">
 			<!--breadcrumb-->
@@ -92,7 +92,7 @@
 			<!--author box-->
 			<div class="author-box wow fadeInLeft">
 				<?php echo get_avatar( get_the_author_meta('user_email'), '100', '' ); ?>
-				<div class="author-box-title"><?php echo esc_html_e('By', 'dblogger'); ?><?php esc_url(the_author_posts_link()); ?></a></div>
+				<div class="author-box-title"><?php echo esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></a></div>
 				<div class="author-description"><?php the_author_meta('description'); ?></div>
 				<div class="author_social"><a href="<?php echo esc_url( get_the_author_meta('url') ); ?>"><i class="fa fa-globe"></i></a></div>
 			</div>

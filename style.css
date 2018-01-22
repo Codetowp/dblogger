@@ -52,25 +52,17 @@ This theme, like WordPress, is licensed under the GPL.
 ---------------------------*/
 
 /*--------------------
-1.0 Normalize
+1.0 Normalize - Bootstrap handles reset of basic elements
 --------------------*/
-
 /*
-fonts used
-
 font-family: 'Montserrat', sans-serif;
 font-family: 'PT Serif', serif;
-
 */
-
-/* Bootstrap handles reset of basic elements */
-
 /*--------------------
 2.0 Style Guide
 --------------------*/
 
 /* 2.1 Typography */
-
 
 html, body {
 	font-family: 'Montserrat', sans-serif;
@@ -148,10 +140,6 @@ a:hover {
 	line-height: 28px;
 	color: #3a405b;
 	margin: 10px 0 20px;
-}
-.single .cat-links a,.single .tags-links a , .page .cat-links a, .page .tags-links a , .page .date-article a{
-
-	/*color: #fff;*/
 }
 pre {
     padding: 25px;
@@ -779,9 +767,6 @@ button + .dropdown-menu {
 /*----------------
 3.0 Base Elements
 ------------------*/
-
-
-
 .posts-navigation {
 	display: block;
 	padding: 80px 0 40px;
@@ -3410,9 +3395,6 @@ img.rss-widget-icon {
 	user-select: none;
 	background-image: none;
 }
-
-
-
 .single .single-post footer.entry-meta-bar a:hover {
 	webkit-transition: all 300ms ease-in-out;
 	transition: all 300ms ease-in-out;
@@ -3445,6 +3427,9 @@ blockquote p {
 	color: #73757d;
 	margin-top: 10px;
 	margin-bottom: 30px;
+}
+.single span.cat-links a {
+    color: white !important;
 }
 .page-links p{
 	clear: both;
@@ -3506,9 +3491,7 @@ blockquote p {
 	text-transform: uppercase;
 	margin-top: 80px;
 }
-
 /*Woocommerce product page*/
-
 
 #woocommerce-page {
 	padding: 80px 0;
@@ -4015,7 +3998,6 @@ li.bbp-forum-info, li.bbp-topic-title {
 	font-weight: 500;
 	text-transform: none;
 }
-
 #bbpress-forums p.bbp-topic-meta img.avatar, #bbpress-forums ul.bbp-reply-revision-log img.avatar, #bbpress-forums ul.bbp-topic-revision-log img.avatar, #bbpress-forums div.bbp-template-notice img.avatar, #bbpress-forums .widget_display_topics img.avatar, #bbpress-forums .widget_display_replies img.avatar {
 	float: none;
 	border-radius: 50%;
@@ -4034,6 +4016,9 @@ li.bbp-forum-info, li.bbp-topic-title {
 .bbp-forum .bbp-forum-link {
 	font-size: 10px;
 	color: #777;
+}
+#bbpress-forums div.bbp-forum-author img.avatar, #bbpress-forums div.bbp-topic-author img.avatar, #bbpress-forums div.bbp-reply-author img.avatar{
+	min-height: 80px;
 }
 div.bbp-breadcrumb, div.bbp-topic-tags {
 	font-size: 12px;
@@ -4493,9 +4478,6 @@ width:100%;
 9.0 Common
 ----------------------*/
 
-/*time:nth-child(2) {
-    display: none;
-}*/
 .single-post .entry-date {
     color: #fff;
 }
@@ -4517,12 +4499,4 @@ span.byline {
     content: "\f054";
     font-family: fontawesome;
     margin-left: 5px;
-}
-/*bbpress*/
-#bbpress-forums div.bbp-forum-author img.avatar, #bbpress-forums div.bbp-topic-author img.avatar, #bbpress-forums div.bbp-reply-author img.avatar{
-
-	min-height: 80px;
-}
-.single span.cat-links a {
-    color: white !important;
 }
