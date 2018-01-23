@@ -1844,8 +1844,8 @@ aside .widget_search .input-group {
 	left: 45px;
 	font-size: 18px;
 }
-.widget ul {
-	padding-left:20px;
+.widget_archive ul, .widget_recent_entries ul, .widget_nav_menu ul, .widget_pages ul, .widget_rss ul {
+	padding-left: 10px;
 }
 #recentcomments {
 	padding-left:40px;
@@ -1880,15 +1880,12 @@ aside .widget_search .input-group {
 }
 .widget_recent_entries ul li .media-body .by-author a {
 	color: #404040;
-	font-size: 12px;
-	font-weight: 500;
-	text-transform: uppercase;
-	margin-left: 10px;
-	letter-spacing: 0.8px;
-	font-family: 'Montserrat', sans-serif;
-	text-decoration: none;
-	margin-top: 0px;
-	line-height: 1.8;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0px;
+    margin-left: 0;
 }
 .widget_recent_entries .post-date {
 	font-size: 90%;
@@ -1903,7 +1900,8 @@ aside .widget_search .input-group {
 .widget_recent_entries ul li .media-body p {
 	text-align: left;
 	margin: 0;
-	padding-left: 20px;
+	padding-left: 10px;
+    line-height: 22px;
 }
 .widget_recent_entries ul li .media-body p a span {
 	display: block;
