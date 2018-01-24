@@ -2846,6 +2846,7 @@ article a h5 {
 	margin-top: 30px;
 	font-family: 'Montserrat', sans-serif;
 	font-style: normal;
+	line-height: 1.6;
 }
 article a h5:hover {
 	color: #3c3e8b;
