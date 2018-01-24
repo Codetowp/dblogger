@@ -14,7 +14,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 wow fadeInLeft">
-				<p class="copyright">&#169; 2018 <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
+				<p class="copyright">&#169; <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
 			</div>
 			<div class="col-md-4 wow zoomIn">
 				<nav class="bottom-nav">
@@ -29,8 +29,15 @@
 					</ul>
 				</nav>
 			</div>
-			<div class="col-md-4 wow fadeInRight">
-				<p class="powered-by">Made with <i class="fa fa-heart"></i> by <a href="<?php echo esc_url('https://dcrazed.com/'); ?>">Dcrazed</a></p>
+			<div class="col-md-4 wow fadeInRight">				
+				<p class="powered-by">
+					<?php printf( /* translators: 1: Heart icon, 2: website. */
+							esc_html__( 'Made with %1$s by %2$s', 'dblogger' ) , 
+							'<i class="fa fa-heart"></i>', 
+							'<a href="https://dcrazed.com/" target="_blank">Dcrazed</a>'
+						);
+					?>
+				</p>
 			</div>
 		</div>
 	</div>
