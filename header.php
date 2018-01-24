@@ -20,27 +20,30 @@
 <body <?php body_class(); ?>>
 	<header>
 		<div class="container">
-			<div class="row"> 
-				<?php
-				$custom_logo = get_theme_mod( 'custom_logo' );
-				$logo = wp_get_attachment_image_src( $custom_logo , 'full' );
-				if ( has_custom_logo() ) {
-					echo '<a class="navbar-brand" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $logo[0] ) . '"></a>';
-				}else{
-                    echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'"><h3>'. esc_html( get_bloginfo( 'name' ) ) .'</h3></a>';}
-					
-				?>
+			<div class="row flex-dblogger-logo"> 
+				<div class="col-md-4"> 
+					<?php
+					$custom_logo = get_theme_mod( 'custom_logo' );
+					$logo = wp_get_attachment_image_src( $custom_logo , 'full' );
+					if ( has_custom_logo() ) {
+						echo '<a class="navbar-brand" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $logo[0] ) . '"></a>';
+					}
+					else{
+						echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'"><h3>'. esc_html( get_bloginfo( 'name' ) ) .'</h3></a>';
+					}				
+					?>
+				</div>
 				<div class="col-md-8 pull-right"> 
 					<?php
 					$type = get_theme_mod( 'dblogger_banner_type','image' );
 					if( $type == 'image' ){
 						$header_image   =  get_theme_mod( 'dblogger_banner_image', esc_url(get_template_directory_uri() . '/assets/img/ads.jpg') );						
 					?>
-					<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"> <img class="img-responsive ads pull-right" src="<?php echo esc_url($header_image);?>"> </a>
+					<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"><img class="img-responsive ads pull-right" src="<?php echo esc_url($header_image);?>"></a>
 					<?php  } else{ ?>
 					<?php 
-                   $code =get_theme_mod( 'dblogger_banner_adsense_code');
-                   echo htmlspecialchars_decode( $code );
+						$code =get_theme_mod( 'dblogger_banner_adsense_code');
+						echo htmlspecialchars_decode( $code );
 					} ?>
 				</div>
 			</div>
@@ -63,21 +66,21 @@
 						'menu_class'        => 'nav navbar-nav navbar-left' ) );
 					?>
 				<?php else : ?>
-					<ul class="nav navbar-nav navbar-left"><li class="menu-item"><a  href=" <?php echo esc_url(admin_url( 'nav-menus.php' ));?>  "><?php echo esc_html_e( 'Add a Primary Menu', 'dblogger' );?>  </a></li></ul>
+					<ul class="nav navbar-nav navbar-left"><li class="menu-item"><a href="<?php echo esc_url(admin_url( 'nav-menus.php' ));?>"><?php esc_html_e( 'Add a Primary Menu', 'dblogger' );?></a></li></ul>
 				<?php endif; ?>
-				<ul class="navbar-right social-links-top ">
+				<ul class="navbar-right social-links-top">
 					<?php
-					if ( $socials = get_theme_mod( 'social' ) ) 
+					if ( $socials = get_theme_mod( 'dblogger_social_links' ) ) 
 					{
 						$socials = $socials ? array_filter( $socials ) : array();
 						foreach ( $socials as $social => $name ) 
 						{
-						printf(' <li> <a href="%s" ><i class="fa fa-%s"></i></a></li> <li> ', esc_url( $name ), esc_html($social) );
+						printf(' <li> <a href="%s" ><i class="fa fa-%s"></i></a></li>', esc_url( $name ), esc_html($social) );
 						}
 					}?>
 					<li> <!--search form-->
 						<form id="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get"> 
-							<input type="text"  placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="s" size="40"/>
+							<input type="text" placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="s" size="40"/>
 						</form>
 					</li>
 				</ul>
