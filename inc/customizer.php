@@ -253,8 +253,8 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'dblogger_paragraph_font', array(
-		'label'   => esc_attr__('Change paragraph font family', 'dblogger' ),
-		'description'   => esc_attr__('Default : PT Serif', 'dblogger' ),
+		'label'   => __('Change paragraph font family', 'dblogger' ),
+		'description'   => __('Applies to subtitles, widget content, single post & pages', 'dblogger' ),
 		'section' => 'dblogger_font_settings',
 		'type'    => 'select',
 		'choices' => $font_choices,
@@ -272,14 +272,14 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_paragraph_font_color', 
 		array(
 			'label'      => esc_attr__( 'Pick paragraph font color', 'dblogger' ),
-			'description'   => esc_attr__('Default : #43484d', 'dblogger' ),
+			'description'   => esc_attr__('Applies only to single posts & pages', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
 			'priority'   => 2,
 		) 
 	) );    
 
 	$wp_customize->add_setting( 'dblogger_paragraph_font_size', array(
-		'default'       => get_theme_mod( 'dblogger_paragraph_font_size', '16px' ),
+		'default'       => '16',
 		'capability'    => 'edit_theme_options',
 		'transport'     => 'refresh',
 		'sanitize_callback' => 'dblogger_sanitize_integer',
@@ -290,7 +290,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'section'  => 'dblogger_font_settings',
 		'settings' => 'dblogger_paragraph_font_size',        
 		'label'    => __( 'Pick paragraph font size' , 'dblogger' ),
-		'description'   => esc_attr__('Default : 16px', 'dblogger' ),
+		'description'   => esc_attr__('Applies only to single posts & pages.', 'dblogger' ),
 		'input_attrs' => array(
 		'min'    => 11,
 		'max'    => 24,
@@ -308,7 +308,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( 'dblogger_heading_font_family', array(
 		'label'   => 'Change heading font family',
-		'description'   =>  esc_attr__('Default : Montserrat', 'dblogger' ),
+		'description'   =>  esc_attr__('Applies to all headings.', 'dblogger' ),
 		'section' => 'dblogger_font_settings',
 		'type'    => 'select',
 		'choices' => $font_choices,
@@ -325,6 +325,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_headings_font_color', 
 		array(
 			'label'      => esc_attr__( 'Pick heading font color', 'dblogger' ),
+			'description'   =>  __('Applies only to headings in single posts & pages.', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
 			'priority'   => 5,
 		) ) );
