@@ -332,7 +332,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	// Social Links
 
-	$wp_customize->add_section( 'social', array(
+	$wp_customize->add_section( 'dblogger_social_links', array(
 		'title'                     => __( 'Social Links', 'dblogger'  ),
 		'priority'                  => 99,
 		'panel'                     => 'dblogger_global_panel',  
@@ -341,16 +341,16 @@ function dblogger_customize_register( $wp_customize ) {
 	$social_sites = array( 'facebook', 'twitter','instagram',  'google-plus', 'pinterest', 'linkedin', 'rss');
 
 	foreach( $social_sites as $social_site ) {
-		$wp_customize->add_setting( "social[$social_site]", array(
+		$wp_customize->add_setting( "dblogger_social_links[$social_site]", array(
 			'default'           => '',
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'esc_url_raw'
 		) );
 
-		$wp_customize->add_control( "social[$social_site]", array(
+		$wp_customize->add_control( "dblogger_social_links[$social_site]", array(
 			'label'   => ucwords( $social_site ) . __( " Url:", 'dblogger' ),
-			'section' => 'social',
+			'section' => 'dblogger_social_links',
 			'type'    => 'text',
 		) );
 	}
