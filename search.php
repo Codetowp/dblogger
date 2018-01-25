@@ -13,12 +13,10 @@ get_header(); ?>
 	<div class="overlay-banner">
 		<div class="content">
 		  <div class="container"> 
-			<header class="page-header">
 				<h1 class="page-title"><?php
 					/* translators: %s: search query. */
 					printf( esc_html__( 'Search Results for: %s', 'dblogger' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
-			</header><!-- .page-header -->
 		  </div>
 		</div>
 	</div>
@@ -27,7 +25,7 @@ get_header(); ?>
 <section id="Blog-home">
 	<div class="container">
 		<div class="row"> 
-			<!--blog posts container-->
+			<!-- Post Loop -->
 			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;"> 
 
 				<?php

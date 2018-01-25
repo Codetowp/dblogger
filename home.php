@@ -17,13 +17,13 @@ get_header(); ?>
 		<div class="row"> 
 			<!--blog posts-->
 			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;"> 
-				<?php 
-				if ( have_posts() ) :
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/content', get_post_format() );
-					endwhile;
-				endif;?>
+				<?php if ( have_posts() ) :
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+				
+					get_template_part( 'template-parts/content', get_post_format() );
+					
+				endwhile; ?>
 				<div class="clearfix"></div>
 				<nav class="navigation posts-navigation"  role="navigation">
 					<ul>
@@ -38,6 +38,11 @@ get_header(); ?>
 						</li>  
 					</ul>
 				</nav>
+				<?php else :
+				
+					get_template_part( 'template-parts/content', 'none' );
+					
+				endif; ?>
 			</div>
 			<!--blog posts--> 
 			<!--Sidebar-->

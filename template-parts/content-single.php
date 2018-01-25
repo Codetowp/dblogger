@@ -8,47 +8,13 @@
  */
 
 ?>
-
-<!-- banner Page
-    ==========================================-->
-<div id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('dblogger_single_article'); ?>);">
-	<div class="content wow fadeInUp">
-		<div class="container">
-			<!--breadcrumb-->
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><?php the_breadcrumb(); ?></li>
-			</ol>
-			<!--/breadcrumb-->
-			<h1><?php the_title(); ?></h1>
-			<header class="entry-header">
-				<span class="date-article">
-					<?php dblogger_days_ago(); ?><?php dblogger_category_list(); ?> 
-				</span>
-			</header>
-		</div>
-	</div>
-</div>
-
 <div id="Blog-home">
 	<div class="container">
 		<div class="row">			
 			<div class="col-md-8 col-sm-8 wow fadeInUp">
 				<article class="single-post">
-					<?php
-					$disable1  = get_theme_mod( 'dblogger_post_sharing_icons' ) == 0 ? true : false ;
-					if ( dblogger_is_selective_refresh() ) {
-						$disable1 = false;
-					}
-					if ( ! $disable1) : ?>	
-					<ul class="single-post-share-ico">
-						<li><a data-original-title="Facebook"  data-placement="left" target="_blank" href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title(); ?>" title="<?php esc_html('Share this post on Facebook!', 'dblogger')?>"><i class="fa fa-facebook"></i></a> </li>
-						<li><a data-original-title="Twitter" data-placement="left" target="_blank" href="http://twitter.com/home?status=<?php echo urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>: <?php the_permalink(); ?>" title="<?php esc_html('Share this post on Twitter!', 'dblogger')?>"><i class="fa fa-twitter"></i></a> </li>
-						<li><a data-original-title="Dribbble"  data-placement="left" target="_blank" href="https://dribbble.com?url=<?php the_permalink(); ?>&title=<?php urlencode(html_entity_decode(get_the_title(), ENT_COMPAT, 'UTF-8')); ?>&source=Dribbble" title="<?php esc_html('Share this post on Dribbble!', 'dblogger')?>"><i class="fa fa-dribbble"></i></a> </li>
-						<li><a data-original-title="linkedin"  data-placement="left" target="_blank" href="https://www.linkedin.com/?hl=en?url=<?php the_permalink();?>&description=<?php the_title();?> on <?php bloginfo('name'); ?> <?php echo esc_url( site_url() );?>" class="pin-it-button" count-layout="horizontal" title="<?php esc_html('Share on linkedin','dblogger') ?>"><i class="fa fa-linkedin"></i></a> </li>
-					</ul>
-					<?php endif;?>
-					<?php echo the_content();?>
-					<!--Tags-->
+					<?php the_content();?>
+					<!-- Tags List-->
 					<?php
 						$categories = get_the_tags();
 						if( $categories !='' ){
@@ -85,33 +51,34 @@
 							);
 						?>
 					<?php endif; ?>
-			<div class="clearfix"></div>
-			<div class="page-links">
-				<?php wp_link_pages(); ?> 
-			</div>
-			<!--author box-->
-			<div class="author-box wow fadeInLeft">
-				<?php echo get_avatar( get_the_author_meta('user_email'), '100', '' ); ?>
-				<div class="author-box-title"><?php echo esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></a></div>
-				<div class="author-description"><?php the_author_meta('description'); ?></div>
-				<div class="author_social"><a href="<?php echo esc_url( get_the_author_meta('url') ); ?>"><i class="fa fa-globe"></i></a></div>
-			</div>
+				</article>
+				<div class="clearfix"></div>
+				<?php wp_link_pages('before=<div id="page-links">&after=</div>'); ?>
+				<!--author box-->
+				<div class="author-box wow fadeInLeft">
+					<?php echo get_avatar( get_the_author_meta('ID'), '100', '' ); ?>
+					<div class="author-box-title"><?php esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></a></div>
+					<div class="author-description">
+						<?php the_author_meta('description'); ?>						
+					</div>
+					<div class="author_social"><a href="<?php echo esc_url( get_the_author_meta('url') ); ?>"><i class="fa fa-globe"></i></a></div>
+				</div>
 
-			<div class="clearfix"></div>
-			<?php the_post_navigation(); ?>
+				<div class="clearfix"></div>
+				<?php the_post_navigation(); ?>
 
-			<div class="clearfix"></div>
-			
-			<!-- Related Posts-->
-			<div class="also-like-block wow bounceIn">
-				<h4><?php echo esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
-				<?php dblogger_related_post(); ?>
-			</div>						
-			
-			<!--Comments-->
-			<div class="clearfix"></div>
-			<div id="comments" class="comments-area text-left wow fadeInUp">
-				<?php comments_template(); ?>
-			</div>
+				<div class="clearfix"></div>
+				
+				<!-- Related Posts-->
+				<div class="also-like-block wow bounceIn">
+					<h4><?php echo esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
+					<?php dblogger_related_post(); ?>
+				</div>						
+				
+				<!--Comments-->
+				<div class="clearfix"></div>
+				<div id="comments" class="comments-area text-left wow fadeInUp">
+					<?php comments_template(); ?>
+				</div>
 			
 			</div>

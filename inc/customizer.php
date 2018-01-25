@@ -219,22 +219,6 @@ function dblogger_customize_register( $wp_customize ) {
 		'section' => 'dblogger_post_settings',		
 	) );
 	
-	$wp_customize->add_setting( 'dblogger_post_sharing_icons',
-		array(
-			'sanitize_callback' => 'dblogger_sanitize_checkbox',
-			'default'           => 0,
-			'capability'        => 'manage_options',
-			'transport'         => 'refresh',
-		)
-	);
-	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_sharing_icons',  array(
-		'settings' => 'dblogger_post_sharing_icons',
-		'label'    => __( 'Enable Sharing Icons in Posts', 'dblogger' ),
-		'section'  => 'dblogger_post_settings',
-		'type'     => 'ios',
-		'priority' => 1,
-	) ) );
-
     // Font SETTINGS
      
 	$wp_customize->add_section('dblogger_font_settings', 
