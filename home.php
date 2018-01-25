@@ -15,8 +15,8 @@ get_header(); ?>
 <section id="Blog-home">
 	<div class="container">
 		<div class="row"> 
-			<!--blog posts container-->
-			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;" > 
+			<!--blog posts-->
+			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;"> 
 				<?php 
 				if ( have_posts() ) :
 					/* Start the Loop */
@@ -39,12 +39,12 @@ get_header(); ?>
 					</ul>
 				</nav>
 			</div>
-			<!--blog posts container--> 
-			<!--aside-->
-			<aside class="col-md-4 col-sm-4" > 
+			<!--blog posts--> 
+			<!--Sidebar-->
+			<aside class="col-md-4 col-sm-4"> 
 				<?php get_sidebar(); ?> 
 			</aside>
-			<!--aside-->
+			<!--Sidebar ends-->
 			<div class="clearfix"></div>
 		</div>
 	</div>

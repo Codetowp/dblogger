@@ -16,13 +16,13 @@ get_header(); ?>
 
 <!-- banner Page
     ==========================================-->
-<section id="theme-banner" style="background-image: url(<?php echo esc_url( the_post_thumbnail_url('full') ); ?>);">
+<section id="theme-banner" style="background-image: url(<?php the_post_thumbnail_url('dblogger_single_article'); ?>);">
 	<div class="content wow fadeInUp">
 		<div class="container text-center"> 
 			<h1><?php the_title(); ?></h1>
 			<header class="entry-header">
 				<span class="date-article">
-					<?php dblogger_days_ago(); ?><?php dblogger_entry_footer(); ?>
+					<?php dblogger_days_ago(); ?><?php dblogger_category_list(); ?>
 				</span>
 			</header>
 		</div>

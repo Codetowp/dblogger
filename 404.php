@@ -7,7 +7,7 @@
 	 * @package dblogger
 	 */
 get_header(); ?>
-
+<!-- Banner -->
 <section id="page-banner" style="background-image: url( <?php header_image(); ?> );">
     <div class="overlay-banner">
         <div class="content">
@@ -19,7 +19,7 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
+<!-- Search Form -->
 <section id="Blog-home">
 	<div class="container">
 		<div class="row">
@@ -36,6 +36,5 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-
 <?php
 get_footer();

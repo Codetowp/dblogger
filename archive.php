@@ -9,9 +9,7 @@
 
 get_header(); ?>
 
-<!-- banner Page
-==========================================-->
-
+<!-- Banner with title -->
 <section id="page-banner" style="background-image: url( <?php header_image(); ?> );">
 	<div class="overlay-banner">
 		<div class="content">
@@ -24,31 +22,25 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-
-<!--blog body-->
-
+<!-- Post Loop -->
 <section id="Blog-home">
 	<div class="container">
-		<div class="row"> 
-			<!--blog posts container-->
+		<div class="row"> 			
 			<div class="col-md-8 col-sm-8" style="padding-left:0; padding-right:0;" > 
-
-			<?php
-			if ( have_posts() ) :
+				<?php if ( have_posts() ) :
+				/* Start the Loop */
 				while ( have_posts() ) : the_post();
-			?>
-
-					<!--blog post-->
-					<?php get_template_part( 'template-parts/content', get_post_format() );?>
-				
-					<!--/blog post--> 
-
-			<?php
+					/*
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
+					
 				endwhile;
-			endif;?>
-
+				?>
 				<div class="clearfix"></div>
-				<nav class="navigation posts-navigation"  role="navigation">
+				<nav class="navigation posts-navigation" role="navigation">
 					<ul>
 						<li>
 							<?php
@@ -58,12 +50,17 @@ get_header(); ?>
 									'next_text' => __( 'Older posts', 'dblogger' ) . '<i class="fa fa-chevron-right"></i>',
 								)
 							);
-							?>
-							<?php wp_reset_postdata(); ?>
+							?>							
 						</li>   
 
 					</ul>
 				</nav>
+				<?php else :
+				
+					get_template_part( 'template-parts/content', 'none' );
+					
+				endif; ?>
+
 			</div>
 			<!--blog posts container--> 
 			<!--aside-->

@@ -2841,10 +2841,14 @@ article header.entry-header {
 	font-weight: 400;
 	font-style: italic;
 }
-article a h5 {
+
+article a h5, article a h2 {
 	color: #404040;
 	margin-top: 30px;
+	margin-bottom: 15px;
+	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 	font-style: normal;
 	line-height: 1.6;
 }

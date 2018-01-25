@@ -13,9 +13,11 @@
 <footer id="bottom-footer">
 	<div class="container">
 		<div class="row">
+			<!-- Copyright -->
 			<div class="col-md-4 wow fadeInLeft">
 				<p class="copyright">&#169; <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
 			</div>
+			<!-- Footer Navigation Menu -->
 			<div class="col-md-4 wow zoomIn">
 				<nav class="bottom-nav">
 					<ul>
@@ -29,9 +31,10 @@
 					</ul>
 				</nav>
 			</div>
+			<!-- Theme Author Link -->
 			<div class="col-md-4 wow fadeInRight">				
 				<p class="powered-by">
-					<?php printf( /* translators: 1: Heart icon, 2: website. */
+					<?php printf( /* translators: 1: Heart icon, 2: Website. */
 							esc_html__( 'Made with %1$s by %2$s', 'dblogger' ) , 
 							'<i class="fa fa-heart"></i>', 
 							'<a href="https://dcrazed.com/" target="_blank">Dcrazed</a>'

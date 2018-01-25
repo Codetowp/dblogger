@@ -41,11 +41,11 @@ function dblogger_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'dblogger_entry_footer' ) ) :
+if ( ! function_exists( 'dblogger_category_list' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Prints HTML with meta information for the categories
  */
-function dblogger_entry_footer() {
+function dblogger_category_list() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -54,22 +54,15 @@ function dblogger_entry_footer() {
 			/* translators: 1: list of categories. */
 			printf( '<span class="cat-links">' . esc_html__( 'in %1$s', 'dblogger' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
-
-		/* translators: used between list items, there is a space after the comma */
-		//$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'dblogger' ) );
-		//if ( $tags_list ) {
-		//	printf( '<span class="tags-links">' . esc_html__( ', %1$s', 'dblogger' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		//}
 	}
 }
 endif;
 if ( ! function_exists( 'dblogger_days_ago' ) ) :
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Outputs date
  */
-function dblogger_days_ago() {
-        
-       $days = round((date('U') - get_the_time('U')) / (60*60*24));
+function dblogger_days_ago() {        
+    $days = round((date('U') - get_the_time('U')) / (60*60*24));
 	if ($days==0) {
 		echo " today "; 
 	}
