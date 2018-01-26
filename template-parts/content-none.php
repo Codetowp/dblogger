@@ -11,7 +11,6 @@
 <div class="page-content">
 	<?php
 	if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
 		<p><?php
 			printf(
 				wp_kses(
@@ -26,26 +25,18 @@
 				esc_url( admin_url( 'post-new.php' ) )
 			);
 		?></p>
-
 	<?php elseif ( is_search() ) : ?>
-
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'dblogger' ); ?></p>
 		<?php
 			get_search_form();
-
 		?>
 	<?php elseif ( is_category() ) : ?>
-
 		<p><?php esc_html_e( 'It seems that the category doesn&rsquo;t have posts right now. Try searching some keywords.', 'dblogger' ); ?></p>
 		<?php
 			get_search_form();
-
 	else : ?>
-
 		<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'dblogger' ); ?></p>
 		<?php
 			get_search_form();
-
 	endif; ?>
 </div><!-- .page-content -->
-
