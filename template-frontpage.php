@@ -83,6 +83,7 @@ if ( ! $disable1) : ?>
 							endwhile;
 							endif;
 						?>
+						<?php wp_reset_postdata(); ?>
 					</ul>
 					<div class="tab-content">
 						<?php
@@ -108,6 +109,7 @@ if ( ! $disable1) : ?>
 						<?php  $firstClass = ""; 
 							endwhile;
 						endif;?>
+						<?php wp_reset_postdata(); ?>
 					</div>
 				</div>
 			</div>
@@ -202,8 +204,7 @@ if ( ! $disable1) : ?>
 				?>
 			</div>
 			<?php
-			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , esc_attr(2, 'dblogger' ));
-			$count_blog = $count_blog-1;
+			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , 2);
 			$query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
 			if ($query_post->have_posts()) :
 				while ($query_post->have_posts()) : $query_post->the_post();
