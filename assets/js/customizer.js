@@ -76,7 +76,7 @@
     
   //************************** HEADERSECTION****************************************//    
 
-     wp.customize( 'dblogger_heder_text', function( value ) {
+     wp.customize( 'dblogger_header_text', function( value ) {
 		value.bind( function( to ) {
 			$( '#home-banner h1' ).text( to );
 		} );

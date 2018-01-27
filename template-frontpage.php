@@ -28,7 +28,7 @@ if ( ! $disable) : ?>
 			<?php 
 				$title  = get_theme_mod( 'dblogger_tagline_text', esc_html__('Section Title', 'dblogger' ));
 				if ($title != '') echo '<span class="sub wow fadeInRight" data-wow-duration="1s">  ' . wp_kses_post($title) . ' </span>'; 
-					$desc  = get_theme_mod( 'dblogger_heder_text', esc_html__('Section Description', 'dblogger' ));
+					$desc  = get_theme_mod( 'dblogger_header_text', esc_html__('Section Description', 'dblogger' ));
 				if ($desc != '') echo '<h1 class="wow fadeInUp">' . wp_kses_post($desc) . '</h1>';
 					$dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
 					$dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#', 'dblogger') );
