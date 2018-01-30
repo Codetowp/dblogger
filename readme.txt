@@ -1,4 +1,4 @@
-﻿=== dblogger ===
+﻿=== Dblogger ===
 
 Contributors: Rijo Abraham, Dcrazed.
 Requires at least: 4.0
