@@ -31,10 +31,13 @@ Yes. You can check this URL: https://dcrazed.com/docs/dblogger/
 
 == Changelog ==
 
-= 1.1 - Jan 20 2018 =
+= 1.0.2 - Mar 20 2018 =
+* Bug fixing for WordPress.org Repo
+
+= 1.0.1 - Jan 20 2018 =
 * Minor Bugs and Customizer improvements.
 
-= 1.0 - Dec 20 2017 =
+= 1.0.0 - Dec 20 2017 =
 * Initial release
 
 == Credits ==

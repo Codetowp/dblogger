@@ -133,7 +133,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_banner_type', 
 		array( 
 			'default'           => 'image',
-			'sanitize_callback' => 'banners_type_callback',
+			'sanitize_callback' => 'dblogger_banners_type_callback',
 	));
     
 	$wp_customize->add_control('dblogger_banner_type',
@@ -160,7 +160,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'section'         => 'dblogger_general_banners_controls',
 			'settings'        => 'dblogger_banner_link',
 			'type'			  => 'text',	
-			'active_callback' => 'banners_type_callback',
+			'active_callback' => 'dblogger_banners_type_callback',
 	) );
      
 	$wp_customize->add_setting( 'dblogger_banner_image',
@@ -177,7 +177,7 @@ function dblogger_customize_register( $wp_customize ) {
 				'label'           => esc_html__( 'Banner Image:', 'dblogger' ),
 				'description'     => esc_html__( 'Recommended size: 728 x 90', 'dblogger' ),
 				'section'         => 'dblogger_general_banners_controls',
-				'active_callback' => 'banners_type_callback',
+				'active_callback' => 'dblogger_banners_type_callback',
 			)
 	) );   
 
@@ -195,7 +195,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'section'         => 'dblogger_general_banners_controls',
 			'settings'        => 'dblogger_banner_adsense_code',
 			'type'            => 'textarea',
-			'active_callback' => 'banners_type_false_callback',
+			'active_callback' => 'dblogger_banners_type_false_callback',
 	) );
 	
 	// Post SETTINGS
@@ -204,13 +204,13 @@ function dblogger_customize_register( $wp_customize ) {
 			'priority'    => 105,
 			'title'       => esc_html__( 'Post Settings', 'dblogger' ),
 			'description' => '', 
-			'panel'                     => 'dblogger_global_panel',
+			'panel'       => 'dblogger_global_panel',
 		)
 	);
 	
 	$wp_customize->add_setting('dblogger_post_related_post_count', array(
 		'default' => 3,
-		'sanitize_callback' => 'dblogger_sanitize_integer'
+		'sanitize_callback' => 'absint'
 	) );
 
 	$wp_customize->add_control('dblogger_post_related_post_count', array(
@@ -224,7 +224,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_section('dblogger_font_settings', 
 		array(
 			'title'                     => __('Font Settings', 'dblogger'),
-			'description'               => 'Change font family, size and color (Headings & Paragraph) for Homepage, Blog Posts & Pages.',
+			'description'               => __('Change font family, size and color (Headings & Paragraph) for Homepage, Blog Posts & Pages.', 'dblogger'),
 			'panel'                     => 'dblogger_global_panel',
 			'priority'                  => 40,
 	));    
@@ -263,10 +263,10 @@ function dblogger_customize_register( $wp_customize ) {
 	) );    
 
 	$wp_customize->add_setting( 'dblogger_paragraph_font_size', array(
-		'default'       => '16',
+		'default'       => 16,
 		'capability'    => 'edit_theme_options',
 		'transport'     => 'refresh',
-		'sanitize_callback' => 'dblogger_sanitize_integer',
+		'sanitize_callback' => 'absint',
 	) );
 
 	$wp_customize->add_control( new Dblogger_Customizer_Range_Value_Control( $wp_customize, 'dblogger_paragraph_font_size', array(
@@ -291,8 +291,8 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'dblogger_heading_font_family', array(
-		'label'   => 'Change heading font family',
-		'description'   =>  esc_attr__('Applies to all headings.', 'dblogger' ),
+		'label'   => __('Change heading font family', 'dblogger' ),
+		'description'   =>  __('Applies to all headings.', 'dblogger' ),
 		'section' => 'dblogger_font_settings',
 		'type'    => 'select',
 		'choices' => $font_choices,
@@ -308,7 +308,7 @@ function dblogger_customize_register( $wp_customize ) {
 		
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_headings_font_color', 
 		array(
-			'label'      => esc_attr__( 'Pick heading font color', 'dblogger' ),
+			'label'      => __( 'Pick heading font color', 'dblogger' ),
 			'description'   =>  __('Applies only to headings in single posts & pages.', 'dblogger' ),
 			'section'    => 'dblogger_font_settings',
 			'priority'   => 5,
@@ -350,7 +350,7 @@ function dblogger_customize_register( $wp_customize ) {
     // Header INTRO    
 	$wp_customize->add_section('dblogger_header', array(
 		'title'                     => __('Header Intro', 'dblogger'),
-		'description'               => 'Easily edit your header section',
+		'description'               => __('Easily edit your header section', 'dblogger'),
 		'priority'                  => 100,
 		'panel'                    => 'dblogger_panel',
 	));
@@ -429,8 +429,8 @@ function dblogger_customize_register( $wp_customize ) {
     ) );
 
     $wp_customize->add_setting( 'dblogger_button_url', array(      
-        'default'           => esc_url( '#', 'dblogger' ),
-        'sanitize_callback'         => 'sanitize_text_field',
+        'default'           => esc_url( '#' ),
+        'sanitize_callback'         => 'esc_url_raw',
         'transport'                 => 'postMessage',               
     ) );   
     $wp_customize->add_control( 'dblogger_button_url', array(
@@ -444,7 +444,7 @@ function dblogger_customize_register( $wp_customize ) {
     
     $wp_customize->add_section('dblogger_guide_section', array(
         'title'                     => __('Category section', 'dblogger'),
-        'description'               => 'Show any category posts on homepage',
+        'description'               => __('Show any category posts on homepage', 'dblogger'),
         'priority'                  => 101,
          'panel'                     => 'dblogger_panel',  
     ) );
@@ -497,7 +497,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );	   
     
 	$wp_customize->add_setting( 'dblogger_guide_desc', array(
-		'default'                   => esc_html__('Section Description.', 'dblogger'),
+		'default'               => esc_html__('Section Description.', 'dblogger'),
 		'sanitize_callback'     => 'sanitize_text_field',
 		'transport'             => 'postMessage',
 	));
@@ -525,15 +525,13 @@ function dblogger_customize_register( $wp_customize ) {
 		'choices'    => $dblogger_options_categories
 	));
     
-	$wp_customize->add_setting('dblogger_post_number',
-		array(
+	$wp_customize->add_setting('dblogger_post_number', array(
 			'default' => '6',
-			'sanitize_callback' => 'dblogger_sanitize_integer'
+			'sanitize_callback' => 'absint'
 		)
 	);
 	
-	$wp_customize->add_control('dblogger_post_number',
-		array(
+	$wp_customize->add_control('dblogger_post_number', array(
 			'type' => 'integer',
 			'label' => __('Number Of Slides To Show - i.e 10 (default is 6)','dblogger'),
 			'section' => 'dblogger_guide_section',
@@ -549,8 +547,7 @@ function dblogger_customize_register( $wp_customize ) {
 		'panel'                     => 'dblogger_panel',  
 	) );
     
-	$wp_customize->add_setting( 'dblogger_theme_check',
-		array(
+	$wp_customize->add_setting( 'dblogger_theme_check', array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
 			'default'           => 0,
 			'capability'        => 'manage_options',
@@ -593,8 +590,8 @@ function dblogger_customize_register( $wp_customize ) {
     ) );	
 
     $wp_customize->add_setting( 'dblogger_theme_button_url', array(     
-        'default'                   => esc_url('#', 'dblogger'),
-        'sanitize_callback'         => 'sanitize_text_field',
+        'default'                   => esc_url('#'),
+        'sanitize_callback'         => 'esc_url_raw',
         'transport'                 => 'postMessage',               
     ) );    
 
@@ -631,15 +628,13 @@ function dblogger_customize_register( $wp_customize ) {
 		'priority' 					=> 6,
 	) );
     
-	$wp_customize->add_setting('dblogger_page_post_count',
-		array(
+	$wp_customize->add_setting('dblogger_page_post_count', array(
 			'default' => '6',
-			'sanitize_callback' => 'dblogger_sanitize_integer'
+			'sanitize_callback' => 'absint'
 		)
 	);
 
-	$wp_customize->add_control('dblogger_page_post_count',
-		array(
+	$wp_customize->add_control('dblogger_page_post_count', array(
 			'type' => 'integer',
 
 			'label' => __('Number Of Page To Show (default - 6)','dblogger'),
@@ -667,13 +662,12 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_section('dblogger_blog_section', array(
 		'title'                     => __('Our Blog Section', 'dblogger'),
-		'description'               => 'Change settings for no of posts on homepage and manage related posts on single post.',
+		'description'               => __('Change settings for no of posts on homepage and manage related posts on single post.', 'dblogger'),
 		'priority'                  => 103,
 		'panel'                     => 'dblogger_panel', 
 	) );    
     
-	$wp_customize->add_setting( 'dblogger_blog_check',
-		array(
+	$wp_customize->add_setting( 'dblogger_blog_check', array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
 			'default'           => '',
 			'capability'        => 'manage_options',
@@ -716,8 +710,8 @@ function dblogger_customize_register( $wp_customize ) {
     ) );	
     
      $wp_customize->add_setting( 'dblogger_blog_button_url', array(     
-        'default'                   => esc_url('#', 'dblogger'),
-        'sanitize_callback'         => 'sanitize_text_field',
+        'default'                   => esc_url('#'),
+        'sanitize_callback'         => 'esc_url_raw',
         'transport'                 => 'postMessage',               
     ) );    
 
@@ -728,18 +722,14 @@ function dblogger_customize_register( $wp_customize ) {
         'priority' 					=> 3
     ) );	
 	
-    $wp_customize->add_setting(
-    'dblogger_blog_post_count',
-		array(
-            'default'           => esc_attr(2, 'dblogger'),
-			'sanitize_callback' => 'dblogger_sanitize_integer',
+    $wp_customize->add_setting( 'dblogger_blog_post_count', array(
+            'default'           => 2,
+			'sanitize_callback' => 'absint',
             'transport'         => 'refresh',  
 		)
     );
 	
-    $wp_customize->add_control(
-    'dblogger_blog_post_count',
-    array(
+    $wp_customize->add_control( 'dblogger_blog_post_count', array(
         'type' => 'integer',
         'label' => __('Number Of Posts To Show','dblogger'),
         'section' => 'dblogger_blog_section',
@@ -749,8 +739,7 @@ function dblogger_customize_register( $wp_customize ) {
 	
     // Subscribe SETTINGS
 	
-	$wp_customize->add_section( 'dblogger_newsletter' ,
-		array(
+	$wp_customize->add_section( 'dblogger_newsletter' , array(
 			'priority'    => 110,
 			'title'       => esc_html__( 'Subscribe', 'dblogger' ),
 			'description' => '',
@@ -758,8 +747,7 @@ function dblogger_customize_register( $wp_customize ) {
 		)
 	);
     
-	$wp_customize->add_setting( 'dblogger_newsletter_disable',
-		array(
+	$wp_customize->add_setting( 'dblogger_newsletter_disable', array(
 			'sanitize_callback' => 'dblogger_sanitize_checkbox',
 			'default'           => '',
 			'capability'        => 'manage_options',
@@ -774,46 +762,40 @@ function dblogger_customize_register( $wp_customize ) {
 		'priority' => 1,
 	) ) );
     
-	$wp_customize->add_setting( 'dblogger_newsletter_title',
-		array(
+	$wp_customize->add_setting( 'dblogger_newsletter_title', array(
 			'sanitize_callback' => 'sanitize_text_field',
 			'default'           => esc_html__( 'Subscribe to our newsletter', 'dblogger' ),
 			'transport'         => 'postMessage', 
 		)
 	);
-	$wp_customize->add_control( 'dblogger_newsletter_title',
-		array(
+	$wp_customize->add_control( 'dblogger_newsletter_title', array(
 			'label'       => esc_html__('Subscribe Form Title', 'dblogger'),
 			'section'     => 'dblogger_newsletter',
 			'description' => ''
 		)
 	);
 	
-	$wp_customize->add_setting( 'dblogger_newsletter_mailchimp',
-		array(
-			'sanitize_callback' => 'esc_url',
+	$wp_customize->add_setting( 'dblogger_newsletter_mailchimp', array(
+			'sanitize_callback' => 'esc_url_raw',
 			'default'           => '',
 			'transport'         => 'postMessage', 
 		)
 	);
-	$wp_customize->add_control( 'dblogger_newsletter_mailchimp',
-		array(
+	$wp_customize->add_control( 'dblogger_newsletter_mailchimp', array(
 			'label'       => esc_html__('MailChimp Action URL', 'dblogger'),
 			'section'     => 'dblogger_newsletter',
-			'description' => __( 'The newsletter form use MailChimp, please follow <a target="_blank" href="http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms">this guide</a> to know how to get MailChimp Action URL. Example <i>//yourlist.us8.list-manage.com/subscribe/post?u=anything</i>', 'dblogger' )
+			'description' => esc_html__( 'The newsletter form use MailChimp, please follow <a target="_blank" href="http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms">this guide</a> to know how to get MailChimp Action URL. Example <i>//yourlist.us8.list-manage.com/subscribe/post?u=anything</i>', 'dblogger' )
 		)
 	);
     
-	$wp_customize->add_setting( 'dblogger_newsletter_det', 
-		array(      
-			'default'                   => 'We protect your privacy. We provide you with high quality updates.' ,
+	$wp_customize->add_setting( 'dblogger_newsletter_det',  array(      
+			'default'                   => __('We protect your privacy. We provide you with high quality updates.' , 'dblogger'),
 			'sanitize_callback'         => 'sanitize_text_field',
-			'transport'                 => 'postMessage',               
+			'transport'                 => 'postMessage', 
 		)
 	);    
 
-	$wp_customize->add_control( 'dblogger_newsletter_det', 
-		array(
+	$wp_customize->add_control( 'dblogger_newsletter_det', array(
 			'type'						=> 'text',
 			'label' 					=> __( 'Newsletter Details', 'dblogger' ),
 			'section'  					=> 'dblogger_newsletter',
@@ -822,12 +804,6 @@ function dblogger_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'dblogger_customize_register' );
 
-
-function dblogger_sanitize_integer( $input ) {
-	if( is_numeric( $input ) ) {
-		return intval( $input );
-	}
-}
 
 function dblogger_sanitize_slidecat( $input ) {
 	global $dblogger_options_categories;
@@ -846,14 +822,14 @@ function dblogger_main_sanitize_checkbox( $input ) {
     }
 }
 
-function banners_type_callback( $control ) {
+function dblogger_banners_type_callback( $control ) {
 	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'image' ) {
 		return true;
 	}
 	return false;
 }
 
-function banners_type_false_callback( $control ) {
+function dblogger_banners_type_false_callback( $control ) {
 	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'image' ) {
 		return false;
 	}
