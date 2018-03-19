@@ -31,7 +31,7 @@ if ( ! $disable) : ?>
 					$desc  = get_theme_mod( 'dblogger_header_text', esc_html__('Section Description', 'dblogger' ));
 				if ($desc != '') echo '<h1 class="wow fadeInUp">' . wp_kses_post($desc) . '</h1>';
 					$dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
-					$dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#', 'dblogger') );
+					$dblogger_button_url  = get_theme_mod( 'dblogger_button_url', esc_url('#') );
 				if ($dblogger_button_text != '' && $dblogger_button_url != '') echo '<a href="' . esc_url($dblogger_button_url) . '" class="btn btn-default wow fadeInLeft">' . wp_kses_post($dblogger_button_text) . '</a>'; 
 			?>
 		</div>
@@ -52,10 +52,10 @@ if ( ! $disable1) : ?>
 			$background_img_static   = get_template_directory_uri() . '/assets/img/f-fa-book.png';
 			$image = $background_img ? "$background_img" : "$background_img_static"; 
 		?>
-		<img src="<?php echo esc_url( $image );?>" class="img-responsive" style="width:65px;margin-left:48%">
+		<img src="<?php echo esc_url( $image );?>" class="img-responsive" style="width:65px; margin-left:48%">
 		<?php 
 			$dblogger_guide_title  = get_theme_mod( 'dblogger_guide_title', esc_html__('Section Title', 'dblogger' ));
-			if ($dblogger_guide_title != '') echo '<h2>  ' . wp_kses_post($dblogger_guide_title) . ' </h2>'; 
+			if ($dblogger_guide_title != '') echo '<h2>  ' . esc_html($dblogger_guide_title) . ' </h2>'; 
 		?>
 		<?php 
 			$dblogger_guide_desc  = get_theme_mod( 'dblogger_guide_desc', esc_html__('Section Description', 'dblogger' ));
@@ -70,8 +70,8 @@ if ( ! $disable1) : ?>
 						<?php
 							$firstClass = 'active'; 
 							$values=0;
-							$count = get_theme_mod( 'dblogger_post_number',6);
-							$slidecat = get_option( 'dblogger_slide_categories');
+							$count = get_theme_mod( 'dblogger_post_number', 6 );
+							$slidecat = get_option( 'dblogger_slide_categories' );
 							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
 							if ($query->have_posts()) :
 							while ($query->have_posts()) : $query->the_post();
@@ -89,7 +89,7 @@ if ( ! $disable1) : ?>
 						<?php
 						esc_url( $firstClass = 'active' ); 
 						$values=0;
-						$count = get_theme_mod( 'dblogger_post_number',6);
+						$count = get_theme_mod( 'dblogger_post_number', 6 );
 						$slidecat =get_option( 'dblogger_slide_categories' );
 						$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
 						if ($query->have_posts()) :
@@ -131,10 +131,10 @@ if ( ! $disable1) : ?>
 				<?php 
 				$dblogger_theme_title  = get_theme_mod( 'dblogger_theme_title', esc_html__('Pages', 'dblogger' ));
 				?>
-				<h2><?php echo $dblogger_theme_title; ?></h2>
+				<h2><?php echo esc_html($dblogger_theme_title); ?></h2>
 				<?php 
 					$dblogger_theme_button_text  = get_theme_mod( 'dblogger_theme_button_text', esc_html__('Read More', 'dblogger') );
-					$dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_url('#', 'dblogger') );
+					$dblogger_theme_button_url = get_theme_mod( 'dblogger_theme_button_url', esc_url('#') );
 					if ($dblogger_theme_button_text != '' && $dblogger_theme_button_url != '') { 
 						echo '<a class="btn btn-white" href="' . esc_url($dblogger_theme_button_url) . '" >' . esc_html($dblogger_theme_button_text) . '</a>'; 
 					}
@@ -142,7 +142,7 @@ if ( ! $disable1) : ?>
 				<hr>
 			</div>
 			<?php 
-			$page_counts = get_theme_mod( 'dblogger_page_post_count', esc_attr(6, 'dblogger' ) );
+			$page_counts = get_theme_mod( 'dblogger_page_post_count', 6 );
 			$page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts, 'orderby' => 'date', 'order' => 'DESC', ) ); ?>
 			<?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
 			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
@@ -238,7 +238,7 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 			<div class="col-md-4 col-md-offset-4">
 				<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>" target="_blank">
 					<div class="input-group">
-						<input class="form-control" type="text" placeholder="Email Address..." value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
+						<input class="form-control" type="text" placeholder="<?php esc_attr_e('Email Address', 'dblogger'); ?>" value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
 						<span class="input-group-btn">
 							<button  type="submit"><i class="fa  fa-chevron-right"></i></button>
 						</span>
@@ -246,7 +246,7 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 				</form>
 				<p> 
 					<?php echo  $dblogger_newsletter_det=( get_theme_mod( 'dblogger_newsletter_det' ) )?
-					esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ):esc_html('We protect your privacy. We provide you with high quality updates.'); ?>
+					esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ):esc_html__('We protect your privacy. We provide you with high quality updates.', 'dblogger'); ?>
 				</p>
 			</div>
 		</div>
