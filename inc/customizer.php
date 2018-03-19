@@ -405,7 +405,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_header_text', array(   
 		'default'                   => esc_html__('Section Description', 'dblogger'),
-		'sanitize_callback'         => 'sanitize_text_field',
+		'sanitize_callback'         => 'wp_kses_post',
 		'transport'                 => 'postMessage',             
 	) );    
 
@@ -418,7 +418,7 @@ function dblogger_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'dblogger_button_text', array(      
         'default'                   => esc_html__('Read More', 'dblogger'),
-        'sanitize_callback'         => 'sanitize_text_field',
+        'sanitize_callback'         => 'wp_kses_post',
         'transport'                 => 'postMessage',               
     ) );    
     $wp_customize->add_control( 'dblogger_button_text', array(
@@ -498,7 +498,7 @@ function dblogger_customize_register( $wp_customize ) {
     
 	$wp_customize->add_setting( 'dblogger_guide_desc', array(
 		'default'               => esc_html__('Section Description.', 'dblogger'),
-		'sanitize_callback'     => 'sanitize_text_field',
+		'sanitize_callback'     => 'wp_kses_post',
 		'transport'             => 'postMessage',
 	));
 	
@@ -636,7 +636,6 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control('dblogger_page_post_count', array(
 			'type' => 'integer',
-
 			'label' => __('Number Of Page To Show (default - 6)','dblogger'),
 			'section' => 'dblogger_theme_section',
 		)

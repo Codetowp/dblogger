@@ -90,7 +90,7 @@ function dblogger_days_ago() {
 	echo '<span class="posted-on">'. $posted_on,$sep.'</span>'; 
 	}
 	else {
-		echo  $days . " days ago ";
+		echo  $days . __(' days ago ', 'dblogger');
 	} 
     }
 endif;
