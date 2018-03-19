@@ -57,7 +57,7 @@
 				<!--author box-->
 				<div class="author-box wow fadeInLeft">
 					<?php echo get_avatar( get_the_author_meta('ID'), '100', '' ); ?>
-					<div class="author-box-title"><?php esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></a></div>
+					<div class="author-box-title"><?php esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></div>
 					<div class="author-description">
 						<?php the_author_meta('description'); ?>						
 					</div>
