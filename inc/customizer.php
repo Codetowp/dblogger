@@ -564,7 +564,7 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_theme_check', array(
 		'settings' => 'dblogger_theme_check',
-		'label'    => __( 'Disable this section', 'dblogger' ),
+		'label'    => __( 'Enable this section', 'dblogger' ),
 		'section'  => 'dblogger_theme_section',
 		'type'     => 'ios',
 		'priority' => 1,

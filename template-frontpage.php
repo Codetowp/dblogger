@@ -119,7 +119,7 @@ if ( ! $disable1) : ?>
 <?php endif;?>
 <!-- // Pages SECTION -->
 <?php
-$disable1  = get_theme_mod( 'dblogger_theme_check' ) == 1 ? true : false ;
+$disable1  = get_theme_mod( 'dblogger_theme_check' ) == 0 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
     $disable1 = false;
 }
