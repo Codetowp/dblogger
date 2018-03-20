@@ -5,17 +5,17 @@
  * @package dblogger
  */
 
-function the_breadcrumb() {
+function dblogger_breadcrumb_link() {
 	if ( ! is_home() ) {
 		echo '<a href="';
-		echo esc_url( home_url( 'home' ) );
+		echo esc_url( home_url( '/' ) );
 		echo '">';
-		echo esc_html_e( 'Home', 'dblogger' );
-		echo '</a> / ';
+		esc_html_e( 'Home', 'dblogger' );
+		echo '</a> > ';
 		if ( is_category() || is_single() ) {
-			the_category( ',' );
+			the_category( ' > ' );
 		} elseif ( is_page() ) {
-			echo the_title();
+			the_title();
 		}
 	}
 }

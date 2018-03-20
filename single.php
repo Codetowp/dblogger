@@ -9,12 +9,12 @@
 
 get_header(); ?>
 	<!-- Banner -->
-	<div id="single-banner" style="background-image: url(<?php echo the_post_thumbnail_url('dblogger_single_article'); ?>);">
+	<div id="single-banner" style="background-image: url(<?php the_post_thumbnail_url('dblogger_single_article'); ?>);">
 		<div class="content wow fadeInUp">
 			<div class="container">
 				<!--breadcrumb-->
 				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><?php the_breadcrumb(); ?></li>
+					<li class="breadcrumb-item"><?php dblogger_breadcrumb_link(); ?></li>
 				</ol>
 				<?php the_title( '<h1>', '</h1>' ); ?>
 				<header class="entry-header">

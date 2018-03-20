@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 
  <!-- banner Page
     ==========================================-->
-<Section id="page-banner" style="background-image: url(<?php header_image() ?>);">
+<section id="page-banner" style="background-image: url(<?php header_image(); ?>);">
 	<div class="overlay-banner">
 		<div class="content">
 			<div class="container ">
@@ -44,11 +44,7 @@ get_header( 'shop' ); ?>
 			</div>
 		</div>
 	</div>
-</Section>
-
-
-
-
+</section>
 
 <!--woocommerce body-->
 

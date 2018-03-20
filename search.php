@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<section id="page-banner" style="background-image: url(<?php header_image() ?>);">
+<section id="page-banner" style="background-image: url(<?php header_image(); ?>);">
 	<div class="overlay-banner">
 		<div class="content">
 		  <div class="container"> 
