@@ -36,6 +36,6 @@
 			?>
 		</span>
 	</header>
-	<p><?php the_excerpt(); ?></p>
+	<?php the_excerpt(); ?>
 </article>
 <!--/blog post--> 

@@ -24,7 +24,7 @@
 							<span class="tag-links clearfix"> 
 								<?php
 									foreach ( $categories as $category ) {
-										echo '<a rel="tag" href="' . esc_html( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a> ';
+										echo '<a rel="tag" href="' . get_category_link( $category->term_id ) . '">' .  $category->name . '</a> ';
 									}
 								?>
 							</span> 

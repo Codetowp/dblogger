@@ -8,7 +8,7 @@
 class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 	function __construct() {
-		$widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html( "The most recent posts on your site with thumbnails"), 'customize_selective_refresh' => true, );
+		$widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html__( "The most recent posts on your site with thumbnails", 'dblogger'), 'customize_selective_refresh' => true, );
 		parent::__construct('thirst-recent-posts', __('Dblogger - Recent Posts', 'dblogger'), $widget_ops);
 		$this->alt_option_name = 'widget_recent_entries';
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
@@ -41,7 +41,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		if ($r->have_posts()) :
 
 		?>
-			<?php echo $before_widget; ?>
+			<?php echo wp_kses_post($before_widget); ?>
 			<?php if ( $title ) echo $before_title . $title . $after_title;?>
 			<ul class="media-list main-list">
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
@@ -73,7 +73,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						</p>
 						<p class="by-author"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'dblogger'); ?></a></p>
 						<?php if ( $show_date ) : ?>
-							<p class="post-date"><?php echo esc_attr(get_the_date()); ?></p>
+							<p class="post-date"><?php the_time( get_option('date_format') ); ?></p>
 						<?php endif;
 
 						//thirst_number_comments();
@@ -115,14 +115,14 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
-			<p><label for="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html( 'Title:' ); ?></label><br/>
+			<p><label for="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'dblogger' ); ?></label><br/>
 			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_html( $title ); ?>" /></p>
 
-			<p><label for="<?php echo esc_html( $this->get_field_id( 'number' ) ); ?>"><?php echo esc_html( 'Number of posts to show:' ); ?></label><br/>
+			<p><label for="<?php echo esc_html( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'dblogger' ); ?></label><br/>
 			<input class="widefat" id="<?php echo esc_html( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_html( $number ); ?>" size="3" /></p>
 
 			<p><input type="checkbox" <?php checked( $show_date ); ?> id="<?php echo esc_html( $this->get_field_id( 'show_date' ) ); ?>" name="<?php echo esc_html( $this->get_field_name( 'show_date' ) ); ?>" />
-			<label class="widefat" for="<?php echo esc_html( $this->get_field_id( 'show_date' ) ); ?>"><?php echo esc_html( 'Display post date?' ); ?></label></p>
+			<label class="widefat" for="<?php echo esc_html( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_html_e( 'Display post date?', 'dblogger' ); ?></label></p>
 	<?php
 	}
 }
