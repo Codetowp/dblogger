@@ -190,7 +190,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_banner_adsense_code', 
 		array(
-			'sanitize_callback' => 'wp_kses_post',
+			'sanitize_callback' => 'esc_html',
 			'default'           => ''
 		)
 	);
@@ -398,14 +398,14 @@ function dblogger_customize_register( $wp_customize ) {
     ) );    
 
 	$wp_customize->add_setting( 'dblogger_tagline_text', array(      
-		'default'                   => esc_html__('Session Title', 'dblogger'),
+		'default'                   => esc_html__('Sub Title', 'dblogger'),
 		'sanitize_callback'         => 'sanitize_text_field',
 		'transport'                 => 'postMessage',               
 	) );    
 
 	$wp_customize->add_control( 'dblogger_tagline_text', array(
 		'type'						=> 'text',
-		'label' 					=> __( 'Section Title', 'dblogger' ),
+		'label' 					=> __( 'Sub Heading', 'dblogger' ),
 		'section'  					=> 'dblogger_header',
 		'priority' 					=> 3,
 	) );	
@@ -417,7 +417,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );    
 
     $wp_customize->add_control( 'dblogger_header_text', array(
-        'type'						=> 'text',
+        'type'						=> 'textarea',
         'label' 					=> __( 'Heading', 'dblogger' ),
         'section'  					=> 'dblogger_header',
         'priority' 					=> 4,
@@ -491,7 +491,7 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'dblogger_guide_title', array(   
-		'default'                   => esc_html__('Section Title', 'dblogger'),
+		'default'                   => esc_html__('How to Guides', 'dblogger'),
 		'sanitize_callback'         => 'sanitize_text_field',
 		'transport'                 => 'postMessage',               
 	) ); 
@@ -549,7 +549,7 @@ function dblogger_customize_register( $wp_customize ) {
     
 	$wp_customize->add_section('dblogger_theme_section', array(
 		'title'                     => __('Pages section', 'dblogger'),
-		'description'               => 'Show your latest pages here',
+		'description'               => 'Show your featured pages on homepage.',
 		'priority'                  => 102,
 		'panel'                     => 'dblogger_panel',  
 	) );
@@ -643,10 +643,10 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_first_page', array(
-	'label' => __('first page', 'dblogger'),
+	'label' => __('Select pages manually', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page One', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
 	$wp_customize->add_setting('dblogger_second_page', array(
@@ -657,10 +657,9 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_second_page', array(
-	'label' => __('second page', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page Two', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
 	$wp_customize->add_setting('dblogger_third_page', array(
@@ -671,10 +670,9 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_third_page', array(
-	'label' => __('third page', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page Three', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
 	$wp_customize->add_setting('dblogger_fourth_page', array(
@@ -685,10 +683,9 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_fourth_page', array(
-	'label' => __('fourth page', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page Four', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
 	$wp_customize->add_setting('dblogger_fifth_page', array(
@@ -699,10 +696,9 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_fifth_page', array(
-	'label' => __('fifth page', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page Five', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
 	$wp_customize->add_setting('dblogger_sixth_page', array(
@@ -713,10 +709,9 @@ function dblogger_customize_register( $wp_customize ) {
 
 	));
 	$wp_customize->add_control('dblogger_sixth_page', array(
-	'label' => __('sixth page', 'dblogger'),
 	'section' => 'dblogger_theme_section',
 	'type'    => 'select',
-	'description' => __('Select a page', 'dblogger'),
+	'description' => __('Page Six', 'dblogger'),
 	'choices'    => $dblogger_option_pages,
 	));
         
