@@ -3185,11 +3185,11 @@ img.rss-widget-icon {
 	display: none;
 }
 #theme-details ul {
-	margin-bottom: 48px;
+	/*margin-bottom: 48px;*/
 }
 #theme-details ol {
 	margin-left: 20px;
-	margin-bottom: 48px
+	/*margin-bottom: 48px*/
 }
 #theme-details ul li {
 	list-style: none;

@@ -158,7 +158,7 @@ if ( ! $disable1) : ?>
 				} else {
 					$page_post_img= get_template_directory_uri() . '/assets/img/default.jpg' ;
 					?>
-					<a href="<?php echo the_permalink();?>">
+					<a href="<?php the_permalink();?>">
 					<img src="<?php echo esc_url( $page_post_img );?>" class="img-responsive">
 					</a>
 				<?php  }  ?>
@@ -172,7 +172,7 @@ if ( ! $disable1) : ?>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
-						<a href="<?php echo the_permalink();?>"> 
+						<a href="<?php the_permalink();?>"> 
 						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
 						</a>
 					</div>
@@ -199,12 +199,12 @@ if ( ! $disable1) : ?>
 				if ($dblogger_blog_title != '') echo '<h2>' . wp_kses_post($dblogger_blog_title) . '</h2>'; ?>
 				<?php 
 				$dblogger_blog_button_text  = get_theme_mod( 'dblogger_blog_button_text', esc_html__('Read More', 'dblogger' ));
-				$dblogger_blog_button_url   = get_theme_mod('dblogger_blog_button_url',esc_url('#', 'dblogger') );
+				$dblogger_blog_button_url   = get_theme_mod('dblogger_blog_button_url',esc_url('#') );
 				if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url($dblogger_blog_button_url ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; 
 				?>
 			</div>
 			<?php
-			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , 2);
+			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , 2 );
 			$query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
 			if ($query_post->have_posts()) :
 				while ($query_post->have_posts()) : $query_post->the_post();
@@ -240,7 +240,7 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 					<div class="input-group">
 						<input class="form-control" type="text" placeholder="<?php esc_attr_e('Email Address', 'dblogger'); ?>" value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
 						<span class="input-group-btn">
-							<button  type="submit"><i class="fa  fa-chevron-right"></i></button>
+							<button type="submit"><i class="fa fa-chevron-right"></i></button>
 						</span>
 					</div>
 				</form>
