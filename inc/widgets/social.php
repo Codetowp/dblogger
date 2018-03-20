@@ -79,7 +79,7 @@ class Dblogger_Premium extends WP_Widget{
 		<?php }?>
 		</ul>
 		<?php
-		echo $args['after_widget'];
+		echo wp_kses_post($args['after_widget']);
 	}
 
 	/**

@@ -4,7 +4,6 @@
  * 
  * @package dblogger
  */
- 
 class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 	function __construct() {
@@ -22,16 +21,9 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		if ( !is_array($cache) )
 		$cache = array();
 
-		if ( ! isset( $args['widget_id'] ) )
-		$args['widget_id'] = $this->id;
-
-		if ( isset( $cache[ $args['widget_id'] ] ) ) {
-		echo $cache[ $args['widget_id'] ];
-		return;
-		}
-
 		ob_start();
 		extract($args);
+		
 		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts','dblogger') : $instance['title'], $instance, $this->id_base);
 		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
 		$number = 10;
@@ -42,7 +34,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 		?>
 			<?php echo wp_kses_post($before_widget); ?>
-			<?php if ( $title ) echo $before_title . $title . $after_title;?>
+			<h2 class="widget-title"><?php if ( $title ) echo esc_html( $title ); ?></h2>
 			<ul class="media-list main-list">
 			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
 
@@ -64,11 +56,12 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 					<div class="media-body">
 						<p class="media-heading">
 							<a href="<?php the_permalink(); ?>"> 
-								<?php if ( get_the_title() ) {
-									$title = get_the_title();
-									echo substr($title, 0,40);
+								<?php if ( get_the_title() ) 
+								{
+									echo esc_html(get_the_title());
 								}
-								else the_ID(); ?>
+									else the_ID(); 
+								?>
 							</a>
 						</p>
 						<p class="by-author"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read more', 'dblogger'); ?></a></p>
@@ -83,7 +76,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 				</li>
 			<?php endwhile; ?>
 			</ul>
-			<?php echo $after_widget; ?>
+			<?php echo wp_kses_post($after_widget); ?>
 			<?php
 			// Reset the global $the_post as this query will have stomped on it
 			wp_reset_postdata();
@@ -96,7 +89,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['number'] = (int) $new_instance['number'];
-		$instance['show_date'] = (bool) $new_instance['show_date'];
+		$instance['show_date'] = isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
 		$this->flush_widget_cache();
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
@@ -130,7 +123,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 function Dblogger_WP_Widget_Recent_Posts() {
 	// define widget title and description
-	$widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html_e( "The most recent posts on your site with thumbnails" ,'dblogger') );
+	$widget_ops = array('classname' => 'widget_recent_entries', 'description' => __( "The most recent posts on your site with thumbnails" ,'dblogger') );
 	// register the widget
 	$this->WP_Widget('dblogger-recent-posts',  esc_html('Dblogger Recent Posts'), $widget_ops);
 }

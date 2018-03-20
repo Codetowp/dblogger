@@ -13,21 +13,10 @@
 		<div class="row">			
 			<div class="col-md-8 col-sm-8 wow fadeInUp">
 				<article class="single-post">
-					<?php the_content();?>
-					<!-- Tags List-->
-					<?php
-						$categories = get_the_tags();
-						if( $categories !='' ){
-					?>		
+					<?php the_content();?>					
 					<footer class="entry-footer entry-meta-bar">
 						<div class="entry-meta"><i class="fa fa-tags"></i> 
-							<span class="tag-links clearfix"> 
-								<?php
-									foreach ( $categories as $category ) {
-										echo '<a rel="tag" href="' . get_category_link( $category->term_id ) . '">' .  $category->name . '</a> ';
-									}
-								?>
-							</span> 
+							<?php dblogger_footer_tag(); ?>
 						</div>
 					</footer>
 					<?php } ?>
