@@ -15,7 +15,7 @@
 		<div class="row">
 			<!-- Copyright -->
 			<div class="col-md-4 wow fadeInLeft">
-				<p class="copyright">&#169; <?php echo bloginfo('name'); ?>. <?php echo esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
+				<p class="copyright">&#169; <?php echo bloginfo('name'); ?>. <?php esc_html_e('All rights reserved', 'dblogger'); ?>.</p>
 			</div>
 			<!-- Footer Navigation Menu -->
 			<div class="col-md-4 wow zoomIn">

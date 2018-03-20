@@ -87,7 +87,7 @@ if ( ! $disable1) : ?>
 					</ul>
 					<div class="tab-content">
 						<?php
-						esc_url( $firstClass = 'active' ); 
+						$firstClass = 'active' ; 
 						$values=0;
 						$count = get_theme_mod( 'dblogger_post_number', 6 );
 						$slidecat =get_option( 'dblogger_slide_categories' );
@@ -149,7 +149,7 @@ if ( ! $disable1) : ?>
 				<?php 
 				if(get_the_post_thumbnail()){
 				?>
-				<a href="<?php echo the_permalink();?>">
+				<a href="<?php the_permalink();?>">
 				<?php
 					the_post_thumbnail('dblogger_theme_page');
 				?>	
@@ -236,17 +236,13 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 				?>  
 			</div>
 			<div class="col-md-4 col-md-offset-4">
-				<form action="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>" target="_blank">
+				<form>
 					<div class="input-group">
-						<input class="form-control" type="text" placeholder="<?php esc_attr_e('Email Address', 'dblogger'); ?>" value="<?php esc_attr_e('Subscribe', 'dblogger'); ?>">
-						<span class="input-group-btn">
-							<button type="submit"><i class="fa fa-chevron-right"></i></button>
-						</span>
+						<a target="_blank" class="btn btn-danger form-newsletter" href="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>"><?php esc_attr_e('Click Here', 'dblogger'); ?></a>
 					</div>
 				</form>
 				<p> 
-					<?php echo  $dblogger_newsletter_det=( get_theme_mod( 'dblogger_newsletter_det' ) )?
-					esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ):esc_html__('We protect your privacy. We provide you with high quality updates.', 'dblogger'); ?>
+					<?php echo  $dblogger_newsletter_det=( get_theme_mod( 'dblogger_newsletter_det' ) )? esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ): esc_html__('We protect your privacy. We provide you with high quality updates.', 'dblogger'); ?>
 				</p>
 			</div>
 		</div>
