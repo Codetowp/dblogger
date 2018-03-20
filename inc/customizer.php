@@ -8,6 +8,13 @@
 function dblogger_customize_register( $wp_customize ) {    
 	require get_template_directory() . '/inc/lib/fo-to-range.php';
 	require get_template_directory() . '/inc/lib/theme-info.php';   
+   	$pages= get_pages();
+    $dblogger_option_pages = array();
+    $dblogger_option_pages[0] = esc_html__( 'Select page', 'dblogger' );
+    foreach( $pages as $p )
+        {
+            $dblogger_option_pages[ $p->ID ] = $p->post_title;
+        }
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -133,7 +140,7 @@ function dblogger_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'dblogger_banner_type', 
 		array( 
 			'default'           => 'image',
-			'sanitize_callback' => 'dblogger_banners_type_callback',
+			'sanitize_callback' => 'dblogger_sanitize_choices',
 	));
     
 	$wp_customize->add_control('dblogger_banner_type',
@@ -183,7 +190,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_banner_adsense_code', 
 		array(
-			'sanitize_callback' => 'esc_html',
+			'sanitize_callback' => 'wp_kses_post',
 			'default'           => ''
 		)
 	);
@@ -628,18 +635,90 @@ function dblogger_customize_register( $wp_customize ) {
 		'priority' 					=> 6,
 	) );
     
-	$wp_customize->add_setting('dblogger_page_post_count', array(
-			'default' => '6',
-			'sanitize_callback' => 'absint'
-		)
-	);
+	$wp_customize->add_setting('dblogger_first_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
 
-	$wp_customize->add_control('dblogger_page_post_count', array(
-			'type' => 'integer',
-			'label' => __('Number Of Page To Show (default - 6)','dblogger'),
-			'section' => 'dblogger_theme_section',
-		)
-	);
+	));
+	$wp_customize->add_control('dblogger_first_page', array(
+	'label' => __('first page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
+	$wp_customize->add_setting('dblogger_second_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
+
+	));
+	$wp_customize->add_control('dblogger_second_page', array(
+	'label' => __('second page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
+	$wp_customize->add_setting('dblogger_third_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
+
+	));
+	$wp_customize->add_control('dblogger_third_page', array(
+	'label' => __('third page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
+	$wp_customize->add_setting('dblogger_fourth_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
+
+	));
+	$wp_customize->add_control('dblogger_fourth_page', array(
+	'label' => __('fourth page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
+	$wp_customize->add_setting('dblogger_fifth_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
+
+	));
+	$wp_customize->add_control('dblogger_fifth_page', array(
+	'label' => __('fifth page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
+	$wp_customize->add_setting('dblogger_sixth_page', array(
+	'default'=>'0',
+	'type' => 'option',
+	'capability' => 'edit_theme_options',
+	'sanitize_callback'=>'dblogger_sanitize_choices',
+
+	));
+	$wp_customize->add_control('dblogger_sixth_page', array(
+	'label' => __('sixth page', 'dblogger'),
+	'section' => 'dblogger_theme_section',
+	'type'    => 'select',
+	'description' => __('Select a page', 'dblogger'),
+	'choices'    => $dblogger_option_pages,
+	));
         
 	$wp_customize->add_setting( 'dblogger_theme_tag_check', array(
 		'default'    => 1,
@@ -829,10 +908,10 @@ function dblogger_banners_type_callback( $control ) {
 }
 
 function dblogger_banners_type_false_callback( $control ) {
-	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'image' ) {
-		return false;
+	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'adsense' ) {
+		return true;
 	}
-	return true;
+	return false;
 }
 
 function dblogger_sanitize_checkbox( $input ) {
@@ -854,6 +933,17 @@ function dblogger_sanitize_select( $input, $setting ){
 	//return input if valid or return default option
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );                
 		 
+}
+function dblogger_sanitize_choices( $input, $setting ) {
+  global $wp_customize;
+
+  $control = $wp_customize->get_control( $setting->id );
+
+  if ( array_key_exists( $input, $control->choices ) ) {
+    return $input;
+  } else {
+    return $setting->default;
+  }
 }
 /**
  * Render all selective refresh partial.

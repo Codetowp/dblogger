@@ -141,44 +141,190 @@ if ( ! $disable1) : ?>
 				?>     
 				<hr>
 			</div>
+			<!-- first page -->
 			<?php 
-			$page_counts = get_theme_mod( 'dblogger_page_post_count', 6 );
-			$page_query = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => $page_counts, 'orderby' => 'date', 'order' => 'DESC', ) ); ?>
-			<?php if ( $page_query->have_posts() ) : while ( $page_query->have_posts() ) : $page_query->the_post(); ?>
+			$post_id= get_option('dblogger_first_page','0');
+			
+			if($post_id !== '0'):
+				
+			
+			 $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+			?>
 			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
-				<?php 
-				if(get_the_post_thumbnail()){
-				?>
-				<a href="<?php the_permalink();?>">
-				<?php
-					the_post_thumbnail('dblogger_theme_page');
-				?>	
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
 				</a>
-				<?php 
-				} else {
-					$page_post_img= get_template_directory_uri() . '/assets/img/default.jpg' ;
-					?>
-					<a href="<?php the_permalink();?>">
-					<img src="<?php echo esc_url( $page_post_img );?>" class="img-responsive">
-					</a>
-				<?php  }  ?>
+				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php the_title(); ?> 
-						<?php 
-						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
-						?>
+					<h6>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
-						<a href="<?php the_permalink();?>"> 
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
 						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
 			</div>
-			<?php  endwhile;endif;?>
+		<?php endif; ?>
+		<!-- second page -->
+			<?php 
+			$post_id= get_option('dblogger_second_page','0');
+			
+			if($post_id !== '0'):
+			
+           $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+           /* $image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;	*/		 ?>
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
+				</a>
+				
+				<div class="theme-post-caption eq-blocks">
+					<h6>
+					</h6>
+					<div class="view-payment"> 
+						<?php 
+						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
+						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- third page -->
+			<?php 
+			$post_id= get_option('dblogger_third_page','0');
+		
+			if($post_id !== '0'):
+			
+			
+			 $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+			?>
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
+				</a>
+				
+				<div class="theme-post-caption eq-blocks">
+					<h6>
+					</h6>
+					<div class="view-payment"> 
+						<?php 
+						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
+						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?><?php echo $post_id; ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- fourth page -->
+			<?php 
+			$post_id= get_option('dblogger_fourth_page','0');
+			
+			if($post_id !== '0'):
+			
+			 $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+			?>
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
+				</a>
+				
+				<div class="theme-post-caption eq-blocks">
+					<h6>
+					</h6>
+					<div class="view-payment"> 
+						<?php 
+						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
+						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?><?php echo $post_id; ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- fifth page -->
+			<?php 
+			$post_id= get_option('dblogger_fifth_page','0');
+			
+			if($post_id !== '0'):
+			
+			 $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+			
+			
+ ?>
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
+				</a>
+				
+				<div class="theme-post-caption eq-blocks">
+					<h6>
+					</h6>
+					<div class="view-payment"> 
+						<?php 
+						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
+						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?><?php echo $post_id; ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- sixth page -->
+			<?php 
+			$post_id= get_option('dblogger_sixth_page','0');
+			
+			if($post_id !== '0'):
+
+			 $image_url= get_the_post_thumbnail_url($post_id);
+           while($image_url == ''){
+           	$image_url=get_template_directory_uri() . '/assets/img/default.jpg' ;
+           }
+			?>
+			<div class="col-md-4 col-sm-6 col-xs-6 theme-post wow fadeInUp"> 				
+				
+				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>">
+				<img src="<?php echo esc_url($image_url); ?>" class="img-responsive">
+				</a>
+				
+				<div class="theme-post-caption eq-blocks">
+					<h6>
+					</h6>
+					<div class="view-payment"> 
+						<?php 
+						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
+						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
+						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?><?php echo $post_id; ?>
+						</a>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>
 		</div>
 	</div>
 </section>

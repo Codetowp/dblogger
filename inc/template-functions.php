@@ -30,3 +30,4 @@ function dblogger_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'dblogger_pingback_header' );
+
