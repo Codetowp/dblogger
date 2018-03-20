@@ -636,83 +636,91 @@ function dblogger_customize_register( $wp_customize ) {
 	) );
     
 	$wp_customize->add_setting('dblogger_first_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
-
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 	));
+	
 	$wp_customize->add_control('dblogger_first_page', array(
-	'label' => __('Select pages manually', 'dblogger'),
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page One', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'label' => __('Select pages manually', 'dblogger'),
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page One', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
+	
 	$wp_customize->add_setting('dblogger_second_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 
 	));
+	
 	$wp_customize->add_control('dblogger_second_page', array(
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page Two', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page Two', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
+	
 	$wp_customize->add_setting('dblogger_third_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
-
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 	));
+	
 	$wp_customize->add_control('dblogger_third_page', array(
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page Three', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page Three', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
+	
 	$wp_customize->add_setting('dblogger_fourth_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 
 	));
+	
 	$wp_customize->add_control('dblogger_fourth_page', array(
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page Four', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page Four', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
+	
 	$wp_customize->add_setting('dblogger_fifth_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
-
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 	));
+	
 	$wp_customize->add_control('dblogger_fifth_page', array(
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page Five', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page Five', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
+	
 	$wp_customize->add_setting('dblogger_sixth_page', array(
-	'default'=>'0',
-	'type' => 'option',
-	'capability' => 'edit_theme_options',
-	'sanitize_callback'=>'dblogger_sanitize_choices',
+		'default'=>'0',
+		'type' => 'option',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback'=>'dblogger_sanitize_choices',
 
 	));
+	
 	$wp_customize->add_control('dblogger_sixth_page', array(
-	'section' => 'dblogger_theme_section',
-	'type'    => 'select',
-	'description' => __('Page Six', 'dblogger'),
-	'choices'    => $dblogger_option_pages,
+		'section' => 'dblogger_theme_section',
+		'type'    => 'select',
+		'description' => __('Page Six', 'dblogger'),
+		'choices'    => $dblogger_option_pages,
 	));
         
 	$wp_customize->add_setting( 'dblogger_theme_tag_check', array(
@@ -877,7 +885,7 @@ function dblogger_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'dblogger_customize_register' );
 
-
+//Sanitize categories
 function dblogger_sanitize_slidecat( $input ) {
 	global $dblogger_options_categories;
 		if ( array_key_exists( $input, $dblogger_options_categories ) ) {
