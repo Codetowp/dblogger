@@ -402,7 +402,7 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 			<div class="col-md-4 col-md-offset-4">
 				<form>
 					<div class="input-group">
-						<a target="_blank" class="btn btn-danger form-newsletter" href="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>"><?php esc_attr_e('Click Here', 'dblogger'); ?></a>
+						<a target="_blank" class="btn btn-default form-newsletter" href="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>"><?php esc_attr_e('Click Here', 'dblogger'); ?></a>
 					</div>
 				</form>
 				<p> 
