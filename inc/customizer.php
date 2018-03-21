@@ -190,7 +190,7 @@ function dblogger_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'dblogger_banner_adsense_code', 
 		array(
-			'sanitize_callback' => 'esc_html',
+			'sanitize_callback' => 'sanitize_textarea_field',
 			'default'           => ''
 		)
 	);
@@ -549,7 +549,7 @@ function dblogger_customize_register( $wp_customize ) {
     
 	$wp_customize->add_section('dblogger_theme_section', array(
 		'title'                     => __('Pages section', 'dblogger'),
-		'description'               => 'Show your featured pages on homepage.',
+		'description'               => __('Show your featured pages on homepage.', 'dblogger'),
 		'priority'                  => 102,
 		'panel'                     => 'dblogger_panel',  
 	) );
@@ -835,7 +835,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'transport'         => 'refresh',
 		)
 	);
-	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable',                   array(
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_newsletter_disable', array(
 		'settings' => 'dblogger_newsletter_disable',
 		'label'    => __( 'Enable newsletter?', 'dblogger' ),
 		'section'  => 'dblogger_newsletter',

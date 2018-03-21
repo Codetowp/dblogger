@@ -71,7 +71,7 @@ if ( ! $disable1) : ?>
 							$firstClass = 'active'; 
 							$values=0;
 							$count = get_theme_mod( 'dblogger_post_number', 6 );
-							$slidecat = get_option( 'dblogger_slide_categories' );
+							$slidecat = esc_html(get_option( 'dblogger_slide_categories' ));
 							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
 							if ($query->have_posts()) :
 							while ($query->have_posts()) : $query->the_post();
@@ -96,7 +96,7 @@ if ( ! $disable1) : ?>
 							while ($query->have_posts()) : $query->the_post();
 							$values++;
 						?>
-							<div role="tabpanel" class="tab-pane <?php echo esc_html( $firstClass ); ?>" id="<?php echo esc_attr( $values );?>"><?php
+							<div role="tabpanel" class="tab-pane <?php echo esc_attr( $firstClass ); ?>" id="<?php echo esc_attr( $values );?>"><?php
 								if  ( get_the_post_thumbnail()!='')
 								{?>
 									<a href="<?php the_permalink();?>"><?php the_post_thumbnail('dblogger_homepage_article'); ?></a>
@@ -155,7 +155,7 @@ if ( ! $disable1) : ?>
 				<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"><img src="<?php echo esc_url($image_url); ?>" class="img-responsive"></a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
@@ -189,7 +189,7 @@ if ( ! $disable1) : ?>
 				</a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
@@ -224,7 +224,7 @@ if ( ! $disable1) : ?>
 				</a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
@@ -258,7 +258,7 @@ if ( ! $disable1) : ?>
 				</a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
@@ -293,7 +293,7 @@ if ( ! $disable1) : ?>
 				</a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
@@ -327,7 +327,7 @@ if ( ! $disable1) : ?>
 				</a>
 				
 				<div class="theme-post-caption eq-blocks">
-					<h6><?php echo get_the_title($post_id); ?> 
+					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
 						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 

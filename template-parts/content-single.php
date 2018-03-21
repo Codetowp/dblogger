@@ -19,7 +19,6 @@
 							<?php dblogger_footer_tag(); ?>
 						</div>
 					</footer>
-					<?php } ?>
 					<?php if ( get_edit_post_link() ) : ?>
 						<?php
 							edit_post_link(
@@ -60,7 +59,7 @@
 				
 				<!-- Related Posts-->
 				<div class="also-like-block wow bounceIn">
-					<h4><?php echo esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
+					<h4><?php esc_html_e('YOU MAY ALSO LIKE', 'dblogger'); ?></h4>
 					<?php dblogger_related_post(); ?>
 				</div>						
 				

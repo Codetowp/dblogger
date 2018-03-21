@@ -17,7 +17,7 @@
 		} else {
 			$single_img = get_template_directory_uri().'/assets/img/default.jpg';
 		?>
-		<img src="<?php echo esc_url( $single_img );?>" alt="<?php the_title(); ?>" class="img-responsive">
+		<img src="<?php echo esc_url( $single_img );?>" alt="<?php the_title_attribute(); ?>" class="img-responsive">
 		<?php }?>
 	</a>
 	<header class="entry-header">

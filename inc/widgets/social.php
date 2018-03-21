@@ -45,22 +45,22 @@ class Dblogger_Premium extends WP_Widget{
 		<ul >
 
 		<?php if( !empty( $instance['facebook_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['facebook_url'] ) ); endif; ?>" title="<?php esc_html_e('facebook', 'dblogger'); ?>"><i class="fa fa-facebook"></i></a></li>
+			<li ><a href="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['facebook_url'] ) ); endif; ?>" title="<?php esc_attr_e('facebook', 'dblogger'); ?>"><i class="fa fa-facebook"></i></a></li>
 		<?php }?>
 		<?php if( !empty( $instance['twitter_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['twitter_url'] ) ); endif; ?>" title="<?php esc_html_e('twitter', 'dblogger'); ?>"><i class="fa  fa-twitter"></i></a></li>
+			<li ><a href="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['twitter_url'] ) ); endif; ?>" title="<?php esc_attr_e('twitter', 'dblogger'); ?>"><i class="fa fa-twitter"></i></a></li>
 		<?php }?>
 		<?php if( !empty( $instance['google_url'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['google_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['google_url'] ) ); endif; ?>" title="<?php esc_html_e('google-plus', 'dblogger'); ?>"><i class="fa  fa-google-plus"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['google_url'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['google_url'] ) ); endif; ?>" title="<?php esc_attr_e('google-plus', 'dblogger'); ?>"><i class="fa fa-google-plus"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['dribbble'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['dribbble'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['dribbble'] ) ); endif; ?>" title="<?php esc_html_e('dribbble', 'dblogger'); ?>"><i class="fa fa-dribbble"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['dribbble'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['dribbble'] ) ); endif; ?>" title="<?php esc_attr_e('dribbble', 'dblogger'); ?>"><i class="fa fa-dribbble"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['behance'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['behance'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['behance'] ) ); endif; ?>" title="<?php esc_html_e('behance', 'dblogger'); ?>"><i class="fa fa-behance"></i></a> </li>
+			<li ><a href="<?php if( !empty( $instance['behance'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['behance'] ) ); endif; ?>" title="<?php esc_attr_e('behance', 'dblogger'); ?>"><i class="fa fa-behance"></i></a> </li>
 		<?php }?>
 		<?php if( !empty( $instance['inst_title'] ) ){?>
-			<li ><a href="<?php if( !empty( $instance['inst_title'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['inst_title'] ) ); endif; ?>" title="<?php esc_html_e('instagram', 'dblogger'); ?>"><i class="fa  fa-instagram"></i></a>
+			<li ><a href="<?php if( !empty( $instance['inst_title'] ) ): echo esc_url( apply_filters( 'widget_title', $instance['inst_title'] ) ); endif; ?>" title="<?php esc_attr_e('instagram', 'dblogger'); ?>"><i class="fa fa-instagram"></i></a>
 
 				<?php 
 				if( !empty($instance['text']) ):
@@ -93,61 +93,61 @@ class Dblogger_Premium extends WP_Widget{
 
 	?>
 
-		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('social_title') ); ?>"><?php esc_html_e( 'Title', 'dblogger' ); ?></label><br/>
+			<p>
+			<label for="<?php echo esc_attr( $this->get_field_id('social_title') ); ?>"><?php esc_attr_e( 'Title', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('social_title') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('social_title') ); ?>" value="<?php if( !empty( $instance['social_title'] ) ): echo esc_attr( $instance['social_title'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('social_title') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('social_title') ); ?>" value="<?php if( !empty( $instance['social_title'] ) ): echo esc_attr( $instance['social_title'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('facebook_url') ); ?>"><?php esc_html_e( 'Facebook Url', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('facebook_url') ); ?>"><?php esc_attr_e( 'Facebook Url', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('facebook_url') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('facebook_url') ); ?>" value="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_attr( $instance['facebook_url'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('facebook_url') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('facebook_url') ); ?>" value="<?php if( !empty( $instance['facebook_url'] ) ): echo esc_attr( $instance['facebook_url'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('twitter_url') ); ?>"><?php esc_html_e( 'Twitter Url', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('twitter_url') ); ?>"><?php esc_attr_e( 'Twitter Url', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('twitter_url') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('twitter_url') ); ?>" value="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_attr( $instance['twitter_url'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('twitter_url') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('twitter_url') ); ?>" value="<?php if( !empty( $instance['twitter_url'] ) ): echo esc_attr( $instance['twitter_url'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('google_url') ); ?>"><?php esc_html_e( 'Google Url', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('google_url') ); ?>"><?php esc_attr_e( 'Google Url', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('google_url') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('google_url') ); ?>" value="<?php if( !empty( $instance['google_url'] ) ): echo esc_attr( $instance['google_url'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('google_url') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('google_url') ); ?>" value="<?php if( !empty( $instance['google_url'] ) ): echo esc_attr( $instance['google_url'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('inst_title') ); ?>"><?php esc_html_e( 'Instagram Title', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('inst_title') ); ?>"><?php esc_attr_e( 'Instagram Title', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('inst_title') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('inst_title') ); ?>" value="<?php if( !empty( $instance['inst_title'] ) ): echo esc_attr( $instance['inst_title'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('inst_title') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('inst_title') ); ?>" value="<?php if( !empty( $instance['inst_title'] ) ): echo esc_attr( $instance['inst_title'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('dribbble') ); ?>"><?php esc_html_e( 'Dribbble Url', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('dribbble') ); ?>"><?php esc_attr_e( 'Dribbble Url', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('dribbble') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('dribbble') ); ?>" value="<?php if( !empty( $instance['dribbble'] ) ): echo esc_attr( $instance['dribbble'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('dribbble') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('dribbble') ); ?>" value="<?php if( !empty( $instance['dribbble'] ) ): echo esc_attr( $instance['dribbble'] ); endif; ?>"
 			class="widefat"/>
 		</p>
 
 		<p>
-			<label for="<?php echo esc_html( $this->get_field_id('behance') ); ?>"><?php esc_html_e( 'Behance Url', 'dblogger' ); ?></label><br/>
+			<label for="<?php echo esc_attr( $this->get_field_id('behance') ); ?>"><?php esc_attr_e( 'Behance Url', 'dblogger' ); ?></label><br/>
 
-			<input type="text" name="<?php echo esc_html( $this->get_field_name('behance') ); ?>"
-			id="<?php echo esc_html( $this->get_field_id('behance') ); ?>" value="<?php if( !empty( $instance['behance'] ) ): echo esc_attr( $instance['behance'] ); endif; ?>"
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name('behance') ); ?>"
+			id="<?php echo esc_attr( $this->get_field_id('behance') ); ?>" value="<?php if( !empty( $instance['behance'] ) ): echo esc_attr( $instance['behance'] ); endif; ?>"
 			class="widefat"/>
-		</p>      
+		</p>       
 
 
 	<?php
