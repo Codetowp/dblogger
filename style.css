@@ -933,6 +933,7 @@ form label {
 }
 .input-group {
 	margin-bottom: 15px;
+	margin: 0 auto;
 }
 .btn-group>.btn {
 	margin-right:0;
