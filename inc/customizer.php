@@ -858,7 +858,7 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'dblogger_newsletter_mailchimp', array(
 			'sanitize_callback' => 'esc_url_raw',
-			'default'           => '',
+			'default'           => esc_url('#'),
 			'transport'         => 'postMessage', 
 		)
 	);

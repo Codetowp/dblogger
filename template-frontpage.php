@@ -388,7 +388,7 @@ if ( dblogger_is_selective_refresh() ) {
 }
 if ( ! $disable1) : ?>
 <?php
-$dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
+$dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp', '#');
  ?> 
 <section id="newsletter-block">
 	<div class="container">

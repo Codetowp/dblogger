@@ -26,10 +26,10 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		
 		$title = apply_filters('widget_title', empty($instance['title']) ? __('Recent Posts','dblogger') : $instance['title'], $instance, $this->id_base);
 		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
-		$number = 10;
+		$number = 5;
 		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
-		$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'category__not_in' => array(23,24,25,26,27) ) ) );
+		$r = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => absint($number), 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true, 'category__not_in' => array(23,24,25,26,27) ) ) );
 		if ($r->have_posts()) :
 
 		?>
