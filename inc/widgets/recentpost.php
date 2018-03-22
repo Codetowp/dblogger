@@ -45,11 +45,11 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						if  ( get_the_post_thumbnail()=='')
 						{
 							$background_img_relatedpost   = get_template_directory_uri()."/assets/img/default.jpg";
-							echo   '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
+							echo '<img class="media-object" src="'. esc_url( $background_img_relatedpost ).'" alt="...">';
 						}
 						else
 						{
-							echo   get_the_post_thumbnail( get_the_ID(),'dblogger_related_post' );
+							echo get_the_post_thumbnail( get_the_ID(),'dblogger_related_post' );
 						}   
 						?>
 					</a>
@@ -68,9 +68,6 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 						<?php if ( $show_date ) : ?>
 							<p class="post-date"><?php the_time( get_option('date_format') ); ?></p>
 						<?php endif;
-
-						//thirst_number_comments();
-
 						?>
 					</div>
 				</li>
@@ -108,14 +105,14 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 		$number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
 		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
 		?>
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'dblogger' ); ?></label><br/>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'dblogger' ); ?></label><br/>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
-			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_attr_e( 'Number of posts to show:', 'dblogger' ); ?></label><br/>
+			<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of posts to show:', 'dblogger' ); ?></label><br/>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
 
 			<p><input type="checkbox" <?php checked( $show_date ); ?> id="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'show_date' ) ); ?>" />
-			<label class="widefat" for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_attr_e( 'Display post date?', 'dblogger' ); ?></label></p>
+			<label class="widefat" for="<?php echo esc_attr( $this->get_field_id( 'show_date' ) ); ?>"><?php esc_html_e( 'Display post date?', 'dblogger' ); ?></label></p>
 	<?php
 	}
 }
@@ -125,7 +122,7 @@ function Dblogger_WP_Widget_Recent_Posts() {
 	// define widget title and description
 	$widget_ops = array('classname' => 'widget_recent_entries', 'description' => __( "The most recent posts on your site with thumbnails" ,'dblogger') );
 	// register the widget
-	$this->WP_Widget('dblogger-recent-posts',  esc_html('Dblogger Recent Posts'), $widget_ops);
+	$this->WP_Widget('dblogger-recent-posts',  esc_html__('Dblogger Recent Posts', 'dblogger'), $widget_ops);
 }
 
 function Dblogger_WP_Widget_Recent_Posts_init(){
