@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Dblogger\n"
-"POT-Creation-Date: 2018-03-21 12:12+0530\n"
-"PO-Revision-Date: 2018-03-21 12:12+0530\n"
+"POT-Creation-Date: 2018-03-22 12:16+0530\n"
+"PO-Revision-Date: 2018-03-22 12:16+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,6 +80,10 @@ msgstr ""
 
 #: functions.php:209 inc/widgets/recentpost.php:67
 msgid "Read more"
+msgstr ""
+
+#: header.php:57
+msgid "Toggle navigation"
 msgstr ""
 
 #: header.php:69
@@ -574,7 +578,7 @@ msgctxt "list item separator"
 msgid " "
 msgstr ""
 
-#: inc/widgets/recentpost.php:10 inc/widgets/recentpost.php:126
+#: inc/widgets/recentpost.php:10 inc/widgets/recentpost.php:123
 msgid "The most recent posts on your site with thumbnails"
 msgstr ""
 
@@ -586,16 +590,20 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/widgets/recentpost.php:111
+#: inc/widgets/recentpost.php:108
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:114
+#: inc/widgets/recentpost.php:111
 msgid "Number of posts to show:"
 msgstr ""
 
-#: inc/widgets/recentpost.php:118
+#: inc/widgets/recentpost.php:115
 msgid "Display post date?"
+msgstr ""
+
+#: inc/widgets/recentpost.php:125
+msgid "Dblogger Recent Posts"
 msgstr ""
 
 #: inc/widgets/social.php:17
