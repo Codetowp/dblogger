@@ -16,8 +16,8 @@
 get_header(); ?>
 <!-- // Header INTRO -->
 <?php
-$background_img   =  get_theme_mod( 'dblogger_back_img',  esc_url(get_template_directory_uri() . '/assets/img/b-1.jpg'));   
-$disable    = get_theme_mod( 'dblogger_header_check' ) == 1 ? true : false ;
+$background_img = get_theme_mod( 'dblogger_back_img',  esc_url(get_template_directory_uri() . '/assets/img/b-1.jpg'));   
+$disable = get_theme_mod( 'dblogger_header_check' ) == 1 ? true : false ;
 if ( dblogger_is_selective_refresh() ) {
 	$disable = false;
 }
@@ -27,7 +27,7 @@ if ( ! $disable) : ?>
         <div class="container">
 			<?php 
 				$title  = get_theme_mod( 'dblogger_tagline_text', esc_html__('Sub Heading', 'dblogger' ));
-				if ($title != '') echo '<span class="sub wow fadeInRight" data-wow-duration="1s">  ' . wp_kses_post($title) . ' </span>'; 
+				if ($title != '') echo '<span class="sub wow fadeInRight" data-wow-duration="1s">  ' . esc_html($title) . ' </span>'; 
 					$desc  = get_theme_mod( 'dblogger_header_text', esc_html__('Section Description', 'dblogger' ));
 				if ($desc != '') echo '<h1 class="wow fadeInUp">' . wp_kses_post($desc) . '</h1>';
 					$dblogger_button_text  = get_theme_mod( 'dblogger_button_text', esc_html__('Read More', 'dblogger') );
@@ -52,7 +52,7 @@ if ( ! $disable1) : ?>
 			$background_img_static   = get_template_directory_uri() . '/assets/img/f-fa-book.png';
 			$image = $background_img ? "$background_img" : "$background_img_static"; 
 		?>
-		<img src="<?php echo esc_url( $image );?>" class="img-responsive" style="width:65px; margin-left:48%">
+		<img src="<?php echo esc_url( $image );?>" class="img-responsive" style="width:65px; margin-left:48%;">
 		<?php 
 			$dblogger_guide_title  = get_theme_mod( 'dblogger_guide_title', esc_html__('How to Guides', 'dblogger' ));
 			if ($dblogger_guide_title != '') echo '<h2>  ' . esc_html($dblogger_guide_title) . ' </h2>'; 
@@ -71,13 +71,13 @@ if ( ! $disable1) : ?>
 							$firstClass = 'active'; 
 							$values=0;
 							$count = get_theme_mod( 'dblogger_post_number', 6 );
-							$slidecat = esc_html(get_option( 'dblogger_slide_categories' ));
-							$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
+							$slidecat = get_option( 'dblogger_slide_categories' );
+							$query = new WP_Query( array( 'cat' =>esc_attr( $slidecat ),'posts_per_page' =>absint($count),'post__not_in' => get_option( 'sticky_posts' )) );
 							if ($query->have_posts()) :
 							while ($query->have_posts()) : $query->the_post();
 							$values++;
 						?>
-							<li role="presentation" class="<?php echo esc_html( $firstClass ); ?>"><a href="#<?php echo esc_attr( $values );?>"  onclick="location.href='<?php the_permalink();?>'"  aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
+							<li role="presentation" class="<?php echo esc_attr( $firstClass ); ?>"><a href="#<?php echo esc_html( $values );?>"  onclick="location.href='<?php the_permalink();?>'"  aria-controls="home" role="tab" data-toggle="tab"><h6><?php the_title();?></h6></a></li>
 						<?php  
 							$firstClass = "";
 							endwhile;
@@ -91,7 +91,7 @@ if ( ! $disable1) : ?>
 						$values=0;
 						$count = get_theme_mod( 'dblogger_post_number', 6 );
 						$slidecat =get_option( 'dblogger_slide_categories' );
-						$query = new WP_Query( array( 'cat' =>$slidecat,'posts_per_page' =>$count,'post__not_in' => get_option( 'sticky_posts' )) );
+						$query = new WP_Query( array( 'cat' =>esc_attr($slidecat),'posts_per_page' =>absint($count),'post__not_in' => get_option( 'sticky_posts' )) );
 						if ($query->have_posts()) :
 							while ($query->have_posts()) : $query->the_post();
 							$values++;
@@ -158,14 +158,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -192,14 +192,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -227,14 +227,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -261,14 +261,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -296,14 +296,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?> 
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -330,14 +330,14 @@ if ( ! $disable1) : ?>
 					<h6><?php echo esc_html(get_the_title($post_id)); ?>
 						<?php 
 						$dblogger_tag_title  = get_theme_mod( 'dblogger_tag_title', esc_html__('Tag', 'dblogger' ));
-						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . wp_kses_post($dblogger_tag_title) . '</span>'; 
+						if ($dblogger_tag_title != '') echo '<span class="badge badge-info">' . esc_html($dblogger_tag_title) . '</span>'; 
 						?>
 					</h6>
 					<div class="view-payment"> 
 						<?php 
 						$dblogger_theme_link_title = get_theme_mod( 'dblogger_theme_link_title', esc_html__('Read More', 'dblogger' ));?>
 						<a href="<?php echo esc_url(get_the_permalink($post_id)); ?>"> 
-						<?php if ($dblogger_theme_link_title != '') echo wp_kses_post($dblogger_theme_link_title);?>
+						<?php if ($dblogger_theme_link_title != '') echo esc_html($dblogger_theme_link_title);?>
 						</a>
 					</div>
 				</div>
@@ -360,16 +360,16 @@ if ( ! $disable1) : ?>
 			<div class="section-title text-center">
 				<?php 
 				$dblogger_blog_title  = get_theme_mod( 'dblogger_blog_title', esc_html__('Our Blog', 'dblogger' ));
-				if ($dblogger_blog_title != '') echo '<h2>' . wp_kses_post($dblogger_blog_title) . '</h2>'; ?>
+				if ($dblogger_blog_title != '') echo '<h2>' . esc_html($dblogger_blog_title) . '</h2>'; ?>
 				<?php 
 				$dblogger_blog_button_text  = get_theme_mod( 'dblogger_blog_button_text', esc_html__('Read More', 'dblogger' ));
 				$dblogger_blog_button_url   = get_theme_mod('dblogger_blog_button_url',esc_url('#') );
-				if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url($dblogger_blog_button_url ) .'">' . wp_kses_post($dblogger_blog_button_text) . '</a>'; 
+				if ($dblogger_blog_button_text != '') echo '<a class="btn btn-white" href="'. esc_url($dblogger_blog_button_url ) .'">' . esc_html($dblogger_blog_button_text) . '</a>'; 
 				?>
 			</div>
 			<?php
 			$count_blog = get_theme_mod( 'dblogger_blog_post_count' , 2 );
-			$query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>$count_blog ) );    
+			$query_post = new WP_Query( array( 'post_type' => 'post', 'posts_per_page' =>absint($count_blog) ) );    
 			if ($query_post->have_posts()) :
 				while ($query_post->have_posts()) : $query_post->the_post();
 					get_template_part( 'template-parts/content', get_post_format() );
@@ -396,17 +396,17 @@ $dblogger_newsletter_mailchimp = get_theme_mod('dblogger_newsletter_mailchimp');
 			<div class="section-title text-center">
 				<?php 
 				$dblogger_newsletter_title  = get_theme_mod( 'dblogger_newsletter_title', esc_html__('Subscribe to our newsletter', 'dblogger' ));
-				if ($dblogger_newsletter_title != '') echo '<h3>  ' . wp_kses_post($dblogger_newsletter_title) . ' </h3>'; 
+				if ($dblogger_newsletter_title != '') echo '<h3>  ' . esc_html($dblogger_newsletter_title) . ' </h3>'; 
 				?>  
 			</div>
 			<div class="col-md-4 col-md-offset-4">
 				<form>
 					<div class="input-group">
-						<a target="_blank" class="btn btn-default form-newsletter" href="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>"><?php esc_attr_e('Click Here', 'dblogger'); ?></a>
+						<a target="_blank" class="btn btn-default form-newsletter" href="<?php if ($dblogger_newsletter_mailchimp != '') echo esc_url($dblogger_newsletter_mailchimp); ?>"><?php esc_html_e('Click Here', 'dblogger'); ?></a>
 					</div>
 				</form>
 				<p> 
-					<?php echo  $dblogger_newsletter_det=( get_theme_mod( 'dblogger_newsletter_det' ) )? esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ): esc_html__('We protect your privacy. We provide you with high quality updates.', 'dblogger'); ?>
+					<?php echo $dblogger_newsletter_det=( get_theme_mod( 'dblogger_newsletter_det' ) )? esc_html( get_theme_mod( 'dblogger_newsletter_det' ) ): esc_html__('We protect your privacy. We provide you with high quality updates.', 'dblogger'); ?>
 				</p>
 			</div>
 		</div>
