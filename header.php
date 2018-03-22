@@ -54,7 +54,7 @@
 		<div class="container"> 
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only"><?php esc_html_e('Toggle navigation' , 'dblogger'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -80,7 +80,7 @@
 					}?>
 					<li> <!--search form-->
 						<form id="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get"> 
-							<input type="text" placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo get_search_query(); ?>" name="s" size="40"/>
+							<input type="text" placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo esc_attr(get_search_query()); ?>" name="s" size="40"/>
 						</form>
 					</li>
 				</ul>
