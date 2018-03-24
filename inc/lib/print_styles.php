@@ -112,7 +112,7 @@ if (!function_exists('dblogger_accent_color'))  {
         $append_border_b=sprintf('border-bottom: 20px solid %s;',$color_value );
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" .'.bbpress .bbp-header{'.esc_html( $append_color_link ).'}' . "\n" .'#top-menu.navbar-default, .badge-info{'.esc_html( $append_bckcolor ).'}'."\n".'#top-menu.navbar-default .navbar-nav > li a:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-default{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.esc_html( $append_color ).'}'."\n".'.btn-white:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-white:hover{'.esc_html( $append_border ).'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active:before, .guide-block .nav-tabs > li:hover:before{'.esc_html( $append_color_link ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_bckcolor ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_border_s ).'}'."\n".'#top-menu.navbar-default .navbar-nav ul li{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#top-menu.navbar-default .navbar-nav ul:before{'.esc_html( $append_border_b ).'}'."\n"."\n".'#respond input[type=submit]{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#respond input[type=submit]:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.single .single-post ul li:before{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.widget_archive li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_categories li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li:hover:before{'.esc_html( $append_color ).'}'."\n"."\n".'aside li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.posts-navigation ul li a:hover, .nav-links a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_border_s ).'}'."\n"."\n".'.cat-links a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.tags-links a:hover{'.esc_html( $append_color ).'}'."\n";
+			echo "\n" .'.bbpress .bbp-header{'.esc_html( $append_color_link ).'}' . "\n" .'.btn-default{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.esc_html( $append_color ).'}'."\n".'.btn-white:hover{'.esc_html( $append_bckcolor ).'}'."\n".'.btn-white:hover{'.esc_html( $append_border ).'}'."\n".'button, input[type="button"], input[type="reset"], input[type="submit"]{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active:before, .guide-block .nav-tabs > li:hover:before{'.esc_html( $append_color_link ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_bckcolor ).'}'."\n".'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {'.esc_html( $append_border_s ).'}'."\n".'#top-menu.navbar-default .navbar-nav ul li{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#top-menu.navbar-default .navbar-nav ul:before{'.esc_html( $append_border_b ).'}'."\n"."\n".'#respond input[type=submit]{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#respond input[type=submit]:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.single .single-post ul li:before{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.widget_archive li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_categories li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.widget_meta li:hover:before{'.esc_html( $append_color ).'}'."\n"."\n".'aside li a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.posts-navigation ul li a:hover, .nav-links a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.btn-default:hover{'.esc_html( $append_border_s ).'}'."\n"."\n".'.cat-links a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.tags-links a:hover{'.esc_html( $append_color ).'}'."\n";
 		}
 		echo "\n". "</style>". "\n";
 	}
@@ -130,7 +130,7 @@ if (!function_exists('dblogger_secondary_color'))  {
         $append_border= sprintf('border: 2px %s solid',$color_value);
 			// Output the styles.
 		if ( $color_value ) {
-			echo "\n" .'.on{'.esc_html( $append_bckcolor ).'}'."\n".'.theme-post-caption .view-payment{'.esc_html( $append_bckcolor ).'}'."\n".'.widget_categories ul{'.esc_html( $append_bckcolor ).'}'."\n".'.author-box .author-box-title a{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.author-box .author-box-title{'.esc_html( $append_color ).'}'."\n"."\n".'a{'.esc_html( $append_color ).'}'."\n"."\n".'.widget-title{'.esc_html( $append_color ).'}'."\n"."\n".'.tagcloud a{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.social-links-top > li > a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.also-like-block h4, #comments .comment-reply-title{'.esc_html( $append_color ).'}'."\n";
+			echo "\n" .'.on{'.esc_html( $append_bckcolor ).'}'."\n".'.theme-post-caption .view-payment{'.esc_html( $append_bckcolor ).'}'."\n".'.widget_categories ul{'.esc_html( $append_bckcolor ).'}'."\n".'.author-box .author-box-title a{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.author-box .author-box-title{'.esc_html( $append_color ).'}'."\n"."\n".'a{'.esc_html( $append_color ).'}'."\n"."\n".'.widget-title{'.esc_html( $append_color ).'}'."\n"."\n".'.tagcloud a{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_border ).'}'."\n"."\n".'.tagcloud a:hover{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'.social-links-top > li > a:hover{'.esc_html( $append_color ).'}'."\n"."\n".'.also-like-block h4, #comments .comment-reply-title{'.esc_html( $append_color ).'}'."\n"."\n".'.btn-default{'.esc_html( $append_bckcolor ).'}'."\n".'.guide-block .nav-tabs > li.active > a > h6, .guide-block .nav-tabs > li.active > a:hover{'.esc_html( $append_color ).'}'."\n";
 		}
 		echo "\n". "</style>". "\n";
 	}
@@ -138,3 +138,41 @@ if (!function_exists('dblogger_secondary_color'))  {
  // Add custom styles to `<head>`.
 add_action( 'wp_head', 'dblogger_secondary_color' );
 
+
+if(!function_exists('dblogger_menu_background_color')){
+
+function dblogger_menu_background_color(){
+	echo '<style type="text/css" id="menu-color-css">';
+ $menu_color = get_theme_mod('dblogger_menu_background_color');
+ $append_bckcolor = sprintf( 'background-color: %s !important;',   $menu_color );
+ $append_border_b=sprintf('border-bottom: 20px solid %s;', $menu_color);	
+
+ if($menu_color){
+ echo "\n".'#top-menu.navbar-default .navbar-nav ul li{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#top-menu.navbar-default .navbar-nav ul:before{'.esc_html( $append_border_b ).'}'."\n".'#top-menu.navbar-default, .badge-info{'.esc_html( $append_bckcolor ).'}'."\n".'#top-menu.navbar-default .navbar-nav > li a:hover{'.esc_html( $append_bckcolor ).'}'."\n";
+
+
+ }
+ echo "\n". "</style>". "\n";
+}
+}
+ // Add custom styles to `<head>`.
+add_action( 'wp_head', 'dblogger_menu_background_color' );
+
+if(!function_exists('dblogger_menu_text_color')){
+
+function dblogger_menu_text_color(){
+	echo '<style type="text/css" id="menu-color-css">';
+ $menu_text_color = get_theme_mod('dblogger_menu_text_color');
+ $append_bckcolor = sprintf( 'color: %s !important;',    $menu_text_color );
+	
+
+ if( $menu_text_color){
+ echo "\n".'#top-menu.navbar-default .navbar-nav > li > a{'.esc_html( $append_bckcolor ).'}'."\n"."\n".'#top-menu.navbar-default .navbar-nav > li:after{'.esc_html( $append_bckcolor ).'}'."\n";
+
+
+ }
+ echo "\n". "</style>". "\n";
+}
+}
+ // Add custom styles to `<head>`.
+add_action( 'wp_head', 'dblogger_menu_text_color' );
