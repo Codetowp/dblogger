@@ -19,7 +19,7 @@ get_header(); ?>
 				<?php the_title( '<h1>', '</h1>' ); ?>
 				<header class="entry-header">
 					<span class="date-article">
-						<?php dblogger_days_ago(); dblogger_category_list(); ?> 
+						<?php dblogger_days_ago(); dblogger_category_list();?> 
 					</span>
 				</header>
 			</div>

@@ -31,8 +31,9 @@ Yes. You can check this URL: https://dcrazed.com/docs/dblogger/
 
 == Changelog ==
 
-= 1.0.2 - Mar 20 2018 =
-* Bug fixing for WordPress.org Repo
+= Upto 1.0.5 - Mar 24 2018 =
+* Bug fixing, style changes. 
+* Added new Single post layout as per request.
 
 = 1.0.1 - Jan 20 2018 =
 * Minor Bugs and Customizer improvements.

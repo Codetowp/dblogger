@@ -30,10 +30,7 @@
 			?>
 		</a> 
 		<span class="date-article">
-			<?php 	
-				dblogger_days_ago(); 
-				dblogger_category_list(); 
-			?>
+			<?php  dblogger_days_ago();  dblogger_category_list(); dblogger_posted_on(); ?>
 		</span>
 	</header>
 	<?php the_excerpt(); ?>

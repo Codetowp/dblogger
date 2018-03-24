@@ -45,11 +45,11 @@
 				<!--author box-->
 				<div class="author-box wow fadeInLeft">
 					<?php echo get_avatar( get_the_author_meta('ID'), '100', '' ); ?>
-					<div class="author-box-title"><?php esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></div>
+					<div class="author-box-title"><?php echo esc_html(get_the_author_meta('first_name')) . " " . esc_html(get_the_author_meta('last_name'));//esc_html_e('By', 'dblogger'); ?><?php the_author_posts_link(); ?></div>
 					<div class="author-description">
 						<?php the_author_meta('description'); ?>						
 					</div>
-					<div class="author_social"><a href="<?php echo esc_url( get_the_author_meta('url') ); ?>"><i class="fa fa-globe"></i></a></div>
+					<?php if(get_the_author_meta('url')) { ?><div class="author_social"><a href="<?php echo esc_url( get_the_author_meta('url') ); ?>"><i class="fa fa-globe"></i></a></div><?php } ?>
 				</div>
 
 				<div class="clearfix"></div>
