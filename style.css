@@ -856,11 +856,11 @@ header.entry-header .author.vcard a {
     content: "\f007";
 }
 header.entry-header {
-	color: #a1aaba;
+	/* color: #a1aaba;
 	font-family: 'Droid Serif', serif;
 	text-transform: none;
 	font-weight: 400;
-	font-style: italic;
+	font-style: italic; */
 }
 /* All base elements go here */
 
@@ -2864,11 +2864,11 @@ article header .author.vcard a {
 	font-weight: 600;
 }
 article header.entry-header {
-	color: #a1aaba;
+	/*	color: #a1aaba;
 	font-family: 'Droid Serif', serif;
 	text-transform: none;
 	font-weight: 400;
-	font-style: italic;
+	font-style: italic; */
 }
 
 article a h5, article a h2 {
@@ -3476,7 +3476,7 @@ blockquote p {
 	margin-top: 10px;
 	margin-bottom: 30px;
 }
-.single span.cat-links a {
+#single-banner span.cat-links a {
     color: white !important;
 }
 .page-links p{
@@ -4545,9 +4545,6 @@ width:100%;
 9.0 Common
 ----------------------*/
 
-.single-post .entry-date {
-    color: #fff;
-}
 span.byline {
     margin-left: 5px;
 }
