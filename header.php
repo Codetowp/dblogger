@@ -79,9 +79,7 @@
 						}
 					}?>
 					<li> <!--search form-->
-						<form id="search" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get"> 
-							<input type="text" placeholder="<?php echo esc_attr_x( 'Search...&hellip;', 'placeholder', 'dblogger' ); ?>"  value="<?php echo esc_attr(get_search_query()); ?>" name="s" size="40"/>
-						</form>
+						<?php get_search_form(); ?>
 					</li>
 				</ul>
 			</div>

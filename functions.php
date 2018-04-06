@@ -169,8 +169,8 @@ function dblogger_enqueue_styles(){
     wp_enqueue_style( 'bootstrap' , get_template_directory_uri() . '/assets/css/bootstrap.css' );
     wp_enqueue_style( 'fontawesome' , get_template_directory_uri() . '/assets/css/font-awesome.css' );
     wp_enqueue_style( 'animate' , get_template_directory_uri() . '/assets/css/animate.css' );
-    wp_enqueue_style( 'main-style' , get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900' );    
+    wp_enqueue_style( 'dblogger-main-style' , get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'dblogger-google-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700|Montserrat:100,200,300,300i,400,500,600,700,800,900' );    
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -181,7 +181,7 @@ function dblogger_enqueue_styles(){
     wp_enqueue_script( 'bootstrap-min-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '20151215', true );    
     wp_enqueue_script( 'SmoothScroll-js', get_template_directory_uri() . '/assets/js/SmoothScroll.js', array(), '20151215', true );    
     wp_enqueue_script( 'jquery-isotope-js', get_template_directory_uri() . '/assets/js/jquery.isotope.js', array(), '20151215', true );    
-    wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true );    
+    wp_enqueue_script( 'dblogger-main-js', get_template_directory_uri() . '/assets/js/main.js', array(), '20151215', true );    
     wp_enqueue_script( 'wow-min-js', get_template_directory_uri() . '/assets/js/wow.min.js', array(), '', true );    
 	wp_add_inline_script( 'wow-min-js', 'new WOW().init();' );
 }

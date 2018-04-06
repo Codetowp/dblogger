@@ -8,7 +8,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 	function __construct() {
 		$widget_ops = array('classname' => 'widget_recent_entries', 'description' => esc_html__( "The most recent posts on your site with thumbnails", 'dblogger'), 'customize_selective_refresh' => true, );
-		parent::__construct('thirst-recent-posts', __('Dblogger - Recent Posts', 'dblogger'), $widget_ops);
+		parent::__construct('dblogger-recent-posts', __('Dblogger - Recent Posts', 'dblogger'), $widget_ops);
 		$this->alt_option_name = 'widget_recent_entries';
 		add_action( 'save_post', array($this, 'flush_widget_cache') );
 		add_action( 'deleted_post', array($this, 'flush_widget_cache') );
@@ -40,7 +40,7 @@ class Dblogger_WP_Widget_Recent_Posts extends WP_Widget {
 
 				<li class="media">
 					<a class="pull-left no-pddig" href="<?php the_permalink(); ?>">
-						<?php add_image_size( 'footer_recent_post', 96, 80,  array( 'top', 'center' ) );
+						<?php add_image_size( 'dblogger_recent_post', 96, 80,  array( 'top', 'center' ) );
 
 						if  ( get_the_post_thumbnail()=='')
 						{

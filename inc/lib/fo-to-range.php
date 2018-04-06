@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 if ( ! class_exists( 'Dblogger_Customizer_Library' ) ) :
 	// Helper functions for fonts.
-	require plugin_dir_path( __FILE__ ) . 'fonts.php';
+	require get_template_directory() . 'fonts.php';
 	class Dblogger_Customizer_Library {
 		private static $instance;
 		public $options = array();

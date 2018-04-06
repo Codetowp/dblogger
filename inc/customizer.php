@@ -674,9 +674,10 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('dblogger_third_page', array(
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
 		'description' => __('Page Three', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
+		//'choices'    => $dblogger_option_pages,
 	));
 	
 	$wp_customize->add_setting('dblogger_fourth_page', array(
@@ -960,22 +961,22 @@ function dblogger_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 function dblogger_customize_partial_tagline_text() {
-	return get_theme_mod('dblogger_tagline_text');
+	return esc_html(get_theme_mod('dblogger_tagline_text'));
 }
 function dblogger_customize_partial_header_text() {
-	return get_theme_mod('dblogger_header_text');
+	return wp_kses_post(get_theme_mod('dblogger_header_text'));
 }
 function dblogger_customize_partial_guide_title() {
-	return get_theme_mod('dblogger_guide_title');
+	return esc_html(get_theme_mod('dblogger_guide_title'));
 }
 function dblogger_customize_partial_theme_title() {
-	return get_theme_mod('dblogger_theme_title');
+	return esc_html(get_theme_mod('dblogger_theme_title'));
 }
 function dblogger_customize_partial_blog_title() {
-	return get_theme_mod('dblogger_blog_title');
+	return esc_html(get_theme_mod('dblogger_blog_title'));
 }
 function dblogger_customize_partial_newsletter_title() {
-	return  get_theme_mod('dblogger_newsletter_title');
+	return  esc_html(get_theme_mod('dblogger_newsletter_title'));
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

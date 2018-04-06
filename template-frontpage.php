@@ -142,7 +142,7 @@ if ( ! $disable1) : ?>
 				<hr>
 			</div>
 			<!-- first page -->
-			<?php 
+			<?php 			
 			$post_id= get_option('dblogger_first_page','0');			
 			if($post_id !== '0'):			
 			$image_url= get_the_post_thumbnail_url($post_id);

@@ -37,7 +37,7 @@
 					<?php printf( /* translators: 1: Heart icon, 2: Website. */
 							esc_html__( 'Made with %1$s by %2$s', 'dblogger' ) , 
 							'<i class="fa fa-heart"></i>', 
-							'<a href="https://dcrazed.com/" target="_blank">Dcrazed</a>'
+							'<a href="https://dcrazed.net/" target="_blank">Designscrazed</a>'
 						);
 					?>
 				</p>

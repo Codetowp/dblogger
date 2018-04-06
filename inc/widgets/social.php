@@ -13,7 +13,7 @@ class Dblogger_Premium extends WP_Widget{
 	function __construct() 
 	{
 		parent::__construct(
-		'premium-widget', // Base ID
+		'dblogger-premium-widget', // Base ID
 		esc_html__( 'Dblogger - Follow widget', 'dblogger' ), // Name
 			array( 
 				'description' => esc_html__( 'Display a Premium or Feature description.', 'dblogger' ),
@@ -38,9 +38,10 @@ class Dblogger_Premium extends WP_Widget{
 	front page view */
 	public function widget( $args, $instance ){
 		echo wp_kses_post($args['before_widget']); 
+		$title = apply_filters('widget_title', empty($instance['title']) ? __('Dblogger - Follow widget','dblogger') : $instance['title'], $instance, $this->id_base);
 	?>
 		<?php if(! empty( $instance['social_title'] ) ){?>
-			<h2 class="widget-title"><?php echo esc_html( apply_filters( 'widget_title', $instance['social_title'] ) );?></h2>
+			<h2 class="widget-title"><?php if ( $title ) echo esc_html( $title ); ?></h2>
 		<?php }?>
 		<ul >
 
