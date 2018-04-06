@@ -129,81 +129,7 @@ function dblogger_customize_register( $wp_customize ) {
 			'description'     => '',
 	) );    
 	 
-    // Ad Banner SETTINGS
-	$wp_customize->add_section('dblogger_general_banners_controls',
-		array(
-			'title'                     => __('Ad Banner Settings', 'dblogger'),
-			'panel'                     => 'dblogger_global_panel',  
-			'priority'                  => 98,
-	) );    
-
-	$wp_customize->add_setting( 'dblogger_banner_type', 
-		array( 
-			'default'           => 'image',
-			'sanitize_callback' => 'dblogger_sanitize_choices',
-	));
     
-	$wp_customize->add_control('dblogger_banner_type',
-		array(
-			'type'        => 'radio',
-			'choices'     => array(
-				'image'   => esc_html__( 'Image', 'dblogger' ),
-				'adsense' => esc_html__( 'AdSense', 'dblogger' )
-				),
-			'label'       => esc_html__( 'The type of the banner', 'dblogger' ),
-			'description' => esc_html__( 'Select what type of banner you want to use: normal image or adsense script','dblogger' ),
-			'section'     => 'dblogger_general_banners_controls',
-	));    
-
-	$wp_customize->add_setting( 'dblogger_banner_link',
-		array(
-			'sanitize_callback' => 'esc_url_raw',
-			'default'           => esc_url( '#' ),
-	) );
-	$wp_customize->add_control('dblogger_banner_link', 
-		array(
-			'label'           => esc_html__( 'Banner Link:', 'dblogger' ),
-			'description'     => esc_html__( 'Add the link for banner image.', 'dblogger' ),
-			'section'         => 'dblogger_general_banners_controls',
-			'settings'        => 'dblogger_banner_link',
-			'type'			  => 'text',	
-			'active_callback' => 'dblogger_banners_type_callback',
-	) );
-     
-	$wp_customize->add_setting( 'dblogger_banner_image',
-		array(
-			'default'           =>  get_template_directory_uri() . '/assets/img/ads.jpg',
-			'sanitize_callback' => 'esc_url_raw',
-
-	) );
-    
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,'dblogger_banner_image',
-			array(
-				'label'           => esc_html__( 'Banner Image:', 'dblogger' ),
-				'description'     => esc_html__( 'Recommended size: 728 x 90', 'dblogger' ),
-				'section'         => 'dblogger_general_banners_controls',
-				'active_callback' => 'dblogger_banners_type_callback',
-			)
-	) );   
-
-	$wp_customize->add_setting( 'dblogger_banner_adsense_code', 
-		array(
-			'sanitize_callback' => 'sanitize_textarea_field',
-			'default'           => ''
-		)
-	);
-
-	$wp_customize->add_control( 'dblogger_banner_adsense_code', 
-		array(
-			'label'           => esc_html__( 'AdSense Code:', 'dblogger' ),
-			'description'     => esc_html__( 'Add the code you retrieved from your AdSense account. You only need to insert the <ins> tag.', 'dblogger' ),
-			'section'         => 'dblogger_general_banners_controls',
-			'settings'        => 'dblogger_banner_adsense_code',
-			'type'            => 'textarea',
-			'active_callback' => 'dblogger_banners_type_false_callback',
-	) );
 	
 	// Post SETTINGS
 	$wp_customize->add_section( 'dblogger_post_settings' ,
@@ -637,39 +563,36 @@ function dblogger_customize_register( $wp_customize ) {
     
 	$wp_customize->add_setting('dblogger_first_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 	));
 	
 	$wp_customize->add_control('dblogger_first_page', array(
 		'label' => __('Select pages manually', 'dblogger'),
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
-		'description' => __('Page One', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
+		'description' => __('Page one', 'dblogger'),
 	));
 	
 	$wp_customize->add_setting('dblogger_second_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 
 	));
 	
 	$wp_customize->add_control('dblogger_second_page', array(
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
 		'description' => __('Page Two', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
 	));
 	
 	$wp_customize->add_setting('dblogger_third_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 	));
 	
 	$wp_customize->add_control('dblogger_third_page', array(
@@ -682,46 +605,43 @@ function dblogger_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting('dblogger_fourth_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 
 	));
 	
 	$wp_customize->add_control('dblogger_fourth_page', array(
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
-		'description' => __('Page Four', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
+		'description' => __('Page four', 'dblogger'),
 	));
 	
 	$wp_customize->add_setting('dblogger_fifth_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 	));
 	
 	$wp_customize->add_control('dblogger_fifth_page', array(
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
-		'description' => __('Page Five', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
+		'description' => __('Page five', 'dblogger'),
 	));
 	
 	$wp_customize->add_setting('dblogger_sixth_page', array(
 		'default'=>'0',
-		'type' => 'option',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback'=>'dblogger_sanitize_choices',
+		'sanitize_callback'=>'dblogger_sanitize_dropdown_pages',
 
 	));
 	
 	$wp_customize->add_control('dblogger_sixth_page', array(
 		'section' => 'dblogger_theme_section',
-		'type'    => 'select',
+		'type'    => 'dropdown-pages',
+		//'type'    => 'select',
 		'description' => __('Page Six', 'dblogger'),
-		'choices'    => $dblogger_option_pages,
 	));
         
 	$wp_customize->add_setting( 'dblogger_theme_tag_check', array(
@@ -904,19 +824,7 @@ function dblogger_main_sanitize_checkbox( $input ) {
     }
 }
 
-function dblogger_banners_type_callback( $control ) {
-	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'image' ) {
-		return true;
-	}
-	return false;
-}
 
-function dblogger_banners_type_false_callback( $control ) {
-	if ( $control->manager->get_setting( 'dblogger_banner_type' )->value() == 'adsense' ) {
-		return true;
-	}
-	return false;
-}
 
 function dblogger_sanitize_checkbox( $input ) {
     if ( $input == 1 ) {
@@ -977,6 +885,13 @@ function dblogger_customize_partial_blog_title() {
 }
 function dblogger_customize_partial_newsletter_title() {
 	return  esc_html(get_theme_mod('dblogger_newsletter_title'));
+}
+function dblogger_sanitize_dropdown_pages( $page_id, $setting ) {
+  // Ensure $input is an absolute integer.
+  $page_id = absint( $page_id );
+
+  // If $page_id is an ID of a published page, return it; otherwise, return the default.
+  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

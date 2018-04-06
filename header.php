@@ -33,19 +33,7 @@
 					}				
 					?>
 				</div>
-				<div class="col-md-8 pull-right"> 
-					<?php
-					$type = get_theme_mod( 'dblogger_banner_type','image' );
-					if( $type == 'image' ){
-						$header_image   =  get_theme_mod( 'dblogger_banner_image', esc_url(get_template_directory_uri() . '/assets/img/ads.jpg') );						
-					?>
-					<a href="<?php echo esc_url( get_theme_mod( 'dblogger_banner_link' ));?>"><img class="img-responsive ads pull-right" src="<?php echo esc_url($header_image);?>"></a>
-					<?php  } else{ ?>
-					<?php 
-						$code = get_theme_mod( 'dblogger_banner_adsense_code');
-						echo htmlspecialchars_decode( $code );
-					} ?>
-				</div>
+				
 			</div>
 		</div>
 	</header>

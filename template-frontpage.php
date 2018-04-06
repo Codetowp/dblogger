@@ -143,7 +143,7 @@ if ( ! $disable1) : ?>
 			</div>
 			<!-- first page -->
 			<?php 			
-			$post_id= get_option('dblogger_first_page','0');			
+			$post_id= get_theme_mod('dblogger_first_page','0');			
 			if($post_id !== '0'):			
 			$image_url= get_the_post_thumbnail_url($post_id);
 			while($image_url == ''){
@@ -173,7 +173,7 @@ if ( ! $disable1) : ?>
 		<?php endif; ?>
 		<!-- second page -->
 			<?php 
-			$post_id= get_option('dblogger_second_page','0');
+			$post_id= get_theme_mod('dblogger_second_page','0');
 			
 			if($post_id !== '0'):
 			
@@ -207,8 +207,8 @@ if ( ! $disable1) : ?>
 		<?php endif; ?>
 		<!-- third page -->
 			<?php 
-			$post_id= get_option('dblogger_third_page','0');
-		
+			$post_id= get_theme_mod('dblogger_third_page','0');
+		     
 			if($post_id !== '0'):
 			
 			
@@ -242,7 +242,7 @@ if ( ! $disable1) : ?>
 		<?php endif; ?>
 		<!-- fourth page -->
 			<?php 
-			$post_id= get_option('dblogger_fourth_page','0');
+			$post_id= get_theme_mod('dblogger_fourth_page','0');
 			
 			if($post_id !== '0'):
 			
@@ -276,7 +276,7 @@ if ( ! $disable1) : ?>
 		<?php endif; ?>
 		<!-- fifth page -->
 			<?php 
-			$post_id= get_option('dblogger_fifth_page','0');
+			$post_id= get_theme_mod('dblogger_fifth_page','0');
 			
 			if($post_id !== '0'):
 			
@@ -311,7 +311,7 @@ if ( ! $disable1) : ?>
 		<?php endif; ?>
 		<!-- sixth page -->
 			<?php 
-			$post_id= get_option('dblogger_sixth_page','0');
+			$post_id= get_theme_mod('dblogger_sixth_page','0');
 			
 			if($post_id !== '0'):
 
