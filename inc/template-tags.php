@@ -12,6 +12,9 @@ if ( ! function_exists( 'dblogger_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function dblogger_posted_on() {
+	$disable = get_theme_mod( 'dblogger_post_show_author',1 ) == 1 ? true : false ;
+
+if (  $disable == 1) :  
 	$byline = sprintf(
 		/* translators: %s: post author. */
 		esc_html_x( '%s', 'post author', 'dblogger' ),
@@ -19,7 +22,7 @@ function dblogger_posted_on() {
 	);
 
 	echo $byline; // WPCS: XSS OK.
-
+endif;
 }
 endif;
 
@@ -28,6 +31,9 @@ if ( ! function_exists( 'dblogger_category_list' ) ) :
  * Prints HTML with meta information for the categories
  */
 function dblogger_category_list() {
+	$disable = get_theme_mod( 'dblogger_post_show_category',1 ) == 1 ? true : false ;
+
+    if (  $disable == 1) : 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
@@ -37,13 +43,18 @@ function dblogger_category_list() {
 			printf( '<span class="cat-links">' . '%1$s' . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
+endif;
 }
 endif;
 if ( ! function_exists( 'dblogger_days_ago' ) ) :
 /**
  * Outputs date
  */
-function dblogger_days_ago() {        
+
+function dblogger_days_ago() {   
+$disable = get_theme_mod( 'dblogger_post_show_date',1 ) == 1 ? true : false ;
+
+if (  $disable == 1) :      
     $days = round((date('U') - get_the_time('U')) / (60*60*24));
 	if ($days==0) {
 		echo " today "; 
@@ -69,12 +80,14 @@ function dblogger_days_ago() {
 		esc_html( '%s', 'post date', 'dblogger' ),$time_string 
 	);
     $sep=' ';
-	echo '<span class="posted-on">'. $posted_on,$sep.'</span>'; // WPCS: XSS OK.
+	echo '<span class="date-article"> <span class="posted-on">'. $posted_on,$sep.'</span> </span>'; // WPCS: XSS OK.
 	}
 	else {
 		echo  esc_html($days) . esc_html__(' days ago ', 'dblogger');
 	} 
+	endif;
     }
+
 endif;
 
 /**

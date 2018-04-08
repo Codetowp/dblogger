@@ -102,6 +102,33 @@ function dblogger_customize_register( $wp_customize ) {
 			'description' => esc_attr__( 'Add Secondary Color to Button.', 'dblogger' ),
 			'section'    => 'colors',) 
 	) );    
+
+	$wp_customize->add_setting( 'dblogger_menu_background_color',  
+		array(
+			'default' => '#f53347', 
+			'transport' => 'refresh', 
+			'sanitize_callback' => 'sanitize_hex_color', 
+		) );
+			
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_menu_background_color', 
+		array(
+			'label'      => esc_attr__( 'Menu Background Color', 'dblogger' ),
+			'description' => esc_attr__( 'Add Background Color to Menu.', 'dblogger' ),
+			'section'    => 'colors',) 
+	) );    
+	$wp_customize->add_setting( 'dblogger_menu_text_color',  
+			array(
+				'default' => '#fff', 
+				'transport' => 'refresh', 
+				'sanitize_callback' => 'sanitize_hex_color', 
+			) );
+				
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'dblogger_menu_text_color', 
+		array(
+			'label'      => esc_attr__( 'Menu text Color', 'dblogger' ),
+			'description' => esc_attr__( 'Add Color to Menu items.', 'dblogger' ),
+			'section'    => 'colors',) 
+	) ); 
  
 	$wp_customize->add_section( 'dblogger_theme_info', 
 		array(
@@ -225,7 +252,69 @@ function dblogger_customize_register( $wp_customize ) {
 		'label' => __('Number Of Related Post To Show','dblogger'),
 		'section' => 'dblogger_post_settings',		
 	) );
+
+	$wp_customize->add_setting( 'dblogger_post_show_date', array(
+			'sanitize_callback' => 'dblogger_sanitize_checkbox',
+			'default'           => 1,
+			'capability'        => 'manage_options',
+			'transport'         => 'refresh',
+		)
+	);
 	
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_show_date', array(
+		'settings' => 'dblogger_post_show_date',
+		'label'    => __( 'Show date', 'dblogger' ),
+		'section'  => 'dblogger_post_settings',
+		'type'     => 'ios',
+		'priority' => 1,
+	) ) );
+	$wp_customize->add_setting( 'dblogger_post_show_author', array(
+			'sanitize_callback' => 'dblogger_sanitize_checkbox',
+			'default'           => 1,
+			'capability'        => 'manage_options',
+			'transport'         => 'refresh',
+		)
+	);
+	
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_show_author', array(
+		'settings' => 'dblogger_post_show_author',
+		'label'    => __( 'Show author', 'dblogger' ),
+		'section'  => 'dblogger_post_settings',
+		'type'     => 'ios',
+		'priority' => 2,
+	) ) );
+
+	$wp_customize->add_setting( 'dblogger_post_show_category', array(
+			'sanitize_callback' => 'dblogger_sanitize_checkbox',
+			'default'           => 1,
+			'capability'        => 'manage_options',
+			'transport'         => 'refresh',
+		)
+	);
+	
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_show_category', array(
+		'settings' => 'dblogger_post_show_category',
+		'label'    => __( 'Show category', 'dblogger' ),
+		'section'  => 'dblogger_post_settings',
+		'type'     => 'ios',
+		'priority' => 3,
+	) ) );
+
+	$wp_customize->add_setting( 'dblogger_post_show_breadcrumb', array(
+			'sanitize_callback' => 'dblogger_sanitize_checkbox',
+			'default'           => 1,
+			'capability'        => 'manage_options',
+			'transport'         => 'refresh',
+		)
+	);
+	
+	$wp_customize->add_control( new Dblogger_Customizer_Toggle_Control( $wp_customize, 'dblogger_post_show_breadcrumb', array(
+		'settings' => 'dblogger_post_show_breadcrumb',
+		'label'    => __( 'Show breadcrumb', 'dblogger' ),
+		'section'  => 'dblogger_post_settings',
+		'type'     => 'ios',
+		'priority' => 4,
+	) ) );
     // Font SETTINGS
      
 	$wp_customize->add_section('dblogger_font_settings', 
