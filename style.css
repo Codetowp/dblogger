@@ -4199,6 +4199,12 @@ div.bbp-breadcrumb p a {
 #single-banner h1{
 	font-size:32px;
 }
+.author-box .author-description {
+	text-align: center;
+}
+.author_social {
+    text-align: center;
+}
 }	
 @media (min-width: 480px) {
 	.nav-next, .nav-previous {
