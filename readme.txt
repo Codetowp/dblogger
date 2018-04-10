@@ -1,8 +1,8 @@
 ﻿=== Dblogger ===
 
-Contributors: Rijo Abraham, Dcrazed.
+Contributors: Rijo Abraham, Designscrazed.
 Requires at least: 4.0
-Tested up to: 4.9.4
+Tested up to: 4.9.5
 Stable tag: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,13 +27,12 @@ Digital blogger(Dblogger) is a free wordpress blog theme with a clean layout and
 Woocommerce, bbpress, Contact Form 7, Jetpack, Yoast SEO are fully supported.
 
 = Is there a step by step documentation for the theme =
-Yes. You can check this URL: https://dcrazed.com/docs/dblogger/
+Yes. You can check this URL: https://dcrazed.net/docs/dblogger/
 
 == Changelog ==
 
-= Upto 1.0.5 - Mar 24 2018 =
+= Upto 1.0.5 - Apr 10 2018 =
 * Bug fixing, style changes. 
-* Added new Single post layout as per request.
 
 = 1.0.1 - Jan 20 2018 =
 * Minor Bugs and Customizer improvements.

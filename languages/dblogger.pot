@@ -1,0 +1,715 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Dblogger\n"
+"POT-Creation-Date: 2018-04-11 00:38+0530\n"
+"PO-Revision-Date: 2018-04-11 00:38+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:29
+msgid "Maybe try another search?"
+msgstr ""
+
+#: archive.php:49 home.php:34
+msgid "Newer posts"
+msgstr ""
+
+#: archive.php:50 home.php:35
+msgid "Older posts"
+msgstr ""
+
+#: comments.php:33
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: comments.php:39
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:59
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:18
+msgid "All rights reserved"
+msgstr ""
+
+#: footer.php:38
+#, php-format
+msgid "Made with %1$s by %2$s"
+msgstr ""
+
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: functions.php:48
+msgid "Footer"
+msgstr ""
+
+#: functions.php:137
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:139
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:209 inc/widgets/recentpost.php:67
+msgid "Read more"
+msgstr ""
+
+#: header.php:45
+msgid "Toggle navigation"
+msgstr ""
+
+#: header.php:57
+msgid "Add a Primary Menu"
+msgstr ""
+
+#: inc/customizer.php:13
+msgid "Select page"
+msgstr ""
+
+#: inc/customizer.php:67
+msgid "WordPress Settings"
+msgstr ""
+
+#: inc/customizer.php:71
+msgid "Branding"
+msgstr ""
+
+#: inc/customizer.php:72
+msgid "Archive Banner"
+msgstr ""
+
+#: inc/customizer.php:73
+msgid "Add custom banner for categories, 404, search pages etc"
+msgstr ""
+
+#: inc/customizer.php:87
+msgid "Accent Color"
+msgstr ""
+
+#: inc/customizer.php:88
+msgid "Add Accent Color to Button."
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Secondary Color"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid "Add Secondary Color to Button."
+msgstr ""
+
+#: inc/customizer.php:115
+msgid "Menu Background Color"
+msgstr ""
+
+#: inc/customizer.php:116
+msgid "Add Background Color to Menu."
+msgstr ""
+
+#: inc/customizer.php:128
+msgid "Menu text Color"
+msgstr ""
+
+#: inc/customizer.php:129
+msgid "Add Color to Menu items."
+msgstr ""
+
+#: inc/customizer.php:135
+msgid "Documentation & Links"
+msgstr ""
+
+#: inc/customizer.php:155
+msgid "Global Settings"
+msgstr ""
+
+#: inc/customizer.php:165
+msgid "Post Settings"
+msgstr ""
+
+#: inc/customizer.php:178
+msgid "Number Of Related Post To Show"
+msgstr ""
+
+#: inc/customizer.php:192
+msgid "Show date"
+msgstr ""
+
+#: inc/customizer.php:207
+msgid "Show author"
+msgstr ""
+
+#: inc/customizer.php:223
+msgid "Show category"
+msgstr ""
+
+#: inc/customizer.php:239
+msgid "Show breadcrumb"
+msgstr ""
+
+#: inc/customizer.php:248
+msgid "Font Settings"
+msgstr ""
+
+#: inc/customizer.php:249
+msgid ""
+"Change font family, size and color (Headings & Paragraph) for Homepage, Blog "
+"Posts & Pages."
+msgstr ""
+
+#: inc/customizer.php:262
+msgid "Change paragraph font family"
+msgstr ""
+
+#: inc/customizer.php:263
+msgid "Applies to subtitles, widget content, single post & pages"
+msgstr ""
+
+#: inc/customizer.php:280
+msgid "Pick paragraph font color"
+msgstr ""
+
+#: inc/customizer.php:281
+msgid "Applies only to single posts & pages"
+msgstr ""
+
+#: inc/customizer.php:298
+msgid "Pick paragraph font size"
+msgstr ""
+
+#: inc/customizer.php:299
+msgid "Applies only to single posts & pages."
+msgstr ""
+
+#: inc/customizer.php:316
+msgid "Change heading font family"
+msgstr ""
+
+#: inc/customizer.php:317
+msgid "Applies to all headings."
+msgstr ""
+
+#: inc/customizer.php:333
+msgid "Pick heading font color"
+msgstr ""
+
+#: inc/customizer.php:334
+msgid "Applies only to headings in single posts & pages."
+msgstr ""
+
+#: inc/customizer.php:342
+msgid "Social Links"
+msgstr ""
+
+#: inc/customizer.php:358
+msgid " Url:"
+msgstr ""
+
+#: inc/customizer.php:368
+msgid "Frontpage Sections"
+msgstr ""
+
+#: inc/customizer.php:374
+msgid "Header Intro"
+msgstr ""
+
+#: inc/customizer.php:375
+msgid "Easily edit your header section"
+msgstr ""
+
+#: inc/customizer.php:391
+msgid "Disable Header?"
+msgstr ""
+
+#: inc/customizer.php:407
+msgid "Background Image"
+msgstr ""
+
+#: inc/customizer.php:416
+msgid "Sub Title"
+msgstr ""
+
+#: inc/customizer.php:423 template-frontpage.php:29
+msgid "Sub Heading"
+msgstr ""
+
+#: inc/customizer.php:429 template-frontpage.php:31 template-frontpage.php:61
+msgid "Section Description"
+msgstr ""
+
+#: inc/customizer.php:436
+msgid "Heading"
+msgstr ""
+
+#: inc/customizer.php:442 inc/customizer.php:602 inc/customizer.php:628
+#: inc/customizer.php:791 template-frontpage.php:33 template-frontpage.php:166
+#: template-frontpage.php:200 template-frontpage.php:235
+#: template-frontpage.php:269 template-frontpage.php:304
+#: template-frontpage.php:338 template-frontpage.php:365
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer.php:448 inc/customizer.php:609 inc/customizer.php:798
+msgid "Button Text"
+msgstr ""
+
+#: inc/customizer.php:460 inc/customizer.php:622 inc/customizer.php:811
+msgid "Button Url"
+msgstr ""
+
+#: inc/customizer.php:468
+msgid "Category section"
+msgstr ""
+
+#: inc/customizer.php:469
+msgid "Show any category posts on homepage"
+msgstr ""
+
+#: inc/customizer.php:485
+msgid "Disable this section ?"
+msgstr ""
+
+#: inc/customizer.php:501
+msgid "Guide Icon"
+msgstr ""
+
+#: inc/customizer.php:509 template-frontpage.php:57
+msgid "How to Guides"
+msgstr ""
+
+#: inc/customizer.php:516 inc/customizer.php:596 inc/customizer.php:785
+#: inc/widgets/social.php:98
+msgid "Title"
+msgstr ""
+
+#: inc/customizer.php:522
+msgid "Section Description."
+msgstr ""
+
+#: inc/customizer.php:529
+msgid "Description"
+msgstr ""
+
+#: inc/customizer.php:543
+msgid "Slider Category"
+msgstr ""
+
+#: inc/customizer.php:546
+msgid "Select a category for the featured post slider"
+msgstr ""
+
+#: inc/customizer.php:558
+msgid "Number Of Slides To Show - i.e 10 (default is 6)"
+msgstr ""
+
+#: inc/customizer.php:566
+msgid "Pages section"
+msgstr ""
+
+#: inc/customizer.php:567
+msgid "Show your featured pages on homepage."
+msgstr ""
+
+#: inc/customizer.php:582
+msgid "Enable this section"
+msgstr ""
+
+#: inc/customizer.php:589 template-frontpage.php:132
+msgid "Pages"
+msgstr ""
+
+#: inc/customizer.php:635
+msgid "Link Title"
+msgstr ""
+
+#: inc/customizer.php:641 template-frontpage.php:160 template-frontpage.php:194
+#: template-frontpage.php:229 template-frontpage.php:263
+#: template-frontpage.php:298 template-frontpage.php:332
+msgid "Tag"
+msgstr ""
+
+#: inc/customizer.php:648
+msgid "Tag Title"
+msgstr ""
+
+#: inc/customizer.php:660
+msgid "Select pages manually"
+msgstr ""
+
+#: inc/customizer.php:664
+msgid "Page one"
+msgstr ""
+
+#: inc/customizer.php:678
+msgid "Page Two"
+msgstr ""
+
+#: inc/customizer.php:691
+msgid "Page Three"
+msgstr ""
+
+#: inc/customizer.php:706
+msgid "Page four"
+msgstr ""
+
+#: inc/customizer.php:719
+msgid "Page five"
+msgstr ""
+
+#: inc/customizer.php:733
+msgid "Page Six"
+msgstr ""
+
+#: inc/customizer.php:745
+msgid "Enable/Disable tag section"
+msgstr ""
+
+#: inc/customizer.php:755
+msgid "Our Blog Section"
+msgstr ""
+
+#: inc/customizer.php:756
+msgid ""
+"Change settings for no of posts on homepage and manage related posts on "
+"single post."
+msgstr ""
+
+#: inc/customizer.php:771
+msgid "Disable Blog Section?"
+msgstr ""
+
+#: inc/customizer.php:778 template-frontpage.php:362
+msgid "Our Blog"
+msgstr ""
+
+#: inc/customizer.php:825
+msgid "Number Of Posts To Show"
+msgstr ""
+
+#: inc/customizer.php:835
+msgid "Subscribe"
+msgstr ""
+
+#: inc/customizer.php:850
+msgid "Enable newsletter?"
+msgstr ""
+
+#: inc/customizer.php:858 template-frontpage.php:398
+msgid "Subscribe to our newsletter"
+msgstr ""
+
+#: inc/customizer.php:863
+msgid "Subscribe Form Title"
+msgstr ""
+
+#: inc/customizer.php:876
+msgid "MailChimp Action URL"
+msgstr ""
+
+#: inc/customizer.php:878
+msgid ""
+"The newsletter form use MailChimp, please follow <a target=\"_blank\" href="
+"\"http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms"
+"\">this guide</a> to know how to get MailChimp Action URL. Example <i>//"
+"yourlist.us8.list-manage.com/subscribe/post?u=anything</i>"
+msgstr ""
+
+#: inc/customizer.php:883 template-frontpage.php:409
+msgid "We protect your privacy. We provide you with high quality updates."
+msgstr ""
+
+#: inc/customizer.php:891
+msgid "Newsletter Details"
+msgstr ""
+
+#: inc/lib/breadcrumb.php:16
+msgid "Home"
+msgstr ""
+
+#: inc/lib/fonts.php:17
+msgid "Standard Fonts"
+msgstr ""
+
+#: inc/lib/fonts.php:19
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/lib/fonts.php:124
+msgid "All"
+msgstr ""
+
+#: inc/lib/fonts.php:125
+msgid "Cyrillic"
+msgstr ""
+
+#: inc/lib/fonts.php:126
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:127
+msgid "Devanagari"
+msgstr ""
+
+#: inc/lib/fonts.php:128
+msgid "Greek"
+msgstr ""
+
+#: inc/lib/fonts.php:129
+msgid "Greek Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:130
+msgid "Khmer"
+msgstr ""
+
+#: inc/lib/fonts.php:131
+msgid "Latin"
+msgstr ""
+
+#: inc/lib/fonts.php:132
+msgid "Latin Extended"
+msgstr ""
+
+#: inc/lib/fonts.php:133
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/lib/fonts.php:193
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: inc/lib/fonts.php:197
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/lib/fonts.php:201
+msgctxt "font style"
+msgid "Monospaced"
+msgstr ""
+
+#: inc/lib/theme-info.php:41
+msgid "Documentation"
+msgstr ""
+
+#: inc/lib/theme-info.php:45
+msgid "Live Demo"
+msgstr ""
+
+#: inc/lib/theme-info.php:49
+msgid "Go to Themepage"
+msgstr ""
+
+#: inc/template-tags.php:20
+#, php-format
+msgctxt "post author"
+msgid "%s"
+msgstr ""
+
+#: inc/template-tags.php:40
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:86
+msgid " days ago "
+msgstr ""
+
+#: inc/template-tags.php:108
+msgctxt "list item separator"
+msgid " "
+msgstr ""
+
+#: inc/widgets/recentpost.php:10 inc/widgets/recentpost.php:123
+msgid "The most recent posts on your site with thumbnails"
+msgstr ""
+
+#: inc/widgets/recentpost.php:11
+msgid "Dblogger - Recent Posts"
+msgstr ""
+
+#: inc/widgets/recentpost.php:27
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widgets/recentpost.php:108
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/recentpost.php:111
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/recentpost.php:115
+msgid "Display post date?"
+msgstr ""
+
+#: inc/widgets/recentpost.php:125
+msgid "Dblogger Recent Posts"
+msgstr ""
+
+#: inc/widgets/social.php:17 inc/widgets/social.php:41
+msgid "Dblogger - Follow widget"
+msgstr ""
+
+#: inc/widgets/social.php:19
+msgid "Display a Premium or Feature description."
+msgstr ""
+
+#: inc/widgets/social.php:49
+msgid "facebook"
+msgstr ""
+
+#: inc/widgets/social.php:52
+msgid "twitter"
+msgstr ""
+
+#: inc/widgets/social.php:55
+msgid "google-plus"
+msgstr ""
+
+#: inc/widgets/social.php:58
+msgid "dribbble"
+msgstr ""
+
+#: inc/widgets/social.php:61
+msgid "behance"
+msgstr ""
+
+#: inc/widgets/social.php:64
+msgid "instagram"
+msgstr ""
+
+#: inc/widgets/social.php:106
+msgid "Facebook Url"
+msgstr ""
+
+#: inc/widgets/social.php:114
+msgid "Twitter Url"
+msgstr ""
+
+#: inc/widgets/social.php:122
+msgid "Google Url"
+msgstr ""
+
+#: inc/widgets/social.php:130
+msgid "Instagram Title"
+msgstr ""
+
+#: inc/widgets/social.php:138
+msgid "Dribbble Url"
+msgstr ""
+
+#: inc/widgets/social.php:146
+msgid "Behance Url"
+msgstr ""
+
+#: inc/woocommerce.php:227
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/woocommerce.php:229
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/woocommerce.php:272
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr ""
+
+#: page.php:43 template-parts/content-single.php:28
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: search.php:18
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search...&hellip;"
+msgstr ""
+
+#: template-frontpage.php:405
+msgid "Click Here"
+msgstr ""
+
+#: template-parts/content-none.php:18
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:29
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:34
+msgid ""
+"It seems that the category doesn&rsquo;t have posts right now. Try searching "
+"some keywords."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-single.php:62
+msgid "YOU MAY ALSO LIKE"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Dblogger"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://dcrazed.com/themes/dblogger/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Digital blogger(Dblogger) is a free wordpress blog theme with a clean layout "
+"and responsive design. It has full woocommerce and bbpress plugin support "
+"and is for digital bloggers, personal blogs etc. The powerful blog gives you "
+"better SEO visibility and lets you reach a global audience."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Rijo Abraham"
+msgstr ""
