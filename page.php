@@ -21,9 +21,7 @@ get_header(); ?>
 		<div class="container text-center"> 
 			<h1><?php the_title(); ?></h1>
 			<header class="entry-header">
-				<span class="date-article">
-					<?php dblogger_days_ago(); ?><?php dblogger_category_list(); ?>
-				</span>
+				<?php dblogger_days_ago(); ?><?php dblogger_category_list(); ?>
 			</header>
 		</div>
 	</div>

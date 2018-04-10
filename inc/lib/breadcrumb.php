@@ -6,6 +6,9 @@
  */
 
 function dblogger_breadcrumb_link() {
+	$disable = get_theme_mod( 'dblogger_post_show_breadcrumb',1 ) == 1 ? true : false ;
+
+    if (  $disable == 1) : 
 	if ( ! is_home() ) {
 		echo '<a href="';
 		echo esc_url( home_url( '/' ) );
@@ -18,5 +21,6 @@ function dblogger_breadcrumb_link() {
 			the_title();
 		}
 	}
+endif;
 }
 ?>
